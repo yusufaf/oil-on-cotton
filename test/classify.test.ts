@@ -31,6 +31,14 @@ describe('garmentOf', () => {
 		'Calder Chess Set',
 		'Mug',
 		'Van Gogh Irises Linen Apron',
+		'Tie Clip',
+		'Silk Tie Bar',
+		'Hair Ties',
+		'Tie-Dye Kit',
+		'Rainbow Tie Dye',
+		'Oven Glove',
+		'Gardening Gloves',
+		'Bodysuit',
 	])(
 		'%s is not clothing',
 		(name) => {
@@ -62,7 +70,10 @@ describe('normalizeSize', () => {
 	it('reads combined sizes, and bare numbers only on children’s clothing', () => {
 		expect(normalizeSize('S/M')).toBe('S/M');
 		expect(normalizeSize('l/xl')).toBe('L/XL');
+		expect(normalizeSize('S / M')).toBe('S/M');
 		expect(normalizeSize('10', true)).toBe('Kids 10');
+		expect(normalizeSize('Youth 10')).toBe('Kids 10');
+		expect(normalizeSize('Kids 8')).toBe('Kids 8');
 	});
 });
 
@@ -83,6 +94,15 @@ describe('sizesOf', () => {
 			'Kids 4',
 			'Kids 10',
 		]);
+	});
+
+	it('puts baby and toddler sizes before kids sizes, and combined sizes after their first part', () => {
+		expect(sizesOf([v(['10'], true), v(['2T'], true), v(['6-12 Months'], true)], true).map((s) => s.label)).toEqual([
+			'6-12 months',
+			'2T',
+			'Kids 10',
+		]);
+		expect(sizesOf([v(['M/L']), v(['M']), v(['S/M']), v(['S'])]).map((s) => s.label)).toEqual(['S', 'S/M', 'M', 'M/L']);
 	});
 
 	it('reports a single unsized variant as one size', () => {

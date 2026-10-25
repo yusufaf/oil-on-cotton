@@ -50,23 +50,36 @@ export function normalizeSize(value: string, kids = false): string | undefined {
 		.replace(/^(adult|unisex)\s+/i, '');
 	const key = cleaned.toLowerCase().replace(/\./g, '').replace(/\s+/g, ' ');
 	if (ALIASES[key]) return ALIASES[key];
-	const combined = key.match(/^([^/]+)\/([^/]+)$/);
+	const combined = key.match(/^([^/]+?)\s*\/\s*([^/]+)$/);
 	if (combined && ALIASES[combined[1]] && ALIASES[combined[2]]) return `${ALIASES[combined[1]]}/${ALIASES[combined[2]]}`;
 	if (kids && /^\d{1,2}$/.test(key)) return `Kids ${Number(key)}`;
 	const prefixed = cleaned.match(PREFIX);
 	if (prefixed) {
-		const inner = ALIASES[prefixed[2].toLowerCase().replace(/\./g, '')];
+		const rest = prefixed[2].toLowerCase().replace(/\./g, '');
+		if (/^(youth|kids?|toddler)$/i.test(prefixed[1]) && /^\d{1,2}$/.test(rest)) return `Kids ${Number(rest)}`;
+		const inner = ALIASES[rest];
 		if (inner) return `${prefixed[1][0].toUpperCase()}${prefixed[1].slice(1).toLowerCase()} ${inner}`;
 	}
 	if (CHILD.test(cleaned)) return cleaned.replace(/\s+/g, ' ').toUpperCase().replace(/MONTHS$/, 'months');
 	return undefined;
 }
 
-function rank(label: string): number {
+// Children's sizes, by age in years: 6-12 months, then 2T, then Kids 2, and so on.
+function childAge(label: string): number | undefined {
+	const months = label.match(/(\d+)\s*(M|MO|months)$/i);
+	if (months) return Number(months[1]) / 12;
+	const years = label.match(/^(\d+)\s*(T|Y|YRS|YEARS)$/i);
+	if (years) return Number(years[1]);
 	const kids = label.match(/^Kids (\d+)$/);
-	if (kids) return ORDER.length * 2 + Number(kids[1]);
+	return kids ? Number(kids[1]) + 0.5 : undefined;
+}
+
+function rank(label: string): number {
+	const age = childAge(label);
+	if (age !== undefined) return ORDER.length * 2 + age;
 	const plain = ORDER.indexOf(label.split('/')[0]);
-	if (plain !== -1) return plain;
+	// A combined size sits just after its first part: S, S/M, M.
+	if (plain !== -1) return plain + (label.includes('/') ? 0.5 : 0);
 	const prefixed = ORDER.indexOf(label.slice(label.indexOf(' ') + 1));
 	return prefixed === -1 ? ORDER.length * 3 + 100 : ORDER.length + prefixed;
 }

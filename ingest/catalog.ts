@@ -13,7 +13,8 @@ import {
 } from './shopify.ts';
 
 const MAX_COLLECTION_PAGES = 40;
-const CHILDRENS = /\b(kids?|kid's|youth|baby|babies|toddlers?|infants?|child|children's)\b/i;
+// "Baby Blue" is a colour, not an age.
+const CHILDRENS = /\b(kids?|kid['’]s|youth|baby(?! (blue|pink|yellow|green))|babies|toddlers?|infants?|child|children(['’]?s)?)\b/i;
 // A crawl that finds fewer than this share of last week's items is treated as broken.
 const MIN_COUNT_RATIO = 0.8;
 
@@ -125,7 +126,9 @@ export async function crawlMuseum(
 				continue;
 			}
 			if (options.limit !== undefined && fetched >= options.limit) {
+				// Not visited this run: carry over whatever was known.
 				if (old) items.push(old);
+				if (oldSkipped[handle]) skipped[handle] = oldSkipped[handle];
 				continue;
 			}
 			fetched++;
