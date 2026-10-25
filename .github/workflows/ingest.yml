@@ -1,0 +1,73 @@
+name: ingest
+
+# Manual for now. A weekly schedule is added once a smoke run from Actions shows the shops answer 200.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'smoke: a few requests per shop. full: crawl and open a data PR.'
+        type: choice
+        options: [smoke, full]
+        default: smoke
+      museum:
+        description: 'Only this museum id (optional)'
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ingest
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      WEB_BOT_AUTH_KEY: ${{ secrets.WEB_BOT_AUTH_KEY }}
+      BOT_SIGNATURE_AGENT: ${{ vars.BOT_SIGNATURE_AGENT }}
+      MUSEUM: ${{ inputs.museum }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+
+      - name: Smoke
+        if: inputs.mode == 'smoke'
+        run: pnpm ingest --smoke ${MUSEUM:+--museum "$MUSEUM"}
+
+      # A shop that fails keeps last week's items, and hosts.json records why, so the PR is opened either way.
+      - name: Crawl
+        id: crawl
+        if: inputs.mode == 'full'
+        continue-on-error: true
+        run: pnpm ingest ${MUSEUM:+--museum "$MUSEUM"}
+
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        if: inputs.mode == 'full'
+        with:
+          app-id: ${{ vars.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_KEY }}
+
+      - uses: peter-evans/create-pull-request@v8
+        if: inputs.mode == 'full'
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: data/catalog
+          delete-branch: true
+          add-paths: |
+            data/catalog.json
+            data/hosts.json
+          commit-message: 'chore(data): update catalog from crawl'
+          title: 'chore(data): update catalog from crawl'
+          body: |
+            Crawl run ${{ github.run_id }}. Check `data/hosts.json` for any shop whose status is not `ok`.
+
+      - name: Fail if a shop failed
+        if: inputs.mode == 'full' && steps.crawl.outcome == 'failure'
+        run: exit 1
