@@ -3,20 +3,16 @@ import type { Museum } from '../src/lib/museums.ts';
 import { garmentOf } from './classify.ts';
 import { HostBlockedError, type Crawler } from './crawler.ts';
 import { sizesOf } from './sizes.ts';
-import {
-	ParseError,
-	parseCollectionPage,
-	parseProductPage,
-	parseProductSitemap,
-	parseSitemapIndex,
-	type ProductPage,
-} from './shopify.ts';
+import { ParseError, parseCollectionPage, parseProductPage, type ProductPage } from './shopify.ts';
 
 const MAX_COLLECTION_PAGES = 40;
 // "Baby Blue" is a colour, not an age.
 const CHILDRENS = /\b(kids?|kid['’]s|youth|baby(?! (blue|pink|yellow|green))|babies|toddlers?|infants?|child|children(['’]?s)?)\b/i;
 // A crawl that finds fewer than this share of last week's items is treated as broken.
 const MIN_COUNT_RATIO = 0.8;
+// Shopify sitemaps stamp every product with the sitemap's build time, so they cannot say what
+// changed. Catalog pieces are reread every run; pages found not to be clothing wait this long.
+const RECHECK_SKIPPED_MS = 28 * 24 * 60 * 60 * 1000;
 
 export function toItem(
 	museum: string,
@@ -48,17 +44,6 @@ export function toItem(
 	});
 }
 
-async function readLastmod(crawler: Crawler, origin: string): Promise<Map<string, string>> {
-	const index = await crawler.get(`${origin}/sitemap.xml`);
-	const lastmod = new Map<string, string>();
-	if (index.status !== 200) return lastmod;
-	for (const url of parseSitemapIndex(index.body, origin)) {
-		const sitemap = await crawler.get(url);
-		if (sitemap.status === 200) for (const [handle, date] of parseProductSitemap(sitemap.body)) lastmod.set(handle, date);
-	}
-	return lastmod;
-}
-
 async function readCollections(crawler: Crawler, origin: string, collections: string[]): Promise<string[]> {
 	const handles = new Set<string>();
 	for (const collection of collections) {
@@ -84,7 +69,7 @@ export async function crawlMuseum(
 	museum: Museum,
 	previous: CatalogItem[],
 	previousHost: HostState | undefined,
-	// refresh: ignore sitemap dates and the skip list, e.g. after the parser or classifier changes.
+	// refresh: recheck skipped pages too, e.g. after the classifier changes.
 	options: { now: string; limit?: number; refresh?: boolean },
 ): Promise<MuseumCrawl> {
 	const origin = new URL(museum.storeUrl).origin;
@@ -101,7 +86,6 @@ export async function crawlMuseum(
 
 	try {
 		if (museum.apparelCollections.length === 0) throw new Error('no apparelCollections in museums.yaml');
-		const lastmod = await readLastmod(crawler, origin);
 		const listed = await readCollections(crawler, origin, museum.apparelCollections);
 		// Previously indexed pieces stay until their own product page is gone, even if they left the collection.
 		const handles = [...new Set([...listed, ...previous.map((i) => i.handle)])];
@@ -109,19 +93,15 @@ export async function crawlMuseum(
 		const oldSkipped = previousHost?.skipped ?? {};
 		const skipped: Record<string, string> = {};
 		const items: CatalogItem[] = [];
-		const unchangedSince = (handle: string, since: string | undefined) => {
-			const modified = lastmod.get(handle);
-			return !options.refresh && since !== undefined && modified !== undefined && modified <= since;
-		};
+		const skippedRecently = (handle: string) =>
+			!options.refresh &&
+			oldSkipped[handle] !== undefined &&
+			Date.parse(options.now) - Date.parse(oldSkipped[handle]) < RECHECK_SKIPPED_MS;
 		let fetched = 0;
 
 		for (const handle of handles) {
 			const old = byHandle.get(handle);
-			if (old && unchangedSince(handle, old.checkedAt)) {
-				items.push(old);
-				continue;
-			}
-			if (unchangedSince(handle, oldSkipped[handle])) {
+			if (!old && skippedRecently(handle)) {
 				skipped[handle] = oldSkipped[handle];
 				continue;
 			}

@@ -21,7 +21,7 @@ OilOnCottonBot reads public pages from the few museum shops whose terms allow it
 
 **What it does:**
 - It identifies itself as `OilOnCottonBot`, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header points to the key directory, which is itself signed.
-- It reads each shop's `robots.txt`, its sitemap, its clothing collection pages, and the product pages those collections link to. It skips product pages whose sitemap date has not changed since its last visit.
+- It reads each shop's `robots.txt`, its clothing collection pages, and the product pages those collections link to. Product pages it has found not to be clothing are rechecked monthly, not weekly.
 - It honors `robots.txt` and `Crawl-delay`, waits at least one second between requests to the same shop, and follows `Retry-After` on `429`. If a shop keeps throttling, it stops and keeps the previous week's data.
 - It keeps only facts: the product name, price, sizes in stock and URL.
 

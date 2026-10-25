@@ -52,7 +52,7 @@ if (values.smoke) {
 	let failed = false;
 	for (const museum of museums) {
 		const origin = new URL(museum.storeUrl).origin;
-		for (const path of ['/sitemap.xml', ...museum.apparelCollections.slice(0, 1).map((c) => `/collections/${c}`)]) {
+		for (const path of museum.apparelCollections.slice(0, 1).map((c) => `/collections/${c}`)) {
 			try {
 				const page = await crawler.get(origin + path);
 				if (page.status !== 200) failed = true;

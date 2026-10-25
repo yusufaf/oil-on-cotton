@@ -1,12 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import {
-	ParseError,
-	parseCollectionPage,
-	parseProductPage,
-	parseProductSitemap,
-	parseSitemapIndex,
-} from '../ingest/shopify';
+import { ParseError, parseCollectionPage, parseProductPage } from '../ingest/shopify';
 
 const fixture = (name: string) => readFileSync(`test/fixtures/${name}.html`, 'utf8');
 
@@ -76,35 +70,10 @@ describe('parseCollectionPage', () => {
 	});
 });
 
-describe('sitemaps', () => {
-	it('keeps same-origin product sitemaps only', () => {
-		const xml = `<sitemapindex>
-			<sitemap><loc>https://shop.example.org/sitemap_products_1.xml?from=1&amp;to=99</loc></sitemap>
-			<sitemap><loc>https://shop.example.org/sitemap_pages_1.xml</loc></sitemap>
-			<sitemap><loc>https://shop.example.org/en-ca/sitemap_products_1.xml</loc></sitemap>
-			<sitemap><loc>https://elsewhere.example/sitemap_products_1.xml</loc></sitemap>
-		</sitemapindex>`;
-		expect(parseSitemapIndex(xml, 'https://shop.example.org')).toEqual([
-			'https://shop.example.org/sitemap_products_1.xml?from=1&to=99',
-		]);
-	});
-
-	it('maps product handles to lastmod', () => {
-		const xml = `<urlset>
-			<url><loc>https://shop.example.org/</loc><changefreq>daily</changefreq></url>
-			<url><loc>https://shop.example.org/products/tee-one</loc><lastmod>2026-10-20T10:00:00-04:00</lastmod></url>
-		</urlset>`;
-		expect([...parseProductSitemap(xml)]).toEqual([['tee-one', '2026-10-20T14:00:00.000Z']]);
-	});
-
-	it('skips entries with a bad lastmod or loc instead of throwing', () => {
-		const xml = `<urlset>
-			<url><loc>https://s.org/products/a</loc><lastmod>unknown</lastmod></url>
-			<url><loc>https://s.org/products/%E0%A4%A</loc><lastmod>2026-10-20</lastmod></url>
-			<url><loc>/products/relative</loc><lastmod>2026-10-20</lastmod></url>
-			<url><loc>https://s.org/products/b</loc><lastmod>2026-10-20</lastmod></url>
-		</urlset>`;
-		expect([...parseProductSitemap(xml).keys()]).toEqual(['relative', 'b']);
+describe('malformed links', () => {
+	it('skips links it cannot parse or decode instead of throwing', () => {
+		const html = '<a href="http://[bad">x</a><a href="/products/%E0%A4%A">y</a><a href="/products/ok">z</a>';
+		expect(parseCollectionPage(html, 'https://s.org/collections/c').handles).toEqual(['ok']);
 	});
 });
 

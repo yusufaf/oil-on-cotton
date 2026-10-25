@@ -66,27 +66,6 @@ function tryDecode(component: string): string | undefined {
 	}
 }
 
-// Product URLs from a sitemap index's product sitemaps, with their lastmod.
-export function parseSitemapIndex(xml: string, origin: string): string[] {
-	return [...xml.matchAll(/<sitemap>[\s\S]*?<loc>([^<]+)<\/loc>/g)]
-		.map(([, loc]) => tryUrl(decodeEntities(loc.trim()), origin))
-		.filter((url) => url?.origin === origin && url.pathname.startsWith('/sitemap_products'))
-		.map((url) => url!.href);
-}
-
-export function parseProductSitemap(xml: string): Map<string, string> {
-	const lastmod = new Map<string, string>();
-	for (const [, block] of xml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
-		const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
-		const modified = Date.parse(block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]?.trim() ?? '');
-		if (!loc || Number.isNaN(modified)) continue;
-		// An entry we cannot read just means that product is always refetched.
-		const raw = tryUrl(decodeEntities(loc.trim()), 'https://invalid/')?.pathname.match(/^\/products\/([^/]+)$/)?.[1];
-		const handle = raw && tryDecode(raw);
-		if (handle) lastmod.set(handle, new Date(modified).toISOString());
-	}
-	return lastmod;
-}
 
 export function parseCollectionPage(html: string, pageUrl: string): { handles: string[]; next?: string } {
 	const handles = new Set<string>();
