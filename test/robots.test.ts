@@ -49,6 +49,14 @@ describe('parseRobots', () => {
 		expect(tie.isAllowed('/a')).toBe(true);
 	});
 
+	it('keeps user-agent lines in one group across a Sitemap line', () => {
+		const robots = parseRobots(
+			'User-agent: OilOnCottonBot\nSitemap: https://x/sitemap.xml\nUser-agent: AhrefsBot\nDisallow: /',
+			'OilOnCottonBot',
+		);
+		expect(robots.isAllowed('/products/a')).toBe(false);
+	});
+
 	it('allows everything with no matching group or an empty disallow', () => {
 		expect(parseRobots('', 'x').isAllowed('/anything')).toBe(true);
 		expect(parseRobots('User-agent: *\nDisallow:', 'x').isAllowed('/anything')).toBe(true);

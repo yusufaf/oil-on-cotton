@@ -96,4 +96,24 @@ describe('sitemaps', () => {
 		</urlset>`;
 		expect([...parseProductSitemap(xml)]).toEqual([['tee-one', '2026-10-20T14:00:00.000Z']]);
 	});
+
+	it('skips entries with a bad lastmod or loc instead of throwing', () => {
+		const xml = `<urlset>
+			<url><loc>https://s.org/products/a</loc><lastmod>unknown</lastmod></url>
+			<url><loc>https://s.org/products/%E0%A4%A</loc><lastmod>2026-10-20</lastmod></url>
+			<url><loc>/products/relative</loc><lastmod>2026-10-20</lastmod></url>
+			<url><loc>https://s.org/products/b</loc><lastmod>2026-10-20</lastmod></url>
+		</urlset>`;
+		expect([...parseProductSitemap(xml).keys()]).toEqual(['relative', 'b']);
+	});
+});
+
+describe('names', () => {
+	it('decodes og:title entities exactly once', () => {
+		const html = fixture('product-ld-offers').replace(
+			'content="Whitney NY T-shirt"',
+			'content="Tom &amp;amp; Jerry T-shirt &#99999999;"',
+		);
+		expect(parseProductPage(html, 'whitney-ny-t-shirt').name).toBe('Tom &amp; Jerry T-shirt &#99999999;');
+	});
 });

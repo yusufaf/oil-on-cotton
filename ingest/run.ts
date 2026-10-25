@@ -23,6 +23,12 @@ const { values } = parseArgs({
 	},
 });
 
+const limit = values.limit === undefined ? undefined : Number(values.limit);
+if (limit !== undefined && !(Number.isInteger(limit) && limit >= 0)) {
+	console.error(`--limit must be a whole number, got ${values.limit}`);
+	process.exit(2);
+}
+
 const seed = process.env.WEB_BOT_AUTH_KEY;
 if (!seed) {
 	console.error('WEB_BOT_AUTH_KEY is not set. The crawler never sends unsigned requests.');
@@ -45,7 +51,7 @@ if (values.smoke) {
 	let failed = false;
 	for (const museum of museums) {
 		const origin = new URL(museum.storeUrl).origin;
-		for (const path of ['/sitemap.xml', `/collections/${museum.apparelCollections[0]}`]) {
+		for (const path of ['/sitemap.xml', ...museum.apparelCollections.slice(0, 1).map((c) => `/collections/${c}`)]) {
 			try {
 				const page = await crawler.get(origin + path);
 				if (page.status !== 200) failed = true;
@@ -64,7 +70,6 @@ const readJson = (path: string) => (existsSync(path) ? JSON.parse(readFileSync(p
 const catalog = catalogSchema.parse(readJson(CATALOG) ?? []);
 const hosts = hostsSchema.parse(readJson(HOSTS) ?? {});
 const now = new Date().toISOString();
-const limit = values.limit === undefined ? undefined : Number(values.limit);
 
 let next: CatalogItem[] = catalog.filter((i) => !museums.some((m) => m.id === i.museum));
 for (const museum of museums) {
@@ -88,4 +93,4 @@ if (values['dry-run']) {
 	writeFileSync(CATALOG, JSON.stringify(next, null, '\t') + '\n');
 	writeFileSync(HOSTS, JSON.stringify(Object.fromEntries(Object.entries(hosts).sort()), null, '\t') + '\n');
 }
-if (Object.values(hosts).some((h) => h.status !== 'ok')) process.exitCode = 1;
+if (museums.some((m) => hosts[m.id]?.status !== 'ok')) process.exitCode = 1;

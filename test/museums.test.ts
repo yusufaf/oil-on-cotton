@@ -17,6 +17,12 @@ describe('museums.yaml', () => {
 		}
 	});
 
+	it('names the clothing collections of every automated shop', () => {
+		for (const m of museums.filter((m) => m.automation === 'auto')) {
+			expect(m.apparelCollections.length, m.id).toBeGreaterThan(0);
+		}
+	});
+
 	it('quotes the deciding clause for every excluded or noncommercial verdict', () => {
 		for (const m of museums.filter((m) => m.terms.verdict === 'excluded' || m.terms.verdict === 'listed-noncommercial')) {
 			expect(m.terms.clause, m.id).toBeTruthy();

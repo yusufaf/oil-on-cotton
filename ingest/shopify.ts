@@ -25,7 +25,7 @@ export function decodeEntities(text: string): string {
 	return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, entity: string) => {
 		if (entity[0] === '#') {
 			const code = entity[1] === 'x' || entity[1] === 'X' ? parseInt(entity.slice(2), 16) : Number(entity.slice(1));
-			return Number.isFinite(code) ? String.fromCodePoint(code) : match;
+			return Number.isInteger(code) && code <= 0x10ffff ? String.fromCodePoint(code) : match;
 		}
 		return ENTITIES[entity.toLowerCase()] ?? match;
 	});
@@ -49,21 +49,41 @@ function scripts(html: string, type: string): unknown[] {
 	return found;
 }
 
+// Pages can carry malformed links; one bad link should cost that link, not the crawl.
+function tryUrl(href: string, base: string): URL | undefined {
+	try {
+		return new URL(href, base);
+	} catch {
+		return undefined;
+	}
+}
+
+function tryDecode(component: string): string | undefined {
+	try {
+		return decodeURIComponent(component);
+	} catch {
+		return undefined;
+	}
+}
+
 // Product URLs from a sitemap index's product sitemaps, with their lastmod.
 export function parseSitemapIndex(xml: string, origin: string): string[] {
 	return [...xml.matchAll(/<sitemap>[\s\S]*?<loc>([^<]+)<\/loc>/g)]
-		.map(([, loc]) => new URL(decodeEntities(loc.trim()), origin))
-		.filter((url) => url.origin === origin && url.pathname.startsWith('/sitemap_products'))
-		.map((url) => url.href);
+		.map(([, loc]) => tryUrl(decodeEntities(loc.trim()), origin))
+		.filter((url) => url?.origin === origin && url.pathname.startsWith('/sitemap_products'))
+		.map((url) => url!.href);
 }
 
 export function parseProductSitemap(xml: string): Map<string, string> {
 	const lastmod = new Map<string, string>();
 	for (const [, block] of xml.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
 		const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
-		const handle = loc && new URL(decodeEntities(loc.trim())).pathname.match(/^\/products\/([^/]+)$/)?.[1];
-		const modified = block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1];
-		if (handle && modified) lastmod.set(decodeURIComponent(handle), new Date(modified.trim()).toISOString());
+		const modified = Date.parse(block.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]?.trim() ?? '');
+		if (!loc || Number.isNaN(modified)) continue;
+		// An entry we cannot read just means that product is always refetched.
+		const raw = tryUrl(decodeEntities(loc.trim()), 'https://invalid/')?.pathname.match(/^\/products\/([^/]+)$/)?.[1];
+		const handle = raw && tryDecode(raw);
+		if (handle) lastmod.set(handle, new Date(modified).toISOString());
 	}
 	return lastmod;
 }
@@ -72,13 +92,13 @@ export function parseCollectionPage(html: string, pageUrl: string): { handles: s
 	const handles = new Set<string>();
 	for (const [tag] of html.matchAll(/<a\b[^>]*>/gi)) {
 		const href = attribute(tag, 'href');
-		const path = href && new URL(href, pageUrl).pathname;
-		const handle = path?.match(/^(?:\/collections\/[^/]+)?\/products\/([^/?#]+)\/?$/)?.[1];
-		if (handle) handles.add(decodeURIComponent(handle));
+		const raw = href && tryUrl(href, pageUrl)?.pathname.match(/^(?:\/collections\/[^/]+)?\/products\/([^/?#]+)\/?$/)?.[1];
+		const handle = raw && tryDecode(raw);
+		if (handle) handles.add(handle);
 	}
 	const nextTag = [...html.matchAll(/<link\b[^>]*>/gi)].map(([tag]) => tag).find((tag) => attribute(tag, 'rel') === 'next');
 	const nextHref = nextTag && attribute(nextTag, 'href');
-	return { handles: [...handles], next: nextHref ? new URL(nextHref, pageUrl).href : undefined };
+	return { handles: [...handles], next: nextHref ? tryUrl(nextHref, pageUrl)?.href : undefined };
 }
 
 interface MetaProduct {
@@ -202,7 +222,7 @@ export function parseProductPage(html: string, handle: string): ProductPage {
 
 	return {
 		id: meta.id,
-		name: decodeEntities(name.trim()),
+		name: name.trim(),
 		productType: meta.type || undefined,
 		tags: theme?.tags,
 		variants,

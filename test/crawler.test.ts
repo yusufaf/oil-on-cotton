@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { verify } from 'web-bot-auth';
 import { verifierFromJWK } from 'web-bot-auth/crypto';
-import { HostBlockedError, USER_AGENT } from '../ingest/crawler';
+import { HostBlockedError, RobotsDisallowedError, USER_AGENT } from '../ingest/crawler';
 import { fakeCrawler, jwk } from './helpers';
 
 const ROBOTS = 'User-agent: *\nDisallow: /cart\n';
@@ -41,7 +41,7 @@ describe('Crawler', () => {
 
 	it('refuses paths robots.txt disallows, without requesting them', async () => {
 		const { crawler } = await fakeCrawler({ '/robots.txt': ROBOTS });
-		await expect(crawler.get('https://shop.example/cart')).rejects.toThrow(HostBlockedError);
+		await expect(crawler.get('https://shop.example/cart')).rejects.toThrow(RobotsDisallowedError);
 		expect(crawler.requests.map((r) => new URL(r.url).pathname)).toEqual(['/robots.txt']);
 	});
 
@@ -49,7 +49,7 @@ describe('Crawler', () => {
 		const missing = await fakeCrawler({ '/robots.txt': 404, '/a': 'A' });
 		expect((await missing.crawler.get('https://shop.example/a')).body).toBe('A');
 		const broken = await fakeCrawler({ '/robots.txt': 500, '/a': 'A' });
-		await expect(broken.crawler.get('https://shop.example/a')).rejects.toThrow(HostBlockedError);
+		await expect(broken.crawler.get('https://shop.example/a')).rejects.toThrow(RobotsDisallowedError);
 	});
 
 	it('waits out Retry-After on 429, then gives up after the retry budget', async () => {
@@ -85,8 +85,8 @@ describe('Crawler', () => {
 		});
 		expect(await crawler.get('https://shop.example/old')).toMatchObject({ status: 200, body: 'NEW' });
 		expect(seen.at(-1)?.headers.get('signature')).not.toBe(seen.at(-2)?.headers.get('signature'));
-		await expect(crawler.get('https://shop.example/away')).rejects.toThrow(/cross-host/);
+		await expect(crawler.get('https://shop.example/away')).rejects.toThrow(/cross-origin/);
 		await expect(crawler.get('https://shop.example/loop')).rejects.toThrow(/too many redirects/);
-		await expect(crawler.get('https://shop.example/to-cart')).rejects.toThrow(HostBlockedError);
+		await expect(crawler.get('https://shop.example/to-cart')).rejects.toThrow(RobotsDisallowedError);
 	});
 });

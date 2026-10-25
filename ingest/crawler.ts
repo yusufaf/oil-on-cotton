@@ -7,7 +7,9 @@ export const USER_AGENT = `${PRODUCT_TOKEN}/0.1 (+https://github.com/yusufaf/oil
 const THROTTLE_STATUSES = new Set([429, 430, 503]);
 const MAX_REDIRECTS = 3;
 
+// The host is throttling us: stop crawling it for this run.
 export class HostBlockedError extends Error {}
+export class RobotsDisallowedError extends Error {}
 
 export interface Page {
 	url: string;
@@ -55,12 +57,12 @@ export class Crawler {
 		};
 	}
 
-	// Throws HostBlockedError when robots.txt disallows the URL or the host keeps throttling.
+	// Throws RobotsDisallowedError for a path robots.txt disallows, HostBlockedError when the host keeps throttling.
 	async get(url: string): Promise<Page> {
 		const target = new URL(url);
 		const robots = await this.robotsFor(target.origin);
 		if (!robots.isAllowed(target.pathname + target.search)) {
-			throw new HostBlockedError(`robots.txt disallows ${target.pathname}${target.search}`);
+			throw new RobotsDisallowedError(`robots.txt disallows ${target.pathname}${target.search}`);
 		}
 		return this.request(target);
 	}
@@ -113,11 +115,11 @@ export class Crawler {
 			const location = response.headers.get('location');
 			if (!location) return { url: target.href, status: response.status, body: '' };
 			const next = new URL(location, target);
-			if (next.host !== host) throw new Error(`cross-host redirect from ${target.href} to ${next.href}`);
+			if (next.origin !== target.origin) throw new Error(`cross-origin redirect from ${target.href} to ${next.href}`);
 			if (redirects >= MAX_REDIRECTS) throw new Error(`too many redirects from ${target.href}`);
 			const robots = this.robots.get(next.origin);
 			if (robots && !robots.isAllowed(next.pathname + next.search)) {
-				throw new HostBlockedError(`robots.txt disallows ${next.pathname}${next.search}`);
+				throw new RobotsDisallowedError(`robots.txt disallows ${next.pathname}${next.search}`);
 			}
 			return this.request(next, redirects + 1);
 		}

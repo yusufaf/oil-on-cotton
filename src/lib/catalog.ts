@@ -18,7 +18,7 @@ const cents = z.number().int().nonnegative();
 // Facts only. `.strict()` makes the schema reject descriptions, images or any other field.
 export const catalogItemSchema = z
 	.object({
-		id: z.string().regex(/^[a-z-]+:\d+$/),
+		id: z.string().regex(/^[a-z0-9-]+:\d+$/),
 		museum: z.string(),
 		handle: z.string(),
 		url: z.url(),

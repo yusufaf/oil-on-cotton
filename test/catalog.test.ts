@@ -103,6 +103,31 @@ describe('crawlMuseum', () => {
 		expect(items.map((i) => i.handle)).toEqual(['tee-1', 'tee-2', 'tee-3', 'tee-4']);
 	});
 
+	it('confines a bad product page, or one robots.txt disallows, to that piece', async () => {
+		const previous = [item('tee-1', 1), item('tee-2', 2)];
+		const { crawler } = await fakeCrawler({
+			...site(['tee-1', 'tee-2', 'whitney-ny-t-shirt'], {}, {
+				'/products/tee-1': '<html>garbage</html>',
+				'/products/whitney-ny-t-shirt': productHtml,
+			}),
+			'/robots.txt': 'User-agent: *\nDisallow: /products/tee-2',
+		});
+		const { items, host } = await crawlMuseum(crawler, museum, previous, undefined, { now: NOW });
+		expect(host.status).toBe('ok');
+		expect(items.map((i) => i.handle)).toEqual(['tee-1', 'tee-2', 'whitney-ny-t-shirt']);
+		expect(items[0]).toBe(previous[0]);
+	});
+
+	it('follows a renamed handle to its new page without duplicating the piece', async () => {
+		const previous = [item('old-tee', 8938971988258)];
+		const { crawler } = await fakeCrawler({
+			...site(['whitney-ny-t-shirt'], {}, { '/products/whitney-ny-t-shirt': productHtml }),
+			'/products/old-tee': () => new Response(null, { status: 301, headers: { location: '/products/whitney-ny-t-shirt' } }),
+		});
+		const { items } = await crawlMuseum(crawler, museum, previous, undefined, { now: NOW });
+		expect(items.map((i) => [i.id, i.handle])).toEqual([['whitney:8938971988258', 'whitney-ny-t-shirt']]);
+	});
+
 	it('keeps last week when the crawl finds far fewer pieces', async () => {
 		const previous = [1, 2, 3, 4, 5].map((n) => item(`tee-${n}`, n));
 		const { crawler } = await fakeCrawler(

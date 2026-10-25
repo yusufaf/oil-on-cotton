@@ -97,6 +97,7 @@ export async function crawlMuseum(
 	});
 
 	try {
+		if (museum.apparelCollections.length === 0) throw new Error('no apparelCollections in museums.yaml');
 		const lastmod = await readLastmod(crawler, origin);
 		const listed = await readCollections(crawler, origin, museum.apparelCollections);
 		// Previously indexed pieces stay until their own product page is gone, even if they left the collection.
@@ -126,20 +127,25 @@ export async function crawlMuseum(
 				continue;
 			}
 			fetched++;
-			const page = await crawler.get(`${origin}/products/${encodeURIComponent(handle)}`);
-			if (page.status === 404 || page.status === 410) continue;
 			let item: CatalogItem | undefined;
+			let finalHandle = handle;
 			try {
+				const page = await crawler.get(`${origin}/products/${encodeURIComponent(handle)}`);
+				if (page.status === 404 || page.status === 410) continue;
 				if (page.status !== 200) throw new ParseError(`answered ${page.status}`);
-				item = toItem(museum.id, origin, handle, parseProductPage(page.body, handle), old, options.now);
+				// A renamed product redirects to its new handle; index it there, once.
+				finalHandle = decodeURIComponent(new URL(page.url).pathname.replace(/^\/products\//, ''));
+				if (finalHandle !== handle && handles.includes(finalHandle)) continue;
+				item = toItem(museum.id, origin, finalHandle, parseProductPage(page.body, finalHandle), old, options.now);
 			} catch (error) {
-				if (!(error instanceof ParseError)) throw error;
-				console.error(`  kept previous ${museum.id}/${handle}: ${error.message}`);
+				// Throttling ends the shop's crawl; anything wrong with one page only affects that page.
+				if (error instanceof HostBlockedError) throw error;
+				console.error(`  kept previous ${museum.id}/${handle}: ${error instanceof Error ? error.message : error}`);
 				if (old) items.push(old);
 				continue;
 			}
 			if (item) items.push(item);
-			else skipped[handle] = options.now;
+			else skipped[finalHandle] = options.now;
 		}
 
 		if (previous.length > 0 && items.length < previous.length * MIN_COUNT_RATIO) {
@@ -148,8 +154,8 @@ export async function crawlMuseum(
 				host: host('count-drop', previous.length, { error: `found ${items.length}, had ${previous.length}` }),
 			};
 		}
-		items.sort((a, b) => a.id.localeCompare(b.id));
-		return { items, host: host('ok', items.length, { lastSuccess: options.now, skipped }) };
+		const unique = [...new Map(items.map((i) => [i.id, i])).values()].sort((a, b) => a.id.localeCompare(b.id));
+		return { items: unique, host: host('ok', unique.length, { lastSuccess: options.now, skipped }) };
 	} catch (error) {
 		// Any failure keeps last week's items for this shop; the reason lands in hosts.json.
 		const message = error instanceof Error ? error.message : String(error);

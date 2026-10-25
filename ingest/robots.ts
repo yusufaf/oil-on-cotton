@@ -42,6 +42,8 @@ export function parseRobots(text: string, productToken: string): Robots {
 			lastWasAgent = true;
 			continue;
 		}
+		// Only group members end a run of user-agent lines; Sitemap and unknown lines do not.
+		if (key !== 'allow' && key !== 'disallow' && key !== 'crawl-delay') continue;
 		lastWasAgent = false;
 		if (!current) continue;
 		if (key === 'allow' || key === 'disallow') {
