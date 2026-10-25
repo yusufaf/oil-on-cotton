@@ -1,7 +1,10 @@
 name: ingest
 
-# Manual for now. A weekly schedule is added once a smoke run from Actions shows the shops answer 200.
+# Weekly full crawl, plus manual smoke and full runs. GitHub disables schedules after 60 days
+# without a commit, so merging the weekly data PR is what keeps this running.
 on:
+  schedule:
+    - cron: '17 9 * * 1'
   workflow_dispatch:
     inputs:
       mode:
@@ -48,19 +51,19 @@ jobs:
       # A shop that fails keeps last week's items, and hosts.json records why, so the PR is opened either way.
       - name: Crawl
         id: crawl
-        if: inputs.mode == 'full'
+        if: inputs.mode != 'smoke'
         continue-on-error: true
         run: pnpm ingest $REFRESH ${MUSEUM:+--museum "$MUSEUM"}
 
       - uses: actions/create-github-app-token@v1
         id: app-token
-        if: inputs.mode == 'full'
+        if: inputs.mode != 'smoke'
         with:
           app-id: ${{ vars.RELEASE_APP_ID }}
           private-key: ${{ secrets.RELEASE_APP_KEY }}
 
       - uses: peter-evans/create-pull-request@v8
-        if: inputs.mode == 'full'
+        if: inputs.mode != 'smoke'
         with:
           token: ${{ steps.app-token.outputs.token }}
           branch: data/catalog
@@ -74,5 +77,5 @@ jobs:
             Crawl run ${{ github.run_id }}. Check `data/hosts.json` for any shop whose status is not `ok`.
 
       - name: Fail if a shop failed
-        if: inputs.mode == 'full' && steps.crawl.outcome == 'failure'
+        if: inputs.mode != 'smoke' && steps.crawl.outcome == 'failure'
         run: exit 1
