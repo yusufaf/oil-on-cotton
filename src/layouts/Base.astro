@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="color-scheme" content="light" />
+		<meta name="darkreader-lock" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="site">
+			<a href="/" class="wordmark">Oil on Cotton</a>
+			<nav aria-label="Main">
+				<a href="/" aria-current={Astro.url.pathname === '/' ? 'page' : undefined}>Rooms</a>
+			</nav>
+		</header>
+		<slot />
+		<footer class="site">
+			<p>
+				An independent, non-commercial index. It is not affiliated with or endorsed by any museum. Names identify the
+				shops; trademarks belong to their owners.
+			</p>
+		</footer>
+	</body>
+</html>
+
+<style>
+	.site {
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: 28px var(--gutter);
+		box-sizing: border-box;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 12px 32px;
+	}
+
+	.wordmark {
+		font-weight: 600;
+		font-size: 19px;
+		text-decoration: none;
+	}
+
+	footer p {
+		margin: 0;
+		font-size: 14px;
+		max-width: 72ch;
+	}
+</style>

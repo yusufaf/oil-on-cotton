@@ -1,0 +1,117 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { isOpen } from '../lib/museums';
+
+const museums = (await getCollection('museums')).map((entry) => entry.data);
+const open = museums.filter(isOpen);
+const closed = museums.filter((m) => m.automation === 'pending');
+---
+
+<Base
+	title="Oil on Cotton: museum shop apparel, hung by room"
+	description="An independent index of clothing sold by museum shops. Each room is one shop, and every piece links to the shop that sells it."
+>
+	<main>
+		<section class="intro">
+			<h1>Museum shop apparel, hung by room</h1>
+			<p>Each room is one museum shop's clothing. Every piece links to the shop that sells it.</p>
+		</section>
+		<section aria-label="Rooms" class="rooms">
+			<ul>
+				{
+					open.map((m) => (
+						<li>
+							<span class="swatch" style={`background: ${m.wall.hex}`} aria-hidden="true" />
+							<span class="name">{m.shop}</span>
+							<span>Walls: {m.wall.name}</span>
+						</li>
+					))
+				}
+			</ul>
+			{
+				closed.length > 0 && (
+					<p>Closed for now: {closed.map((m) => m.museum).join(' and ')}, while we read their terms.</p>
+				)
+			}
+		</section>
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: 0 var(--gutter) 96px;
+		box-sizing: border-box;
+	}
+
+	.intro {
+		padding: 56px 0 48px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: end;
+		gap: 24px 48px;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: clamp(40px, 5vw, 56px);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+		max-width: 14ch;
+	}
+
+	.intro p {
+		margin: 0;
+		font-size: 19px;
+		line-height: 1.45;
+		max-width: 40ch;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-bottom: 2px solid var(--plan-ink);
+	}
+
+	li {
+		display: grid;
+		grid-template-columns: 56px minmax(0, 2fr) minmax(0, 1fr);
+		column-gap: 28px;
+		align-items: center;
+		padding: 22px 0;
+		border-top: 2px solid var(--plan-ink);
+	}
+
+	.swatch {
+		width: 56px;
+		height: 56px;
+	}
+
+	.name {
+		font-family: var(--serif);
+		font-size: 32px;
+		line-height: 1.15;
+	}
+
+	@media (max-width: 720px) {
+		li {
+			grid-template-columns: 40px minmax(0, 1fr);
+			row-gap: 4px;
+		}
+
+		.swatch {
+			width: 40px;
+			height: 40px;
+		}
+
+		li > span:last-child {
+			grid-column: 2;
+		}
+	}
+</style>

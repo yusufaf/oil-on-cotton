@@ -1,0 +1,144 @@
+# One entry per museum shop. Terms verdicts come from reading each shop's terms
+# and its museum's site terms; quote the clause that decided the verdict.
+# Wall colours are Ridgway (1912) names; hex values are provisional ISCC-NBS
+# centroids until they are recomputed from Hamly's 1949 Munsell key.
+
+- id: getty
+  shop: Getty Museum Store
+  museum: J. Paul Getty Trust
+  storeUrl: https://shop.getty.edu
+  platform: shopify
+  automation: auto
+  affiliate: never
+  apparelCollections: [apparel-accessories]
+  terms:
+    mainUrl: https://www.getty.edu/legal/terms-of-use/
+    shopUrl: https://shop.getty.edu/policies/terms-of-service
+    reviewedAt: "2026-10-25"
+    verdict: listed-noncommercial
+    clause: "(3) Using Site Content for commercial purposes is prohibited;"
+  wall: { name: Ox-blood Red, hex: "#841B2D", source: iscc-nbs-centroid }
+
+- id: whitney
+  shop: Whitney Shop
+  museum: Whitney Museum of American Art
+  storeUrl: https://shop.whitney.org
+  platform: shopify
+  automation: auto
+  affiliate: never
+  apparelCollections: [apparel-accessories]
+  terms:
+    mainUrl: https://whitney.org/terms-and-conditions
+    shopUrl: https://shop.whitney.org/policies/terms-of-service
+    reviewedAt: "2026-10-25"
+    verdict: listed-noncommercial
+    clause: "You may not use the Materials for commercial purposes."
+  wall: { name: Dull Blackish Green, hex: "#3A4B47", source: iscc-nbs-centroid }
+
+- id: lacma
+  shop: LACMA Store
+  museum: Los Angeles County Museum of Art
+  storeUrl: https://www.thelacmastore.org
+  platform: shopify
+  automation: auto
+  affiliate: never
+  apparelCollections: [new-all-apparel]
+  terms:
+    mainUrl: https://www.lacma.org/about/contact-us/terms-use
+    reviewedAt: "2026-10-25"
+    verdict: listed-noncommercial
+    clause: "LACMA expressly prohibits the use, downloading, copying, display, publication, distribution, transmission, modification, reposting or exploitation for commercial or public purposes of the Protected Content"
+  wall: { name: Dark Payne's Gray, hex: "#36454F", source: iscc-nbs-centroid }
+
+- id: met
+  shop: The Met Store
+  museum: The Metropolitan Museum of Art
+  storeUrl: https://store.metmuseum.org
+  platform: magento
+  automation: manual
+  affiliate: never
+  terms:
+    mainUrl: https://www.metmuseum.org/information/terms-and-conditions
+    reviewedAt: "2026-10-25"
+    verdict: unread
+  wall: { name: Bottle Green, hex: "#1B4D3E", source: iscc-nbs-centroid }
+
+- id: moma
+  shop: MoMA Design Store
+  museum: The Museum of Modern Art
+  storeUrl: https://store.moma.org
+  platform: shopify
+  automation: manual
+  affiliate: never
+  terms:
+    reviewedAt: "2026-10-25"
+    verdict: unread
+  wall: { name: Bone Brown, hex: "#5B504F", source: iscc-nbs-centroid }
+
+- id: brooklyn
+  shop: Brooklyn Museum Shop
+  museum: Brooklyn Museum
+  storeUrl: https://shop.brooklynmuseum.org
+  platform: shopify
+  automation: pending
+  affiliate: never
+  terms:
+    shopUrl: https://shop.brooklynmuseum.org/policies/terms-of-service
+    reviewedAt: "2026-10-25"
+    verdict: unread
+  wall: { name: Blackish Slate, hex: "#555555", source: iscc-nbs-centroid }
+
+- id: guggenheim
+  shop: Guggenheim Store
+  museum: Solomon R. Guggenheim Museum
+  storeUrl: https://guggenheimstore.org
+  platform: shopify
+  automation: pending
+  affiliate: never
+  terms:
+    mainUrl: https://www.guggenheim.org/terms-conditions
+    reviewedAt: "2026-10-25"
+    verdict: unread
+  wall: { name: Hessian Brown, hex: "#43302E", source: iscc-nbs-centroid }
+
+- id: sfmoma
+  shop: SFMOMA Museum Store
+  museum: San Francisco Museum of Modern Art
+  storeUrl: https://museumstore.sfmoma.org
+  platform: shopify
+  automation: excluded
+  affiliate: never
+  terms:
+    mainUrl: https://www.sfmoma.org/terms-of-use/
+    reviewedAt: "2026-10-25"
+    verdict: excluded
+    clause: "access or use any automated process (such as a robot, spider, scraper, or similar) to access the Service in violation of our robot exclusion headers, or for the purpose of scraping all or a substantial portion of the content of the Service"
+  wall: { name: Carob Brown, hex: "#3E1D1E", source: iscc-nbs-centroid }
+
+- id: new-museum
+  shop: New Museum Store
+  museum: New Museum
+  storeUrl: https://newmuseumstore.org
+  platform: shopify
+  automation: excluded
+  affiliate: never
+  terms:
+    mainUrl: https://www.newmuseum.org/terms-conditions/
+    reviewedAt: "2026-10-25"
+    verdict: excluded
+    clause: "you agree to not in any event use any robot, spider, Webcrawler or other automatic or manual device or process for the purpose of compiling information"
+  wall: { name: Dark Payne's Gray, hex: "#51585E", source: iscc-nbs-centroid }
+
+- id: aic
+  shop: Art Institute of Chicago Museum Shop
+  museum: Art Institute of Chicago
+  storeUrl: https://shop.artic.edu
+  platform: shopify
+  automation: excluded
+  affiliate: never
+  terms:
+    shopUrl: https://shop.artic.edu/policies/terms-of-service
+    reviewedAt: "2026-10-25"
+    verdict: excluded
+    clause: "This license does not include any commercial use of this site or its contents; any collection or use of product listings, descriptions, or prices"
+  wall: { name: Bottle Green, hex: "#1B4D3E", source: iscc-nbs-centroid }

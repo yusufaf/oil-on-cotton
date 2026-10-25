@@ -1,0 +1,66 @@
+@import '@fontsource/besley/latin-400.css';
+@import '@fontsource/besley/latin-400-italic.css';
+@import '@fontsource-variable/schibsted-grotesk/wght.css';
+
+/* Tokens mirror DESIGN.md. Walls are Ridgway (1912) names; label stock is a
+   cool foam-board white, never cream. */
+:root {
+	--hall: #b9b8b5;
+	--label: #e9eceb;
+	--label-hover: #dee3e1;
+	--ink: #171b1a;
+	--plan-ink: #22262a;
+	--rule: #c9d0ce;
+	--on-wall: #f1f3f2;
+
+	--serif: 'Besley', Georgia, serif;
+	--sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+	--measure: 1280px;
+	--gutter: 48px;
+
+	color-scheme: light;
+}
+
+@media (max-width: 720px) {
+	:root {
+		--gutter: 20px;
+	}
+}
+
+html {
+	background: var(--hall);
+	color: var(--ink);
+	font-family: var(--sans);
+	font-size: 17px;
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: inherit;
+	text-underline-offset: 4px;
+	text-decoration-thickness: 1px;
+}
+
+a:hover {
+	text-decoration-thickness: 2px;
+}
+
+nav a {
+	text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current='page'] {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+	outline: 3px solid currentColor;
+	outline-offset: 3px;
+}
