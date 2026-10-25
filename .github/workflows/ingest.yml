@@ -12,6 +12,10 @@ on:
       museum:
         description: 'Only this museum id (optional)'
         required: false
+      refresh:
+        description: 'Refetch every product page, ignoring sitemap dates (after parser changes)'
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -27,6 +31,7 @@ jobs:
       WEB_BOT_AUTH_KEY: ${{ secrets.WEB_BOT_AUTH_KEY }}
       BOT_SIGNATURE_AGENT: ${{ vars.BOT_SIGNATURE_AGENT }}
       MUSEUM: ${{ inputs.museum }}
+      REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -45,7 +50,7 @@ jobs:
         id: crawl
         if: inputs.mode == 'full'
         continue-on-error: true
-        run: pnpm ingest ${MUSEUM:+--museum "$MUSEUM"}
+        run: pnpm ingest $REFRESH ${MUSEUM:+--museum "$MUSEUM"}
 
       - uses: actions/create-github-app-token@v1
         id: app-token

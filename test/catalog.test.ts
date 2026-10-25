@@ -79,6 +79,44 @@ describe('crawlMuseum', () => {
 		expect(second.items).toEqual(result.items);
 	});
 
+	it('refetches everything, skipped pieces included, on refresh', async () => {
+		const previous = [item('whitney-ny-t-shirt', 8938971988258, NOW)];
+		const { crawler } = await fakeCrawler(
+			site(['whitney-ny-t-shirt', 'mug'], { 'whitney-ny-t-shirt': LAST_WEEK, mug: LAST_WEEK }, {
+				'/products/whitney-ny-t-shirt': productHtml,
+				'/products/mug': 404,
+			}),
+		);
+		const skipped = { mug: NOW };
+		const host = { lastAttempt: NOW, status: 'ok' as const, requests: 0, items: 1, skipped };
+		await crawlMuseum(crawler, museum, previous, host, { now: NOW, refresh: true });
+		const paths = crawler.requests.map((r) => new URL(r.url).pathname);
+		expect(paths).toContain('/products/whitney-ny-t-shirt');
+		expect(paths).toContain('/products/mug');
+	});
+
+	it('keeps the skip list for pages a limited run did not reach', async () => {
+		const { crawler } = await fakeCrawler(site(['a-mug', 'b-mug'], {}, { '/products/a-mug': 404 }));
+		const host = { lastAttempt: NOW, status: 'ok' as const, requests: 0, items: 0, skipped: { 'a-mug': NOW, 'b-mug': NOW } };
+		const result = await crawlMuseum(crawler, museum, [], host, { now: NOW, refresh: true, limit: 1 });
+		expect(result.host.skipped).toEqual({ 'b-mug': NOW });
+	});
+});
+
+describe('children’s sizing', () => {
+	const kidsTee = (name: string) =>
+		productHtml.replace('content="Whitney NY T-shirt"', `content="${name}"`).replaceAll('SMALL \\/ ', '4 \\/ ');
+
+	it.each([
+		['Children’s T-shirt', true],
+		['Childrens T-shirt', true],
+		['Baby Blue T-shirt', false],
+	])('%s gets kids sizes: %s', async (name, kids) => {
+		const { crawler } = await fakeCrawler(site(['t'], {}, { '/products/t': kidsTee(name) }));
+		const { items } = await crawlMuseum(crawler, museum, [], undefined, { now: NOW });
+		expect(items[0].sizes.some((s) => s.label === 'Kids 4')).toBe(kids);
+	});
+
 	it('refetches a product whose sitemap lastmod moved, keeping firstSeen', async () => {
 		const previous = [item('whitney-ny-t-shirt', 8938971988258)];
 		const { crawler } = await fakeCrawler(
