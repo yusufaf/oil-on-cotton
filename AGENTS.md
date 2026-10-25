@@ -5,6 +5,8 @@
 - Ingest stores facts only (name, price, sizes, URL). Never store product descriptions or images, and never call a Shopify API or MCP endpoint: Shopify's API Terms §2.3.14 forbid building a product index.
 - Site copy is drafted from per-room fact ledgers. No em dashes, and none of the banned words listed in `DESIGN.md`.
 - Use pnpm. Commits follow Conventional Commits; data updates use `chore(data): ...`.
+- Hosting is GitHub Pages (`deploy-pages.yml`). Until launch the site is served at `yusufaf.dev/oil-on-cotton/`, so build internal links with `href()` from `src/lib/paths.ts`, never a bare `/`.
+- `main` is protected: work on a branch and merge through a PR once the `build` check passes.
 
 ## Development
 

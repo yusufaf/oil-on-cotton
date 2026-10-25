@@ -20,7 +20,7 @@ The design language is in [DESIGN.md](DESIGN.md). The museum list, and the terms
 A weekly job reads public product pages from a small number of museum shops whose terms allow it. Here is what it does and what it never does.
 
 **What it does:**
-- It identifies itself, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The public key directory is served from this site at `/.well-known/http-message-signatures-directory`.
+- It identifies itself, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header in each request points to the public key directory.
 - It reads only each shop's `/sitemap.xml` and the public product pages it lists.
 - It honors `robots.txt`, waits at least one second between requests to the same shop, and backs off on `429` responses, following `Retry-After`.
 - It keeps only facts: the product name, price, available sizes and URL.
