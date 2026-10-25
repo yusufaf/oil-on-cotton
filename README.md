@@ -17,11 +17,11 @@ The design language is in [DESIGN.md](DESIGN.md). The museum list, and the terms
 
 ## Crawler
 
-OilOnCottonBot reads public pages from the few museum shops whose terms allow it. It runs by hand for now and will run weekly once it is confirmed to work. Its about page and public key are at [bot.oiloncotton.com](https://bot.oiloncotton.com).
+OilOnCottonBot reads public pages from the few museum shops whose terms allow it. It runs every Monday and opens or updates a pull request with the results. Its about page and public key are at [bot.oiloncotton.com](https://bot.oiloncotton.com).
 
 **What it does:**
 - It identifies itself as `OilOnCottonBot`, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header points to the key directory, which is itself signed.
-- It reads each shop's `robots.txt`, its sitemap, its clothing collection pages, and the product pages those collections link to. It skips product pages whose sitemap date has not changed since its last visit.
+- It reads each shop's `robots.txt`, its clothing collection pages, and the product pages those collections link to. Product pages it has found not to be clothing are rechecked monthly, not weekly.
 - It honors `robots.txt` and `Crawl-delay`, waits at least one second between requests to the same shop, and follows `Retry-After` on `429`. If a shop keeps throttling, it stops and keeps the previous week's data.
 - It keeps only facts: the product name, price, sizes in stock and URL.
 
@@ -44,7 +44,7 @@ pnpm ingest --museum getty --limit 5 --dry-run
 pnpm ingest                    # writes data/catalog.json and data/hosts.json
 ```
 
-In Actions, run the `ingest` workflow: `smoke` mode checks access, `full` mode opens a `chore(data)` pull request.
+In Actions, the `ingest` workflow runs a full crawl weekly; run it by hand in `smoke` mode to check access, or `full` mode to crawl now (with `refresh` to also recheck pages skipped as not clothing, after classifier changes). GitHub disables the schedule after 60 days without a commit, which merging the data PRs prevents; if it lapses, re-enable it with `gh workflow enable ingest.yml`.
 
 ## License
 

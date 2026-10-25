@@ -34,15 +34,15 @@
 			</p>
 			<h2>What it reads</h2>
 			<p>
-				Once a week it reads each listed shop's <code>robots.txt</code>, its sitemap, its clothing collection pages, and
-				the product pages those collections link to. It keeps the product name, price, sizes in stock and the page
+				Once a week it reads each listed shop's <code>robots.txt</code>, its clothing collection pages, and the product
+				pages those collections link to. It keeps the product name, price, sizes in stock and the page
 				address. It does not keep descriptions or images, and it calls no shop or platform API.
 			</p>
 			<h2>How it behaves</h2>
 			<p>
 				It sends one request at a time, at least one second apart per shop, follows <code>Crawl-delay</code> and
-				<code>Retry-After</code>, and stops for the week if a shop keeps answering <code>429</code>. Product pages that
-				have not changed since the last visit, according to the sitemap, are skipped.
+				<code>Retry-After</code>, and stops for the week if a shop keeps answering <code>429</code>. Product pages it
+				has found not to be clothing are rechecked once a month, not every week.
 			</p>
 			<p>
 				Every request carries the user agent <code>OilOnCottonBot</code> and a Web Bot Auth signature (Ed25519). The
