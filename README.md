@@ -17,7 +17,7 @@ The design language is in [DESIGN.md](DESIGN.md). The museum list, and the terms
 
 ## Crawler
 
-A weekly job reads public product pages from a small number of museum shops whose terms allow it. Here is what it does and what it never does.
+The crawler is planned and not running yet. Once live, a weekly job will read public product pages from a small number of museum shops whose terms allow it. Here is what it will do and what it never does.
 
 **What it does:**
 - It identifies itself, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header in each request points to the public key directory.
