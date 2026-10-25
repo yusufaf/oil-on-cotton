@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>OilOnCottonBot</title>
+		<style>
+			body {
+				margin: 0;
+				background: #e9eceb;
+				color: #1d2321;
+				font: 17px/1.55 system-ui, sans-serif;
+			}
+			main {
+				max-width: 64ch;
+				margin: 0 auto;
+				padding: 48px 20px;
+			}
+			h1 {
+				font-size: 28px;
+				margin: 0 0 24px;
+			}
+			code {
+				font-size: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>OilOnCottonBot</h1>
+			<p>
+				OilOnCottonBot is the crawler behind Oil on Cotton, an independent, non-commercial index of clothing sold by
+				museum shops. It is not affiliated with any museum or with Shopify.
+			</p>
+			<h2>What it reads</h2>
+			<p>
+				Once a week it reads each listed shop's <code>robots.txt</code>, its sitemap, its clothing collection pages, and
+				the product pages those collections link to. It keeps the product name, price, sizes in stock and the page
+				address. It does not keep descriptions or images, and it calls no shop or platform API.
+			</p>
+			<h2>How it behaves</h2>
+			<p>
+				It sends one request at a time, at least one second apart per shop, follows <code>Crawl-delay</code> and
+				<code>Retry-After</code>, and stops for the week if a shop keeps answering <code>429</code>. Product pages that
+				have not changed since the last visit, according to the sitemap, are skipped.
+			</p>
+			<p>
+				Every request carries the user agent <code>OilOnCottonBot</code> and a Web Bot Auth signature (Ed25519). The
+				public key is published at
+				<a href="/.well-known/http-message-signatures-directory"
+					><code>/.well-known/http-message-signatures-directory</code></a
+				>.
+			</p>
+			<h2>Blocking it</h2>
+			<p>
+				Add this to your <code>robots.txt</code> and the next visit will stop there:
+			</p>
+			<pre><code>User-agent: OilOnCottonBot
+Disallow: /</code></pre>
+			<h2>Contact</h2>
+			<p>
+				Source code and crawler rules:
+				<a href="https://github.com/yusufaf/oil-on-cotton#crawler">github.com/yusufaf/oil-on-cotton</a>. To have a shop
+				or a listing removed, open an issue there. Removals are made within 48 hours.
+			</p>
+		</main>
+	</body>
+</html>

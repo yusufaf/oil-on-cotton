@@ -17,13 +17,13 @@ The design language is in [DESIGN.md](DESIGN.md). The museum list, and the terms
 
 ## Crawler
 
-The crawler is planned and not running yet. Once live, a weekly job will read public product pages from a small number of museum shops whose terms allow it. Here is what it will do and what it never does.
+OilOnCottonBot reads public pages from the few museum shops whose terms allow it. It runs by hand for now and will run weekly once it is confirmed to work. Its about page and public key are at [bot.oiloncotton.com](https://bot.oiloncotton.com).
 
 **What it does:**
-- It identifies itself, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header in each request points to the public key directory.
-- It reads only each shop's `/sitemap.xml` and the public product pages it lists.
-- It honors `robots.txt`, waits at least one second between requests to the same shop, and backs off on `429` responses, following `Retry-After`.
-- It keeps only facts: the product name, price, available sizes and URL.
+- It identifies itself as `OilOnCottonBot`, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header points to the key directory, which is itself signed.
+- It reads each shop's `robots.txt`, its sitemap, its clothing collection pages, and the product pages those collections link to. It skips product pages whose sitemap date has not changed since its last visit.
+- It honors `robots.txt` and `Crawl-delay`, waits at least one second between requests to the same shop, and follows `Retry-After` on `429`. If a shop keeps throttling, it stops and keeps the previous week's data.
+- It keeps only facts: the product name, price, sizes in stock and URL.
 
 **What it never does:**
 - It never stores product descriptions or images.
@@ -33,6 +33,18 @@ The crawler is planned and not running yet. Once live, a weekly job will read pu
 Shops whose terms prohibit automated collection are not crawled.
 
 To ask for a listing to be removed, or for a shop to be excluded, open an issue on this repository. Takedown requests are handled within 48 hours.
+
+### Running it
+
+The signing key is an Ed25519 seed held in two secret stores: `WEB_BOT_AUTH_KEY` on this repository for the crawler, and on the `oil-on-cotton-bot` Fly app for the key directory (`bot/`). `pnpm keygen` prints a new seed on stdout, to be piped into both.
+
+```sh
+pnpm ingest --smoke            # a few signed requests per shop
+pnpm ingest --museum getty --limit 5 --dry-run
+pnpm ingest                    # writes data/catalog.json and data/hosts.json
+```
+
+In Actions, run the `ingest` workflow: `smoke` mode checks access, `full` mode opens a `chore(data)` pull request.
 
 ## License
 

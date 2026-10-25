@@ -12,7 +12,9 @@
 		"astro": "astro",
 		"check": "astro check",
 		"test": "astro check && vitest run",
-		"prepare": "husky"
+		"prepare": "husky",
+		"ingest": "node ingest/run.ts",
+		"keygen": "node scripts/keygen.ts"
 	},
 	"dependencies": {
 		"@fontsource-variable/schibsted-grotesk": "^5.3.0",
@@ -24,9 +26,11 @@
 		"@commitlint/cli": "^21.2.4",
 		"@commitlint/config-conventional": "^21.2.4",
 		"@types/node": "^24.19.2",
+		"http-message-sig": "0.3.0",
 		"husky": "^9.1.7",
 		"typescript": "^6.0.3",
 		"vitest": "^5.0.5",
+		"web-bot-auth": "0.2.0",
 		"yaml": "^2.9.1"
 	},
 	"description": "An independent index of clothing sold by museum shops, hung by room.",
