@@ -15,6 +15,9 @@ const KINDS: [Garment | undefined, RegExp][] = [
 	['hat', /\b(hat|cap|beanie|visor)s?\b/gi],
 	['scarf', /\b(scarf|scarves|bandana|shawl)s?\b/gi],
 	['socks', /\b(sock|socks)\b/gi],
+	['tie', /\b(tie|necktie|bow tie)s?\b/gi],
+	['gloves', /\b(gloves?|mittens?)\b/gi],
+	['onesie', /\b(onesie|bodysuit|romper)s?\b/gi],
 	[
 		undefined,
 		/\b(key ?chain|keyring|pin|patch|magnet|ornament|tote|bag|pouch|backpack|mug|book|card|puzzle|toy|plush|crown|umbrella|wallet|earring|necklace|bracelet|brooch|sunglasses|chess set)(e?s)?\b/gi,

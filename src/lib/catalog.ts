@@ -11,6 +11,9 @@ export const garments = [
 	'hat',
 	'scarf',
 	'socks',
+	'tie',
+	'gloves',
+	'onesie',
 ] as const;
 
 const cents = z.number().int().nonnegative();

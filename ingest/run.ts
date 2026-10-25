@@ -1,5 +1,5 @@
 // Weekly crawl of the shops whose terms allow it. Usage:
-//   node ingest/run.ts [--museum <id>]... [--limit <n>] [--dry-run] [--smoke]
+//   node ingest/run.ts [--museum <id>]... [--limit <n>] [--refresh] [--dry-run] [--smoke]
 // Needs WEB_BOT_AUTH_KEY (base64url Ed25519 seed); BOT_SIGNATURE_AGENT overrides the key directory origin.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
@@ -19,6 +19,7 @@ const { values } = parseArgs({
 		museum: { type: 'string', multiple: true },
 		limit: { type: 'string' },
 		'dry-run': { type: 'boolean', default: false },
+		refresh: { type: 'boolean', default: false },
 		smoke: { type: 'boolean', default: false },
 	},
 });
@@ -79,7 +80,7 @@ for (const museum of museums) {
 		museum,
 		catalog.filter((i) => i.museum === museum.id),
 		hosts[museum.id],
-		{ now, limit },
+		{ now, limit, refresh: values.refresh },
 	);
 	next = next.concat(result.items);
 	hosts[museum.id] = result.host;

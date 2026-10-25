@@ -13,6 +13,7 @@ import {
 } from './shopify.ts';
 
 const MAX_COLLECTION_PAGES = 40;
+const CHILDRENS = /\b(kids?|kid's|youth|baby|babies|toddlers?|infants?|child|children's)\b/i;
 // A crawl that finds fewer than this share of last week's items is treated as broken.
 const MIN_COUNT_RATIO = 0.8;
 
@@ -28,7 +29,7 @@ export function toItem(
 	if (!garment || page.variants.length === 0) return undefined;
 	const prices = page.variants.map((v) => v.price);
 	const compareAt = Math.max(0, ...page.variants.map((v) => v.compareAt ?? 0));
-	const sizes = sizesOf(page.variants);
+	const sizes = sizesOf(page.variants, CHILDRENS.test(page.name));
 	return catalogItemSchema.parse({
 		id: `${museum}:${page.id}`,
 		museum,
@@ -82,7 +83,8 @@ export async function crawlMuseum(
 	museum: Museum,
 	previous: CatalogItem[],
 	previousHost: HostState | undefined,
-	options: { now: string; limit?: number },
+	// refresh: ignore sitemap dates and the skip list, e.g. after the parser or classifier changes.
+	options: { now: string; limit?: number; refresh?: boolean },
 ): Promise<MuseumCrawl> {
 	const origin = new URL(museum.storeUrl).origin;
 	const startRequests = crawler.requests.length;
@@ -108,7 +110,7 @@ export async function crawlMuseum(
 		const items: CatalogItem[] = [];
 		const unchangedSince = (handle: string, since: string | undefined) => {
 			const modified = lastmod.get(handle);
-			return since !== undefined && modified !== undefined && modified <= since;
+			return !options.refresh && since !== undefined && modified !== undefined && modified <= since;
 		};
 		let fetched = 0;
 

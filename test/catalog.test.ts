@@ -79,6 +79,22 @@ describe('crawlMuseum', () => {
 		expect(second.items).toEqual(result.items);
 	});
 
+	it('refetches everything, skipped pieces included, on refresh', async () => {
+		const previous = [item('whitney-ny-t-shirt', 8938971988258, NOW)];
+		const { crawler } = await fakeCrawler(
+			site(['whitney-ny-t-shirt', 'mug'], { 'whitney-ny-t-shirt': LAST_WEEK, mug: LAST_WEEK }, {
+				'/products/whitney-ny-t-shirt': productHtml,
+				'/products/mug': 404,
+			}),
+		);
+		const skipped = { mug: NOW };
+		const host = { lastAttempt: NOW, status: 'ok' as const, requests: 0, items: 1, skipped };
+		await crawlMuseum(crawler, museum, previous, host, { now: NOW, refresh: true });
+		const paths = crawler.requests.map((r) => new URL(r.url).pathname);
+		expect(paths).toContain('/products/whitney-ny-t-shirt');
+		expect(paths).toContain('/products/mug');
+	});
+
 	it('refetches a product whose sitemap lastmod moved, keeping firstSeen', async () => {
 		const previous = [item('whitney-ny-t-shirt', 8938971988258)];
 		const { crawler } = await fakeCrawler(

@@ -15,11 +15,23 @@ describe('garmentOf', () => {
 		['Keith Haring Dog T-shirt', 'tee'],
 		['Pin Stripe Hat', 'hat'],
 		['Oxford Button-Down Shirt', 'shirt'],
+		['Medieval Alphabet Tie', 'tie'],
+		['Tie-Dye T-shirt', 'tee'],
+		['Colorblock Knit Gloves', 'gloves'],
+		['Keith Haring Radiant Baby Onesie', 'onesie'],
 	])('%s is a %s', (name, garment) => {
 		expect(garmentOf(name)).toBe(garment);
 	});
 
-	it.each(['Navy Miffy Keychain', 'King Arthur Crown with Hood', 'T-shirt Tote Bag', 'Hat Pin', 'Calder Chess Set', 'Mug'])(
+	it.each([
+		'Navy Miffy Keychain',
+		'King Arthur Crown with Hood',
+		'T-shirt Tote Bag',
+		'Hat Pin',
+		'Calder Chess Set',
+		'Mug',
+		'Van Gogh Irises Linen Apron',
+	])(
 		'%s is not clothing',
 		(name) => {
 			expect(garmentOf(name)).toBeUndefined();
@@ -43,8 +55,14 @@ describe('normalizeSize', () => {
 		expect(normalizeSize(value)).toBe(label);
 	});
 
-	it.each(['BLACK', 'Default Title', 'Blue/White'])('%s is not a size', (value) => {
+	it.each(['BLACK', 'Default Title', 'Blue/White', '10'])('%s is not a size', (value) => {
 		expect(normalizeSize(value)).toBeUndefined();
+	});
+
+	it('reads combined sizes, and bare numbers only on children’s clothing', () => {
+		expect(normalizeSize('S/M')).toBe('S/M');
+		expect(normalizeSize('l/xl')).toBe('L/XL');
+		expect(normalizeSize('10', true)).toBe('Kids 10');
 	});
 });
 
@@ -56,6 +74,14 @@ describe('sizesOf', () => {
 			{ label: 'S', available: true },
 			{ label: 'M', available: false },
 			{ label: '2XL', available: true },
+		]);
+	});
+
+	it('orders kids sizes numerically', () => {
+		expect(sizesOf([v(['10', 'CAT'], true), v(['2', 'CAT'], false), v(['4', 'ZEBRA'], true)], true).map((s) => s.label)).toEqual([
+			'Kids 2',
+			'Kids 4',
+			'Kids 10',
 		]);
 	});
 
