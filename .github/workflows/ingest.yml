@@ -16,15 +16,17 @@ on:
         description: 'Only this museum id (optional)'
         required: false
       refresh:
-        description: 'Refetch every product page, ignoring sitemap dates (after parser changes)'
+        description: 'Also recheck pages skipped as not clothing (after classifier changes)'
         type: boolean
         default: false
 
 permissions:
   contents: read
+  pull-requests: read
 
-# Crawls queue one at a time (they share the data/catalog branch). Smoke runs write nothing,
-# so each gets its own group and can never displace a queued crawl.
+# Crawls never overlap, since they share the data/catalog branch. GitHub keeps one pending run
+# per group, so a crawl queued behind a running one replaces any older pending crawl. Smoke runs
+# write nothing and get their own group, so they never displace a crawl.
 concurrency:
   group: ${{ inputs.mode == 'smoke' && format('ingest-smoke-{0}', github.run_id) || 'ingest' }}
 
@@ -52,16 +54,22 @@ jobs:
         if: inputs.mode == 'smoke'
         run: pnpm ingest --smoke ${MUSEUM:+--museum "$MUSEUM"}
 
-      # Build on an unmerged data PR rather than on main, so the crawl stays incremental and
-      # keeps firstSeen dates when last week's PR is still open.
+      # Build on last week's data PR while it is still open, so an unmerged week is not thrown
+      # away and firstSeen dates survive. A closed or merged PR's branch is ignored.
       - name: Start from the open data PR
         if: env.CRAWL == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if git fetch --depth=1 origin data/catalog; then
-            git checkout FETCH_HEAD -- data/catalog.json data/hosts.json
-          else
+          open=$(gh pr list --head data/catalog --state open --json number --jq length)
+          if [ "$open" = "0" ]; then
             echo "No open data PR; starting from main."
+            exit 0
           fi
+          git fetch --depth=1 origin data/catalog
+          for file in data/catalog.json data/hosts.json; do
+            git checkout FETCH_HEAD -- "$file" || echo "$file is not on data/catalog; using main's."
+          done
 
       # A shop that fails keeps last week's items, and hosts.json records why, so the PR is opened either way.
       - name: Crawl

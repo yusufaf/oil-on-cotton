@@ -109,6 +109,12 @@ describe('crawlMuseum', () => {
 		expect(productPaths(refreshed.crawler.requests)).toEqual(['/products/mug']);
 	});
 
+	it('keeps a skipped page on the monthly cycle when its recheck fails', async () => {
+		const { crawler } = await fakeCrawler(site(['mug'], { '/products/mug': 500 }));
+		const result = await crawlMuseum(crawler, museum, [], hostWith({ mug: NOW }), { now: FIVE_WEEKS_ON });
+		expect(result.host.skipped).toEqual({ mug: NOW });
+	});
+
 	it('keeps the skip list for pages a limited run did not reach', async () => {
 		const { crawler } = await fakeCrawler(site(['a-mug', 'b-mug'], { '/products/a-mug': 404 }));
 		const result = await crawlMuseum(crawler, museum, [], hostWith({ 'a-mug': NOW, 'b-mug': NOW }), {

@@ -44,7 +44,7 @@ pnpm ingest --museum getty --limit 5 --dry-run
 pnpm ingest                    # writes data/catalog.json and data/hosts.json
 ```
 
-In Actions, the `ingest` workflow runs a full crawl weekly; run it by hand in `smoke` mode to check access, or `full` mode (with `refresh` after parser changes) to crawl now. GitHub disables the schedule after 60 days without a commit, which merging the data PRs prevents; if it lapses, re-enable it with `gh workflow enable ingest.yml`.
+In Actions, the `ingest` workflow runs a full crawl weekly; run it by hand in `smoke` mode to check access, or `full` mode to crawl now (with `refresh` to also recheck pages skipped as not clothing, after classifier changes). GitHub disables the schedule after 60 days without a commit, which merging the data PRs prevents; if it lapses, re-enable it with `gh workflow enable ingest.yml`.
 
 ## License
 

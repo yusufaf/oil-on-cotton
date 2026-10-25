@@ -1,4 +1,4 @@
-// Parsers for public Shopify storefront HTML and XML. They read facts only; descriptions and
+// Parsers for public Shopify storefront HTML. They read facts only; descriptions and
 // images may be present in the parsed JSON but are never copied out of these functions.
 
 export class ParseError extends Error {}
@@ -65,7 +65,6 @@ function tryDecode(component: string): string | undefined {
 		return undefined;
 	}
 }
-
 
 export function parseCollectionPage(html: string, pageUrl: string): { handles: string[]; next?: string } {
 	const handles = new Set<string>();

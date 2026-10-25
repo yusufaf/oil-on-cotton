@@ -127,6 +127,7 @@ export async function crawlMuseum(
 				if (error instanceof HostBlockedError) throw error;
 				console.error(`  kept previous ${museum.id}/${handle}: ${error instanceof Error ? error.message : error}`);
 				if (old) items.push(old);
+				if (oldSkipped[handle]) skipped[handle] = oldSkipped[handle];
 				continue;
 			}
 			if (item) items.push(item);

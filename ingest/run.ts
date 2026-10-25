@@ -52,6 +52,10 @@ if (values.smoke) {
 	let failed = false;
 	for (const museum of museums) {
 		const origin = new URL(museum.storeUrl).origin;
+		if (museum.apparelCollections.length === 0) {
+			failed = true;
+			console.error(`  ${museum.id}: no apparelCollections in museums.yaml`);
+		}
 		for (const path of museum.apparelCollections.slice(0, 1).map((c) => `/collections/${c}`)) {
 			try {
 				const page = await crawler.get(origin + path);
@@ -72,7 +76,15 @@ const catalog = catalogSchema.parse(readJson(CATALOG) ?? []);
 const hosts = hostsSchema.parse(readJson(HOSTS) ?? {});
 const now = new Date().toISOString();
 
-let next: CatalogItem[] = catalog.filter((i) => !museums.some((m) => m.id === i.museum));
+let next: CatalogItem[] = [...catalog];
+// Written after every shop, so a run cut short (say by the job timeout) keeps what it finished.
+const save = () => {
+	if (values['dry-run']) return;
+	next.sort((a, b) => a.id.localeCompare(b.id));
+	writeFileSync(CATALOG, JSON.stringify(next, null, '\t') + '\n');
+	writeFileSync(HOSTS, JSON.stringify(Object.fromEntries(Object.entries(hosts).sort()), null, '\t') + '\n');
+};
+
 for (const museum of museums) {
 	console.error(`${museum.id}: crawling`);
 	const result = await crawlMuseum(
@@ -82,16 +94,11 @@ for (const museum of museums) {
 		hosts[museum.id],
 		{ now, limit, refresh: values.refresh },
 	);
-	next = next.concat(result.items);
+	next = next.filter((i) => i.museum !== museum.id).concat(result.items);
 	hosts[museum.id] = result.host;
 	console.error(`${museum.id}: ${result.host.status}, ${result.items.length} items, ${result.host.requests} requests`);
+	save();
 }
 
-next.sort((a, b) => a.id.localeCompare(b.id));
-if (values['dry-run']) {
-	console.log(JSON.stringify({ items: next.length, hosts }, null, 2));
-} else {
-	writeFileSync(CATALOG, JSON.stringify(next, null, '\t') + '\n');
-	writeFileSync(HOSTS, JSON.stringify(Object.fromEntries(Object.entries(hosts).sort()), null, '\t') + '\n');
-}
+if (values['dry-run']) console.log(JSON.stringify({ items: next.length, hosts }, null, 2));
 if (museums.some((m) => hosts[m.id]?.status !== 'ok')) process.exitCode = 1;
