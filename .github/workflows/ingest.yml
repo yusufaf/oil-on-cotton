@@ -23,8 +23,10 @@ on:
 permissions:
   contents: read
 
+# Crawls queue one at a time (they share the data/catalog branch). Smoke runs write nothing,
+# so each gets its own group and can never displace a queued crawl.
 concurrency:
-  group: ingest
+  group: ${{ inputs.mode == 'smoke' && format('ingest-smoke-{0}', github.run_id) || 'ingest' }}
 
 jobs:
   crawl:
@@ -35,6 +37,8 @@ jobs:
       BOT_SIGNATURE_AGENT: ${{ vars.BOT_SIGNATURE_AGENT }}
       MUSEUM: ${{ inputs.museum }}
       REFRESH: ${{ inputs.refresh && '--refresh' || '' }}
+      # Scheduled runs have no inputs.
+      CRAWL: ${{ github.event_name == 'schedule' || inputs.mode == 'full' }}
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
@@ -48,22 +52,33 @@ jobs:
         if: inputs.mode == 'smoke'
         run: pnpm ingest --smoke ${MUSEUM:+--museum "$MUSEUM"}
 
+      # Build on an unmerged data PR rather than on main, so the crawl stays incremental and
+      # keeps firstSeen dates when last week's PR is still open.
+      - name: Start from the open data PR
+        if: env.CRAWL == 'true'
+        run: |
+          if git fetch --depth=1 origin data/catalog; then
+            git checkout FETCH_HEAD -- data/catalog.json data/hosts.json
+          else
+            echo "No open data PR; starting from main."
+          fi
+
       # A shop that fails keeps last week's items, and hosts.json records why, so the PR is opened either way.
       - name: Crawl
         id: crawl
-        if: inputs.mode != 'smoke'
+        if: env.CRAWL == 'true'
         continue-on-error: true
         run: pnpm ingest $REFRESH ${MUSEUM:+--museum "$MUSEUM"}
 
       - uses: actions/create-github-app-token@v1
         id: app-token
-        if: inputs.mode != 'smoke'
+        if: env.CRAWL == 'true'
         with:
           app-id: ${{ vars.RELEASE_APP_ID }}
           private-key: ${{ secrets.RELEASE_APP_KEY }}
 
       - uses: peter-evans/create-pull-request@v8
-        if: inputs.mode != 'smoke'
+        if: env.CRAWL == 'true'
         with:
           token: ${{ steps.app-token.outputs.token }}
           branch: data/catalog
@@ -77,5 +92,5 @@ jobs:
             Crawl run ${{ github.run_id }}. Check `data/hosts.json` for any shop whose status is not `ok`.
 
       - name: Fail if a shop failed
-        if: inputs.mode != 'smoke' && steps.crawl.outcome == 'failure'
+        if: env.CRAWL == 'true' && steps.crawl.outcome == 'failure'
         run: exit 1

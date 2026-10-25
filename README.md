@@ -17,7 +17,7 @@ The design language is in [DESIGN.md](DESIGN.md). The museum list, and the terms
 
 ## Crawler
 
-OilOnCottonBot reads public pages from the few museum shops whose terms allow it. It runs every Monday and opens a pull request with what changed. Its about page and public key are at [bot.oiloncotton.com](https://bot.oiloncotton.com).
+OilOnCottonBot reads public pages from the few museum shops whose terms allow it. It runs every Monday and opens or updates a pull request with the results. Its about page and public key are at [bot.oiloncotton.com](https://bot.oiloncotton.com).
 
 **What it does:**
 - It identifies itself as `OilOnCottonBot`, and signs every request with [Web Bot Auth](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/). The `Signature-Agent` header points to the key directory, which is itself signed.
@@ -44,7 +44,7 @@ pnpm ingest --museum getty --limit 5 --dry-run
 pnpm ingest                    # writes data/catalog.json and data/hosts.json
 ```
 
-In Actions, the `ingest` workflow runs a full crawl weekly; run it by hand in `smoke` mode to check access, or `full` mode (with `refresh` after parser changes) to crawl now.
+In Actions, the `ingest` workflow runs a full crawl weekly; run it by hand in `smoke` mode to check access, or `full` mode (with `refresh` after parser changes) to crawl now. GitHub disables the schedule after 60 days without a commit, which merging the data PRs prevents; if it lapses, re-enable it with `gh workflow enable ingest.yml`.
 
 ## License
 
