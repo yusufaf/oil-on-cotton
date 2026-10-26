@@ -1,0 +1,8305 @@
+[
+	{
+		"id": "getty:10228117831872",
+		"museum": "getty",
+		"handle": "scrf-poly-chantilly-faux-cashmere",
+		"url": "https://shop.getty.edu/products/scrf-poly-chantilly-faux-cashmere",
+		"name": "Chantilly Kakiemon Collection Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"museum devotee",
+			"new arrivals apparel",
+			"NEW GETTY",
+			"porcelain sets",
+			"style",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10228117864640",
+		"museum": "getty",
+		"handle": "scarf-silk-cameo-jewelry-porcelain",
+		"url": "https://shop.getty.edu/products/scarf-silk-cameo-jewelry-porcelain",
+		"name": "Porcelain Jewels Collection Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"museum devotee",
+			"new arrivals apparel",
+			"NEW GETTY",
+			"porcelain sets",
+			"style",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10228224098496",
+		"museum": "getty",
+		"handle": "all-for-art-adjustable-baseball-cap-travertine-copy",
+		"url": "https://shop.getty.edu/products/all-for-art-adjustable-baseball-cap-travertine-copy",
+		"name": "Getty G Mark Denim Cap",
+		"garment": "hat",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "ACCESSORIES",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"cool blue",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10271032574144",
+		"museum": "getty",
+		"handle": "its-always-ok-to-buy-more-books-gym-crew-socks",
+		"url": "https://shop.getty.edu/products/its-always-ok-to-buy-more-books-gym-crew-socks",
+		"name": "'It's Always OK To Buy More Books' Gym Crew Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"new arrivals apparel",
+			"story seekers",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10271032705216",
+		"museum": "getty",
+		"handle": "art-snob-gym-crew-socks",
+		"url": "https://shop.getty.edu/products/art-snob-gym-crew-socks",
+		"name": "'Art Snob' Gym Crew Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"museum devotee",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10271032770752",
+		"museum": "getty",
+		"handle": "i-like-cats-more-than-people-gym-crew-socks",
+		"url": "https://shop.getty.edu/products/i-like-cats-more-than-people-gym-crew-socks",
+		"name": "'I Like Cats More Than People' Gym Crew Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:10284295684288",
+		"museum": "getty",
+		"handle": "scrf-redon-baronne",
+		"url": "https://shop.getty.edu/products/scrf-redon-baronne",
+		"name": "Odilion Redon Baronne De Domecy Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"museum devotee",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:2411138154573",
+		"museum": "getty",
+		"handle": "scarf-medieval-manuscript",
+		"url": "https://shop.getty.edu/products/scarf-medieval-manuscript",
+		"name": "Silk Scarf - Medieval Manuscript",
+		"garment": "scarf",
+		"price": {
+			"min": 9000,
+			"max": 9000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"favorites",
+			"for the queen",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"medieval",
+			"medieval gifts",
+			"queen",
+			"scarves",
+			"Spring Equinox",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:295259617",
+		"museum": "getty",
+		"handle": "medusa-hat",
+		"url": "https://shop.getty.edu/products/medusa-hat",
+		"name": "Medusa Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "ACTIVITIES GAMES",
+		"tags": [
+			"11-12",
+			"13+",
+			"2021 ALL HOLIDAY",
+			"2025 holiday",
+			"5-6",
+			"7-8",
+			"9-10",
+			"ACTIVE",
+			"All Products",
+			"hats & hair Accessories",
+			"hawke",
+			"holiday 2026",
+			"kids",
+			"toy",
+			"VIP Preview 2025",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:4848987013197",
+		"museum": "getty",
+		"handle": "book-of-hours-silk-scarf",
+		"url": "https://shop.getty.edu/products/book-of-hours-silk-scarf",
+		"name": "Book of Hours Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 9000,
+			"max": 9000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2022 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"artistic adornments",
+			"bts apparel",
+			"bts bags and apparel",
+			"hawke",
+			"medieval",
+			"medieval gifts",
+			"new years eve",
+			"scarves",
+			"Spring Equinox",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:4850117574733",
+		"museum": "getty",
+		"handle": "medieval-alphabet-tie",
+		"url": "https://shop.getty.edu/products/medieval-alphabet-tie",
+		"name": "Medieval Alphabet Tie",
+		"garment": "tie",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2022 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"Apparel & Accessories",
+			"bts apparel",
+			"bts bags and apparel",
+			"Dads & Grads 2021",
+			"Dads & Grads 2024",
+			"favorites",
+			"Gift Guide",
+			"gift guide all gifts",
+			"hawke",
+			"holiday 2026",
+			"medieval gifts",
+			"new years eve",
+			"style makers",
+			"ties",
+			"Valentine 2023",
+			"Valentine 2024",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:595797764",
+		"museum": "getty",
+		"handle": "tie-medieval-flowers",
+		"url": "https://shop.getty.edu/products/tie-medieval-flowers",
+		"name": "Silk Tie - Medieval Flowers",
+		"garment": "tie",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2021 ALL HOLIDAY",
+			"2022 Holiday",
+			"2023 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"ALL VALENTINE",
+			"Apparel & Accessories",
+			"bts apparel",
+			"bts bags and apparel",
+			"castlecore",
+			"Dads & Grads 2021",
+			"favorites",
+			"Gift Guide",
+			"hawke",
+			"Holiday 2023",
+			"holiday 2026",
+			"medieval",
+			"medieval gifts",
+			"style makers",
+			"test50",
+			"ties",
+			"Valentine 2023",
+			"Valentine 2024",
+			"Valentine Gifts",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:5969697702080",
+		"museum": "getty",
+		"handle": "getty-logo-fleece-jacket",
+		"url": "https://shop.getty.edu/products/getty-logo-fleece-jacket",
+		"name": "Getty Logo Fleece Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 4875,
+			"max": 4875,
+			"compareAt": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2021 ALL HOLIDAY",
+			"2022 Holiday",
+			"2023 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"adventurous spirits",
+			"All Products",
+			"ALL VALENTINE",
+			"b2b 2025",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Dads & Grads 2021",
+			"Dads & Grads 2023",
+			"Dads & Grads 2024",
+			"For the Traveler",
+			"Getty Merch",
+			"Gift Guide",
+			"gift guide all gifts",
+			"hawke",
+			"Holiday 2023",
+			"holiday 2026",
+			"jackets",
+			"MD2021",
+			"Mother's Day 2023",
+			"Mother's Day 2024",
+			"Mother's Day 2025",
+			"Sale Apparel",
+			"SM Travel August 2021",
+			"Valentine 2023",
+			"Valentine 2024",
+			"Valentine 2025",
+			"Valentine Gifts",
+			"VIP Preview 2025",
+			"Wholesale",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:6955817337024",
+		"museum": "getty",
+		"handle": "square-van-gogh-irises-silk-scarf",
+		"url": "https://shop.getty.edu/products/square-van-gogh-irises-silk-scarf",
+		"name": "Square Van Gogh Irises Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8900,
+			"max": 8900
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": false
+			}
+		],
+		"available": false,
+		"productType": "APPAREL",
+		"tags": [
+			"2022 Holiday",
+			"2023 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"b2b 2025",
+			"best sellers",
+			"bts apparel",
+			"bts bags and apparel",
+			"Dads & Grads 2023",
+			"Dads & Grads 2024",
+			"for the art enthusiast",
+			"Gardens Day 2026",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide best sellers",
+			"hats & hair Accessories",
+			"hawke",
+			"Holiday 2023",
+			"holiday 2026",
+			"lilies",
+			"lily",
+			"MD26",
+			"modern muse",
+			"Mother's Day 2023",
+			"Mother's Day 2024",
+			"Mother's Day 2025",
+			"scarves",
+			"Spring Equinox",
+			"style makers",
+			"Valentine 2023",
+			"Valentine 2024",
+			"Valentine 2025",
+			"van gogh",
+			"VIP Preview 2025",
+			"Wholesale",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:7385184043200",
+		"museum": "getty",
+		"handle": "square-ambrosius-bosschaert-flower-still-life-silk-scarf",
+		"url": "https://shop.getty.edu/products/square-ambrosius-bosschaert-flower-still-life-silk-scarf",
+		"name": "Square Ambrosius Bosschaert Flower Still Life Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8900,
+			"max": 8900
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2022 Holiday",
+			"2023 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"b2b 2025",
+			"bts apparel",
+			"bts backpack and bag accessories",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Dads & Grads 2023",
+			"for the art enthusiast",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hats & hair Accessories",
+			"hawke",
+			"Holiday 2023",
+			"holiday 2026",
+			"Mother's Day 2023",
+			"nature enthusiasts",
+			"scarves",
+			"Spring Equinox",
+			"style makers",
+			"Valentine 2023",
+			"Valentine 2024",
+			"Valentine 2025",
+			"VIP Preview 2025",
+			"Wholesale",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8032247283904",
+		"museum": "getty",
+		"handle": "van-gogh-irises-cotton-scarf",
+		"url": "https://shop.getty.edu/products/van-gogh-irises-cotton-scarf",
+		"name": "Van Gogh Irises Cotton Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2024 Holiday",
+			"2025 holiday",
+			"All Products",
+			"artistic adornments",
+			"b2b 2025",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Dads & Grads 2024",
+			"favorites",
+			"flora fauna",
+			"for the art enthusiast",
+			"for the gardener",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hawke",
+			"holiday 2026",
+			"inspired by the collections",
+			"Mother's Day 2024",
+			"Mother's Day 2025",
+			"nature enthusiasts",
+			"scarves",
+			"Spring Equinox",
+			"sustainable",
+			"Valentine 2024",
+			"van gogh",
+			"VIP Preview 2025",
+			"Wholesale",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8032247480512",
+		"museum": "getty",
+		"handle": "getty-villa-museum-logo-fleece-jacket",
+		"url": "https://shop.getty.edu/products/getty-villa-museum-logo-fleece-jacket",
+		"name": "Getty Villa Museum Logo Fleece Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 4550,
+			"max": 4550,
+			"compareAt": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2024 Holiday",
+			"2025 holiday",
+			"All Products",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Dads & Grads 2024",
+			"Gift Guide",
+			"gift guide all gifts",
+			"hawke",
+			"holiday 2026",
+			"jackets",
+			"Mother's Day 2024",
+			"Mother's Day 2025",
+			"Sale Apparel",
+			"Valentine 2024",
+			"Valentine 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8054770467008",
+		"museum": "getty",
+		"handle": "mira-calligraphiae-joris-hoefnagel-shawl",
+		"url": "https://shop.getty.edu/products/mira-calligraphiae-joris-hoefnagel-shawl",
+		"name": "Mira Calligraphiae Joris Hoefnagel Shawl",
+		"garment": "scarf",
+		"price": {
+			"min": 30000,
+			"max": 30000,
+			"compareAt": 48000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2024 Holiday",
+			"2025 holiday",
+			"adornments and attire",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Faliero Sarti",
+			"flora fauna",
+			"for the art enthusiast",
+			"for the gardener",
+			"garden of delight",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hawke",
+			"Hoefnagel",
+			"Holiday Glam",
+			"luxurious gifts",
+			"manuscript",
+			"Manuscripts",
+			"medieval gifts",
+			"Mother's Day 2025",
+			"museum devotee",
+			"new years eve",
+			"Sale Apparel",
+			"scarf",
+			"scarves",
+			"style makers",
+			"Valentine 2025",
+			"Valentine 2026",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8054770499776",
+		"museum": "getty",
+		"handle": "mira-calligraphiae-alphabet-shawl",
+		"url": "https://shop.getty.edu/products/mira-calligraphiae-alphabet-shawl",
+		"name": "Mira Calligraphiae Alphabet Shawl",
+		"garment": "scarf",
+		"price": {
+			"min": 30000,
+			"max": 30000,
+			"compareAt": 45000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2024 Holiday",
+			"2025 holiday",
+			"adornments and attire",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Faliero Sarti",
+			"flora fauna",
+			"for the art enthusiast",
+			"for the gardener",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hawke",
+			"Hoefnagel",
+			"Holiday Glam",
+			"luxurious gifts",
+			"manuscript",
+			"Manuscripts",
+			"medieval gifts",
+			"Mother's Day 2025",
+			"museum devotee",
+			"new years eve",
+			"Sale Apparel",
+			"scarf",
+			"scarves",
+			"style makers",
+			"Valentine 2025",
+			"Valentine 2026",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8133588156608",
+		"museum": "getty",
+		"handle": "celestial-scarf",
+		"url": "https://shop.getty.edu/products/celestial-scarf",
+		"name": "Celestial Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 2500,
+			"max": 2500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"Astrology Astronomy",
+			"astronomy",
+			"Astronomy Astrology",
+			"best sellers",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"favorites",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide best sellers",
+			"Halloween",
+			"hawke",
+			"holiday 2026",
+			"Holiday Glam",
+			"Mother's Day 2025",
+			"new years eve",
+			"PST Art & Science Collide",
+			"scarves",
+			"style makers",
+			"Valentine 2025",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8197705957568",
+		"museum": "getty",
+		"handle": "gustave-caillebotte-scarf",
+		"url": "https://shop.getty.edu/products/gustave-caillebotte-scarf",
+		"name": "Young Man at His Window Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 Father's Day",
+			"2025 holiday",
+			"All Products",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Caillebotte",
+			"for the art enthusiast",
+			"hawke",
+			"holiday 2026",
+			"Impressionist",
+			"museum devotee",
+			"NEW GETTY",
+			"new years eve",
+			"poetcore",
+			"scarves",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8252278505664",
+		"museum": "getty",
+		"handle": "getty-embroidered-bucket-hat",
+		"url": "https://shop.getty.edu/products/getty-embroidered-bucket-hat",
+		"name": "Getty Embroidered Bucket Hat - Reversible",
+		"garment": "hat",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"$3 Bill",
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"caps",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hats & hair Accessories",
+			"hawke",
+			"nostalgia",
+			"Queer Lens",
+			"Queer Studies",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8252278538432",
+		"museum": "getty",
+		"handle": "getty-pride-tank-top",
+		"url": "https://shop.getty.edu/products/getty-pride-tank-top",
+		"name": "Getty Pride Tank top",
+		"garment": "tee",
+		"price": {
+			"min": 1250,
+			"max": 1250,
+			"compareAt": 2500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"$3 Bill",
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"gift guide getty creations",
+			"hawke",
+			"Pride",
+			"Queer Lens",
+			"Queer Studies",
+			"Sale Apparel",
+			"t-shirts",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8273507156160",
+		"museum": "getty",
+		"handle": "la-graffiti-black-book-corduroy-bucket-hat",
+		"url": "https://shop.getty.edu/products/la-graffiti-black-book-corduroy-bucket-hat",
+		"name": "L.A. Graffiti Black Book Corduroy Bucket Hat",
+		"garment": "hat",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"b2b 2025",
+			"back to school",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"caps",
+			"explore la and california",
+			"fifa",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hats & hair Accessories",
+			"hawke",
+			"holiday 2026",
+			"inspired by the collections",
+			"la graffiti",
+			"nostalgia",
+			"style makers",
+			"VIP Preview 2025",
+			"Wholesale"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8273829691584",
+		"museum": "getty",
+		"handle": "alabastron-scarf",
+		"url": "https://shop.getty.edu/products/alabastron-scarf",
+		"name": "Alabastron Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 3800,
+			"max": 3800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"back to school",
+			"bts apparel",
+			"bts bags and apparel",
+			"Getty Villa",
+			"hawke",
+			"Holiday Glam",
+			"new years eve",
+			"scarves",
+			"Villa",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8274311872704",
+		"museum": "getty",
+		"handle": "l-a-graffiti-black-book-corduroy-cap",
+		"url": "https://shop.getty.edu/products/l-a-graffiti-black-book-corduroy-cap",
+		"name": "L.A. Graffiti Black Book Corduroy Cap",
+		"garment": "hat",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"back to school",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"caps",
+			"explore la and california",
+			"fifa",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide getty creations",
+			"hats & hair Accessories",
+			"hawke",
+			"holiday 2026",
+			"inspired by the collections",
+			"la graffiti",
+			"style makers",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8286350999744",
+		"museum": "getty",
+		"handle": "getty-villa-museum-pegasus-youth-t-shirt",
+		"url": "https://shop.getty.edu/products/getty-villa-museum-pegasus-youth-t-shirt",
+		"name": "Getty Villa Museum Pegasus Youth T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 2500,
+			"max": 2500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"bts apparel",
+			"bts bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"kids",
+			"mythology",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8306839879872",
+		"museum": "getty",
+		"handle": "socks-mismatch-house-socks-rainbow-l-xl-w-9-95-12-5-m-8-11",
+		"url": "https://shop.getty.edu/products/socks-mismatch-house-socks-rainbow-l-xl-w-9-95-12-5-m-8-11",
+		"name": "Rainbow Mismatch House Socks",
+		"garment": "socks",
+		"price": {
+			"min": 3600,
+			"max": 3600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"nostalgia",
+			"style makers",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8309393948864",
+		"museum": "getty",
+		"handle": "hollywood-painted-t-shirt",
+		"url": "https://shop.getty.edu/products/hollywood-painted-t-shirt",
+		"name": "Hand Painted Hollywood T-Shirt by Scooter LaForge",
+		"garment": "tee",
+		"price": {
+			"min": 14000,
+			"max": 14000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"$3 Bill",
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"fifa",
+			"hawke",
+			"luxurious gifts",
+			"Patricia Fields",
+			"Pride",
+			"Queer Lens",
+			"Scooter LaForge",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349216374976",
+		"museum": "getty",
+		"handle": "psyche-at-the-basketmakers-jacquard-tapestry-hoodie-black",
+		"url": "https://shop.getty.edu/products/psyche-at-the-basketmakers-jacquard-tapestry-hoodie-black",
+		"name": "Psyche at the Basketmakers Jacquard Tapestry Hoodie - Black",
+		"garment": "hoodie",
+		"price": {
+			"min": 16500,
+			"max": 16500,
+			"compareAt": 22000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"inspired by the collections",
+			"luxurious gifts",
+			"pirate",
+			"Sale Apparel",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349224894656",
+		"museum": "getty",
+		"handle": "sculpture-heads-graphic-tee-cream",
+		"url": "https://shop.getty.edu/products/sculpture-heads-graphic-tee-cream",
+		"name": "Sculpture Heads Graphic Tee - Cream",
+		"garment": "tee",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"inspired by the collections",
+			"pirate"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349224927424",
+		"museum": "getty",
+		"handle": "plafond-le-zodiaque-graphic-tee-black",
+		"url": "https://shop.getty.edu/products/plafond-le-zodiaque-graphic-tee-black",
+		"name": "Plafond: Le Zodiaque Graphic Tee - Black",
+		"garment": "tee",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"pirate"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349224960192",
+		"museum": "getty",
+		"handle": "dandelion-vase-graphic-tee-black",
+		"url": "https://shop.getty.edu/products/dandelion-vase-graphic-tee-black",
+		"name": "Dandelion Vase Graphic Tee - Black",
+		"garment": "tee",
+		"price": {
+			"min": 4875,
+			"max": 4875,
+			"compareAt": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"inspired by the collections",
+			"pirate",
+			"Sale Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349224992960",
+		"museum": "getty",
+		"handle": "witte-marvelje-knitted-embroidery-crewneck-cream",
+		"url": "https://shop.getty.edu/products/witte-marvelje-knitted-embroidery-crewneck-cream",
+		"name": "Witte Marvelje Knitted Embroidery Crewneck - Cream",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 18750,
+			"max": 18750,
+			"compareAt": 25000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"inspired by the collections",
+			"luxurious gifts",
+			"MD26",
+			"modern muse",
+			"pirate",
+			"Sale Apparel",
+			"Winter Apparel",
+			"woodland"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349225091264",
+		"museum": "getty",
+		"handle": "venus-at-the-forge-of-vulcan-framed-graphic-tee-black",
+		"url": "https://shop.getty.edu/products/venus-at-the-forge-of-vulcan-framed-graphic-tee-black",
+		"name": "Venus at the Forge of Vulcan Framed Graphic Tee - Black",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000,
+			"compareAt": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"eros eternal",
+			"explore la and california",
+			"fifa",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"pirate",
+			"Sale Apparel",
+			"Valentine 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349271032000",
+		"museum": "getty",
+		"handle": "villa-vase-relaxed-t-shirt",
+		"url": "https://shop.getty.edu/products/villa-vase-relaxed-t-shirt",
+		"name": "Villa Vase Relaxed T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 1800,
+			"max": 1800,
+			"compareAt": 3500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Getty Villa",
+			"Greek",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"museum devotee",
+			"odyssey",
+			"Villa",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8349271064768",
+		"museum": "getty",
+		"handle": "villa-cycladic-harpist-tee",
+		"url": "https://shop.getty.edu/products/villa-cycladic-harpist-tee",
+		"name": "Villa Cycladic Harpist T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 2700,
+			"max": 2700,
+			"compareAt": 3500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Getty Villa",
+			"hawke",
+			"holiday 2026",
+			"Sale Apparel",
+			"Villa",
+			"Villa Cycladic  Harpist Tee",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8363620958400",
+		"museum": "getty",
+		"handle": "simple-rib-knit-beanie-blue",
+		"url": "https://shop.getty.edu/products/simple-rib-knit-beanie-blue",
+		"name": "Simple Rib Knit Beanie - Kelly/Stone Blue",
+		"garment": "hat",
+		"price": {
+			"min": 1400,
+			"max": 1400,
+			"compareAt": 2800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2025",
+			"Sale Apparel",
+			"trendsetter",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8363624366272",
+		"museum": "getty",
+		"handle": "chroma-skinny-scarf",
+		"url": "https://shop.getty.edu/products/chroma-skinny-scarf",
+		"name": "Chroma Skinny Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": false
+			}
+		],
+		"available": false,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"repurposed",
+			"Sale Apparel",
+			"style makers",
+			"trendsetter",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8363628462272",
+		"museum": "getty",
+		"handle": "colorblock-knit-gloves-green-blue",
+		"url": "https://shop.getty.edu/products/colorblock-knit-gloves-green-blue",
+		"name": "Colorblock Knit Gloves - Green/ Blue",
+		"garment": "gloves",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"Holiday Glam",
+			"Sale Apparel",
+			"style makers",
+			"trendsetter",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8367026733248",
+		"museum": "getty",
+		"handle": "sivek-shibori-silk-scarf-gray-teal",
+		"url": "https://shop.getty.edu/products/sivek-shibori-silk-scarf-gray-teal",
+		"name": "Sivek Shibori Silk Scarf - Gray/Teal",
+		"garment": "scarf",
+		"price": {
+			"min": 6000,
+			"max": 6000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"hawke",
+			"holiday 2026",
+			"new years eve",
+			"scarf",
+			"scarves",
+			"style makers",
+			"VIP Preview 2025"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:83855278089",
+		"museum": "getty",
+		"handle": "getty-crew-neck-sweatshirt",
+		"url": "https://shop.getty.edu/products/getty-crew-neck-sweatshirt",
+		"name": "Getty Museum Crew Neck Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2021 ALL HOLIDAY",
+			"2022 Holiday",
+			"2023 Holiday",
+			"2024 Holiday",
+			"2025 holiday",
+			"ACTIVE",
+			"All Products",
+			"Apparel & Accessories",
+			"b2b 2025",
+			"back to school",
+			"best sellers",
+			"bts apparel",
+			"BTS bags and apparel",
+			"bts26",
+			"bts26 apparel & accessories",
+			"Dads & Grads 2021",
+			"Dads & Grads 2023",
+			"Dads & Grads 2024",
+			"explore la and california",
+			"Getty Merch",
+			"Gift Guide",
+			"gift guide all gifts",
+			"gift guide best sellers",
+			"hawke",
+			"Holiday 2023",
+			"jackets",
+			"jumper",
+			"Mother's Day 2023",
+			"Mother's Day 2024",
+			"Mother's Day 2025",
+			"shirt",
+			"sweat shirt",
+			"Valentine 2023",
+			"Valentine 2024",
+			"Valentine 2025",
+			"VIP Preview 2025",
+			"Wholesale",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8388538597568",
+		"museum": "getty",
+		"handle": "purrquoise-cat-silk-scarf",
+		"url": "https://shop.getty.edu/products/purrquoise-cat-silk-scarf",
+		"name": "Purrquoise Cat Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"adornments and attire",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"b2b 2025",
+			"bts26",
+			"bts26 apparel & accessories",
+			"cat mom",
+			"favorites",
+			"for the animal lover",
+			"for the art enthusiast",
+			"hawke",
+			"holiday 2025",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"museum devotee",
+			"NEW GETTY",
+			"purrquoise",
+			"trendsetter",
+			"Valentine 2026",
+			"Wholesale"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8389266342080",
+		"museum": "getty",
+		"handle": "getty-villa-museum-logo-fleece-jacket-1",
+		"url": "https://shop.getty.edu/products/getty-villa-museum-logo-fleece-jacket-1",
+		"name": "Getty Villa Museum Logo Fleece Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 7500,
+			"max": 7500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2025",
+			"trendsetter",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8398712963264",
+		"museum": "getty",
+		"handle": "van-huysum-vase-of-flowers-silk-scarf",
+		"url": "https://shop.getty.edu/products/van-huysum-vase-of-flowers-silk-scarf",
+		"name": "Van Huysum Vase of Flowers Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"artistic adornments",
+			"for the art enthusiast",
+			"hawke",
+			"holiday 2026",
+			"Holiday Glam",
+			"huysum",
+			"museum devotee",
+			"nature enthusiasts",
+			"new years eve",
+			"van huysum"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8398830239936",
+		"museum": "getty",
+		"handle": "tie-violin-mcrofbr",
+		"url": "https://shop.getty.edu/products/tie-violin-mcrofbr",
+		"name": "Violin Tie",
+		"garment": "tie",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"poetcore"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8398830305472",
+		"museum": "getty",
+		"handle": "tie-fern-leaf-prnt-mcrofbr",
+		"url": "https://shop.getty.edu/products/tie-fern-leaf-prnt-mcrofbr",
+		"name": "Fern Leaf Tie",
+		"garment": "tie",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"garden of delight",
+			"Gardens Day 2026",
+			"hawke",
+			"poetcore",
+			"Valentine 2026",
+			"woodland"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399598977216",
+		"museum": "getty",
+		"handle": "scarf-wl-kaleidoscope",
+		"url": "https://shop.getty.edu/products/scarf-wl-kaleidoscope",
+		"name": "Kaleidoscope Wool Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"artistic adornments",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399599009984",
+		"museum": "getty",
+		"handle": "scarf-wool-yellow-blue-graffiti",
+		"url": "https://shop.getty.edu/products/scarf-wool-yellow-blue-graffiti",
+		"name": "Yellow & Blue Graffiti Wool Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399599075520",
+		"museum": "getty",
+		"handle": "scarf-wool-tiger-bush",
+		"url": "https://shop.getty.edu/products/scarf-wool-tiger-bush",
+		"name": "Tiger & Bush Wool Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"holiday 2026",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399599108288",
+		"museum": "getty",
+		"handle": "scarf-entwine-lg",
+		"url": "https://shop.getty.edu/products/scarf-entwine-lg",
+		"name": "Entwine Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"mother nature",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399599141056",
+		"museum": "getty",
+		"handle": "scarf-wool-dragon-xl",
+		"url": "https://shop.getty.edu/products/scarf-wool-dragon-xl",
+		"name": "Dragon Wool Scarf XL",
+		"garment": "scarf",
+		"price": {
+			"min": 6000,
+			"max": 6000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"holiday 2026",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8399649734848",
+		"museum": "getty",
+		"handle": "scarlet-red-scarf-tie",
+		"url": "https://shop.getty.edu/products/scarlet-red-scarf-tie",
+		"name": "Scarlet Red Scarf Tie",
+		"garment": "tie",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"adornments and attire",
+			"artistic adornments",
+			"crimson and cupid",
+			"hawke",
+			"holiday 2026",
+			"poetcore",
+			"style makers",
+			"Valentine 2026",
+			"vday sale 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8408894570688",
+		"museum": "getty",
+		"handle": "purrquoise-cotton-scarf",
+		"url": "https://shop.getty.edu/products/purrquoise-cotton-scarf",
+		"name": "Purrquoise Cotton Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 2800,
+			"max": 2800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"adornments and attire",
+			"bts26",
+			"bts26 apparel & accessories",
+			"cat",
+			"cat mom",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"purrquoise",
+			"Valentine 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8408897061056",
+		"museum": "getty",
+		"handle": "bucket-hat-sport-patchwork-stripe",
+		"url": "https://shop.getty.edu/products/bucket-hat-sport-patchwork-stripe",
+		"name": "Patchwork Stripe Bucket Hat",
+		"garment": "hat",
+		"price": {
+			"min": 5800,
+			"max": 5800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"nostalgia"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8417059602624",
+		"museum": "getty",
+		"handle": "silk-ribbon-scarf",
+		"url": "https://shop.getty.edu/products/silk-ribbon-scarf",
+		"name": "Silk Ribbon Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 4800,
+			"max": 4800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"adornments and attire",
+			"artistic adornments",
+			"hawke",
+			"holiday 2026",
+			"poetcore",
+			"style makers",
+			"Valentine 2026",
+			"vday sale 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8417059635392",
+		"museum": "getty",
+		"handle": "mariniere-silk-skinny-scarf",
+		"url": "https://shop.getty.edu/products/mariniere-silk-skinny-scarf",
+		"name": "Marinière Silk Skinny Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 4800,
+			"max": 4800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"adornments and attire",
+			"artistic adornments",
+			"hawke",
+			"holiday 2026",
+			"style makers",
+			"Valentine 2026",
+			"vday sale 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8497704698048",
+		"museum": "getty",
+		"handle": "apple-juice-3d-socks-kids",
+		"url": "https://shop.getty.edu/products/apple-juice-3d-socks-kids",
+		"name": "Apple Juice 3D Kids Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1400,
+			"max": 1400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"5-6",
+			"7-8",
+			"9-10",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"socks"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8497728323776",
+		"museum": "getty",
+		"handle": "socks-van-gogh-irises",
+		"url": "https://shop.getty.edu/products/socks-van-gogh-irises",
+		"name": "Vincent Van Gogh - Irises - J. Paul Getty Trust Edition Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"flora fauna",
+			"Gardens Day 2026",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"mother nature",
+			"museum devotee",
+			"nature enthusiasts",
+			"van gogh"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8498675941568",
+		"museum": "getty",
+		"handle": "socks-van-gogh-irises-copy",
+		"url": "https://shop.getty.edu/products/socks-van-gogh-irises-copy",
+		"name": "Édouard Manet - Jeanne (Spring) Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"manet",
+			"MD26",
+			"modern muse",
+			"museum devotee"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8498678956224",
+		"museum": "getty",
+		"handle": "edouard-manet-jeanne-spring-socks-copy",
+		"url": "https://shop.getty.edu/products/edouard-manet-jeanne-spring-socks-copy",
+		"name": "Egyptian Symbols Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"ancient",
+			"ancient and enduring",
+			"ancient history",
+			"book of the dead",
+			"hawke",
+			"holiday 2026",
+			"museum devotee"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8498679120064",
+		"museum": "getty",
+		"handle": "egyptian-symbols-socks-copy",
+		"url": "https://shop.getty.edu/products/egyptian-symbols-socks-copy",
+		"name": "Albrecht Dürer - Stag Beetle Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"durer",
+			"hawke",
+			"holiday 2026",
+			"museum devotee"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8498679251136",
+		"museum": "getty",
+		"handle": "albrecht-durer-stag-beetle-socks-copy",
+		"url": "https://shop.getty.edu/products/albrecht-durer-stag-beetle-socks-copy",
+		"name": "Paul Cezanne Still Life with Apples Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"cezane",
+			"cezanne",
+			"hawke",
+			"holiday 2026",
+			"museum devotee"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8498679513280",
+		"museum": "getty",
+		"handle": "paul-cezanne-still-life-socks-copy",
+		"url": "https://shop.getty.edu/products/paul-cezanne-still-life-socks-copy",
+		"name": "Antimenes – Amphora Depicting the Battle Between Heracles Socks",
+		"garment": "socks",
+		"price": {
+			"min": 1600,
+			"max": 1600
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"ancient and enduring",
+			"ancient history",
+			"hawke",
+			"history",
+			"holiday 2026",
+			"museum devotee",
+			"mythology"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8536555749568",
+		"museum": "getty",
+		"handle": "roman-charioteer-t-shirt",
+		"url": "https://shop.getty.edu/products/roman-charioteer-t-shirt",
+		"name": "Roman Charioteer T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"Getty Villa",
+			"hawke",
+			"NEW GETTY",
+			"Villa"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8544001622208",
+		"museum": "getty",
+		"handle": "bndna-seashells-voile",
+		"url": "https://shop.getty.edu/products/bndna-seashells-voile",
+		"name": "Seashells Voile Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 4200,
+			"max": 4200
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"artistic adornments",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"nature enthusiasts",
+			"scarf",
+			"scarves",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8544001654976",
+		"museum": "getty",
+		"handle": "bndna-mrbl-wilde-voile",
+		"url": "https://shop.getty.edu/products/bndna-mrbl-wilde-voile",
+		"name": "Marbled Cotton Voile Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 4200,
+			"max": 4200
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": false
+			}
+		],
+		"available": false,
+		"productType": "APPAREL",
+		"tags": [
+			"artistic adornments",
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"MD26",
+			"modern muse",
+			"poetcore",
+			"scarf",
+			"scarves",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8587813355712",
+		"museum": "getty",
+		"handle": "double-sided-los-angeles-soccer-scarf",
+		"url": "https://shop.getty.edu/products/double-sided-los-angeles-soccer-scarf",
+		"name": "Double Sided Los Angeles Soccer Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 7500,
+			"max": 7500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"california dreamers",
+			"fifa",
+			"hawke",
+			"holiday 2026"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8598372450496",
+		"museum": "getty",
+		"handle": "rainbow-all-for-art-bandana",
+		"url": "https://shop.getty.edu/products/rainbow-all-for-art-bandana",
+		"name": "Rainbow All for Art Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"Pride"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617257631936",
+		"museum": "getty",
+		"handle": "socks-bees-youth",
+		"url": "https://shop.getty.edu/products/socks-bees-youth",
+		"name": "Kids Socks That Protect Bees",
+		"garment": "socks",
+		"price": {
+			"min": 1500,
+			"max": 1500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"new arrivals apparel",
+			"new arrivals kids",
+			"repurposed",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617257697472",
+		"museum": "getty",
+		"handle": "socks-pride-sm",
+		"url": "https://shop.getty.edu/products/socks-pride-sm",
+		"name": "Socks That Save LGBTQ Lives",
+		"garment": "socks",
+		"price": {
+			"min": 1895,
+			"max": 1895
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"new arrivals apparel",
+			"Pride",
+			"repurposed"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617257763008",
+		"museum": "getty",
+		"handle": "socks-bees-sm",
+		"url": "https://shop.getty.edu/products/socks-bees-sm",
+		"name": "Socks That Protect Bees",
+		"garment": "socks",
+		"price": {
+			"min": 1895,
+			"max": 1895
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"holiday 2026",
+			"nature enthusiasts",
+			"new arrivals apparel",
+			"repurposed"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617257992384",
+		"museum": "getty",
+		"handle": "socks-owl-sm",
+		"url": "https://shop.getty.edu/products/socks-owl-sm",
+		"name": "Socks That Protect Owls",
+		"garment": "socks",
+		"price": {
+			"min": 1895,
+			"max": 1895
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"holiday 2026",
+			"nature enthusiasts",
+			"new arrivals apparel",
+			"repurposed"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617258221760",
+		"museum": "getty",
+		"handle": "socks-sccr-sm",
+		"url": "https://shop.getty.edu/products/socks-sccr-sm",
+		"name": "Socks That Support Youth Sports",
+		"garment": "socks",
+		"price": {
+			"min": 1895,
+			"max": 1895
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"fifa",
+			"hawke",
+			"new arrivals apparel",
+			"repurposed"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617258254528",
+		"museum": "getty",
+		"handle": "socks-sccr-youth",
+		"url": "https://shop.getty.edu/products/socks-sccr-youth",
+		"name": "Kids Socks That Support Youth Sports",
+		"garment": "socks",
+		"price": {
+			"min": 1500,
+			"max": 1500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"fifa",
+			"hawke",
+			"holiday 2026",
+			"new arrivals apparel",
+			"new arrivals kids",
+			"repurposed",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8617258287296",
+		"museum": "getty",
+		"handle": "socks-owls-youth",
+		"url": "https://shop.getty.edu/products/socks-owls-youth",
+		"name": "Kids Socks That Protect Owls",
+		"garment": "socks",
+		"price": {
+			"min": 1500,
+			"max": 1500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"new arrivals apparel",
+			"new arrivals kids",
+			"repurposed",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648627519680",
+		"museum": "getty",
+		"handle": "cap-yth-khaki-all-for-art",
+		"url": "https://shop.getty.edu/products/cap-yth-khaki-all-for-art",
+		"name": "Youth ALL FOR ART Adjustable Baseball Cap - Travertine",
+		"garment": "hat",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "ACCESSORIES",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals kids",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648627683520",
+		"museum": "getty",
+		"handle": "cap-adlt-khaki-all-for-art",
+		"url": "https://shop.getty.edu/products/cap-adlt-khaki-all-for-art",
+		"name": "ALL FOR ART Adjustable Baseball Cap - Travertine",
+		"garment": "hat",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "ACCESSORIES",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"khaki",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648635089088",
+		"museum": "getty",
+		"handle": "getty-g-mark-silk-scarf-blue-travertine",
+		"url": "https://shop.getty.edu/products/getty-g-mark-silk-scarf-blue-travertine",
+		"name": "Getty G Mark Silk Scarf - Blue / Travertine",
+		"garment": "scarf",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648635121856",
+		"museum": "getty",
+		"handle": "venus-multi-view-square-scarf",
+		"url": "https://shop.getty.edu/products/venus-multi-view-square-scarf",
+		"name": "Venus Multi-View Square Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"favorites",
+			"hawke",
+			"holiday 2026",
+			"journeys through time",
+			"Logo Collection",
+			"museum devotee",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648635154624",
+		"museum": "getty",
+		"handle": "getty-g-mark-silk-scarf-orange-pink",
+		"url": "https://shop.getty.edu/products/getty-g-mark-silk-scarf-orange-pink",
+		"name": "Getty G Mark Silk Scarf - Orange / Pink",
+		"garment": "scarf",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648637808832",
+		"museum": "getty",
+		"handle": "all-for-art-t-shirt-gray",
+		"url": "https://shop.getty.edu/products/all-for-art-t-shirt-gray",
+		"name": "ALL FOR ART T-Shirt - Gray",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648637841600",
+		"museum": "getty",
+		"handle": "tshirt-degas-quote",
+		"url": "https://shop.getty.edu/products/tshirt-degas-quote",
+		"name": "T-shirt Degas Quote",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648637972672",
+		"museum": "getty",
+		"handle": "tshirt-gauguin-quote",
+		"url": "https://shop.getty.edu/products/tshirt-gauguin-quote",
+		"name": "Gauguin Quote T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648638038208",
+		"museum": "getty",
+		"handle": "tshirt-yth-start-small-and-dream-big",
+		"url": "https://shop.getty.edu/products/tshirt-yth-start-small-and-dream-big",
+		"name": "Start Small and Dream Big Youth T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"new arrivals kids",
+			"young creator"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8648638070976",
+		"museum": "getty",
+		"handle": "all-for-art-t-shirt-navy",
+		"url": "https://shop.getty.edu/products/all-for-art-t-shirt-navy",
+		"name": "ALL FOR ART T-Shirt - Navy",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"bts26",
+			"bts26 apparel & accessories",
+			"hawke",
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8659393937600",
+		"museum": "getty",
+		"handle": "bndna-la-map-nvy",
+		"url": "https://shop.getty.edu/products/bndna-la-map-nvy",
+		"name": "Los Angeles Bandana - Navy",
+		"garment": "scarf",
+		"price": {
+			"min": 1500,
+			"max": 1500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"adventurous spirits",
+			"bts26",
+			"bts26 apparel & accessories",
+			"california dreamers",
+			"hawke",
+			"holiday 2026",
+			"new arrivals apparel"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8663206428864",
+		"museum": "getty",
+		"handle": "swtshrt-afa-navy-blue-hoodie",
+		"url": "https://shop.getty.edu/products/swtshrt-afa-navy-blue-hoodie",
+		"name": "ALL FOR ART Sweatshirt - Navy",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 9000,
+			"max": 9000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"Logo Collection",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8714436477120",
+		"museum": "getty",
+		"handle": "odilon-redon-blue-vase-scarf",
+		"url": "https://shop.getty.edu/products/odilon-redon-blue-vase-scarf",
+		"name": "Odilon Redon Blue Vase Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6800,
+			"max": 6800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"new arrivals apparel",
+			"redon",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8730741571776",
+		"museum": "getty",
+		"handle": "head-within-an-aureole-bandana-25inx25in",
+		"url": "https://shop.getty.edu/products/head-within-an-aureole-bandana-25inx25in",
+		"name": "Head within an Aureole Bandana (25 in x 25 in)",
+		"garment": "scarf",
+		"price": {
+			"min": 7000,
+			"max": 7000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"california dreamers",
+			"holiday 2026",
+			"new arrivals apparel",
+			"redon",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8748546130112",
+		"museum": "getty",
+		"handle": "battle-of-the-bones-dad-hat-washed-black",
+		"url": "https://shop.getty.edu/products/battle-of-the-bones-dad-hat-washed-black",
+		"name": "Battle of the Bones Dad Hat  - Washed Black",
+		"garment": "hat",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"california dreamers",
+			"Halloween",
+			"holiday 2026",
+			"new arrivals apparel",
+			"redon",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "getty:8748546162880",
+		"museum": "getty",
+		"handle": "battle-of-the-bones-bandana-25inx25in",
+		"url": "https://shop.getty.edu/products/battle-of-the-bones-bandana-25inx25in",
+		"name": "Battle of the Bones Bandana (25 in x 25 in)",
+		"garment": "scarf",
+		"price": {
+			"min": 7000,
+			"max": 7000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"california dreamers",
+			"Halloween",
+			"holiday 2026",
+			"new arrivals apparel",
+			"redon",
+			"style makers"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:1435281752167",
+		"museum": "lacma",
+		"handle": "alexander-calder-lacma-t-shirt",
+		"url": "https://www.thelacmastore.org/products/alexander-calder-lacma-t-shirt",
+		"name": "Alexander Calder LACMA T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:2120389099623",
+		"museum": "lacma",
+		"handle": "lacma-lacma-hand-painted-sign-t-shirt-white",
+		"url": "https://www.thelacmastore.org/products/lacma-lacma-hand-painted-sign-t-shirt-white",
+		"name": "LACMA Hand-Painted Sign T-shirt in White",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:6281932996793",
+		"museum": "lacma",
+		"handle": "rirkrit-tiravanija-untitled-bandana",
+		"url": "https://www.thelacmastore.org/products/rirkrit-tiravanija-untitled-bandana",
+		"name": "Rirkrit Tiravanija Untitled Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 3500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7423051497657",
+		"museum": "lacma",
+		"handle": "alexander-calder-black-champion-sweatshirt",
+		"url": "https://www.thelacmastore.org/products/alexander-calder-black-champion-sweatshirt",
+		"name": "Alexander Calder Black Champion Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7468016763065",
+		"museum": "lacma",
+		"handle": "blacma-t-shirt",
+		"url": "https://www.thelacmastore.org/products/blacma-t-shirt",
+		"name": "BLACMA T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			},
+			{
+				"label": "3XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7592085422265",
+		"museum": "lacma",
+		"handle": "lacma-logo-hat-stone-with-stone",
+		"url": "https://www.thelacmastore.org/products/lacma-logo-hat-stone-with-stone",
+		"name": "LACMA Logo Hat Stone with Stone",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7592085520569",
+		"museum": "lacma",
+		"handle": "lacma-logo-hat-black-with-black",
+		"url": "https://www.thelacmastore.org/products/lacma-logo-hat-black-with-black",
+		"name": "LACMA Logo Hat Black with Black",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7610344538297",
+		"museum": "lacma",
+		"handle": "john-baldessari-wrong-t-shirt-1",
+		"url": "https://www.thelacmastore.org/products/john-baldessari-wrong-t-shirt-1",
+		"name": "John Baldessari Wrong T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7630427717817",
+		"museum": "lacma",
+		"handle": "copy-of-judith-baca-the-great-wall-of-los-angeles-t-shirt",
+		"url": "https://www.thelacmastore.org/products/copy-of-judith-baca-the-great-wall-of-los-angeles-t-shirt",
+		"name": "Judy Baca The Great Wall of Los Angeles T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7743876137145",
+		"museum": "lacma",
+		"handle": "hand-painted-sign-champion-sweatshirt",
+		"url": "https://www.thelacmastore.org/products/hand-painted-sign-champion-sweatshirt",
+		"name": "Hand-painted Sign Champion Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7866709639353",
+		"museum": "lacma",
+		"handle": "lacma-red-champion-sweatshirt",
+		"url": "https://www.thelacmastore.org/products/lacma-red-champion-sweatshirt",
+		"name": "LACMA Red Embroidered Champion Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7952091316409",
+		"museum": "lacma",
+		"handle": "lacma-logo-hat-dark-royal-with-white",
+		"url": "https://www.thelacmastore.org/products/lacma-logo-hat-dark-royal-with-white",
+		"name": "LACMA Logo Hat Dark Royal with White",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7967186059449",
+		"museum": "lacma",
+		"handle": "la-hat-green-with-teal",
+		"url": "https://www.thelacmastore.org/products/la-hat-green-with-teal",
+		"name": "LA Hat Green with Teal Embroidery",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7967187534009",
+		"museum": "lacma",
+		"handle": "la-hat-red-with-pink-embroidery-copy",
+		"url": "https://www.thelacmastore.org/products/la-hat-red-with-pink-embroidery-copy",
+		"name": "LA Hat Black with Black Embroidery",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:7969658011833",
+		"museum": "lacma",
+		"handle": "maurizio-cattelan-hollywood-t-shirt",
+		"url": "https://www.thelacmastore.org/products/maurizio-cattelan-hollywood-t-shirt",
+		"name": "Maurizio Cattelan HOLLYWOOD T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8027374583993",
+		"museum": "lacma",
+		"handle": "yoshitomo-nara-flag-bandana-copy",
+		"url": "https://www.thelacmastore.org/products/yoshitomo-nara-flag-bandana-copy",
+		"name": "Yoshitomo Nara Flag Bandana Blue",
+		"garment": "scarf",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8027374780601",
+		"museum": "lacma",
+		"handle": "yoshitomo-nara-flag-bandana-copy-1",
+		"url": "https://www.thelacmastore.org/products/yoshitomo-nara-flag-bandana-copy-1",
+		"name": "Yoshitomo Nara Flag Bandana Beige",
+		"garment": "scarf",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8057791152313",
+		"museum": "lacma",
+		"handle": "pettibon-pen-and-brushes-t-shirt",
+		"url": "https://www.thelacmastore.org/products/pettibon-pen-and-brushes-t-shirt",
+		"name": "Pettibon Pen and Brushes T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8068127326393",
+		"museum": "lacma",
+		"handle": "lacma-logo-hat-pink-with-pink",
+		"url": "https://www.thelacmastore.org/products/lacma-logo-hat-pink-with-pink",
+		"name": "LACMA Logo Hat Pink with Pink",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8085580415161",
+		"museum": "lacma",
+		"handle": "special-offer-jazz-at-laxcma-t-shirt",
+		"url": "https://www.thelacmastore.org/products/special-offer-jazz-at-laxcma-t-shirt",
+		"name": "JAZZ at LACMA T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			},
+			{
+				"label": "3XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8085581267129",
+		"museum": "lacma",
+		"handle": "special-offer-lacma-red-embroidered-champion-sweatshirt-copy",
+		"url": "https://www.thelacmastore.org/products/special-offer-lacma-red-embroidered-champion-sweatshirt-copy",
+		"name": "JAZZ at LACMA Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 6000,
+			"max": 6000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8222287855801",
+		"museum": "lacma",
+		"handle": "tavares-strachan-shiluk-tshirt",
+		"url": "https://www.thelacmastore.org/products/tavares-strachan-shiluk-tshirt",
+		"name": "Tavares Strachan Shiluk Tshirt",
+		"garment": "tee",
+		"price": {
+			"min": 7500,
+			"max": 7500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8222324031673",
+		"museum": "lacma",
+		"handle": "tavares-strachan-please-dont-come-to-mars-bandana",
+		"url": "https://www.thelacmastore.org/products/tavares-strachan-please-dont-come-to-mars-bandana",
+		"name": "Tavares Strachan Please Don't Come to Mars Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 12500,
+			"max": 12500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8237343178937",
+		"museum": "lacma",
+		"handle": "lacma-logo-hat-teal-with-pink-embroidery",
+		"url": "https://www.thelacmastore.org/products/lacma-logo-hat-teal-with-pink-embroidery",
+		"name": "LACMA Logo Hat Teal with Pink Embroidery",
+		"garment": "hat",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "lacma:8533817865",
+		"museum": "lacma",
+		"handle": "pablo-picasso-heads-t-shirt",
+		"url": "https://www.thelacmastore.org/products/pablo-picasso-heads-t-shirt",
+		"name": "Pablo Picasso Heads (Têtes) T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel",
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027595104546",
+		"museum": "whitney",
+		"handle": "basquiat-crown-bucket-hat",
+		"url": "https://shop.whitney.org/products/basquiat-crown-bucket-hat",
+		"name": "Basquiat “Crown” Bucket Hat",
+		"garment": "hat",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027602182434",
+		"museum": "whitney",
+		"handle": "basquiat-beat-bop-mechanics-jacket",
+		"url": "https://shop.whitney.org/products/basquiat-beat-bop-mechanics-jacket",
+		"name": "Basquiat \"Beat Bop\" Mechanic's Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 37500,
+			"max": 37500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027614273826",
+		"museum": "whitney",
+		"handle": "basquiat-pez-dispenser-blue-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/basquiat-pez-dispenser-blue-kids-t-shirt",
+		"name": "Basquiat \"Pez Dispenser\" Blue Kids T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4200,
+			"max": 4200
+		},
+		"sizes": [
+			{
+				"label": "Kids 2",
+				"available": false
+			},
+			{
+				"label": "Kids 4",
+				"available": false
+			},
+			{
+				"label": "Kids 6",
+				"available": false
+			},
+			{
+				"label": "Kids 8",
+				"available": false
+			},
+			{
+				"label": "Kids 10",
+				"available": true
+			},
+			{
+				"label": "Kids 12",
+				"available": false
+			},
+			{
+				"label": "Kids 14",
+				"available": true
+			},
+			{
+				"label": "Kids 16",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027630821666",
+		"museum": "whitney",
+		"handle": "basquiat-untitled-skull-bandana",
+		"url": "https://shop.whitney.org/products/basquiat-untitled-skull-bandana",
+		"name": "Basquiat \"Untitled (Skull)\" Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 2200,
+			"max": 2200
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"$25 and Under",
+			"Apparel & Accessories",
+			"Gifts",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027647729954",
+		"museum": "whitney",
+		"handle": "basquiat-untitled-devil-bandana",
+		"url": "https://shop.whitney.org/products/basquiat-untitled-devil-bandana",
+		"name": "Basquiat \"Untitled (Devil)\" Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 2200,
+			"max": 2200
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"$25 and Under",
+			"Apparel & Accessories",
+			"Gifts",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-25T23:51:58.161Z"
+	},
+	{
+		"id": "whitney:10027656806690",
+		"museum": "whitney",
+		"handle": "basquiat-pez-dispenser-premium-t-shirt",
+		"url": "https://shop.whitney.org/products/basquiat-pez-dispenser-premium-t-shirt",
+		"name": "Basquiat \"Pez Dispenser\" Premium T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 7800,
+			"max": 7800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027678466338",
+		"museum": "whitney",
+		"handle": "calder-bollards-t-shirt",
+		"url": "https://shop.whitney.org/products/calder-bollards-t-shirt",
+		"name": "Calder “Bollards” T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8800,
+			"max": 8800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027684167970",
+		"museum": "whitney",
+		"handle": "calder-untitled-1947-cropped-t-shirt",
+		"url": "https://shop.whitney.org/products/calder-untitled-1947-cropped-t-shirt",
+		"name": "Calder \"Untitled (1947)\" Cropped T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8800,
+			"max": 8800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027688296738",
+		"museum": "whitney",
+		"handle": "calder-kiki-cabana-shirt",
+		"url": "https://shop.whitney.org/products/calder-kiki-cabana-shirt",
+		"name": "Calder \"Kiki\" Cabana Shirt",
+		"garment": "shirt",
+		"price": {
+			"min": 25000,
+			"max": 25000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027714609442",
+		"museum": "whitney",
+		"handle": "robert-indiana-love-patch-crewneck",
+		"url": "https://shop.whitney.org/products/robert-indiana-love-patch-crewneck",
+		"name": "Robert Indiana “LOVE” Patch Crewneck",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 12400,
+			"max": 12400
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10027722604834",
+		"museum": "whitney",
+		"handle": "robert-indiana-love-t-shirt",
+		"url": "https://shop.whitney.org/products/robert-indiana-love-t-shirt",
+		"name": "Robert Indiana “LOVE” T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 7200,
+			"max": 7200
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10034598936866",
+		"museum": "whitney",
+		"handle": "basquiat-pez-dispenser-white-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/basquiat-pez-dispenser-white-kids-t-shirt",
+		"name": "Basquiat \"Pez Dispenser\" White Kids T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4400,
+			"max": 4400
+		},
+		"sizes": [
+			{
+				"label": "Kids 2",
+				"available": false
+			},
+			{
+				"label": "Kids 4",
+				"available": false
+			},
+			{
+				"label": "Kids 6",
+				"available": false
+			},
+			{
+				"label": "Kids 8",
+				"available": false
+			},
+			{
+				"label": "Kids 10",
+				"available": true
+			},
+			{
+				"label": "Kids 12",
+				"available": true
+			},
+			{
+				"label": "Kids 14",
+				"available": true
+			},
+			{
+				"label": "Kids 16",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists",
+			"Gifts"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10039829168418",
+		"museum": "whitney",
+		"handle": "whitney-biennial-white-t-shirt-1",
+		"url": "https://shop.whitney.org/products/whitney-biennial-white-t-shirt-1",
+		"name": "Whitney Biennial 2026 White T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10039918657826",
+		"museum": "whitney",
+		"handle": "whitney-biennial-blue-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-blue-t-shirt",
+		"name": "Whitney Biennial 2026 Blue T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10042574012706",
+		"museum": "whitney",
+		"handle": "whitney-biennial-black-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-black-t-shirt",
+		"name": "Whitney Biennial Black T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10043263385890",
+		"museum": "whitney",
+		"handle": "green-whitney-cap",
+		"url": "https://shop.whitney.org/products/green-whitney-cap",
+		"name": "Green Whitney Cap",
+		"garment": "hat",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10043267088674",
+		"museum": "whitney",
+		"handle": "blue-whitney-cap",
+		"url": "https://shop.whitney.org/products/blue-whitney-cap",
+		"name": "Blue Whitney Cap",
+		"garment": "hat",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10043270594850",
+		"museum": "whitney",
+		"handle": "whitney-museum-of-american-art-acid-wash-hat",
+		"url": "https://shop.whitney.org/products/whitney-museum-of-american-art-acid-wash-hat",
+		"name": "Whitney Museum of American Art Acid Wash Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10073043206434",
+		"museum": "whitney",
+		"handle": "whitney-biennial-2026-catalogue-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-2026-catalogue-t-shirt",
+		"name": "Whitney Biennial 2026 Catalogue T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10092448252194",
+		"museum": "whitney",
+		"handle": "keith-haring-three-eyed-t-shirt",
+		"url": "https://shop.whitney.org/products/keith-haring-three-eyed-t-shirt",
+		"name": "Keith Haring Three Eyed T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4995,
+			"max": 4995
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10092495667490",
+		"museum": "whitney",
+		"handle": "keith-haring-shoulder-stack-t-shirt",
+		"url": "https://shop.whitney.org/products/keith-haring-shoulder-stack-t-shirt",
+		"name": "Keith Haring Shoulder Stack T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4995,
+			"max": 4995
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10092517753122",
+		"museum": "whitney",
+		"handle": "keith-haring-radiant-baby-onesie",
+		"url": "https://shop.whitney.org/products/keith-haring-radiant-baby-onesie",
+		"name": "Keith Haring Radiant Baby Onesie",
+		"garment": "onesie",
+		"price": {
+			"min": 3995,
+			"max": 3995
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists",
+			"Gifts"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10092543082786",
+		"museum": "whitney",
+		"handle": "keith-haring-radiant-baby-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/keith-haring-radiant-baby-kids-t-shirt",
+		"name": "Keith Haring Radiant Baby Kids T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3995,
+			"max": 3995
+		},
+		"sizes": [
+			{
+				"label": "Kids 2",
+				"available": false
+			},
+			{
+				"label": "Kids 4",
+				"available": false
+			},
+			{
+				"label": "Kids 6",
+				"available": false
+			},
+			{
+				"label": "Kids 8",
+				"available": false
+			},
+			{
+				"label": "Kids 10",
+				"available": true
+			},
+			{
+				"label": "Kids 12",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists",
+			"Gifts"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10132961231138",
+		"museum": "whitney",
+		"handle": "basquiat-pez-dispenser-premium-blue-t-shirt",
+		"url": "https://shop.whitney.org/products/basquiat-pez-dispenser-premium-blue-t-shirt",
+		"name": "Basquiat \"Pez Dispenser\" Premium Blue T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 7200,
+			"max": 7200
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10389464252706",
+		"museum": "whitney",
+		"handle": "jean-michel-basquiat-pez-dispenser-denim-jacket",
+		"url": "https://shop.whitney.org/products/jean-michel-basquiat-pez-dispenser-denim-jacket",
+		"name": "Jean-Michel Basquiat \"Pez Dispenser\" Denim Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 35000,
+			"max": 35000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10389491482914",
+		"museum": "whitney",
+		"handle": "keith-haring-angel-cap",
+		"url": "https://shop.whitney.org/products/keith-haring-angel-cap",
+		"name": "Keith Haring Angel Cap",
+		"garment": "hat",
+		"price": {
+			"min": 4400,
+			"max": 4400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10391236542754",
+		"museum": "whitney",
+		"handle": "public-records-adjustable-dad-cap",
+		"url": "https://shop.whitney.org/products/public-records-adjustable-dad-cap",
+		"name": "Public Records Adjustable Dad Cap",
+		"garment": "hat",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10391246504226",
+		"museum": "whitney",
+		"handle": "public-records-cotton-tee",
+		"url": "https://shop.whitney.org/products/public-records-cotton-tee",
+		"name": "Public Records Cotton Tee",
+		"garment": "tee",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10391324655906",
+		"museum": "whitney",
+		"handle": "public-records-heavy-fleece-hoodie",
+		"url": "https://shop.whitney.org/products/public-records-heavy-fleece-hoodie",
+		"name": "Public Records Heavy Fleece Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 9000,
+			"max": 9000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10391342481698",
+		"museum": "whitney",
+		"handle": "public-records-boxy-cotton-tee",
+		"url": "https://shop.whitney.org/products/public-records-boxy-cotton-tee",
+		"name": "Public Records Boxy Cotton Tee",
+		"garment": "tee",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10426789527842",
+		"museum": "whitney",
+		"handle": "ny-ny-cap",
+		"url": "https://shop.whitney.org/products/ny-ny-cap",
+		"name": "NY NY Cap",
+		"garment": "hat",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Our NYC Home"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:10426801652002",
+		"museum": "whitney",
+		"handle": "basquiat-beat-bop-white-t-shirt",
+		"url": "https://shop.whitney.org/products/basquiat-beat-bop-white-t-shirt",
+		"name": "Basquiat \"Beat Bop\" White T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 7800,
+			"max": 7800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15326649712930",
+		"museum": "whitney",
+		"handle": "roy-lichtenstein-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/roy-lichtenstein-kids-t-shirt",
+		"name": "Roy Lichtenstein Kids T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "2T",
+				"available": true
+			},
+			{
+				"label": "4T",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists",
+			"Gifts"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327219155234",
+		"museum": "whitney",
+		"handle": "ohhh-alright-baseball-hat",
+		"url": "https://shop.whitney.org/products/ohhh-alright-baseball-hat",
+		"name": "Ohhh... Alright... Baseball Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3400,
+			"max": 3400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327226396962",
+		"museum": "whitney",
+		"handle": "knock-knock-baseball-hat",
+		"url": "https://shop.whitney.org/products/knock-knock-baseball-hat",
+		"name": "Knock! Knock! Baseball Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3400,
+			"max": 3400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327252906274",
+		"museum": "whitney",
+		"handle": "sweet-dreams-baby-baseball-hat",
+		"url": "https://shop.whitney.org/products/sweet-dreams-baby-baseball-hat",
+		"name": "Sweet Dreams, Baby! Baseball Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3400,
+			"max": 3400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327438504226",
+		"museum": "whitney",
+		"handle": "crying-girl-extra-heavyweight-hoodie",
+		"url": "https://shop.whitney.org/products/crying-girl-extra-heavyweight-hoodie",
+		"name": "Crying Girl Extra Heavyweight Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 12800,
+			"max": 12800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327456297250",
+		"museum": "whitney",
+		"handle": "laughing-cat-sweater",
+		"url": "https://shop.whitney.org/products/laughing-cat-sweater",
+		"name": "Laughing Cat Sweater",
+		"garment": "sweater",
+		"price": {
+			"min": 11800,
+			"max": 11800
+		},
+		"sizes": [
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327633768738",
+		"museum": "whitney",
+		"handle": "standing-explosion-varsity-jacket",
+		"url": "https://shop.whitney.org/products/standing-explosion-varsity-jacket",
+		"name": "Standing Explosion Varsity Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 13800,
+			"max": 13800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327670862114",
+		"museum": "whitney",
+		"handle": "cathedral-2-quarter-zip-sherpa-pullover",
+		"url": "https://shop.whitney.org/products/cathedral-2-quarter-zip-sherpa-pullover",
+		"name": "Cathedral #2 Quarter-Zip Sherpa Pullover",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 11800,
+			"max": 11800
+		},
+		"sizes": [
+			{
+				"label": "S/M",
+				"available": true
+			},
+			{
+				"label": "L/XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327793742114",
+		"museum": "whitney",
+		"handle": "little-big-painting-scarf",
+		"url": "https://shop.whitney.org/products/little-big-painting-scarf",
+		"name": "Little Big Painting Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 3400,
+			"max": 3400
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327863046434",
+		"museum": "whitney",
+		"handle": "crying-girl-graphic-t-shirt",
+		"url": "https://shop.whitney.org/products/crying-girl-graphic-t-shirt",
+		"name": "Crying Girl Graphic T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 5400,
+			"max": 5400
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15327897420066",
+		"museum": "whitney",
+		"handle": "ohhh-alright-heavyweight-hoodie",
+		"url": "https://shop.whitney.org/products/ohhh-alright-heavyweight-hoodie",
+		"name": "Ohhh... Alright... Heavyweight Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 11800,
+			"max": 11800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15328061817122",
+		"museum": "whitney",
+		"handle": "girl-in-window-graphic-t-shirt",
+		"url": "https://shop.whitney.org/products/girl-in-window-graphic-t-shirt",
+		"name": "Girl in Window Graphic T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 5400,
+			"max": 5400
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15328090456354",
+		"museum": "whitney",
+		"handle": "standing-explosion-heavyweight-hoodie",
+		"url": "https://shop.whitney.org/products/standing-explosion-heavyweight-hoodie",
+		"name": "Standing Explosion Heavyweight Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 11800,
+			"max": 11800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15328138756386",
+		"museum": "whitney",
+		"handle": "real-estate-graphic-t-shirt",
+		"url": "https://shop.whitney.org/products/real-estate-graphic-t-shirt",
+		"name": "Real Estate Graphic T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 5400,
+			"max": 5400
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15338914677026",
+		"museum": "whitney",
+		"handle": "cathedral-2-heavyweight-sweatshirt",
+		"url": "https://shop.whitney.org/products/cathedral-2-heavyweight-sweatshirt",
+		"name": "Cathedral #2 Heavyweight Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 9800,
+			"max": 9800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:15338990272802",
+		"museum": "whitney",
+		"handle": "cathedral-2-graphic-t-shirt",
+		"url": "https://shop.whitney.org/products/cathedral-2-graphic-t-shirt",
+		"name": "Cathedral #2 Graphic T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 5800,
+			"max": 5800
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383098126626",
+		"museum": "whitney",
+		"handle": "carol-bove-grid-scarf",
+		"url": "https://shop.whitney.org/products/carol-bove-grid-scarf",
+		"name": "Carol Bove Grid Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 42500,
+			"max": 42500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383098159394",
+		"museum": "whitney",
+		"handle": "carol-bove-origin-scarf",
+		"url": "https://shop.whitney.org/products/carol-bove-origin-scarf",
+		"name": "Carol Bove Origin Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 40000,
+			"max": 40000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"For Art Enthusiasts",
+			"Gifts",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383098224930",
+		"museum": "whitney",
+		"handle": "carol-bove-corridor-scarf",
+		"url": "https://shop.whitney.org/products/carol-bove-corridor-scarf",
+		"name": "Carol Bove Corridor Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 50000,
+			"max": 50000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"For Art Enthusiasts",
+			"Gifts",
+			"Made by Artists",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383098290466",
+		"museum": "whitney",
+		"handle": "carol-bove-scribbles-scarf",
+		"url": "https://shop.whitney.org/products/carol-bove-scribbles-scarf",
+		"name": "Carol Bove Scribbles Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 18500,
+			"max": 18500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383099306274",
+		"museum": "whitney",
+		"handle": "whitney-responsive-w-tie",
+		"url": "https://shop.whitney.org/products/whitney-responsive-w-tie",
+		"name": "Whitney Responsive W Tie",
+		"garment": "tie",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383100584226",
+		"museum": "whitney",
+		"handle": "whitney-cattelan-football-scarf",
+		"url": "https://shop.whitney.org/products/whitney-cattelan-football-scarf",
+		"name": "Whitney Cattelan Football Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"New",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8383104123170",
+		"museum": "whitney",
+		"handle": "hay-artistas-entre-nosotres-sweatshirt",
+		"url": "https://shop.whitney.org/products/hay-artistas-entre-nosotres-sweatshirt",
+		"name": "Hay Artistas Entre Nosotres Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Artists Among Us",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8544157729058",
+		"museum": "whitney",
+		"handle": "there-are-artists-among-us-sweatshirt",
+		"url": "https://shop.whitney.org/products/there-are-artists-among-us-sweatshirt",
+		"name": "There Are Artists Among Us Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Artists Among Us",
+			"Gifts",
+			"Tops",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8819473776930",
+		"museum": "whitney",
+		"handle": "whitney-new-york-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-new-york-t-shirt",
+		"name": "Whitney New York T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"$50 and Under",
+			"Apparel & Accessories",
+			"Gifts",
+			"Our NYC Home",
+			"Tops",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8851795640610",
+		"museum": "whitney",
+		"handle": "hustle-forward-hat",
+		"url": "https://shop.whitney.org/products/hustle-forward-hat",
+		"name": "Hustle Forward Hat",
+		"garment": "hat",
+		"price": {
+			"min": 4200,
+			"max": 4200
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8890665369890",
+		"museum": "whitney",
+		"handle": "edward-hopper-self-portrait-bandana",
+		"url": "https://shop.whitney.org/products/edward-hopper-self-portrait-bandana",
+		"name": "Edward Hopper Self Portrait Bandana",
+		"garment": "scarf",
+		"price": {
+			"min": 2800,
+			"max": 2800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edward Hopper",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8894015144226",
+		"museum": "whitney",
+		"handle": "hay-artistas-entre-nosotres-t-shirt",
+		"url": "https://shop.whitney.org/products/hay-artistas-entre-nosotres-t-shirt",
+		"name": "Hay Artistas Entre Nosotres T-Shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Artists Among Us",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8921913819426",
+		"museum": "whitney",
+		"handle": "edward-hopper-queensborough-bridge-silk-scarf",
+		"url": "https://shop.whitney.org/products/edward-hopper-queensborough-bridge-silk-scarf",
+		"name": "Edward Hopper Queensborough Bridge Silk Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 14000,
+			"max": 14000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edward Hopper",
+			"Gifts",
+			"Our NYC Home",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8937205596450",
+		"museum": "whitney",
+		"handle": "whitney-museum-of-american-art-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-museum-of-american-art-t-shirt",
+		"name": "Whitney Museum of American Art T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Tops",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8937211101474",
+		"museum": "whitney",
+		"handle": "whitney-museum-of-american-art-hat",
+		"url": "https://shop.whitney.org/products/whitney-museum-of-american-art-hat",
+		"name": "Whitney Museum of American Art Hat",
+		"garment": "hat",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8938971988258",
+		"museum": "whitney",
+		"handle": "whitney-ny-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-ny-t-shirt",
+		"name": "Whitney NY T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Our NYC Home",
+			"Tops",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8958510858530",
+		"museum": "whitney",
+		"handle": "short-sleeve-t-shirt",
+		"url": "https://shop.whitney.org/products/short-sleeve-t-shirt",
+		"name": "Short Sleeve T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 7000,
+			"max": 7000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Total Luxury Spa",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8958513578274",
+		"museum": "whitney",
+		"handle": "long-sleeve-t-shirt",
+		"url": "https://shop.whitney.org/products/long-sleeve-t-shirt",
+		"name": "Long Sleeve T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 10000,
+			"max": 10000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Total Luxury Spa",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:8967404388642",
+		"museum": "whitney",
+		"handle": "whitney-biennial-2024-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-2024-t-shirt",
+		"name": "Whitney Biennial 2024 T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9193329492258",
+		"museum": "whitney",
+		"handle": "emerging-artist-baby-hat",
+		"url": "https://shop.whitney.org/products/emerging-artist-baby-hat",
+		"name": "Emerging Artist Baby Hat",
+		"garment": "hat",
+		"price": {
+			"min": 2500,
+			"max": 2500
+		},
+		"sizes": [
+			{
+				"label": "0M",
+				"available": true
+			},
+			{
+				"label": "3M",
+				"available": true
+			},
+			{
+				"label": "6M",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists",
+			"Gifts",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9215968936226",
+		"museum": "whitney",
+		"handle": "indigenous-land-corduroy-hat",
+		"url": "https://shop.whitney.org/products/indigenous-land-corduroy-hat",
+		"name": "Indigenous Land Corduroy Hat",
+		"garment": "hat",
+		"price": {
+			"min": 4500,
+			"max": 4500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Hats",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9417109274914",
+		"museum": "whitney",
+		"handle": "whitney-biennial-white-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-white-t-shirt",
+		"name": "Whitney Biennial White T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9417118974242",
+		"museum": "whitney",
+		"handle": "whitney-biennial-gray-crew-sweatshirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-gray-crew-sweatshirt",
+		"name": "Whitney Biennial Gray Crew Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9419578343714",
+		"museum": "whitney",
+		"handle": "harold-cohen-aaron-t-shirt",
+		"url": "https://shop.whitney.org/products/harold-cohen-aaron-t-shirt",
+		"name": "Harold Cohen: AARON T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"$50 and Under",
+			"Apparel & Accessories",
+			"Gifts",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9480857387298",
+		"museum": "whitney",
+		"handle": "basquiat-hollywood-africans-hoodie",
+		"url": "https://shop.whitney.org/products/basquiat-hollywood-africans-hoodie",
+		"name": "Basquiat \"Hollywood Africans\" Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 25000,
+			"max": 25000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9494766059810",
+		"museum": "whitney",
+		"handle": "whitney-ailey-dancer-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-ailey-dancer-kids-t-shirt",
+		"name": "Whitney Ailey Dancer Kids T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 3000,
+			"max": 3000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"For Emerging Artists"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9497275760930",
+		"museum": "whitney",
+		"handle": "whitney-biennial-stadium-jacket",
+		"url": "https://shop.whitney.org/products/whitney-biennial-stadium-jacket",
+		"name": "Whitney Biennial Stadium Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 15000,
+			"max": 15000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9545101508898",
+		"museum": "whitney",
+		"handle": "mickalene-thomas-afro-goddess-hoodie",
+		"url": "https://shop.whitney.org/products/mickalene-thomas-afro-goddess-hoodie",
+		"name": "Mickalene Thomas \"Afro Goddess\" Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 22500,
+			"max": 22500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9545201254690",
+		"museum": "whitney",
+		"handle": "mickalene-thomas-carla-hoodie",
+		"url": "https://shop.whitney.org/products/mickalene-thomas-carla-hoodie",
+		"name": "Mickalene Thomas \"Carla\" Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 22500,
+			"max": 22500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9602193654050",
+		"museum": "whitney",
+		"handle": "basquiat-new-york-new-wave-cap",
+		"url": "https://shop.whitney.org/products/basquiat-new-york-new-wave-cap",
+		"name": "Basquiat \"New York/New Wave\" Cap",
+		"garment": "hat",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9701223203106",
+		"museum": "whitney",
+		"handle": "christine-sun-kim-ghosting-ghosted-sweatshirt",
+		"url": "https://shop.whitney.org/products/christine-sun-kim-ghosting-ghosted-sweatshirt",
+		"name": "Christine Sun Kim Ghosting/Ghosted Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 9500,
+			"max": 9500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9726177870114",
+		"museum": "whitney",
+		"handle": "basquiat-new-york-new-wave-hoodie",
+		"url": "https://shop.whitney.org/products/basquiat-new-york-new-wave-hoodie",
+		"name": "Basquiat \"New York/New Wave\" Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 13200,
+			"max": 13200
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Our NYC Home",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9831663894818",
+		"museum": "whitney",
+		"handle": "isamu-noguchi-humpty-dumpty-t-shirt",
+		"url": "https://shop.whitney.org/products/isamu-noguchi-humpty-dumpty-t-shirt",
+		"name": "Isamu Noguchi \"Humpty Dumpty\" T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": false
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9858276720930",
+		"museum": "whitney",
+		"handle": "basquiat-pez-dispenser-crewneck",
+		"url": "https://shop.whitney.org/products/basquiat-pez-dispenser-crewneck",
+		"name": "Basquiat \"Pez Dispenser\" Crewneck",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 13200,
+			"max": 13200
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9859582198050",
+		"museum": "whitney",
+		"handle": "robert-indiana-new-glory-penny-hoodie",
+		"url": "https://shop.whitney.org/products/robert-indiana-new-glory-penny-hoodie",
+		"name": "Robert Indiana \"New Glory Penny\" Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 12400,
+			"max": 12400
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9859596058914",
+		"museum": "whitney",
+		"handle": "robert-indiana-love-patch-dad-cap",
+		"url": "https://shop.whitney.org/products/robert-indiana-love-patch-dad-cap",
+		"name": "Robert Indiana \"Love\" Patch Dad Cap",
+		"garment": "hat",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9868835848482",
+		"museum": "whitney",
+		"handle": "calder-kids-t-shirt",
+		"url": "https://shop.whitney.org/products/calder-kids-t-shirt",
+		"name": "Calder Kid's T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "Kids 2",
+				"available": true
+			},
+			{
+				"label": "Kids 4",
+				"available": true
+			},
+			{
+				"label": "Kids 6",
+				"available": true
+			},
+			{
+				"label": "Kids 8",
+				"available": true
+			},
+			{
+				"label": "Kids 10",
+				"available": true
+			},
+			{
+				"label": "Kids 12",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"For Emerging Artists"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9868839780642",
+		"museum": "whitney",
+		"handle": "calder-spider-icon-dad-cap",
+		"url": "https://shop.whitney.org/products/calder-spider-icon-dad-cap",
+		"name": "Calder \"Spider Icon\" Dad Cap",
+		"garment": "hat",
+		"price": {
+			"min": 4800,
+			"max": 4800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9868843286818",
+		"museum": "whitney",
+		"handle": "calder-romulus-and-remus-crewneck-sweatshirt",
+		"url": "https://shop.whitney.org/products/calder-romulus-and-remus-crewneck-sweatshirt",
+		"name": "Calder \"Romulus and Remus\" Crewneck Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 20000,
+			"max": 20000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9868848005410",
+		"museum": "whitney",
+		"handle": "calder-eye-icon-dad-cap",
+		"url": "https://shop.whitney.org/products/calder-eye-icon-dad-cap",
+		"name": "Calder \"Eye Icon\" Dad Cap",
+		"garment": "hat",
+		"price": {
+			"min": 4800,
+			"max": 4800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9868853903650",
+		"museum": "whitney",
+		"handle": "calder-the-forest-is-the-best-place-t-shirt",
+		"url": "https://shop.whitney.org/products/calder-the-forest-is-the-best-place-t-shirt",
+		"name": "Calder \"The Forest is the Best Place\" T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8800,
+			"max": 8800
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": false
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9887499747618",
+		"museum": "whitney",
+		"handle": "whitney-museum-of-american-white-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-museum-of-american-white-t-shirt",
+		"name": "Whitney Museum of American White T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Gifts",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Tops",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9887507480866",
+		"museum": "whitney",
+		"handle": "shawn-walker-man-with-bubble-t-shirt",
+		"url": "https://shop.whitney.org/products/shawn-walker-man-with-bubble-t-shirt",
+		"name": "Shawn Walker \"Man with Bubble\" T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9887513215266",
+		"museum": "whitney",
+		"handle": "deborah-remington-haddonfield-jacket",
+		"url": "https://shop.whitney.org/products/deborah-remington-haddonfield-jacket",
+		"name": "Deborah Remington \"Haddonfield\" Jacket",
+		"garment": "jacket",
+		"price": {
+			"min": 15500,
+			"max": 15500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9887522193698",
+		"museum": "whitney",
+		"handle": "whitney-biennial-black-crew-sweatshirt",
+		"url": "https://shop.whitney.org/products/whitney-biennial-black-crew-sweatshirt",
+		"name": "Whitney Biennial Black Crew Sweatshirt",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 8000,
+			"max": 8000
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Biennial Heritage",
+			"Tops",
+			"Whitney Biennial"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9887527534882",
+		"museum": "whitney",
+		"handle": "calder-clown-hoodie",
+		"url": "https://shop.whitney.org/products/calder-clown-hoodie",
+		"name": "Calder Clown Hoodie",
+		"garment": "hoodie",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "XS",
+				"available": true
+			},
+			{
+				"label": "S",
+				"available": true
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			},
+			{
+				"label": "2XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9900650430754",
+		"museum": "whitney",
+		"handle": "corduroy-script-ny-ny-cap",
+		"url": "https://shop.whitney.org/products/corduroy-script-ny-ny-cap",
+		"name": "Corduroy Script NY NY Cap",
+		"garment": "hat",
+		"price": {
+			"min": 7000,
+			"max": 7000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Our NYC Home"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9924394615074",
+		"museum": "whitney",
+		"handle": "lynn-hershman-leeson-giggling-machine-scarf",
+		"url": "https://shop.whitney.org/products/lynn-hershman-leeson-giggling-machine-scarf",
+		"name": "Lynn Hershman Leeson \"Giggling Machine\" Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 5000,
+			"max": 5000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Scarves & Ties"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9946733019426",
+		"museum": "whitney",
+		"handle": "grace-rosario-perkins-exhibition-t-shirt",
+		"url": "https://shop.whitney.org/products/grace-rosario-perkins-exhibition-t-shirt",
+		"name": "Grace Rosario Perkins Exhibition T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 8500,
+			"max": 8500
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": true
+			},
+			{
+				"label": "L",
+				"available": true
+			},
+			{
+				"label": "XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9949553721634",
+		"museum": "whitney",
+		"handle": "pink-whitney-cap",
+		"url": "https://shop.whitney.org/products/pink-whitney-cap",
+		"name": "Pink Whitney Cap",
+		"garment": "hat",
+		"price": {
+			"min": 3500,
+			"max": 3500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Gifts",
+			"Hats",
+			"Whitney"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9950069391650",
+		"museum": "whitney",
+		"handle": "edges-of-ailey-exhibition-t-shirt",
+		"url": "https://shop.whitney.org/products/edges-of-ailey-exhibition-t-shirt",
+		"name": "Edges of Ailey Exhibition T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": true
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9950077387042",
+		"museum": "whitney",
+		"handle": "whitney-ailey-dancer-t-shirt",
+		"url": "https://shop.whitney.org/products/whitney-ailey-dancer-t-shirt",
+		"name": "Whitney Ailey Dancer T-shirt",
+		"garment": "tee",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "S",
+				"available": false
+			},
+			{
+				"label": "M",
+				"available": false
+			},
+			{
+				"label": "L",
+				"available": false
+			},
+			{
+				"label": "XL",
+				"available": false
+			},
+			{
+				"label": "2XL",
+				"available": false
+			},
+			{
+				"label": "3XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	},
+	{
+		"id": "whitney:9973115388194",
+		"museum": "whitney",
+		"handle": "basquiat-beat-bop-crown-beanie",
+		"url": "https://shop.whitney.org/products/basquiat-beat-bop-crown-beanie",
+		"name": "Basquiat \"Beat Bop Crown\" Beanie",
+		"garment": "hat",
+		"price": {
+			"min": 5500,
+			"max": 5500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Art & Artists",
+			"Edges of Ailey",
+			"Hats"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-10-26T16:07:45.525Z"
+	}
+]
