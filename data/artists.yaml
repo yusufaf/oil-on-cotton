@@ -1,0 +1,212 @@
+# Artists whose work appears on pieces in the catalog, for the checklist's Artist column.
+# src/lib/artists.ts matches a piece to an artist when one of the artist's keys appears in the
+# piece's name as whole words, or equals one of its tags. Keys are the name, the aliases, and
+# the titles of works at the piece's museum.
+#
+# - An alias goes in only when it cannot mean anything else in a clothing name ("Basquiat",
+#   not "Thomas" or "Indiana").
+# - A work goes in only when a piece names the work but not the artist, with a source showing
+#   the title is that artist's work. It counts only at that museum.
+# - Every artist has a Wikidata item, checked against its English label.
+# - Sorted by surname. Pieces naming two artists list them in this order.
+
+- id: antimenes-painter
+  name: Antimenes Painter
+  wikidata: Q577906
+  aliases: [Antimenes]
+
+- id: judy-baca
+  name: Judy Baca
+  wikidata: Q6304327
+
+- id: john-baldessari
+  name: John Baldessari
+  wikidata: Q683378
+
+- id: jean-michel-basquiat
+  name: Jean-Michel Basquiat
+  wikidata: Q155407
+  aliases: [Basquiat]
+
+- id: ambrosius-bosschaert
+  name: Ambrosius Bosschaert
+  wikidata: Q459665
+
+- id: francois-boucher
+  name: François Boucher
+  wikidata: Q180932
+  works:
+    # Beauvais tapestry woven after Boucher's design, from The Story of Psyche.
+    - title: Psyche at the Basketmakers
+      museum: getty
+      url: https://www.getty.edu/art/collection/object/103SC7
+
+- id: carol-bove
+  name: Carol Bove
+  wikidata: Q5044261
+
+- id: gustave-caillebotte
+  name: Gustave Caillebotte
+  wikidata: Q295144
+  aliases: [Caillebotte]
+
+- id: alexander-calder
+  name: Alexander Calder
+  wikidata: Q151580
+  aliases: [Calder]
+
+- id: maurizio-cattelan
+  name: Maurizio Cattelan
+  wikidata: Q655398
+  aliases: [Cattelan]
+
+- id: paul-cezanne
+  name: Paul Cézanne
+  wikidata: Q35548
+  aliases: [Cézanne]
+
+- id: harold-cohen
+  name: Harold Cohen
+  wikidata: Q92723
+
+- id: edgar-degas
+  name: Edgar Degas
+  wikidata: Q46373
+  aliases: [Degas]
+
+- id: albrecht-durer
+  name: Albrecht Dürer
+  wikidata: Q5580
+  aliases: [Dürer]
+
+- id: paul-gauguin
+  name: Paul Gauguin
+  wikidata: Q37693
+  aliases: [Gauguin]
+
+- id: vincent-van-gogh
+  name: Vincent van Gogh
+  wikidata: Q5582
+  aliases: [Van Gogh]
+
+- id: keith-haring
+  name: Keith Haring
+  wikidata: Q485635
+
+- id: lynn-hershman-leeson
+  name: Lynn Hershman Leeson
+  wikidata: Q6709060
+
+- id: joris-hoefnagel
+  name: Joris Hoefnagel
+  wikidata: Q1388840
+  aliases: [Hoefnagel]
+
+- id: edward-hopper
+  name: Edward Hopper
+  wikidata: Q203401
+
+- id: jan-van-huysum
+  name: Jan van Huysum
+  wikidata: Q527869
+  aliases: [Van Huysum]
+
+- id: robert-indiana
+  name: Robert Indiana
+  wikidata: Q169281
+
+- id: christine-sun-kim
+  name: Christine Sun Kim
+  wikidata: Q19664324
+
+- id: scooter-laforge
+  name: Scooter LaForge
+  wikidata: Q113870948
+
+- id: roy-lichtenstein
+  name: Roy Lichtenstein
+  wikidata: Q151679
+  # Merchandise for "Roy Lichtenstein: Like New", Whitney, Oct 2026 to May 2027:
+  # https://whitney.org/exhibitions/lichtenstein
+  works:
+    - title: Cathedral #2
+      museum: whitney
+      url: https://whitney.org/collection/works/60962
+    - title: Crying Girl
+      museum: whitney
+      url: https://whitney.org/collection/works/65512
+    - title: Girl in Window
+      museum: whitney
+      url: https://whitney.org/collection/works/16289
+    - title: Knock! Knock!
+      museum: whitney
+      url: https://www.centrepompidou.fr/en/ressources/oeuvre/cEepqq
+    - title: Laughing Cat
+      museum: whitney
+      url: https://whitney.org/exhibitions/lichtenstein/art?section=3
+    - title: Little Big Painting
+      museum: whitney
+      url: https://whitney.org/exhibitions/lichtenstein/art?section=4
+    - title: Ohhh... Alright...
+      museum: whitney
+      url: https://en.wikipedia.org/wiki/Ohhh...Alright...
+    - title: Real Estate
+      museum: whitney
+      url: https://whitney.org/collection/works/60972
+    - title: Standing Explosion
+      museum: whitney
+      url: https://www.walkerart.org/collections/artwork/standing-explosion/
+    - title: Sweet Dreams, Baby!
+      museum: whitney
+      url: https://whitney.org/collection/works/60949
+
+- id: edouard-manet
+  name: Édouard Manet
+  wikidata: Q40599
+  aliases: [Manet]
+
+- id: yoshitomo-nara
+  name: Yoshitomo Nara
+  wikidata: Q2015324
+
+- id: isamu-noguchi
+  name: Isamu Noguchi
+  wikidata: Q442628
+
+- id: grace-rosario-perkins
+  name: Grace Rosario Perkins
+  wikidata: Q116746647
+
+- id: raymond-pettibon
+  name: Raymond Pettibon
+  wikidata: Q564945
+  aliases: [Pettibon]
+
+- id: pablo-picasso
+  name: Pablo Picasso
+  wikidata: Q5593
+
+- id: odilon-redon
+  name: Odilon Redon
+  wikidata: Q154349
+  aliases: [Redon]
+
+- id: deborah-remington
+  name: Deborah Remington
+  wikidata: Q5248361
+
+- id: tavares-strachan
+  name: Tavares Strachan
+  wikidata: Q7689031
+
+- id: mickalene-thomas
+  name: Mickalene Thomas
+  wikidata: Q3311753
+
+- id: rirkrit-tiravanija
+  name: Rirkrit Tiravanija
+  wikidata: Q989861
+
+- id: shawn-walker
+  name: Shawn Walker
+  wikidata: Q42156278
