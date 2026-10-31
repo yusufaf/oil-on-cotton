@@ -10,7 +10,6 @@ const museums = museumSchema.array().parse(parse(readFileSync('data/museums.yaml
 const artist = (id: string, name: string, extra: Partial<Artist> = {}): Artist => ({
 	id,
 	name,
-	surname: name.split(' ').at(-1)!,
 	wikidata: 'Q1',
 	aliases: [],
 	works: [],
@@ -25,6 +24,11 @@ describe('normalize', () => {
 		expect(normalize('Basquiat “Crown” Bucket Hat')).toBe('basquiat crown bucket hat');
 		expect(normalize('Ohhh... Alright...')).toBe('ohhh alright');
 		expect(normalize('Cathedral #2')).toBe('cathedral 2');
+	});
+
+	it('keeps letters that have no accent to strip, in any script', () => {
+		expect(normalize('Søren Kierkegaard')).toBe('søren kierkegaard');
+		expect(normalize('草間彌生 Dots')).toBe('草間彌生 dots');
 	});
 });
 

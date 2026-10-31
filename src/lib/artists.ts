@@ -15,7 +15,6 @@ export const artistSchema = z
 	.object({
 		id: z.string().regex(/^[a-z0-9-]+$/),
 		name: z.string().min(1),
-		surname: z.string().min(1),
 		wikidata: z.string().regex(/^Q\d+$/),
 		aliases: z.array(z.string().min(1)).default([]),
 		works: z.array(workSchema).default([]),
@@ -29,7 +28,7 @@ export function normalize(text: string): string {
 		.normalize('NFD')
 		.replace(/\p{M}/gu, '')
 		.toLowerCase()
-		.replace(/[^a-z0-9]+/g, ' ')
+		.replace(/[^\p{L}\p{N}]+/gu, ' ')
 		.trim();
 }
 
