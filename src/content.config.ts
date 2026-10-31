@@ -1,5 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { file } from 'astro/loaders';
+import { artistSchema } from './lib/artists';
 import { museumSchema } from './lib/museums';
 
 const museums = defineCollection({
@@ -7,4 +8,9 @@ const museums = defineCollection({
 	schema: museumSchema,
 });
 
-export const collections = { museums };
+const artists = defineCollection({
+	loader: file('data/artists.yaml'),
+	schema: artistSchema,
+});
+
+export const collections = { museums, artists };
