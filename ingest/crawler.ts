@@ -2,7 +2,7 @@ import { generateNonce, sign, type WebBotSigner } from 'web-bot-auth';
 import { allowAll, disallowAll, parseRobots, type Robots } from './robots.ts';
 
 export const PRODUCT_TOKEN = 'OilOnCottonBot';
-export const USER_AGENT = `${PRODUCT_TOKEN}/0.1 (+https://github.com/yusufaf/oil-on-cotton#crawler)`;
+export const USER_AGENT = `${PRODUCT_TOKEN}/0.1 (+https://bot.oiloncotton.com)`;
 
 const THROTTLE_STATUSES = new Set([429, 430, 503]);
 const MAX_REDIRECTS = 3;

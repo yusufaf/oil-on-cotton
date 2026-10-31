@@ -32,7 +32,7 @@ OilOnCottonBot reads public pages from the few museum shops whose terms allow it
 
 Shops whose terms prohibit automated collection are not crawled.
 
-To ask for a listing to be removed, or for a shop to be excluded, open an issue on this repository. Takedown requests are handled within 48 hours.
+To ask for a listing to be removed, or for a shop to be excluded, email bot@oiloncotton.com or open an issue on this repository. Takedown requests are handled within 48 hours.
 
 ### Running it
 
