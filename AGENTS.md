@@ -7,7 +7,7 @@
 - `bot/` is the Fly app that serves the key directory and the bot's about page. It has no dependencies; `test/bot.test.ts` checks it against `web-bot-auth`.
 - Site copy is drafted from per-room fact ledgers. No em dashes, and none of the banned words listed in `DESIGN.md`.
 - Use pnpm. Commits follow Conventional Commits; data updates use `chore(data): ...`.
-- Hosting is GitHub Pages (`deploy-pages.yml`). Until launch the site is served at `yusufaf.dev/oil-on-cotton/`, so build internal links with `href()` from `src/lib/paths.ts`, never a bare `/`.
+- Hosting is GitHub Pages (`deploy-pages.yml`) at `oiloncotton.com`. Build internal links with `href()` from `src/lib/paths.ts`, never a bare `/`, so a preview under a sub-path still works. Only `oiloncotton.com` is indexed; any other `site` builds with noindex.
 - `main` is protected: work on a branch and merge through a PR once the `build` check passes.
 
 ## Development

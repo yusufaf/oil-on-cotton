@@ -1,10 +1,10 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// Staging lives at yusufaf.dev/oil-on-cotton/ (a GitHub Pages project page under the
-// user site's custom domain). At launch: site https://oiloncotton.com, base '/', add public/CNAME.
+// Served by GitHub Pages at oiloncotton.com. The custom domain is set in the repository's Pages
+// settings (an Actions deploy ignores public/CNAME). Only this hostname is indexed: see
+// LAUNCH_HOSTNAME in src/lib/site.ts.
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://yusufaf.dev',
-	base: '/oil-on-cotton',
+	site: 'https://oiloncotton.com',
 });

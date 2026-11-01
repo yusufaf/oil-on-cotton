@@ -1,6 +1,6 @@
 # Oil on Cotton
 
-An independent, non-commercial index of clothing sold by museum shops. Each shop is a room. Every piece links to the shop that sells it, and nothing is sold here.
+An independent, non-commercial index of clothing sold by museum shops, at [oiloncotton.com](https://oiloncotton.com). Each shop is a room. Every piece links to the shop that sells it, and nothing is sold here.
 
 Oil on Cotton is not affiliated with or endorsed by any museum. Shop and museum names identify the shops; trademarks belong to their owners.
 

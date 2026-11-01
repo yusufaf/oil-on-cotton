@@ -16,8 +16,8 @@ interface Props {
 const UMAMI_WEBSITE_ID = '4578771b-d472-458f-815a-36bcfb9f95dd';
 
 const { title, description, wall, noindex = false } = Astro.props;
-// Staging must stay out of search results: GitHub Pages can't redirect it to the brand domain
-// at launch. Compare the hostname, since the site URL carries a trailing slash.
+// Only the brand domain is indexed, so a build for any other host (a preview, a fork) is not.
+// Compare the hostname, since the site URL carries a trailing slash.
 const indexable = Astro.site?.hostname === LAUNCH_HOSTNAME && !noindex;
 const canonical = indexable ? new URL(withSlash(Astro.url.pathname), Astro.site).href : undefined;
 const footerLinks = [
