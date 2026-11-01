@@ -20,7 +20,8 @@ const imageOf = (file: string) => {
 };
 
 // Every file must be 200 KB or less (DESIGN.md). A busy painting fits at 1280px only as AVIF,
-// so the WebP fallback, for browsers without AVIF, stops at 960px.
+// so the WebP fallback, for browsers without AVIF, stops at 960px. AVIF quality 40 keeps
+// mobile LCP under 2s on the Getty room (Lighthouse: 2.1s at 50, 1.8s at 40).
 const sizes = '(max-width: 720px) calc(100vw - 40px), 640px';
 const pictures = await Promise.all(
 	hangs.map(async ({ work }) => {
