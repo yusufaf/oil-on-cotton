@@ -201,12 +201,16 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
 - **checklist-sheet.** A label-stock panel holding the room's full list.
   - Header: "Checklist" in sheet-title, with "Showing N of M" on the right.
   - Below the header, the filters, then the sort. Each is a row of text buttons with counts, for example "T-shirts 37".
+  - Filter groups, as on the spike: All, T-shirts, Sweatshirts (with sweaters), Hoodies, Jackets and shirts, Hats, Scarves and ties, Socks, Other. Empty groups are left out. Sort: "Price, low to high" (default), "Price, high to low", "Name".
+  - Without JavaScript the whole list shows in the default order and the buttons stay hidden.
   - The active filter is weight 600 with a 2px underline. Filter buttons are real `<button>` elements with `aria-pressed`, at least 44px tall.
 - **checklist-row.**
   - **Link.** The piece name is the link to the shop (`target=_blank`, `rel="nofollow noopener"`, later routed through `/go/`). It has no underline at rest; it gets an underline on row hover and on focus.
   - **Separators.** Rows are separated by 1px rule lines.
   - **Optional fields.** Artist and kind are optional, and a blank artist cell stays blank, never filled with a dash. Kids' sizes read "T-shirt (kids)".
-  - **Unavailable items.** A sold-out item shows "Sold out" in the price column. A sale shows both prices with "on sale as of <date>", and expires after 7 days without a fresh check.
+  - **Sizes line.** Under the piece name, in meta size: sizes in stock, then the sold-out ones ("S, M, L · 2XL sold out"). One-size and sold-out pieces have no sizes line.
+  - **Unavailable items.** A sold-out item shows "Sold out" in the price column.
+  - **Sales.** Only a single price with a higher compare-at price counts as a sale. The price column shows the price with "was $65" beneath it, and the sizes line opens with "On sale as of 26 October". The sale marks drop after 14 days without a fresh check. That is 14, not 7, because the crawl is weekly and data PRs merge days later. The site rebuilds daily so the expiry applies.
 - **hang-label.** A museum tombstone in a fixed order:
   1. artist name (600)
   2. nationality and dates
@@ -216,7 +220,7 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
   6. "Sold by <shop>" in credit size
 
   Accession numbers must be verified against the owning museum before shipping.
-- **room-wall.** The H1 reads "Apparel from the <shop name>". The lede is facts from the ledger. The meta line carries the check date and the independence sentence, naming the museum. The paint note reads "Wall: <Ridgway name>" on one line and "after Ridgway, 1912" on the next.
+- **room-wall.** A room lives at `/rooms/<museum id>/`, for automated shops with at least 8 pieces. The H1 reads "Apparel from the <shop name>". The lede is facts from the ledger. The meta line carries the check date and the independence sentence, naming the museum. The paint note reads "Wall: <Ridgway name>" on one line and "after Ridgway, 1912" on the next.
 - **plan-room.** The whole room is one link, with its accessible name taken from its text. It shows the shop name (Besley) and a meta line with the count and wall name. It is filled with the room's wall colour. The room name underlines on hover.
 - **Independence line.** It appears on every page: in the room meta line, and in the footer of the hall pages. Standard text: "An independent, non-commercial index. It is not affiliated with or endorsed by any museum. Names identify the shops; trademarks belong to their owners."
 

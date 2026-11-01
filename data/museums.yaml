@@ -17,7 +17,7 @@
     reviewedAt: "2026-10-25"
     verdict: listed-noncommercial
     clause: "(3) Using Site Content for commercial purposes is prohibited;"
-  wall: { name: Ox-blood Red, hex: "#841B2D", source: iscc-nbs-centroid }
+  wall: { name: Ox-blood Red, hex: "#841B2D", source: iscc-nbs-centroid, text: on-wall-warm }
 
 - id: whitney
   shop: Whitney Shop

@@ -12,6 +12,7 @@
 	--plan-ink: #22262a;
 	--rule: #c9d0ce;
 	--on-wall: #f1f3f2;
+	--on-wall-warm: #f6f1f1;
 
 	--serif: 'Besley', Georgia, serif;
 	--sans: 'Schibsted Grotesk Variable', system-ui, sans-serif;
@@ -63,4 +64,19 @@ nav a[aria-current='page'] {
 :focus-visible {
 	outline: 3px solid currentColor;
 	outline-offset: 3px;
+}
+
+/* Layout rules such as `display: grid` would otherwise show elements marked hidden. */
+[hidden] {
+	display: none !important;
+}
+
+/* Rooms: the wall paints the whole page, and focus is 2px (3px is for the hall). */
+html.room {
+	background: var(--wall);
+	color: var(--on-wall-text);
+}
+
+html.room :focus-visible {
+	outline-width: 2px;
 }

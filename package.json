@@ -15,7 +15,8 @@
 		"prepare": "husky",
 		"ingest": "node ingest/run.ts",
 		"keygen": "node scripts/keygen.ts",
-		"artists": "node scripts/artists-report.ts"
+		"artists": "node scripts/artists-report.ts",
+		"check:dist": "node scripts/check-dist.ts"
 	},
 	"dependencies": {
 		"@fontsource-variable/schibsted-grotesk": "^5.3.0",

@@ -1,0 +1,161 @@
+---
+import { getCollection } from 'astro:content';
+import Checklist, { type Row } from '../../components/Checklist.astro';
+import Base from '../../layouts/Base.astro';
+import { matchArtists } from '../../lib/artists';
+import type { Museum } from '../../lib/museums';
+import {
+	day,
+	fillLede,
+	groupCounts,
+	groupOf,
+	kindLabel,
+	priceText,
+	roomFacts,
+	roomMuseums,
+	sizesLine,
+	sortKeys,
+} from '../../lib/room';
+
+export async function getStaticPaths() {
+	const museums = (await getCollection('museums')).map((e) => e.data);
+	const items = (await getCollection('catalog')).map((e) => e.data);
+	const known = new Set(museums.map((m) => m.id));
+	const strays = [...new Set(items.map((i) => i.museum).filter((id) => !known.has(id)))];
+	if (strays.length > 0) throw new Error(`catalog.json has pieces from museums not in museums.yaml: ${strays.join(', ')}`);
+
+	const rooms = roomMuseums(museums, items);
+	const ledes = new Map((await getCollection('rooms')).map((e) => [e.id, e.data.lede]));
+	const roomIds = new Set(rooms.map((m) => m.id));
+	const missing = rooms.filter((m) => !ledes.has(m.id)).map((m) => m.id);
+	const orphans = [...ledes.keys()].filter((id) => !roomIds.has(id));
+	if (missing.length > 0) throw new Error(`data/rooms.yaml has no lede for: ${missing.join(', ')}`);
+	if (orphans.length > 0) throw new Error(`data/rooms.yaml has ledes for rooms that don't exist: ${orphans.join(', ')}`);
+
+	return rooms.map((museum) => ({
+		params: { museum: museum.id },
+		props: { museum, lede: ledes.get(museum.id)! },
+	}));
+}
+
+interface Props {
+	museum: Museum;
+	lede: string;
+}
+
+const { museum, lede } = Astro.props;
+const now = new Date();
+const items = (await getCollection('catalog')).map((e) => e.data).filter((i) => i.museum === museum.id);
+const artists = (await getCollection('artists')).map((e) => e.data);
+const host = (await getCollection('hosts')).find((e) => e.id === museum.id)?.data;
+if (!host?.lastSuccess) throw new Error(`data/hosts.json has no successful crawl for ${museum.id}`);
+
+const names = new Map(artists.map((a) => [a.id, a.name]));
+const facts = roomFacts(items, artists);
+const ledeText = fillLede(museum.id, lede, facts);
+const keys = sortKeys(items);
+const rows: Row[] = items
+	.map((item) => {
+		const price = priceText(item, now);
+		return {
+			id: item.id,
+			name: item.name,
+			url: item.url,
+			artists: matchArtists(item, artists)
+				.map((id) => names.get(id))
+				.join(', '),
+			kind: kindLabel(item),
+			group: groupOf(item.garment),
+			price,
+			sizes: sizesLine(item, price),
+			keys: keys.get(item.id)!,
+		};
+	})
+	.sort((a, b) => a.keys.asc - b.keys.asc);
+const storeHost = new URL(museum.storeUrl).hostname.replace(/^www\./, '');
+---
+
+<Base title={`Apparel from the ${museum.shop} · Oil on Cotton`} description={ledeText} wall={museum.wall}>
+	<main>
+		<section class="wall">
+			<div class="title">
+				<h1>Apparel from the {museum.shop}</h1>
+				<p class="lede">{ledeText}</p>
+				<p class="meta">
+					Prices checked {day(facts.oldestCheck)} at {storeHost}. This index is independent and is not affiliated with
+					or endorsed by the {museum.museum}. Every piece links to the shop, where it is sold.
+				</p>
+			</div>
+			<p class="paint">Wall: {museum.wall.name}<br />after Ridgway, 1912</p>
+		</section>
+		<Checklist shop={museum.shop} rows={rows} groups={groupCounts(items)} />
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: 0 var(--gutter) 120px;
+		box-sizing: border-box;
+	}
+
+	.wall {
+		display: grid;
+		grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+		gap: 48px;
+		align-items: end;
+		padding: 96px 0 72px;
+	}
+
+	.title {
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+		max-width: 820px;
+	}
+
+	h1 {
+		margin: 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: clamp(44px, 6vw, 76px);
+		line-height: 1.04;
+		letter-spacing: -0.02em;
+	}
+
+	.lede {
+		margin: 0;
+		font-size: 24px;
+		line-height: 1.4;
+		max-width: 32ch;
+	}
+
+	.meta {
+		margin: 0;
+		font-size: 15px;
+		line-height: 1.55;
+		max-width: 62ch;
+	}
+
+	.paint {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.5;
+		justify-self: end;
+		text-align: right;
+	}
+
+	@media (max-width: 720px) {
+		.wall {
+			grid-template-columns: minmax(0, 1fr);
+			padding-top: 48px;
+			gap: 24px;
+		}
+
+		.paint {
+			justify-self: start;
+			text-align: left;
+		}
+	}
+</style>

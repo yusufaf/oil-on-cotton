@@ -2,8 +2,13 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { isOpen } from '../lib/museums';
+import { href } from '../lib/paths';
+import { roomMuseums } from '../lib/room';
 
 const museums = (await getCollection('museums')).map((entry) => entry.data);
+const items = (await getCollection('catalog')).map((entry) => entry.data);
+const rooms = new Set(roomMuseums(museums, items).map((m) => m.id));
+const count = (id: string) => items.filter((i) => i.museum === id).length;
 const open = museums.filter(isOpen);
 const closed = museums.filter((m) => m.automation === 'pending');
 ---
@@ -23,8 +28,16 @@ const closed = museums.filter((m) => m.automation === 'pending');
 					open.map((m) => (
 						<li>
 							<span class="swatch" style={`background: ${m.wall.hex}`} aria-hidden="true" />
-							<span class="name">{m.shop}</span>
-							<span>Walls: {m.wall.name}</span>
+							{rooms.has(m.id) ? (
+								<a class="name" href={href(`rooms/${m.id}/`)}>
+									{m.shop}
+								</a>
+							) : (
+								<span class="name">{m.shop}</span>
+							)}
+							<span>
+								{rooms.has(m.id) ? `${count(m.id)} pieces · ` : ''}Walls: {m.wall.name}
+							</span>
 						</li>
 					))
 				}
@@ -91,6 +104,15 @@ const closed = museums.filter((m) => m.automation === 'pending');
 	.swatch {
 		width: 56px;
 		height: 56px;
+	}
+
+	a.name {
+		text-decoration: none;
+	}
+
+	a.name:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
 	}
 
 	.name {

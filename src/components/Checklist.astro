@@ -1,0 +1,281 @@
+---
+import type { Price } from '../lib/room';
+
+export interface Row {
+	id: string;
+	name: string;
+	url: string;
+	artists: string;
+	kind: string;
+	group: string;
+	price: Price;
+	sizes?: string;
+	keys: { asc: number; desc: number; name: number };
+}
+
+interface Props {
+	shop: string;
+	rows: Row[];
+	groups: { id: string; label: string; count: number }[];
+}
+
+const { shop, rows, groups } = Astro.props;
+const sorts = [
+	['asc', 'Price, low to high'],
+	['desc', 'Price, high to low'],
+	['name', 'Name'],
+] as const;
+---
+
+<section class="sheet" aria-labelledby="checklist" data-checklist>
+	<div class="sheet-head">
+		<h2 id="checklist">Checklist</h2>
+		<p aria-live="polite">Showing <span data-shown>{rows.length}</span> of {rows.length}</p>
+	</div>
+	<div class="controls" role="group" aria-label="Filter by kind" data-filters hidden>
+		<button type="button" data-group="" aria-pressed="true">All {rows.length}</button>
+		{
+			groups.map((g) => (
+				<button type="button" data-group={g.id} aria-pressed="false">
+					{g.label} {g.count}
+				</button>
+			))
+		}
+	</div>
+	<div class="controls sorts" role="group" aria-label="Sort" data-sorts hidden>
+		<span>Sort by</span>
+		{
+			sorts.map(([key, label]) => (
+				<button type="button" data-sort={key} aria-pressed={key === 'asc' ? 'true' : 'false'}>
+					{label}
+				</button>
+			))
+		}
+	</div>
+	<div class="row head" aria-hidden="true">
+		<span>Piece</span><span class="artist">Artist</span><span class="kind">Kind</span><span class="price">Price</span>
+	</div>
+	<ul data-rows>
+		{
+			rows.map((r) => (
+				<li
+					class="row"
+					data-group={r.group}
+					data-asc={r.keys.asc}
+					data-desc={r.keys.desc}
+					data-name={r.keys.name}
+				>
+					<span class="piece">
+						<a href={r.url} target="_blank" rel="nofollow noopener">
+							{r.name}
+						</a>
+						{r.sizes && <span class="sizes">{r.sizes}</span>}
+					</span>
+					<span class="artist">{r.artists}</span>
+					<span class="kind">{r.kind}</span>
+					<span class="price">
+						{r.price.text}
+						{r.price.was && (
+							<span class="was">
+								was <del>{r.price.was}</del>
+							</span>
+						)}
+					</span>
+				</li>
+			))
+		}
+	</ul>
+	<p class="note">
+		Names and prices as listed by the {shop}. Sizes and stock change between checks, and the shop has the final word on
+		both.
+	</p>
+</section>
+
+<script>
+	// Filters and sorting only. Without this script the whole list shows in price order and the
+	// buttons stay hidden.
+	for (const sheet of document.querySelectorAll<HTMLElement>('[data-checklist]')) {
+		const list = sheet.querySelector<HTMLElement>('[data-rows]')!;
+		const rows = [...list.querySelectorAll<HTMLElement>('li')];
+		const shown = sheet.querySelector<HTMLElement>('[data-shown]')!;
+		const press = (buttons: NodeListOf<HTMLElement>, on: HTMLElement) => {
+			for (const b of buttons) b.setAttribute('aria-pressed', String(b === on));
+		};
+
+		const filters = sheet.querySelectorAll<HTMLElement>('[data-filters] button');
+		for (const button of filters) {
+			button.addEventListener('click', () => {
+				const group = button.dataset.group;
+				let count = 0;
+				for (const row of rows) {
+					row.hidden = Boolean(group) && row.dataset.group !== group;
+					if (!row.hidden) count++;
+				}
+				shown.textContent = String(count);
+				press(filters, button);
+			});
+		}
+
+		const sorts = sheet.querySelectorAll<HTMLElement>('[data-sorts] button');
+		for (const button of sorts) {
+			button.addEventListener('click', () => {
+				const key = button.dataset.sort as 'asc' | 'desc' | 'name';
+				rows.sort((a, b) => Number(a.dataset[key]) - Number(b.dataset[key]));
+				list.append(...rows);
+				press(sorts, button);
+			});
+		}
+
+		for (const controls of sheet.querySelectorAll<HTMLElement>('[data-filters], [data-sorts]')) controls.hidden = false;
+	}
+</script>
+
+<style>
+	.sheet {
+		background: var(--label);
+		color: var(--ink);
+		padding: 44px 48px 52px;
+	}
+
+	.sheet-head {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 8px 32px;
+		margin-bottom: 8px;
+	}
+
+	h2 {
+		margin: 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: 34px;
+		line-height: 1.1;
+	}
+
+	.sheet-head p {
+		margin: 0;
+		font-size: 15px;
+	}
+
+	.controls {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0 26px;
+		font-size: 16px;
+		margin-bottom: 4px;
+	}
+
+	.sorts {
+		gap: 0 22px;
+		font-size: 15px;
+		margin-bottom: 28px;
+	}
+
+	button {
+		appearance: none;
+		background: none;
+		border: 0;
+		margin: 0;
+		padding: 10px 0;
+		min-height: 44px;
+		font: inherit;
+		color: inherit;
+		cursor: pointer;
+		text-underline-offset: 6px;
+	}
+
+	button[aria-pressed='true'] {
+		font-weight: 600;
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-bottom: 1px solid var(--rule);
+	}
+
+	.row {
+		display: grid;
+		grid-template-columns: minmax(0, 5fr) minmax(0, 3fr) minmax(0, 2fr) 88px;
+		column-gap: 24px;
+		align-items: baseline;
+		padding: 13px 0;
+		border-top: 1px solid var(--rule);
+	}
+
+	li.row:hover {
+		background: var(--label-hover);
+	}
+
+	.head {
+		border-top: 0;
+		padding: 0 0 10px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.piece a {
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	li.row:hover .piece a,
+	.piece a:focus-visible {
+		text-decoration: underline;
+	}
+
+	.sizes,
+	.was {
+		display: block;
+		font-size: 15px;
+		line-height: 1.55;
+	}
+
+	.price {
+		text-align: right;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.note {
+		margin: 28px 0 0;
+		font-size: 14px;
+		line-height: 1.55;
+		max-width: 70ch;
+	}
+
+	@media (max-width: 720px) {
+		.sheet {
+			padding: 28px 20px 36px;
+		}
+
+		.row {
+			grid-template-columns: minmax(0, 1fr) 72px;
+			row-gap: 2px;
+		}
+
+		.row .artist,
+		.row .kind {
+			grid-column: 1;
+		}
+
+		.price {
+			grid-row: 1;
+			grid-column: 2;
+		}
+
+		.head .artist,
+		.head .kind {
+			display: none;
+		}
+
+		.artist:empty {
+			display: none;
+		}
+	}
+</style>
