@@ -5,7 +5,7 @@ import { z } from 'astro/zod';
 import { artistSchema } from './lib/artists';
 import { catalogItemSchema, hostStateSchema, type CatalogItem } from './lib/catalog';
 import { museumSchema } from './lib/museums';
-import { parseRemovals, visible } from './lib/removals';
+import { readRemovals, visible } from './lib/removals';
 
 const museums = defineCollection({
 	loader: file('data/museums.yaml'),
@@ -22,7 +22,7 @@ const catalog = defineCollection({
 	loader: () =>
 		visible(
 			JSON.parse(readFileSync('data/catalog.json', 'utf8')) as CatalogItem[],
-			parseRemovals(readFileSync('data/removals.yaml', 'utf8')),
+			readRemovals(),
 		),
 	schema: catalogItemSchema,
 });

@@ -11,7 +11,7 @@ import { join, relative, sep } from 'node:path';
 import { parse } from 'yaml';
 import { catalogSchema } from '../src/lib/catalog.ts';
 import { museumSchema } from '../src/lib/museums.ts';
-import { parseRemovals, visible } from '../src/lib/removals.ts';
+import { readRemovals, visible } from '../src/lib/removals.ts';
 import { roomMuseums } from '../src/lib/room.ts';
 import { HALL_PAGES, LAUNCH_HOSTNAME } from '../src/lib/site.ts';
 
@@ -37,7 +37,7 @@ const read = (path: string) => (existsSync(path) ? readFileSync(path, 'utf8') : 
 
 const catalog = visible(
 	catalogSchema.parse(JSON.parse(readFileSync('data/catalog.json', 'utf8'))),
-	parseRemovals(readFileSync('data/removals.yaml', 'utf8')),
+	readRemovals(),
 );
 const museums = museumSchema.array().parse(parse(readFileSync('data/museums.yaml', 'utf8')));
 const rooms = roomMuseums(museums, catalog);

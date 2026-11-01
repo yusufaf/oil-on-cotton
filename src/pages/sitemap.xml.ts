@@ -16,5 +16,5 @@ export const GET: APIRoute = async ({ site }) => {
 		'</urlset>',
 		'',
 	].join('\n');
-	return new Response(xml, { headers: { 'Content-Type': 'application/xml' } });
+	return new Response(xml, { headers: { 'Content-Type': 'application/xml; charset=utf-8' } });
 };

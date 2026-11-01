@@ -69,13 +69,21 @@ export async function crawlMuseum(
 	previous: CatalogItem[],
 	previousHost: HostState | undefined,
 	// refresh: recheck skipped pages too, e.g. after the classifier changes.
-	// removed: ids taken down (data/removals.yaml). Known handles are not fetched; the id check
+	// removed: pieces taken down (data/removals.yaml). Their handles are never fetched; the id check
 	// after a fetch catches a piece that moved to a new handle.
-	options: { now: string; limit?: number; refresh?: boolean; removed?: Set<string> },
+	options: {
+		now: string;
+		limit?: number;
+		refresh?: boolean;
+		removed?: { ids: Set<string>; handles: Set<string> };
+	},
 ): Promise<MuseumCrawl> {
-	const removed = options.removed ?? new Set<string>();
-	const removedHandles = new Set(previous.filter((i) => removed.has(i.id)).map((i) => i.handle));
-	if (removedHandles.size > 0) previous = previous.filter((i) => !removed.has(i.id));
+	const removed = options.removed?.ids ?? new Set<string>();
+	const removedHandles = new Set([
+		...(options.removed?.handles ?? []),
+		...previous.filter((i) => removed.has(i.id)).map((i) => i.handle),
+	]);
+	if (previous.some((i) => removed.has(i.id))) previous = previous.filter((i) => !removed.has(i.id));
 	const origin = new URL(museum.storeUrl).origin;
 	const startRequests = crawler.requests.length;
 	const host = (status: HostState['status'], items: number, extra: Partial<HostState> = {}): HostState => ({
