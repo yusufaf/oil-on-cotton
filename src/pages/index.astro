@@ -12,7 +12,7 @@ const rooms = new Set(roomMuseums(museums, items).map((m) => m.id));
 const count = (id: string) => items.filter((i) => i.museum === id).length;
 const removed = removedMuseums(readRemovals());
 const open = museums.filter((m) => isOpen(m) && !removed.has(m.id));
-const closed = museums.filter((m) => m.automation === 'pending');
+const closed = museums.filter((m) => m.automation === 'pending' && !removed.has(m.id));
 ---
 
 <Base
