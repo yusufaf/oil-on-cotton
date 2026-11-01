@@ -36,6 +36,5 @@
     retrieved: "2026-11-01"
     alt: A bed of blue irises with one white iris among them, green blade-shaped leaves, orange marigolds behind and red-brown earth in front.
   pieces:
-    - { id: "getty:8032247283904", label: Irises cotton scarf }
-    - { id: "getty:8497728323776", label: Irises socks }
-    - { id: "getty:6955817337024", label: Square Irises silk scarf }
+    - { id: "getty:8032247283904", label: Irises cotton scarf, verified: "2026-11-01" }
+    - { id: "getty:8497728323776", label: Irises socks, verified: "2026-11-01" }

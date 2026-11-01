@@ -38,7 +38,7 @@ export const workSchema = z
 					.object({
 						id: z.string().regex(/^[a-z0-9-]+:\d+$/),
 						label: z.string().min(1),
-						verified: date.optional(),
+						verified: date,
 					})
 					.strict(),
 			)

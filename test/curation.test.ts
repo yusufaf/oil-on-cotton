@@ -87,7 +87,7 @@ describe('data/curation.yaml', () => {
 		// Curators write local dates, which can run a day ahead of UTC.
 		const today = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
 		for (const work of works) {
-			const dates = [work.checked, work.image.retrieved, ...work.pieces.flatMap((p) => (p.verified ? [p.verified] : []))];
+			const dates = [work.checked, work.image.retrieved, ...work.pieces.map((p) => p.verified)];
 			for (const date of dates) expect(date <= today, `${work.id}: ${date}`).toBe(true);
 		}
 	});
@@ -115,7 +115,7 @@ describe('data/curation.yaml', () => {
 describe('hangsFor', () => {
 	const item = (museum: string, id: number) => ({ id: `${museum}:${id}`, museum, name: `Piece ${id}` }) as CatalogItem;
 	const work = (id: string, room: string, pieces: number[]) =>
-		({ id, room, pieces: pieces.map((n) => ({ id: `${room}:${n}`, label: `Label ${n}` })) }) as unknown as Work;
+		({ id, room, pieces: pieces.map((n) => ({ id: `${room}:${n}`, label: `Label ${n}`, verified: '2026-11-01' })) }) as unknown as Work;
 
 	it('keeps the curation order of pieces', () => {
 		const items = [item('getty', 1), item('getty', 2), item('getty', 3)];
