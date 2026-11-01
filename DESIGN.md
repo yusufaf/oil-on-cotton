@@ -179,7 +179,7 @@ Pairing A won against B (Brygada 1918 + Familjen Grotesk) and C (Sofia Sans Extr
   5. footer
 - **Wall title block** is a 7:3 grid. The paint note sits bottom-right, and stacks under the text on phones.
 - **Checklist rows** use four columns: Piece (5fr), Artist (3fr), Kind (2fr), Price (88px, right-aligned). Under 720px a row becomes the name and price on one line, with artist and kind beneath.
-- **Hang.** The artwork is at most 640px wide. The label is 256px wide, vertically centred on the artwork, with a 104px gap. Real labels are small next to the work, so the painting needs wall around it.
+- **Hang.** The artwork is at most 640px wide. The label is 256px wide, vertically centred on the artwork, with a 104px gap. Real labels are small next to the work, so the painting needs wall around it. Under 900px the label sits under the artwork, still 256px wide. Several works stack with a 104px gap.
 - **Floor plan:**
   - **Fixed layout, not data-driven.** Rooms come in three size classes: L (518 × 318), M (452 × 318) and S (about 240 × 232). Counts are shown as text.
   - **Shell.** The outer wall is 14px poché and the inner walls are 6px.
@@ -215,11 +215,11 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
   1. artist name (600)
   2. nationality and dates
   3. artwork title (italic Besley) and year
-  4. owning collection and accession number, then "Image in the public domain."
-  5. a divider, then "Made after this painting" with one line per piece: the name as a link, the price or "Sold out" on the right
-  6. "Sold by <shop>" in credit size
+  4. owning collection and accession number, then "Image in the public domain, courtesy of <image credit>."
+  5. a divider, then "Made after this painting" with a list of pieces: a short name we write ("Irises socks") as the link, the price or "Sold out" on the right
+  6. "Sold by the <shop>" in credit size
 
-  Accession numbers must be verified against the owning museum before shipping.
+  The label quotes the owning museum's record (name, nationality and dates, title, date, collection, accession), read from that record before shipping. A curator opens each piece's shop page in a browser and confirms it reproduces that exact work. Hung pieces also stay in the checklist, so the checklist is always the room's full list. Works live in `data/curation.yaml`.
 - **room-wall.** A room lives at `/rooms/<museum id>/`, for automated shops with at least 8 pieces. The H1 reads "Apparel from the <shop name>". The lede is facts from the ledger. The meta line carries the check date and the independence sentence, naming the museum. The paint note reads "Wall: <Ridgway name>" on one line and "after Ridgway, 1912" on the next.
 - **plan-room.** The whole room is one link, with its accessible name taken from its text. It shows the shop name (Besley) and a meta line with the count and wall name. It is filled with the room's wall colour. The room name underlines on hover.
 - **Independence line.** It appears on every page: in the room meta line, and in the footer of the hall pages. Standard text: "An independent, non-commercial index. It is not affiliated with or endorsed by any museum. Names identify the shops; trademarks belong to their owners."
@@ -280,7 +280,7 @@ Claude drafts all copy from each hub's fact ledger: counts, price spread, size g
 
 - Only public-domain or CC0 artwork images. Never product photos, museum logos or shop imagery.
 - An artwork hangs only when a curator has verified that the garment reproduces that exact work.
-- Prefer the owning museum's open-access image, and record its source URL, licence and retrieval date. The spike uses a Wikimedia Commons public-domain copy of *Irises*; production replaces it with the Getty Open Content file.
+- Use the owning museum's open-access image, only when it is CC0, and record its source URL, licence and retrieval date in `data/curation.yaml`. *Irises* is the Getty Open Content file. The build serves AVIF at 640, 960 and 1280px wide, with a WebP fallback at 640 and 960px, because a busy painting at 1280px fits the 200KB budget only as AVIF.
 - No AI-generated imagery. Wall texture, if used at all, is a real CC0 plaster scan (Poly Haven or ambientCG), under 40KB.
 
 ## Motion
@@ -297,7 +297,7 @@ None by default. No scroll-triggered animation and no fade-ups. Hover changes ar
   - LCP under 2.0s on throttled mobile
   - under 50KB of JS per room (the filter island only)
   - at most 4 subset font files
-  - each artwork image under 200KB at display size
+  - every artwork image file at most 200KB, at every width and format (`check:dist` checks it)
 
 ## Open items
 

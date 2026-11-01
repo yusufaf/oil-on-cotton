@@ -1,0 +1,41 @@
+# Hung works: public-domain artworks that hang in a room, each with a museum label listing the
+# pieces made after it (DESIGN.md, hang-label). To hang a work:
+#
+# 1. Read the owning museum's collection record, never a shop page. Copy name, artistLine,
+#    title, date, collection and accession as the record gives them (a year range takes an en
+#    dash), set `record` to its URL and `checked` to the day you read it.
+# 2. Use the owner's open-access image, and only if it is CC0. Save it in src/assets/hang/ at
+#    1600px wide, and record `source`, `licence`, `credit` and `retrieved`. Every image the build
+#    ships must be 200 KB or less; scripts/check-dist.ts checks it.
+# 3. The `alt` says what the painting shows. The label already gives artist and title.
+# 4. List each piece by its catalog id with a short `label` for the label. A curator opens the
+#    piece's shop page in a browser, confirms it reproduces this exact work, and sets `verified`
+#    to that day. Never fetch a shop page from a script.
+#
+# A piece that leaves the catalog drops off the label at build time, and a work with no pieces
+# left stops hanging. To take down a work itself, delete its entry and its image file.
+# Quote every date: test/curation.test.ts checks it. All label copy follows DESIGN.md.
+
+- id: irises
+  room: getty
+  artist: vincent-van-gogh
+  name: Vincent van Gogh
+  artistLine: Dutch, 1853–1890
+  title: Irises
+  date: "1889"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: 90.PA.20
+  record: https://www.getty.edu/art/collection/object/103JNH
+  checked: "2026-11-01"
+  image:
+    file: irises.jpg
+    source: https://media.getty.edu/iiif/image/8c255d80-7382-46db-9fa8-892c0d37247e/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-01"
+    alt: A bed of blue irises with one white iris among them, green blade-shaped leaves, orange marigolds behind and red-brown earth in front.
+  pieces:
+    - { id: "getty:8032247283904", label: Irises cotton scarf }
+    - { id: "getty:8497728323776", label: Irises socks }
+    - { id: "getty:6955817337024", label: Square Irises silk scarf }
