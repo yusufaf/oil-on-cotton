@@ -19,6 +19,14 @@ describe('garmentOf', () => {
 		['Tie-Dye T-shirt', 'tee'],
 		['Colorblock Knit Gloves', 'gloves'],
 		['Keith Haring Radiant Baby Onesie', 'onesie'],
+		['Getty Pride Tank top', 'top'],
+		['Ribbed Tank', 'top'],
+		['Fish Tank T-shirt', 'tee'],
+		['Silk Camisole', 'top'],
+		['Witte Marvelje Knitted Embroidery Crewneck - Cream', 'sweater'],
+		['Merino Knit Pullover', 'sweater'],
+		['Basquiat "Pez Dispenser" Crewneck', 'sweatshirt'],
+		['Simple Rib Knit Beanie - Kelly/Stone Blue', 'hat'],
 	])('%s is a %s', (name, garment) => {
 		expect(garmentOf(name)).toBe(garment);
 	});

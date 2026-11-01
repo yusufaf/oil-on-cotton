@@ -19,6 +19,7 @@ export function roomMuseums(museums: Museum[], items: CatalogItem[]): Museum[] {
 
 const KIND: Record<Garment, string> = {
 	tee: 'T-shirt',
+	top: 'Top',
 	shirt: 'Shirt',
 	sweatshirt: 'Sweatshirt',
 	hoodie: 'Hoodie',
@@ -42,9 +43,10 @@ export function kindLabel(item: Pick<CatalogItem, 'name' | 'sizes' | 'garment'>)
 	return item.garment !== 'onesie' && isKids(item) ? `${kind} (kids)` : kind;
 }
 
-// The approved spike's filter groups.
-export const GROUPS: { id: string; label: string; garments: Garment[] }[] = [
-	{ id: 'tees', label: 'T-shirts', garments: ['tee'] },
+// The approved spike's filter groups. A group's label grows when a room has the extra kind,
+// so a room without tank tops still reads "T-shirts".
+export const GROUPS: { id: string; label: string; garments: Garment[]; wider?: [Garment, string] }[] = [
+	{ id: 'tees', label: 'T-shirts', garments: ['tee', 'top'], wider: ['top', 'T-shirts and tops'] },
 	{ id: 'sweatshirts', label: 'Sweatshirts', garments: ['sweatshirt', 'sweater'] },
 	{ id: 'hoodies', label: 'Hoodies', garments: ['hoodie'] },
 	{ id: 'jackets', label: 'Jackets and shirts', garments: ['jacket', 'shirt'] },
@@ -59,9 +61,11 @@ export function groupOf(garment: Garment): string {
 }
 
 export function groupCounts(items: Pick<CatalogItem, 'garment'>[]) {
-	return GROUPS.map((g) => ({ ...g, count: items.filter((i) => g.garments.includes(i.garment)).length })).filter(
-		(g) => g.count > 0,
-	);
+	return GROUPS.map((g) => ({
+		...g,
+		label: g.wider && items.some((i) => i.garment === g.wider![0]) ? g.wider[1] : g.label,
+		count: items.filter((i) => g.garments.includes(i.garment)).length,
+	})).filter((g) => g.count > 0);
 }
 
 export function dollars(cents: number): string {

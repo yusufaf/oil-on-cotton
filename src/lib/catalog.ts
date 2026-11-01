@@ -2,6 +2,7 @@ import { z } from 'astro/zod';
 
 export const garments = [
 	'tee',
+	'top',
 	'shirt',
 	'sweatshirt',
 	'hoodie',

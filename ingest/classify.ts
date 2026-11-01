@@ -3,12 +3,14 @@ import type { garments } from '../src/lib/catalog.ts';
 export type Garment = (typeof garments)[number];
 
 // Earlier entries win when two patterns end at the same place: "hooded sweatshirt" is a hoodie,
-// and "t-shirt" is a tee, not a shirt. `undefined` marks things that are not clothing.
+// "t-shirt" is a tee, not a shirt, and a knitted crewneck is a sweater, not a sweatshirt.
+// `undefined` marks things that are not clothing.
 const KINDS: [Garment | undefined, RegExp][] = [
 	['hoodie', /\b(hoodie|hoody|hooded (sweatshirt|pullover))\b/gi],
-	['tee', /\b(t-?shirt|tee|tank top|long ?sleeve)s?\b/gi],
+	['top', /\b(tank( top)?|camisole|crop top)s?\b/gi],
+	['tee', /\b(t-?shirt|tee|long ?sleeve)s?\b/gi],
+	['sweater', /\b(sweater|cardigan|jumper|knit(ted)?\b[\w ]*?\b(crewneck|crew neck|pullover))s?\b/gi],
 	['sweatshirt', /\b(sweatshirt|crewneck|crew neck|quarter-zip|pullover)s?\b/gi],
-	['sweater', /\b(sweater|cardigan|jumper)s?\b/gi],
 	['jacket', /\b(jacket|coat|vest|kimono|robe)s?\b/gi],
 	['dress', /\b(dress|dresses|skirt)s?\b/gi],
 	['shirt', /\b(shirt|button-?down|blouse|polo)s?\b/gi],
