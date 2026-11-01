@@ -85,6 +85,14 @@ describe('kindLabel and groups', () => {
 			['Scarves and ties', 1],
 		]);
 	});
+
+	it('names tops in the T-shirt group only when the room has one', () => {
+		expect(groupCounts([{ garment: 'tee' }, { garment: 'top' }])[0]).toMatchObject({ label: 'T-shirts and tops', count: 2 });
+		expect(groupCounts([{ garment: 'top' }])[0]).toMatchObject({ id: 'tees', label: 'T-shirts and tops', count: 1 });
+		expect(kindLabel(piece({ garment: 'top', name: 'Getty Pride Tank top' }))).toBe('Top');
+		const camisole = piece({ garment: 'top', name: 'Youth Camisole', sizes: [{ label: 'One size', available: true }] });
+		expect(kindLabel(camisole)).toBe('Top (kids)');
+	});
 });
 
 describe('priceText and sizesLine', () => {

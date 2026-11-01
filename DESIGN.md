@@ -201,7 +201,7 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
 - **checklist-sheet.** A label-stock panel holding the room's full list.
   - Header: "Checklist" in sheet-title, with "Showing N of M" on the right.
   - Below the header, the filters, then the sort. Each is a row of text buttons with counts, for example "T-shirts 37".
-  - Filter groups, as on the spike: All, T-shirts, Sweatshirts (with sweaters), Hoodies, Jackets and shirts, Hats, Scarves and ties, Socks, Other. Empty groups are left out. Sort: "Price, low to high" (default), "Price, high to low", "Name".
+  - Filter groups, as on the spike: All, T-shirts ("T-shirts and tops" in a room with a tank top or camisole), Sweatshirts (with sweaters), Hoodies, Jackets and shirts, Hats, Scarves and ties, Socks, Other. Empty groups are left out. Sort: "Price, low to high" (default), "Price, high to low", "Name".
   - Without JavaScript the whole list shows in the default order and the buttons stay hidden.
   - The active filter is weight 600 with a 2px underline. Filter buttons are real `<button>` elements with `aria-pressed`, at least 44px tall.
 - **checklist-row.**

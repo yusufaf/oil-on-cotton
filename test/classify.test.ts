@@ -19,6 +19,16 @@ describe('garmentOf', () => {
 		['Tie-Dye T-shirt', 'tee'],
 		['Colorblock Knit Gloves', 'gloves'],
 		['Keith Haring Radiant Baby Onesie', 'onesie'],
+		['Getty Pride Tank top', 'top'],
+		['Black Crop Top', 'top'],
+		['Linen Tank Dress', 'dress'],
+		['Knit Hoodie', 'hoodie'],
+		['Fish Tank T-shirt', 'tee'],
+		['Silk Camisole', 'top'],
+		['Witte Marvelje Knitted Embroidery Crewneck - Cream', 'sweater'],
+		['Merino Knit Pullover', 'sweater'],
+		['Basquiat "Pez Dispenser" Crewneck', 'sweatshirt'],
+		['Simple Rib Knit Beanie - Kelly/Stone Blue', 'hat'],
 	])('%s is a %s', (name, garment) => {
 		expect(garmentOf(name)).toBe(garment);
 	});
@@ -28,6 +38,7 @@ describe('garmentOf', () => {
 		'King Arthur Crown with Hood',
 		'T-shirt Tote Bag',
 		'Hat Pin',
+		'Shark Tank Sticker Sheet',
 		'Calder Chess Set',
 		'Mug',
 		'Van Gogh Irises Linen Apron',
