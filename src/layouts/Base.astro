@@ -12,8 +12,8 @@ interface Props {
 	noindex?: boolean;
 }
 
-// Umami website id for oiloncotton.com. Left empty, the tracker is not included at all.
-const UMAMI_WEBSITE_ID = '';
+// Umami website id for oiloncotton.com (public; it ships in every page).
+const UMAMI_WEBSITE_ID = '4578771b-d472-458f-815a-36bcfb9f95dd';
 
 const { title, description, wall, noindex = false } = Astro.props;
 // Staging must stay out of search results: GitHub Pages can't redirect it to the brand domain
