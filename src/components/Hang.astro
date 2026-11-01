@@ -22,7 +22,15 @@ const imageOf = (file: string) => {
 // Every file must be 200 KB or less (DESIGN.md). A busy painting fits at 1280px only as AVIF,
 // so the WebP fallback, for browsers without AVIF, stops at 960px. AVIF quality 40 keeps
 // mobile LCP under 2s on the Getty room (Lighthouse: 2.1s at 50, 1.8s at 40).
-const sizes = '(max-width: 720px) calc(100vw - 40px), 640px';
+// The image column: full width under 720px (20px gutters), up to 640px when stacked (48px
+// gutters), squeezed beside the 256px label and 104px gap until the row fits at 1096px.
+const sizes = [
+	'(max-width: 720px) calc(100vw - 40px)',
+	'(max-width: 736px) calc(100vw - 96px)',
+	'(max-width: 900px) 640px',
+	'(max-width: 1096px) calc(100vw - 456px)',
+	'640px',
+].join(', ');
 const pictures = await Promise.all(
 	hangs.map(async ({ work }) => {
 		const src = imageOf(work.image.file);
@@ -76,6 +84,7 @@ const pictures = await Promise.all(
 										data-umami-event="Outbound"
 										data-umami-event-museum={item.museum}
 										data-umami-event-item={item.id}
+										data-umami-event-place="hang"
 									>
 										{label}
 									</a>
