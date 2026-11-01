@@ -17,6 +17,17 @@ export function roomMuseums(museums: Museum[], items: CatalogItem[]): Museum[] {
 	);
 }
 
+// A shop takedown empties its room but leaves its lede, so the takedown stays one line in
+// data/removals.yaml. Any other lede without a room is a stale or mistyped id.
+export function checkLedes(rooms: string[], ledes: string[], removed: Set<string>): void {
+	const built = new Set(rooms);
+	const written = new Set(ledes);
+	const missing = rooms.filter((id) => !written.has(id));
+	const orphans = ledes.filter((id) => !built.has(id) && !removed.has(id));
+	if (missing.length > 0) throw new Error(`data/rooms.yaml has no lede for: ${missing.join(', ')}`);
+	if (orphans.length > 0) throw new Error(`data/rooms.yaml has ledes for rooms that don't exist: ${orphans.join(', ')}`);
+}
+
 const KIND: Record<Garment, string> = {
 	tee: 'T-shirt',
 	top: 'Top',
