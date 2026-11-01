@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import Checklist, { type Row } from '../../components/Checklist.astro';
+import Hang from '../../components/Hang.astro';
 import Base from '../../layouts/Base.astro';
 import { matchArtists } from '../../lib/artists';
+import { hangsFor, readCuration } from '../../lib/curation';
 import type { Museum } from '../../lib/museums';
 import {
 	day,
@@ -72,6 +74,7 @@ const rows: Row[] = items
 		};
 	})
 	.sort((a, b) => a.keys.asc - b.keys.asc);
+const hangs = hangsFor(museum.id, readCuration(), items);
 const storeHost = new URL(museum.storeUrl).hostname.replace(/^www\./, '');
 ---
 
@@ -88,6 +91,7 @@ const storeHost = new URL(museum.storeUrl).hostname.replace(/^www\./, '');
 			</div>
 			<p class="paint">Wall: {museum.wall.name}<br />after Ridgway, 1912</p>
 		</section>
+		{hangs.length > 0 && <Hang shop={museum.shop} hangs={hangs} now={now} />}
 		<Checklist shop={museum.shop} rows={rows} groups={groupCounts(items)} />
 	</main>
 </Base>

@@ -1,5 +1,8 @@
 // Checks the built site in dist/ after `pnpm build`:
-// - every room page exists with one row, and one counted shop link, per visible catalog piece
+// - every room page exists with one row per visible catalog piece, and one counted shop link per
+//   row and per hung piece
+// - every hung work shows its accession number, and every image file it uses exists and is at
+//   most 200 KB, with a 1280w AVIF; no hang source image ships
 // - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
 //   hall pages and the rooms
 // - staging pages carry noindex and no canonical; on the launch hostname every page but the 404
@@ -10,6 +13,7 @@ import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { parse } from 'yaml';
 import { catalogSchema } from '../src/lib/catalog.ts';
+import { hangsFor, readCuration } from '../src/lib/curation.ts';
 import { museumSchema } from '../src/lib/museums.ts';
 import { readRemovals, visible } from '../src/lib/removals.ts';
 import { roomMuseums } from '../src/lib/room.ts';
@@ -21,6 +25,8 @@ const problems: string[] = [];
 const BANNED =
 	/\b(delve|crafting|passionate|seamless|leverage|robust|journey|elevate|empower|unlock|transform|showcase|testament|pivotal|vibrant|meticulous|multifaceted)\b/i;
 const NOINDEX = '<meta name="robots" content="noindex">';
+// DESIGN.md, Accessibility and performance.
+const IMAGE_BUDGET = 200 * 1024;
 
 const pages = (dir: string): string[] =>
 	readdirSync(dir).flatMap((name) => {
@@ -35,12 +41,19 @@ const routeOf = (file: string) =>
 		.replace(/(^|\/)index\.html$/, '$1');
 const read = (path: string) => (existsSync(path) ? readFileSync(path, 'utf8') : undefined);
 
+const { default: config } = await import('../astro.config.mjs');
+if (!config.site) throw new Error('astro.config.mjs has no site');
+const site = new URL(config.site);
+const base = (config.base ?? '/').replace(/\/?$/, '/');
+
 const catalog = visible(
 	catalogSchema.parse(JSON.parse(readFileSync('data/catalog.json', 'utf8'))),
 	readRemovals(),
 );
 const museums = museumSchema.array().parse(parse(readFileSync('data/museums.yaml', 'utf8')));
 const rooms = roomMuseums(museums, catalog);
+const works = readCuration();
+const hanging = new Set<string>();
 for (const museum of rooms) {
 	const path = join(DIST, 'rooms', museum.id, 'index.html');
 	const html = read(path);
@@ -48,17 +61,57 @@ for (const museum of rooms) {
 		problems.push(`${path} is missing`);
 		continue;
 	}
-	const expected = catalog.filter((i) => i.museum === museum.id).length;
+	const items = catalog.filter((i) => i.museum === museum.id);
+	const expected = items.length;
 	const rows = html.match(/<li\b[^>]*\bclass="row\b/g)?.length ?? 0;
 	const counted = html.match(/data-umami-event="Outbound"/g)?.length ?? 0;
+	const hangs = hangsFor(museum.id, works, items);
+	const hung = hangs.reduce((n, h) => n + h.pieces.length, 0);
+	for (const h of hangs) hanging.add(h.work.id);
 	if (rows !== expected) problems.push(`${path} has ${rows} rows, catalog has ${expected}`);
-	if (counted !== expected) problems.push(`${path} has ${counted} counted shop links, catalog has ${expected}`);
+	if (counted !== expected + hung)
+		problems.push(`${path} has ${counted} counted shop links, expected ${expected} rows and ${hung} hung pieces`);
+
+	const hang = html.match(/<section class="hang"[\s\S]*?<\/section>/)?.[0] ?? '';
+	if (hangs.length > 0 && !hang) problems.push(`${path} has no hang section`);
+	if (hangs.length === 0 && hang) problems.push(`${path} has a hang section but nothing hangs`);
+	for (const { work } of hangs) {
+		if (!hang.includes(work.accession)) problems.push(`${path} does not show ${work.id}'s accession ${work.accession}`);
+	}
+	const sources = [...hang.matchAll(/<source type="image\/avif" srcset="([^"]+)"/g)].map((m) => m[1]);
+	if (sources.length !== hangs.length || sources.some((s) => !/ 1280w\b/.test(s)))
+		problems.push(`${path} has a hung work without a 1280w AVIF`);
+	const urls = [...hang.matchAll(/\b(?:src|srcset)="([^"]+)"/g)].flatMap((m) =>
+		m[1].split(',').map((entry) => entry.trim().split(/\s+/)[0]),
+	);
+	for (const url of new Set(urls)) {
+		// Asset URLs carry the base (a preview under a sub-path); dist/ does not.
+		const file = join(DIST, ...url.slice(url.startsWith(base) ? base.length : 0).split('/').filter(Boolean));
+		if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
+		else if (statSync(file).size > IMAGE_BUDGET)
+			problems.push(`${url} is ${Math.round(statSync(file).size / 1024)} KB, over the 200 KB budget`);
+	}
 }
 
-const { default: config } = await import('../astro.config.mjs');
-if (!config.site) throw new Error('astro.config.mjs has no site');
-const site = new URL(config.site);
-const base = (config.base ?? '/').replace(/\/?$/, '/');
+// A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or
+// its room isn't built) only warns, so data PRs can't fail on it; Astro still ships its source,
+// a CC0 file at an unlinked URL.
+const assets = existsSync(join(DIST, '_astro')) ? readdirSync(join(DIST, '_astro')) : [];
+for (const work of works) {
+	if (!hanging.has(work.id)) {
+		console.warn(`${work.id} hangs nowhere; remove it from data/curation.yaml with its image`);
+		continue;
+	}
+	const stem = work.image.file.replace(/\.\w+$/, '');
+	const sources = assets.filter((name) => name.startsWith(`${stem}.`) && /\.(jpe?g|png)$/.test(name));
+	if (sources.length > 0) problems.push(`dist/_astro ships the source image ${sources.join(', ')}`);
+}
+
+// A piece the shop dropped leaves its label quietly; say so, so the entry can be tidied.
+const shown = new Set(catalog.map((i) => i.id));
+const missing = works.flatMap((w) => w.pieces.filter((p) => !shown.has(p.id)).map((p) => `${w.id}: ${p.id}`));
+if (missing.length > 0) console.warn(`curation.yaml lists pieces not in the visible catalog: ${missing.join(', ')}`);
+
 const urlOf = (route: string) => new URL(base + route, site).href;
 // The same test as Base.astro: only the launch hostname may be indexed.
 const launch = site.hostname === LAUNCH_HOSTNAME;
