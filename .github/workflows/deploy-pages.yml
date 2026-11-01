@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Daily, so sale labels expire and dates stay honest between data merges.
+  schedule:
+    - cron: '43 6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -28,6 +31,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm test
       - run: pnpm build
+      - run: pnpm check:dist
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

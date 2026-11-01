@@ -24,6 +24,8 @@ export const museumSchema = z.object({
 		name: z.string(),
 		hex: z.string().regex(/^#[0-9A-F]{6}$/),
 		source: z.enum(['iscc-nbs-centroid', 'munsell-hamly-1949']),
+		// Light text on the wall; red walls take the warm white (DESIGN.md, Colors).
+		text: z.enum(['on-wall', 'on-wall-warm']).default('on-wall'),
 	}),
 });
 

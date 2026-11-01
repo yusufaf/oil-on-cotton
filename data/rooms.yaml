@@ -1,0 +1,15 @@
+# One lede per room, written by hand around slots that the build fills from the catalog:
+# {count}, {min} and {max} (lowest and highest price of any listed piece, sold out or not), and
+# {artist:<id>} (pieces matched to that artist). A slot that is unknown or comes to zero stops
+# the build, so a lede can't go false.
+# Prose beside a price never names a piece, since the cheapest or dearest piece changes.
+# No em dashes, none of DESIGN.md's banned words, and no two ledes open the same way.
+
+- id: getty
+  lede: Of the {count} pieces here, Odilon Redon is on {artist:odilon-redon} and Van Gogh on {artist:vincent-van-gogh}. Prices run from {min} to {max}.
+
+- id: whitney
+  lede: "{count} pieces to wear, priced {min} to {max}. Roy Lichtenstein turns up on {artist:roy-lichtenstein} of them and Basquiat on {artist:jean-michel-basquiat}."
+
+- id: lacma
+  lede: None of the {count} pieces here costs more than {max}, and the cheapest is {min}.

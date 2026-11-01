@@ -5,17 +5,27 @@ import { href, isCurrent } from '../lib/paths';
 interface Props {
 	title: string;
 	description: string;
+	// A room page is painted in its wall colour; hall pages leave this out.
+	wall?: { hex: string; text: 'on-wall' | 'on-wall-warm' };
 }
 
-const { title, description } = Astro.props;
+const { title, description, wall } = Astro.props;
+// Staging must stay out of search results: GitHub Pages can't redirect it to the brand domain
+// at launch. Compare the hostname, since the site URL carries a trailing slash.
+const indexable = Astro.site?.hostname === 'oiloncotton.com';
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+	lang="en"
+	class:list={{ room: wall }}
+	style={wall ? `--wall: ${wall.hex}; --on-wall-text: var(--${wall.text})` : undefined}
+>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
+		{!indexable && <meta name="robots" content="noindex" />}
 		<meta name="color-scheme" content="light" />
 		<meta name="darkreader-lock" />
 		<link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />

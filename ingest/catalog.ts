@@ -1,4 +1,5 @@
 import { catalogItemSchema, type CatalogItem, type HostState } from '../src/lib/catalog.ts';
+import { CHILDRENS } from '../src/lib/kids.ts';
 import type { Museum } from '../src/lib/museums.ts';
 import { garmentOf } from './classify.ts';
 import { HostBlockedError, type Crawler } from './crawler.ts';
@@ -6,8 +7,6 @@ import { sizesOf } from './sizes.ts';
 import { ParseError, parseCollectionPage, parseProductPage, type ProductPage } from './shopify.ts';
 
 const MAX_COLLECTION_PAGES = 40;
-// "Baby Blue" is a colour, not an age.
-const CHILDRENS = /\b(kids?|kid['’]s|youth|baby(?! (blue|pink|yellow|green))|babies|toddlers?|infants?|child|children(['’]?s)?)\b/i;
 // A crawl that finds fewer than this share of last week's items is treated as broken.
 const MIN_COUNT_RATIO = 0.8;
 // Shopify sitemaps stamp every product with the sitemap's build time, so they cannot say what
