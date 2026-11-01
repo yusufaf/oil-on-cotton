@@ -3,7 +3,7 @@
 // - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
 //   hall pages and the rooms
 // - staging pages carry noindex and no canonical; on the launch hostname every page but the 404
-//   is indexable, with a canonical that matches its sitemap entry, and loads the visit counter
+//   is indexable, with a canonical that matches its sitemap entry; only launch builds load the visit counter
 // - hall pages follow DESIGN.md's copy rules, and no page shows "undefined", "NaN" or "Invalid Date"
 // Usage: node scripts/check-dist.ts
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -83,6 +83,9 @@ for (const path of pages(DIST)) {
 	const text = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>/g, ' ');
 	const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
 	const noindex = html.includes(NOINDEX);
+	const counter = /<script[^>]+src="https:\/\/analytics\.oiloncotton\.com\/s\.js"[^>]+data-website-id="[0-9a-f-]{36}"/.test(html);
+	// The counter loads on every launch page, 404 included, and on no other build.
+	if (counter !== launch) problems.push(`${path} ${launch ? 'does not load' : 'loads'} the visit counter`);
 	if (/\bundefined\b|\bNaN\b|Invalid Date/.test(text)) problems.push(`${path} shows "undefined", "NaN" or "Invalid Date"`);
 	// Room pages quote shop product names, which follow the shops' own style.
 	if (!route.startsWith('rooms/') && (/[—!]/.test(text) || BANNED.test(text)))
@@ -96,8 +99,6 @@ for (const path of pages(DIST)) {
 	if (noindex) problems.push(`${path} has noindex on the launch hostname`);
 	if (canonical !== urlOf(route)) problems.push(`${path} canonical is ${canonical}, expected ${urlOf(route)}`);
 	if (!listed.includes(urlOf(route))) problems.push(`${path} is indexable but not in sitemap.xml`);
-	if (!/<script[^>]+src="https:\/\/analytics\.oiloncotton\.com\/s\.js"[^>]+data-website-id="[0-9a-f-]{36}"/.test(html))
-		problems.push(`${path} does not load the visit counter`);
 }
 
 if (problems.length > 0) {

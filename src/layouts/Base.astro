@@ -12,13 +12,15 @@ interface Props {
 	noindex?: boolean;
 }
 
-// Umami website id for oiloncotton.com (public; it ships in every page).
+// Umami website id for oiloncotton.com (public; it ships in every page). The tracker is only
+// included in builds for the launch hostname, so previews and forks never request it.
 const UMAMI_WEBSITE_ID = '4578771b-d472-458f-815a-36bcfb9f95dd';
 
 const { title, description, wall, noindex = false } = Astro.props;
 // Only the brand domain is indexed, so a build for any other host (a preview, a fork) is not.
 // Compare the hostname, since the site URL carries a trailing slash.
-const indexable = Astro.site?.hostname === LAUNCH_HOSTNAME && !noindex;
+const launch = Astro.site?.hostname === LAUNCH_HOSTNAME;
+const indexable = launch && !noindex;
 const canonical = indexable ? new URL(withSlash(Astro.url.pathname), Astro.site).href : undefined;
 const footerLinks = [
 	{ path: 'about/', label: 'About' },
@@ -49,7 +51,7 @@ const footerLinks = [
 		<link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
 		<title>{title}</title>
 		{
-			UMAMI_WEBSITE_ID && (
+			launch && (
 				<script
 					is:inline
 					defer
