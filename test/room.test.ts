@@ -115,6 +115,8 @@ describe('priceText and sizesLine', () => {
 		expect(sizesLine(oneSize, priceText(oneSize, NOW))).toBeUndefined();
 		const gone = piece({ sizes: [{ label: 'S', available: false }], available: false });
 		expect(sizesLine(gone, priceText(gone, NOW))).toBeUndefined();
+		const stale = piece({ sizes: [{ label: 'S', available: false }], available: true });
+		expect(sizesLine(stale, priceText(stale, NOW))).toBeUndefined();
 	});
 
 	it('opens the sizes line with the sale date', () => {

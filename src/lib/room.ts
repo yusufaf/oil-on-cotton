@@ -105,8 +105,8 @@ export function sizesLine(item: Pick<CatalogItem, 'sizes' | 'available'>, price:
 	const sized = item.sizes.filter((s) => s.label !== 'One size');
 	const parts: string[] = [];
 	if (price.saleAsOf) parts.push(`On sale as of ${price.saleAsOf}`);
-	if (item.available && sized.length > 0) {
-		const inStock = sized.filter((s) => s.available).map((s) => s.label);
+	const inStock = sized.filter((s) => s.available).map((s) => s.label);
+	if (item.available && inStock.length > 0) {
 		const out = sized.filter((s) => !s.available).map((s) => s.label);
 		parts.push(inStock.join(', ') + (out.length > 0 ? ` · ${out.join(', ')} sold out` : ''));
 	}
