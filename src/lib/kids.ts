@@ -7,7 +7,7 @@ export const CHILDRENS =
 // the name or sits right before the garment ("Kids Socks", "Youth T-Shirt"). "Socks That Support
 // Youth Sports" and "Sweet Dreams, Baby! Baseball Hat" are adult pieces.
 const CHILDREN_WORD = String.raw`(kids?|kid['’]s|youth|baby(?! (blue|pink|yellow|green))|toddlers?|infants?|children['’]?s?)`;
-const GARMENT_WORD = String.raw`(t-?shirts?|tees?|shirts?|hats?|caps?|beanies?|socks?|onesies?|hoodies?|sweatshirts?|crewnecks?|jackets?|dresses?)`;
+const GARMENT_WORD = String.raw`(t-?shirts?|tees?|shirts?|hats?|caps?|beanies?|socks?|onesies?|hoodies?|sweatshirts?|crewnecks?|sweaters?|cardigans?|jackets?|dresses?|tank tops?|camisoles?|tops?)`;
 const FOR_CHILDREN = new RegExp(String.raw`^${CHILDREN_WORD}\b|\b${CHILDREN_WORD}\s+${GARMENT_WORD}\b`, 'i');
 
 // Size labels as ingest/sizes.ts writes them: "Kids 8", "Youth S", "Toddler M", "2T", "6M",

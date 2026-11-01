@@ -7,7 +7,7 @@ export type Garment = (typeof garments)[number];
 // `undefined` marks things that are not clothing.
 const KINDS: [Garment | undefined, RegExp][] = [
 	['hoodie', /\b(hoodie|hoody|hooded (sweatshirt|pullover))\b/gi],
-	['top', /\b(tank( top)?|camisole|crop top)s?\b/gi],
+	['top', /\b(tank top|camisole|crop top)s?\b/gi],
 	['tee', /\b(t-?shirt|tee|long ?sleeve)s?\b/gi],
 	['sweater', /\b(sweater|cardigan|jumper|knit(ted)?\b[\w ]*?\b(crewneck|crew neck|pullover))s?\b/gi],
 	['sweatshirt', /\b(sweatshirt|crewneck|crew neck|quarter-zip|pullover)s?\b/gi],
