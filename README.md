@@ -36,7 +36,7 @@ Questions about the crawler go to bot@oiloncotton.com. To ask for a listing to b
 
 ### Takedowns
 
-A takedown is one line in [data/removals.yaml](data/removals.yaml): `{ id: "getty:123", handle: <its handle in data/catalog.json>, removedAt, reason }` for a piece, or `{ museum: getty, removedAt, reason }` for a whole shop. The build leaves removed pieces out, the crawler never requests their handle again, and the next crawl drops them from `data/catalog.json`. The file is public, so record what was removed and why, never who asked. If a `data/catalog` PR is open when the takedown merges, re-run the full ingest so the PR is rebuilt without the piece.
+A takedown is one line in [data/removals.yaml](data/removals.yaml): `{ id: "getty:123", handle: <its handle in data/catalog.json>, removedAt, reason }` for a piece, or `{ museum: getty, removedAt, reason }` for a whole shop. The build leaves removed pieces out, the crawler never requests their handle again, and the next crawl drops them from `data/catalog.json`. A shop takedown takes its room down too. Its lede in `data/rooms.yaml` can stay, and `pnpm check:dist` warns about each of its works in `data/curation.yaml`, which can be removed later. The file is public, so record what was removed and why, never who asked. If a `data/catalog` PR is open when the takedown merges, re-run the full ingest so the PR is rebuilt without the piece.
 
 ### Running it
 
