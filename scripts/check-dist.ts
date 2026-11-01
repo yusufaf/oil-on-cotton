@@ -41,6 +41,11 @@ const routeOf = (file: string) =>
 		.replace(/(^|\/)index\.html$/, '$1');
 const read = (path: string) => (existsSync(path) ? readFileSync(path, 'utf8') : undefined);
 
+const { default: config } = await import('../astro.config.mjs');
+if (!config.site) throw new Error('astro.config.mjs has no site');
+const site = new URL(config.site);
+const base = (config.base ?? '/').replace(/\/?$/, '/');
+
 const catalog = visible(
 	catalogSchema.parse(JSON.parse(readFileSync('data/catalog.json', 'utf8'))),
 	readRemovals(),
@@ -80,22 +85,26 @@ for (const museum of rooms) {
 		m[1].split(',').map((entry) => entry.trim().split(/\s+/)[0]),
 	);
 	for (const url of new Set(urls)) {
-		const file = join(DIST, ...url.split('/').filter(Boolean));
+		// Asset URLs carry the base (a preview under a sub-path); dist/ does not.
+		const file = join(DIST, ...url.slice(url.startsWith(base) ? base.length : 0).split('/').filter(Boolean));
 		if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
 		else if (statSync(file).size > IMAGE_BUDGET)
 			problems.push(`${url} is ${Math.round(statSync(file).size / 1024)} KB, over the 200 KB budget`);
 	}
 }
 
-// A hung work ships only its resized files. Astro keeps the source of a work that no longer
-// hangs (a CC0 file at an unlinked URL), so that only warns: data PRs mustn't fail on it.
+// A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or
+// its room isn't built) only warns, so data PRs can't fail on it; Astro still ships its source,
+// a CC0 file at an unlinked URL.
 const assets = existsSync(join(DIST, '_astro')) ? readdirSync(join(DIST, '_astro')) : [];
 for (const work of works) {
+	if (!hanging.has(work.id)) {
+		console.warn(`${work.id} hangs nowhere; remove it from data/curation.yaml with its image`);
+		continue;
+	}
 	const stem = work.image.file.replace(/\.\w+$/, '');
 	const sources = assets.filter((name) => name.startsWith(`${stem}.`) && /\.(jpe?g|png)$/.test(name));
-	if (sources.length === 0) continue;
-	if (hanging.has(work.id)) problems.push(`dist/_astro ships the source image ${sources.join(', ')}`);
-	else console.warn(`${work.id} no longer hangs; remove it from data/curation.yaml with its image`);
+	if (sources.length > 0) problems.push(`dist/_astro ships the source image ${sources.join(', ')}`);
 }
 
 // A piece the shop dropped leaves its label quietly; say so, so the entry can be tidied.
@@ -103,10 +112,6 @@ const shown = new Set(catalog.map((i) => i.id));
 const missing = works.flatMap((w) => w.pieces.filter((p) => !shown.has(p.id)).map((p) => `${w.id}: ${p.id}`));
 if (missing.length > 0) console.warn(`curation.yaml lists pieces not in the visible catalog: ${missing.join(', ')}`);
 
-const { default: config } = await import('../astro.config.mjs');
-if (!config.site) throw new Error('astro.config.mjs has no site');
-const site = new URL(config.site);
-const base = (config.base ?? '/').replace(/\/?$/, '/');
 const urlOf = (route: string) => new URL(base + route, site).href;
 // The same test as Base.astro: only the launch hostname may be indexed.
 const launch = site.hostname === LAUNCH_HOSTNAME;

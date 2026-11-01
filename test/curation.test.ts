@@ -22,8 +22,15 @@ const BANNED =
 
 describe('data/curation.yaml', () => {
 	it('quotes every date, so no YAML parser turns one into a Date', () => {
-		const raw = readFileSync(CURATION, 'utf8');
-		expect(raw).not.toMatch(/:\s*\d{4}-\d{2}-\d{2}\b/);
+		// Parse the way Astro's file() loader does, with timestamps on.
+		const dates: string[] = [];
+		const walk = (value: unknown, path: string): void => {
+			if (value instanceof Date) dates.push(path);
+			else if (value && typeof value === 'object')
+				for (const [key, child] of Object.entries(value)) walk(child, `${path}.${key}`);
+		};
+		walk(parse(readFileSync(CURATION, 'utf8'), { customTags: ['timestamp'] }), 'curation');
+		expect(dates).toEqual([]);
 	});
 
 	it('has unique ids', () => {
@@ -77,7 +84,8 @@ describe('data/curation.yaml', () => {
 	});
 
 	it('has no dates in the future', () => {
-		const today = new Date().toISOString().slice(0, 10);
+		// Curators write local dates, which can run a day ahead of UTC.
+		const today = new Date(Date.now() + 86_400_000).toISOString().slice(0, 10);
 		for (const work of works) {
 			const dates = [work.checked, work.image.retrieved, ...work.pieces.flatMap((p) => (p.verified ? [p.verified] : []))];
 			for (const date of dates) expect(date <= today, `${work.id}: ${date}`).toBe(true);

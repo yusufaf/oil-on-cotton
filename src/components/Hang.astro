@@ -48,7 +48,7 @@ const pictures = await Promise.all(
 						width={pictures[i].webp.attributes.width}
 						height={pictures[i].webp.attributes.height}
 						alt={work.image.alt}
-						loading="eager"
+						loading={i === 0 ? 'eager' : 'lazy'}
 						decoding="async"
 					/>
 				</picture>
