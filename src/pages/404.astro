@@ -1,0 +1,14 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/paths';
+---
+
+<Page
+	title="Not found · Oil on Cotton"
+	description="This page is not on Oil on Cotton."
+	heading="Nothing hangs here"
+	lede="This page doesn't exist, or it has moved."
+	noindex
+>
+	<p>The rooms are listed on the <a href={href()}>home page</a>.</p>
+</Page>

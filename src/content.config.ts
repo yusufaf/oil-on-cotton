@@ -1,9 +1,11 @@
+import { readFileSync } from 'node:fs';
 import { defineCollection } from 'astro:content';
 import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { artistSchema } from './lib/artists';
-import { catalogItemSchema, hostStateSchema } from './lib/catalog';
+import { catalogItemSchema, hostStateSchema, type CatalogItem } from './lib/catalog';
 import { museumSchema } from './lib/museums';
+import { parseRemovals, visible } from './lib/removals';
 
 const museums = defineCollection({
 	loader: file('data/museums.yaml'),
@@ -15,8 +17,13 @@ const artists = defineCollection({
 	schema: artistSchema,
 });
 
+// Takedowns apply at build time, so a data PR opened before a removal can't bring a piece back.
 const catalog = defineCollection({
-	loader: file('data/catalog.json'),
+	loader: () =>
+		visible(
+			JSON.parse(readFileSync('data/catalog.json', 'utf8')) as CatalogItem[],
+			parseRemovals(readFileSync('data/removals.yaml', 'utf8')),
+		),
 	schema: catalogItemSchema,
 });
 

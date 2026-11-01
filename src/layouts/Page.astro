@@ -1,0 +1,73 @@
+---
+import Base from './Base.astro';
+
+// A plain hall page: a title, a lede, then running text in sections.
+interface Props {
+	title: string;
+	description: string;
+	heading: string;
+	lede: string;
+	noindex?: boolean;
+}
+
+const { title, description, heading, lede, noindex } = Astro.props;
+---
+
+<Base title={title} description={description} noindex={noindex}>
+	<main>
+		<section class="intro">
+			<h1>{heading}</h1>
+			<p class="lede">{lede}</p>
+		</section>
+		<div class="text">
+			<slot />
+		</div>
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: 0 var(--gutter) 120px;
+		box-sizing: border-box;
+	}
+
+	.intro {
+		padding: 56px 0 40px;
+		border-bottom: 2px solid var(--plan-ink);
+	}
+
+	h1 {
+		margin: 0 0 24px;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: clamp(40px, 5vw, 56px);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	.lede {
+		margin: 0;
+		font-size: 21px;
+		line-height: 1.45;
+		max-width: 40ch;
+	}
+
+	.text {
+		max-width: 62ch;
+		padding-top: 16px;
+	}
+
+	.text :global(h2) {
+		margin: 40px 0 12px;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: 28px;
+		line-height: 1.15;
+	}
+
+	.text :global(p) {
+		margin: 0 0 16px;
+	}
+</style>

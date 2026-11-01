@@ -1,0 +1,30 @@
+---
+import Page from '../layouts/Page.astro';
+
+const REPO = 'https://github.com/yusufaf/oil-on-cotton';
+---
+
+<Page
+	title="Takedown · Oil on Cotton"
+	description="How a shop, a museum or a rights holder can have a piece or a whole shop removed from Oil on Cotton."
+	heading="Takedown"
+	lede="A shop, a museum or a rights holder can have a piece, or a whole shop, removed from this index."
+>
+	<h2>How to ask</h2>
+	<p>
+		Email <a href="mailto:hello@oiloncotton.com">hello@oiloncotton.com</a> with the room or the piece, and who you are
+		asking for. You can also open an <a href={`${REPO}/issues`}>issue on GitHub</a>, but issues are public.
+	</p>
+
+	<h2>What happens</h2>
+	<p>
+		Requests are handled within 48 hours. A removed piece leaves the site and is not listed again. A shop that asks to
+		be excluded is removed whole, and the crawler stops reading it.
+	</p>
+
+	<h2>The removal log</h2>
+	<p>
+		Each removal is recorded in <a href={`${REPO}/blob/main/data/removals.yaml`}>data/removals.yaml</a>, with the date
+		and a short reason, and no names or contact details. Earlier versions of the data stay in the repository's history.
+	</p>
+</Page>

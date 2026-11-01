@@ -1,0 +1,45 @@
+---
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/paths';
+---
+
+<Page
+	title="Privacy · Oil on Cotton"
+	description="What Oil on Cotton records about visits, and what it does not."
+	heading="Privacy"
+	lede="This site counts visits without cookies, and without keeping your IP address."
+>
+	<h2>Counting visits</h2>
+	<p>
+		Visits are counted with <a href="https://umami.is">Umami</a>, run by the maker of this site on a server in Los Angeles.
+		For each page you view it records the page's address and title, the site you came from, your browser, operating
+		system, device type, screen size and language, and the country, region and city looked up from your IP address. When
+		you follow a link to a shop, it records which piece you opened.
+	</p>
+	<p>
+		The IP address itself is not stored. Visits are grouped under an identifier made by hashing the IP address and
+		browser details with a value that changes every month, so a visitor can't be followed from one month to the next.
+	</p>
+	<p>If your browser has Do Not Track turned on, nothing is counted.</p>
+	<p>Records are kept until they are deleted. There is no automatic expiry.</p>
+
+	<h2>Hosting</h2>
+	<p>
+		The site is hosted on GitHub Pages. GitHub <a
+			href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages"
+			>logs visitor IP addresses</a
+		> for security.
+	</p>
+	<p>Fonts are served from this site. Pages make no requests to anyone else.</p>
+
+	<h2>Shops</h2>
+	<p>A link to a piece opens the shop's own site, under that shop's privacy policy.</p>
+
+	<h2>Questions</h2>
+	<p>
+		Write to <a href="mailto:hello@oiloncotton.com">hello@oiloncotton.com</a>. To have a listing removed, see <a
+			href={href('takedown/')}>Takedown</a
+		>.
+	</p>
+	<p>Updated 1 November 2026.</p>
+</Page>

@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../layouts/Page.astro';
+import { href } from '../lib/paths';
+import { roomMuseums } from '../lib/room';
+
+const museums = (await getCollection('museums')).map((e) => e.data);
+const items = (await getCollection('catalog')).map((e) => e.data);
+const rooms = roomMuseums(museums, items);
+const REPO = 'https://github.com/yusufaf/oil-on-cotton';
+---
+
+<Page
+	title="About · Oil on Cotton"
+	description="What Oil on Cotton lists, how its prices are checked, and who makes it."
+	heading="About"
+	lede="Oil on Cotton lists the clothing sold by museum shops. Each shop is a room, and every piece links to the shop that sells it. Nothing is sold here."
+>
+	<h2>What is listed</h2>
+	<p>
+		A shop gets a room once its terms have been read and they allow it. Rooms are open for {
+			rooms.map((m, i) => (
+				<>
+					{i > 0 && (i === rooms.length - 1 ? ' and ' : ', ')}
+					<a href={href(`rooms/${m.id}/`)}>{m.shop}</a>
+				</>
+			))
+		}.
+	</p>
+	<p>
+		Shops whose terms forbid collecting listings or prices, or forbid robots, are left out. The clause behind each
+		decision is quoted in <a href={`${REPO}/blob/main/data/museums.yaml`}>data/museums.yaml</a>.
+	</p>
+
+	<h2>How prices are checked</h2>
+	<p>
+		A crawler called OilOnCottonBot reads each listed shop's clothing pages once a week. It signs its requests, follows
+		robots.txt, and keeps only the name, price, sizes in stock and link of each piece. Its page is at <a
+			href="https://bot.oiloncotton.com">bot.oiloncotton.com</a
+		>.
+	</p>
+	<p>
+		Prices and stock change between checks. Each room shows the date of its last check, and the shop's own page has the
+		final word.
+	</p>
+
+	<h2>No money changes hands</h2>
+	<p>
+		The site has no ads, no affiliate links and nothing for sale. No shop pays to be listed, and the site earns nothing
+		when you buy. It is not affiliated with or endorsed by any museum.
+	</p>
+
+	<h2>The walls</h2>
+	<p>
+		Each room is painted a colour from Robert Ridgway's <cite>Color Standards and Color Nomenclature</cite> (1912), and
+		the colour's name is on the wall. For now the values are approximations from published ISCC-NBS centroids, not
+		measured from the plates.
+	</p>
+
+	<h2>Who makes it</h2>
+	<p>
+		Made by <a href="https://yusufaf.dev">Yusuf Afzal</a>. The code is open source on <a href={REPO}>GitHub</a>. Write
+		to <a href="mailto:hello@oiloncotton.com">hello@oiloncotton.com</a>, and see <a href={href('takedown/')}
+			>Takedown</a
+		> to have a piece or a shop removed.
+	</p>
+</Page>

@@ -8,6 +8,7 @@ import { parse } from 'yaml';
 import { jwkFromSeed } from '../bot/key.ts';
 import { catalogSchema, hostsSchema, type CatalogItem } from '../src/lib/catalog.ts';
 import { museumSchema } from '../src/lib/museums.ts';
+import { parseRemovals, removedIds, removedMuseums, visible } from '../src/lib/removals.ts';
 import { crawlMuseum } from './catalog.ts';
 import { Crawler } from './crawler.ts';
 
@@ -36,10 +37,13 @@ if (!seed) {
 	process.exit(2);
 }
 
+const removals = parseRemovals(readFileSync('data/removals.yaml', 'utf8'));
+const removed = removedIds(removals);
 const museums = museumSchema
 	.array()
 	.parse(parse(readFileSync('data/museums.yaml', 'utf8')))
 	.filter((m) => m.automation === 'auto' && m.platform === 'shopify')
+	.filter((m) => !removedMuseums(removals).has(m.id))
 	.filter((m) => !values.museum || values.museum.includes(m.id));
 
 const crawler = new Crawler({
@@ -72,7 +76,9 @@ if (values.smoke) {
 }
 
 const readJson = (path: string) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined);
-const catalog = catalogSchema.parse(readJson(CATALOG) ?? []);
+// Taken-down pieces leave catalog.json on the first run after their removal, even one that
+// crawls no shop, and a shop that fails can't hand them back.
+const catalog = visible(catalogSchema.parse(readJson(CATALOG) ?? []), removals);
 const hosts = hostsSchema.parse(readJson(HOSTS) ?? {});
 const now = new Date().toISOString();
 
@@ -92,13 +98,14 @@ for (const museum of museums) {
 		museum,
 		catalog.filter((i) => i.museum === museum.id),
 		hosts[museum.id],
-		{ now, limit, refresh: values.refresh },
+		{ now, limit, refresh: values.refresh, removed },
 	);
 	next = next.filter((i) => i.museum !== museum.id).concat(result.items);
 	hosts[museum.id] = result.host;
 	console.error(`${museum.id}: ${result.host.status}, ${result.items.length} items, ${result.host.requests} requests`);
 	save();
 }
+save();
 
 if (values['dry-run']) console.log(JSON.stringify({ items: next.length, hosts }, null, 2));
 if (museums.some((m) => hosts[m.id]?.status !== 'ok')) process.exitCode = 1;

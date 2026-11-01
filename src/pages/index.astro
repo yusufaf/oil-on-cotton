@@ -1,15 +1,18 @@
 ---
+import { readFileSync } from 'node:fs';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import { isOpen } from '../lib/museums';
 import { href } from '../lib/paths';
+import { parseRemovals, removedMuseums } from '../lib/removals';
 import { roomMuseums } from '../lib/room';
 
 const museums = (await getCollection('museums')).map((entry) => entry.data);
 const items = (await getCollection('catalog')).map((entry) => entry.data);
 const rooms = new Set(roomMuseums(museums, items).map((m) => m.id));
 const count = (id: string) => items.filter((i) => i.museum === id).length;
-const open = museums.filter(isOpen);
+const removed = removedMuseums(parseRemovals(readFileSync('data/removals.yaml', 'utf8')));
+const open = museums.filter((m) => isOpen(m) && !removed.has(m.id));
 const closed = museums.filter((m) => m.automation === 'pending');
 ---
 
