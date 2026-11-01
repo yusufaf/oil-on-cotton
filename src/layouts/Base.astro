@@ -1,18 +1,30 @@
 ---
 import '../styles/global.css';
-import { href, isCurrent } from '../lib/paths';
+import { href, isCurrent, withSlash } from '../lib/paths';
+import { LAUNCH_HOSTNAME } from '../lib/site';
 
 interface Props {
 	title: string;
 	description: string;
 	// A room page is painted in its wall colour; hall pages leave this out.
 	wall?: { hex: string; text: 'on-wall' | 'on-wall-warm' };
+	// Pages that should never be indexed, such as the 404 page.
+	noindex?: boolean;
 }
 
-const { title, description, wall } = Astro.props;
+// Umami website id for oiloncotton.com (public; it ships in every page).
+const UMAMI_WEBSITE_ID = '4578771b-d472-458f-815a-36bcfb9f95dd';
+
+const { title, description, wall, noindex = false } = Astro.props;
 // Staging must stay out of search results: GitHub Pages can't redirect it to the brand domain
 // at launch. Compare the hostname, since the site URL carries a trailing slash.
-const indexable = Astro.site?.hostname === 'oiloncotton.com';
+const indexable = Astro.site?.hostname === LAUNCH_HOSTNAME && !noindex;
+const canonical = indexable ? new URL(withSlash(Astro.url.pathname), Astro.site).href : undefined;
+const footerLinks = [
+	{ path: 'about/', label: 'About' },
+	{ path: 'privacy/', label: 'Privacy' },
+	{ path: 'takedown/', label: 'Takedown' },
+];
 ---
 
 <!doctype html>
@@ -26,20 +38,50 @@ const indexable = Astro.site?.hostname === 'oiloncotton.com';
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		{!indexable && <meta name="robots" content="noindex" />}
+		{canonical && <link rel="canonical" href={canonical} />}
+		<meta property="og:site_name" content="Oil on Cotton" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{canonical && <meta property="og:url" content={canonical} />}
 		<meta name="color-scheme" content="light" />
 		<meta name="darkreader-lock" />
 		<link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
 		<title>{title}</title>
+		{
+			UMAMI_WEBSITE_ID && (
+				<script
+					is:inline
+					defer
+					src="https://analytics.oiloncotton.com/s.js"
+					data-website-id={UMAMI_WEBSITE_ID}
+					data-domains="oiloncotton.com"
+					data-do-not-track="true"
+					data-exclude-search="true"
+					data-exclude-hash="true"
+				/>
+			)
+		}
 	</head>
 	<body>
 		<header class="site">
 			<a href={href()} class="wordmark">Oil on Cotton</a>
 			<nav aria-label="Main">
 				<a href={href()} aria-current={isCurrent(Astro.url.pathname) ? 'page' : undefined}>Rooms</a>
+				<a href={href('about/')} aria-current={isCurrent(Astro.url.pathname, 'about/') ? 'page' : undefined}>About</a>
 			</nav>
 		</header>
 		<slot />
 		<footer class="site">
+			<nav aria-label="About this site">
+				{
+					footerLinks.map((l) => (
+						<a href={href(l.path)} aria-current={isCurrent(Astro.url.pathname, l.path) ? 'page' : undefined}>
+							{l.label}
+						</a>
+					))
+				}
+			</nav>
 			<p>
 				An independent, non-commercial index. It is not affiliated with or endorsed by any museum. Names identify the
 				shops; trademarks belong to their owners.
@@ -65,6 +107,17 @@ const indexable = Astro.site?.hostname === 'oiloncotton.com';
 		font-weight: 600;
 		font-size: 19px;
 		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px 24px;
+	}
+
+	footer {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	footer p {

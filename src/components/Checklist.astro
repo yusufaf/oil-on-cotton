@@ -66,7 +66,14 @@ const sorts = [
 					data-name={r.keys.name}
 				>
 					<span class="piece">
-						<a href={r.url} target="_blank" rel="nofollow noopener">
+						<a
+							href={r.url}
+							target="_blank"
+							rel="nofollow noopener"
+							data-umami-event="Outbound"
+							data-umami-event-museum={r.id.split(':')[0]}
+							data-umami-event-item={r.id}
+						>
 							{r.name}
 						</a>
 						{r.sizes && <span class="sizes">{r.sizes}</span>}

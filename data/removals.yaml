@@ -1,0 +1,4 @@
+# Takedowns. Each entry removes one piece ({ id: "getty:123", handle, removedAt, reason }) or a whole
+# shop ({ museum: getty, removedAt, reason }) from the site and from future crawls. This file is
+# public: record what was removed and why, never who asked.
+[]

@@ -205,7 +205,7 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
   - Without JavaScript the whole list shows in the default order and the buttons stay hidden.
   - The active filter is weight 600 with a 2px underline. Filter buttons are real `<button>` elements with `aria-pressed`, at least 44px tall.
 - **checklist-row.**
-  - **Link.** The piece name is the link to the shop (`target=_blank`, `rel="nofollow noopener"`, later routed through `/go/`). It has no underline at rest; it gets an underline on row hover and on focus.
+  - **Link.** The piece name is the link to the shop (`target=_blank`, `rel="nofollow noopener"`). A click is counted as an Umami "Outbound" event with the museum and piece id; GitHub Pages can't run a `/go/` redirect, so these counts are a lower bound (blocked scripts and middle-clicks are missed). It has no underline at rest; it gets an underline on row hover and on focus.
   - **Separators.** Rows are separated by 1px rule lines.
   - **Optional fields.** Artist and kind are optional, and a blank artist cell stays blank, never filled with a dash. Kids' sizes read "T-shirt (kids)".
   - **Sizes line.** Under the piece name, in meta size: sizes in stock, then the sold-out ones ("S, M, L · 2XL sold out"). One-size and sold-out pieces have no sizes line.

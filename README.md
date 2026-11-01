@@ -32,7 +32,11 @@ OilOnCottonBot reads public pages from the few museum shops whose terms allow it
 
 Shops whose terms prohibit automated collection are not crawled.
 
-To ask for a listing to be removed, or for a shop to be excluded, email bot@oiloncotton.com or open an issue on this repository. Takedown requests are handled within 48 hours.
+Questions about the crawler go to bot@oiloncotton.com. To ask for a listing to be removed, or for a shop to be excluded, email hello@oiloncotton.com or open an issue on this repository. Takedown requests are handled within 48 hours.
+
+### Takedowns
+
+A takedown is one line in [data/removals.yaml](data/removals.yaml): `{ id: "getty:123", handle: <its handle in data/catalog.json>, removedAt, reason }` for a piece, or `{ museum: getty, removedAt, reason }` for a whole shop. The build leaves removed pieces out, the crawler never requests their handle again, and the next crawl drops them from `data/catalog.json`. The file is public, so record what was removed and why, never who asked. If a `data/catalog` PR is open when the takedown merges, re-run the full ingest so the PR is rebuilt without the piece.
 
 ### Running it
 
