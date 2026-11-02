@@ -28,7 +28,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10228117864640",
@@ -59,7 +59,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10228224098496",
@@ -91,7 +91,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10271032574144",
@@ -119,7 +119,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10271032705216",
@@ -147,7 +147,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10271032770752",
@@ -174,7 +174,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:10284295684288",
@@ -202,7 +202,34 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
+	},
+	{
+		"id": "getty:10295005085888",
+		"museum": "getty",
+		"handle": "scarf-modal-lrg-dots-piink",
+		"url": "https://shop.getty.edu/products/scarf-modal-lrg-dots-piink",
+		"name": "Tristan Moody Dot Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 7500,
+			"max": 7500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"holiday 2026",
+			"new arrivals apparel",
+			"style makers"
+		],
+		"firstSeen": "2026-11-02T19:28:24.401Z",
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:2411138154573",
@@ -247,7 +274,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:295259617",
@@ -287,7 +314,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:4848987013197",
@@ -326,7 +353,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:4850117574733",
@@ -372,7 +399,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:595797764",
@@ -423,7 +450,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:5969697702080",
@@ -498,7 +525,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:6955817337024",
@@ -620,7 +647,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8032247283904",
@@ -675,7 +702,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8032247480512",
@@ -731,7 +758,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8054770467008",
@@ -741,8 +768,8 @@
 		"name": "Mira Calligraphiae Joris Hoefnagel Shawl",
 		"garment": "scarf",
 		"price": {
-			"min": 30000,
-			"max": 30000,
+			"min": 24000,
+			"max": 24000,
 			"compareAt": 48000
 		},
 		"sizes": [
@@ -792,7 +819,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8054770499776",
@@ -802,8 +829,8 @@
 		"name": "Mira Calligraphiae Alphabet Shawl",
 		"garment": "scarf",
 		"price": {
-			"min": 30000,
-			"max": 30000,
+			"min": 22500,
+			"max": 22500,
 			"compareAt": 45000
 		},
 		"sizes": [
@@ -852,7 +879,78 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
+	},
+	{
+		"id": "getty:8107359862976",
+		"museum": "getty",
+		"handle": "mismatch-fingerless-gloves",
+		"url": "https://shop.getty.edu/products/mismatch-fingerless-gloves",
+		"name": "Mismatch Fingerless Gloves",
+		"garment": "gloves",
+		"price": {
+			"min": 4000,
+			"max": 4000
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"All Products",
+			"Apparel & Accessories",
+			"Archived",
+			"bts apparel",
+			"bts bags and apparel",
+			"Gift Guide",
+			"gift guide all gifts",
+			"PST Art & Science Collide",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-11-02T19:28:24.401Z",
+		"checkedAt": "2026-11-02T19:28:24.401Z"
+	},
+	{
+		"id": "getty:8107365400768",
+		"museum": "getty",
+		"handle": "patchwork-stripe-skinny-scarf",
+		"url": "https://shop.getty.edu/products/patchwork-stripe-skinny-scarf",
+		"name": "Patchwork Stripe Skinny Scarf",
+		"garment": "scarf",
+		"price": {
+			"min": 6500,
+			"max": 6500
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"All Products",
+			"Apparel & Accessories",
+			"Archived",
+			"bts apparel",
+			"bts bags and apparel",
+			"Gift Guide",
+			"gift guide all gifts",
+			"Mother's Day 2025",
+			"scarves",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-11-02T19:28:24.401Z",
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8133588156608",
@@ -903,7 +1001,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8197705957568",
@@ -947,7 +1045,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8252278505664",
@@ -988,7 +1086,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8252278538432",
@@ -996,7 +1094,7 @@
 		"handle": "getty-pride-tank-top",
 		"url": "https://shop.getty.edu/products/getty-pride-tank-top",
 		"name": "Getty Pride Tank top",
-		"garment": "tee",
+		"garment": "top",
 		"price": {
 			"min": 1250,
 			"max": 1250,
@@ -1044,7 +1142,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8273507156160",
@@ -1127,7 +1225,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8274311872704",
@@ -1217,7 +1315,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8306839879872",
@@ -1251,7 +1349,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8309393948864",
@@ -1300,7 +1398,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349216374976",
@@ -1356,7 +1454,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349224894656",
@@ -1404,7 +1502,7 @@
 			"pirate"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349224927424",
@@ -1451,7 +1549,7 @@
 			"pirate"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349224960192",
@@ -1501,7 +1599,7 @@
 			"Sale Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349224992960",
@@ -1509,7 +1607,7 @@
 		"handle": "witte-marvelje-knitted-embroidery-crewneck-cream",
 		"url": "https://shop.getty.edu/products/witte-marvelje-knitted-embroidery-crewneck-cream",
 		"name": "Witte Marvelje Knitted Embroidery Crewneck - Cream",
-		"garment": "sweatshirt",
+		"garment": "sweater",
 		"price": {
 			"min": 18750,
 			"max": 18750,
@@ -1559,7 +1657,7 @@
 			"woodland"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349225091264",
@@ -1610,7 +1708,7 @@
 			"Valentine 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349271032000",
@@ -1665,7 +1763,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8349271064768",
@@ -1717,7 +1815,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8363620958400",
@@ -1734,10 +1832,10 @@
 		"sizes": [
 			{
 				"label": "One size",
-				"available": true
+				"available": false
 			}
 		],
-		"available": true,
+		"available": false,
 		"productType": "APPAREL",
 		"tags": [
 			"2025 holiday",
@@ -1752,7 +1850,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8363624366272",
@@ -1787,7 +1885,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8363628462272",
@@ -1822,7 +1920,39 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
+	},
+	{
+		"id": "getty:8363628495040",
+		"museum": "getty",
+		"handle": "mutli-stripe-big-scarf-rainbow",
+		"url": "https://shop.getty.edu/products/mutli-stripe-big-scarf-rainbow",
+		"name": "Mutli Stripe Big Scarf - Rainbow",
+		"garment": "scarf",
+		"price": {
+			"min": 7800,
+			"max": 7800
+		},
+		"sizes": [
+			{
+				"label": "One size",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "APPAREL",
+		"tags": [
+			"2025 holiday",
+			"Apparel & Accessories",
+			"hawke",
+			"holiday 2025",
+			"Sale Apparel",
+			"trendsetter",
+			"VIP Preview 2025",
+			"Winter Apparel"
+		],
+		"firstSeen": "2026-11-02T19:28:24.401Z",
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8367026733248",
@@ -1856,7 +1986,7 @@
 			"VIP Preview 2025"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:83855278089",
@@ -1930,7 +2060,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8388538597568",
@@ -1976,7 +2106,7 @@
 			"Wholesale"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8389266342080",
@@ -2020,7 +2150,7 @@
 			"Winter Apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8398712963264",
@@ -2056,7 +2186,7 @@
 			"van huysum"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8398830239936",
@@ -2082,7 +2212,7 @@
 			"poetcore"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8398830305472",
@@ -2112,7 +2242,7 @@
 			"woodland"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399598977216",
@@ -2142,7 +2272,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399599009984",
@@ -2171,7 +2301,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399599075520",
@@ -2198,7 +2328,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399599108288",
@@ -2230,7 +2360,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399599141056",
@@ -2257,7 +2387,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8399649734848",
@@ -2290,7 +2420,7 @@
 			"vday sale 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8408894570688",
@@ -2324,7 +2454,7 @@
 			"Valentine 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8408897061056",
@@ -2352,7 +2482,7 @@
 			"nostalgia"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8417059602624",
@@ -2368,10 +2498,10 @@
 		"sizes": [
 			{
 				"label": "One size",
-				"available": true
+				"available": false
 			}
 		],
-		"available": true,
+		"available": false,
 		"productType": "APPAREL",
 		"tags": [
 			"adornments and attire",
@@ -2384,7 +2514,7 @@
 			"vday sale 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8417059635392",
@@ -2415,7 +2545,7 @@
 			"vday sale 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8497704698048",
@@ -2446,7 +2576,7 @@
 			"socks"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8497728323776",
@@ -2482,7 +2612,7 @@
 			"van gogh"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8498675941568",
@@ -2514,7 +2644,7 @@
 			"museum devotee"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8498678956224",
@@ -2545,7 +2675,7 @@
 			"museum devotee"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8498679120064",
@@ -2575,7 +2705,7 @@
 			"museum devotee"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8498679251136",
@@ -2606,7 +2736,7 @@
 			"museum devotee"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8498679513280",
@@ -2637,7 +2767,7 @@
 			"mythology"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8536555749568",
@@ -2683,7 +2813,7 @@
 			"Villa"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8544001622208",
@@ -2718,7 +2848,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8544001654976",
@@ -2753,7 +2883,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8587813355712",
@@ -2781,7 +2911,7 @@
 			"holiday 2026"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8598372450496",
@@ -2809,7 +2939,7 @@
 			"Pride"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617257631936",
@@ -2838,7 +2968,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617257697472",
@@ -2870,7 +3000,7 @@
 			"repurposed"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617257763008",
@@ -2903,7 +3033,7 @@
 			"repurposed"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617257992384",
@@ -2936,7 +3066,7 @@
 			"repurposed"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617258221760",
@@ -2968,7 +3098,7 @@
 			"repurposed"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617258254528",
@@ -2999,7 +3129,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8617258287296",
@@ -3028,7 +3158,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648627519680",
@@ -3059,7 +3189,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648627683520",
@@ -3091,7 +3221,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648635089088",
@@ -3122,7 +3252,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648635121856",
@@ -3154,7 +3284,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648635154624",
@@ -3185,7 +3315,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648637808832",
@@ -3240,7 +3370,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648637841600",
@@ -3295,7 +3425,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648637972672",
@@ -3350,7 +3480,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648638038208",
@@ -3392,7 +3522,7 @@
 			"young creator"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8648638070976",
@@ -3447,7 +3577,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8659393937600",
@@ -3478,7 +3608,7 @@
 			"new arrivals apparel"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8663206428864",
@@ -3522,7 +3652,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8714436477120",
@@ -3550,7 +3680,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8730741571776",
@@ -3579,7 +3709,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8748546130112",
@@ -3609,7 +3739,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "getty:8748546162880",
@@ -3639,7 +3769,7 @@
 			"style makers"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:1435281752167",
@@ -3681,7 +3811,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:2120389099623",
@@ -3723,7 +3853,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:6281932996793",
@@ -3745,7 +3875,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7423051497657",
@@ -3783,7 +3913,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7468016763065",
@@ -3829,7 +3959,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7592085422265",
@@ -3851,7 +3981,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7592085520569",
@@ -3873,7 +4003,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7610344538297",
@@ -3915,7 +4045,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7630427717817",
@@ -3957,7 +4087,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7743876137145",
@@ -3995,7 +4125,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7866709639353",
@@ -4033,7 +4163,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7952091316409",
@@ -4055,7 +4185,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7967186059449",
@@ -4077,7 +4207,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7967187534009",
@@ -4099,7 +4229,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:7969658011833",
@@ -4141,7 +4271,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8027374583993",
@@ -4163,7 +4293,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8027374780601",
@@ -4185,7 +4315,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8057791152313",
@@ -4227,7 +4357,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8068127326393",
@@ -4249,7 +4379,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8085580415161",
@@ -4295,7 +4425,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8085581267129",
@@ -4333,7 +4463,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8222287855801",
@@ -4363,7 +4493,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8222324031673",
@@ -4385,7 +4515,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8237343178937",
@@ -4407,7 +4537,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "lacma:8533817865",
@@ -4449,7 +4579,7 @@
 		"available": true,
 		"productType": "Apparel",
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027595104546",
@@ -4475,7 +4605,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027602182434",
@@ -4519,7 +4649,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027614273826",
@@ -4573,7 +4703,7 @@
 			"For Emerging Artists"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027630821666",
@@ -4601,7 +4731,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027647729954",
@@ -4675,7 +4805,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027678466338",
@@ -4717,7 +4847,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027684167970",
@@ -4759,7 +4889,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027688296738",
@@ -4801,7 +4931,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027714609442",
@@ -4839,7 +4969,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10027722604834",
@@ -4881,7 +5011,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10034598936866",
@@ -4936,7 +5066,7 @@
 			"Gifts"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10039829168418",
@@ -4985,7 +5115,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10039918657826",
@@ -5034,7 +5164,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10042574012706",
@@ -5083,7 +5213,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10043263385890",
@@ -5139,7 +5269,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10043270594850",
@@ -5167,7 +5297,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10073043206434",
@@ -5208,7 +5338,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10092448252194",
@@ -5224,7 +5354,7 @@
 		"sizes": [
 			{
 				"label": "XS",
-				"available": true
+				"available": false
 			},
 			{
 				"label": "S",
@@ -5250,7 +5380,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10092495667490",
@@ -5292,7 +5422,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10092517753122",
@@ -5319,7 +5449,7 @@
 			"Gifts"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10092543082786",
@@ -5366,7 +5496,7 @@
 			"Gifts"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10132961231138",
@@ -5408,7 +5538,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10389464252706",
@@ -5450,7 +5580,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10389491482914",
@@ -5476,7 +5606,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10391236542754",
@@ -5502,7 +5632,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10391246504226",
@@ -5544,7 +5674,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10391324655906",
@@ -5586,7 +5716,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10391342481698",
@@ -5628,7 +5758,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10426789527842",
@@ -5656,7 +5786,7 @@
 			"Our NYC Home"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:10426801652002",
@@ -5702,7 +5832,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15326649712930",
@@ -5733,7 +5863,7 @@
 			"Gifts"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327219155234",
@@ -5759,7 +5889,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327226396962",
@@ -5785,7 +5915,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327252906274",
@@ -5811,7 +5941,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327438504226",
@@ -5853,7 +5983,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327456297250",
@@ -5868,14 +5998,6 @@
 		},
 		"sizes": [
 			{
-				"label": "M",
-				"available": true
-			},
-			{
-				"label": "L",
-				"available": true
-			},
-			{
 				"label": "XL",
 				"available": true
 			}
@@ -5887,7 +6009,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327633768738",
@@ -5929,37 +6051,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
-	},
-	{
-		"id": "whitney:15327670862114",
-		"museum": "whitney",
-		"handle": "cathedral-2-quarter-zip-sherpa-pullover",
-		"url": "https://shop.whitney.org/products/cathedral-2-quarter-zip-sherpa-pullover",
-		"name": "Cathedral #2 Quarter-Zip Sherpa Pullover",
-		"garment": "sweatshirt",
-		"price": {
-			"min": 11800,
-			"max": 11800
-		},
-		"sizes": [
-			{
-				"label": "S/M",
-				"available": true
-			},
-			{
-				"label": "L/XL",
-				"available": true
-			}
-		],
-		"available": true,
-		"productType": "Apparel & Accessories",
-		"tags": [
-			"Apparel & Accessories",
-			"Tops"
-		],
-		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327793742114",
@@ -5985,7 +6077,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327863046434",
@@ -6023,7 +6115,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15327897420066",
@@ -6065,7 +6157,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15328061817122",
@@ -6103,7 +6195,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15328090456354",
@@ -6145,7 +6237,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15328138756386",
@@ -6159,10 +6251,6 @@
 			"max": 5400
 		},
 		"sizes": [
-			{
-				"label": "S",
-				"available": true
-			},
 			{
 				"label": "M",
 				"available": true
@@ -6183,7 +6271,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15338914677026",
@@ -6225,7 +6313,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:15338990272802",
@@ -6263,7 +6351,33 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
+	},
+	{
+		"id": "whitney:15388232843554",
+		"museum": "whitney",
+		"handle": "cathedral-2-quarter-zip-sherpa-pullover",
+		"url": "https://shop.whitney.org/products/cathedral-2-quarter-zip-sherpa-pullover",
+		"name": "Cathedral #2 Quarter-Zip Sherpa Pullover",
+		"garment": "sweatshirt",
+		"price": {
+			"min": 11800,
+			"max": 11800
+		},
+		"sizes": [
+			{
+				"label": "L/XL",
+				"available": true
+			}
+		],
+		"available": true,
+		"productType": "Apparel & Accessories",
+		"tags": [
+			"Apparel & Accessories",
+			"Tops"
+		],
+		"firstSeen": "2026-10-25T23:17:32.710Z",
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383098126626",
@@ -6289,7 +6403,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383098159394",
@@ -6317,7 +6431,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383098224930",
@@ -6346,7 +6460,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383098290466",
@@ -6372,7 +6486,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383099306274",
@@ -6398,7 +6512,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383100584226",
@@ -6425,7 +6539,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8383104123170",
@@ -6472,7 +6586,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8544157729058",
@@ -6521,7 +6635,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8819473776930",
@@ -6571,7 +6685,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8851795640610",
@@ -6597,7 +6711,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8890665369890",
@@ -6625,7 +6739,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8894015144226",
@@ -6672,7 +6786,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8921913819426",
@@ -6702,7 +6816,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8937205596450",
@@ -6746,7 +6860,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8937211101474",
@@ -6774,7 +6888,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8938971988258",
@@ -6815,7 +6929,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8958510858530",
@@ -6861,7 +6975,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8958513578274",
@@ -6907,7 +7021,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:8967404388642",
@@ -6956,7 +7070,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9193329492258",
@@ -6992,7 +7106,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9215968936226",
@@ -7020,7 +7134,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9417109274914",
@@ -7036,7 +7150,7 @@
 		"sizes": [
 			{
 				"label": "XS",
-				"available": true
+				"available": false
 			},
 			{
 				"label": "S",
@@ -7044,7 +7158,7 @@
 			},
 			{
 				"label": "M",
-				"available": true
+				"available": false
 			},
 			{
 				"label": "L",
@@ -7069,7 +7183,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9417118974242",
@@ -7118,7 +7232,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9419578343714",
@@ -7158,7 +7272,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9480857387298",
@@ -7202,7 +7316,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9494766059810",
@@ -7242,7 +7356,7 @@
 			"For Emerging Artists"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9497275760930",
@@ -7291,7 +7405,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9545101508898",
@@ -7335,7 +7449,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9545201254690",
@@ -7383,7 +7497,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9602193654050",
@@ -7411,7 +7525,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9701223203106",
@@ -7457,7 +7571,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9726177870114",
@@ -7489,7 +7603,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9831663894818",
@@ -7535,7 +7649,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9858276720930",
@@ -7579,7 +7693,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9859582198050",
@@ -7621,7 +7735,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9859596058914",
@@ -7647,7 +7761,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9868835848482",
@@ -7693,7 +7807,7 @@
 			"For Emerging Artists"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9868839780642",
@@ -7719,7 +7833,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9868843286818",
@@ -7761,7 +7875,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9868848005410",
@@ -7787,7 +7901,7 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9868853903650",
@@ -7829,7 +7943,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9887499747618",
@@ -7873,7 +7987,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9887507480866",
@@ -7919,7 +8033,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9887513215266",
@@ -7961,7 +8075,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9887522193698",
@@ -8010,7 +8124,7 @@
 			"Whitney Biennial"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9887527534882",
@@ -8056,7 +8170,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9900650430754",
@@ -8084,7 +8198,7 @@
 			"Our NYC Home"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9924394615074",
@@ -8110,7 +8224,7 @@
 			"Scarves & Ties"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9946733019426",
@@ -8148,7 +8262,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9949553721634",
@@ -8176,7 +8290,7 @@
 			"Whitney"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9950069391650",
@@ -8224,7 +8338,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9950077387042",
@@ -8272,7 +8386,7 @@
 			"Tops"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	},
 	{
 		"id": "whitney:9973115388194",
@@ -8300,6 +8414,6 @@
 			"Hats"
 		],
 		"firstSeen": "2026-10-25T23:17:32.710Z",
-		"checkedAt": "2026-10-26T16:07:45.525Z"
+		"checkedAt": "2026-11-02T19:28:24.401Z"
 	}
 ]
