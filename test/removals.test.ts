@@ -1,9 +1,18 @@
 import { readFileSync } from 'node:fs';
+import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import { crawlMuseum } from '../ingest/catalog';
 import type { CatalogItem } from '../src/lib/catalog';
-import type { Museum } from '../src/lib/museums';
-import { parseRemovals, readRemovals, removedHandles, removedIds, removedMuseums, visible } from '../src/lib/removals';
+import { museumSchema, type Museum } from '../src/lib/museums';
+import {
+	parseRemovals,
+	readRemovals,
+	removedHandles,
+	removedIds,
+	removedMuseums,
+	visible,
+	type Removal,
+} from '../src/lib/removals';
 import { fakeCrawler } from './helpers';
 
 const piece = (museum: string, id: number, handle = `piece-${id}`) =>
@@ -27,6 +36,19 @@ describe('data/removals.yaml', () => {
 		expect(() => parseRemovals('- { id: "getty:1", handle: a-tee, removedAt: "2026-11-01" }')).toThrow();
 		expect(() => parseRemovals('- { id: "getty:1", museum: getty, removedAt: "2026-11-01", reason: x }')).toThrow();
 		expect(() => parseRemovals('- { id: "getty:1", handle: a-tee, removedAt: "2026-11-01", reason: x, email: a@b.c }')).toThrow();
+	});
+
+	it('names only shops in museums.yaml, since a mistyped shop would take nothing down', () => {
+		const known = new Set(museumSchema.array().parse(parse(readFileSync('data/museums.yaml', 'utf8'))).map((m) => m.id));
+		const strangers = (removals: Removal[]) =>
+			removals.map((r) => ('museum' in r ? r.museum : r.id.split(':')[0])).filter((id) => !known.has(id));
+		expect(strangers(readRemovals())).toEqual([]);
+		const typos = parseRemovals(
+			'- { museum: gettty, removedAt: "2026-11-01", reason: x }\n' +
+				'- { id: "lacmaa:1", handle: a-tee, removedAt: "2026-11-01", reason: x }\n' +
+				'- { museum: getty, removedAt: "2026-11-01", reason: x }\n',
+		);
+		expect(strangers(typos)).toEqual(['gettty', 'lacmaa']);
 	});
 
 	it('reads an empty file as no removals', () => {

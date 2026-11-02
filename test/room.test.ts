@@ -4,6 +4,7 @@ import type { CatalogItem } from '../src/lib/catalog';
 import { isChildSize } from '../src/lib/kids';
 import type { Museum } from '../src/lib/museums';
 import {
+	checkLedes,
 	fillLede,
 	groupCounts,
 	isKids,
@@ -157,6 +158,17 @@ describe('rooms and ledes', () => {
 		const museums = [museum('whitney', 'auto'), museum('met', 'manual'), museum('lacma', 'auto')];
 		expect(roomMuseums(museums, items).map((m) => m.id)).toEqual(['whitney']);
 		expect(roomMuseums(museums, items.slice(1))).toEqual([]);
+	});
+
+	it('needs a lede for every room, and refuses one for a shop with no room unless it was taken down', () => {
+		expect(() => checkLedes(['whitney', 'getty'], ['whitney'], new Set())).toThrow('data/rooms.yaml has no lede for: getty');
+		expect(() => checkLedes(['whitney'], ['whitney', 'getty'], new Set())).toThrow(
+			"data/rooms.yaml has ledes for rooms that don't exist: getty",
+		);
+		expect(() => checkLedes(['whitney'], ['whitney', 'getty'], new Set(['getty']))).not.toThrow();
+		expect(() => checkLedes(['whitney'], ['whitney', 'getty', 'nowhere'], new Set(['getty']))).toThrow(
+			"data/rooms.yaml has ledes for rooms that don't exist: nowhere",
+		);
 	});
 
 	const items = [

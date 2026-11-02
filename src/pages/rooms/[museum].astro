@@ -6,7 +6,9 @@ import Base from '../../layouts/Base.astro';
 import { matchArtists } from '../../lib/artists';
 import { hangsFor, readCuration } from '../../lib/curation';
 import type { Museum } from '../../lib/museums';
+import { readRemovals, removedMuseums } from '../../lib/removals';
 import {
+	checkLedes,
 	day,
 	fillLede,
 	groupCounts,
@@ -28,11 +30,11 @@ export async function getStaticPaths() {
 
 	const rooms = roomMuseums(museums, items);
 	const ledes = new Map((await getCollection('rooms')).map((e) => [e.id, e.data.lede]));
-	const roomIds = new Set(rooms.map((m) => m.id));
-	const missing = rooms.filter((m) => !ledes.has(m.id)).map((m) => m.id);
-	const orphans = [...ledes.keys()].filter((id) => !roomIds.has(id));
-	if (missing.length > 0) throw new Error(`data/rooms.yaml has no lede for: ${missing.join(', ')}`);
-	if (orphans.length > 0) throw new Error(`data/rooms.yaml has ledes for rooms that don't exist: ${orphans.join(', ')}`);
+	checkLedes(
+		rooms.map((m) => m.id),
+		[...ledes.keys()],
+		removedMuseums(readRemovals()),
+	);
 
 	return rooms.map((museum) => ({
 		params: { museum: museum.id },
