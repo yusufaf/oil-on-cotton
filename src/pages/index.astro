@@ -1,18 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
+import HallIntro from '../components/HallIntro.astro';
 import Base from '../layouts/Base.astro';
-import { isOpen } from '../lib/museums';
 import { href } from '../lib/paths';
+import { homeRooms, roomMeta } from '../lib/plan';
 import { readRemovals, removedMuseums } from '../lib/removals';
-import { roomMuseums } from '../lib/room';
 
 const museums = (await getCollection('museums')).map((entry) => entry.data);
 const items = (await getCollection('catalog')).map((entry) => entry.data);
-const rooms = new Set(roomMuseums(museums, items).map((m) => m.id));
-const count = (id: string) => items.filter((i) => i.museum === id).length;
-const removed = removedMuseums(readRemovals());
-const open = museums.filter((m) => isOpen(m) && !removed.has(m.id));
-const closed = museums.filter((m) => m.automation === 'pending' && !removed.has(m.id));
+const { open, closed } = homeRooms(museums, items, removedMuseums(readRemovals()));
 ---
 
 <Base
@@ -20,26 +16,21 @@ const closed = museums.filter((m) => m.automation === 'pending' && !removed.has(
 	description="An independent index of clothing sold by museum shops. Each room is one shop, and every piece links to the shop that sells it."
 >
 	<main>
-		<section class="intro">
-			<h1>Museum shop apparel, hung by room</h1>
-			<p>Each room is one museum shop's clothing. Every piece links to the shop that sells it.</p>
-		</section>
+		<HallIntro />
 		<section aria-label="Rooms" class="rooms">
 			<ul>
 				{
-					open.map((m) => (
+					open.map((room) => (
 						<li>
-							<span class="swatch" style={`background: ${m.wall.hex}`} aria-hidden="true" />
-							{rooms.has(m.id) ? (
-								<a class="name" href={href(`rooms/${m.id}/`)}>
-									{m.shop}
+							<span class="swatch" style={`background: ${room.museum.wall.hex}`} aria-hidden="true" />
+							{room.linked ? (
+								<a class="name" href={href(`rooms/${room.museum.id}/`)}>
+									{room.museum.shop}
 								</a>
 							) : (
-								<span class="name">{m.shop}</span>
+								<span class="name">{room.museum.shop}</span>
 							)}
-							<span>
-								{rooms.has(m.id) ? `${count(m.id)} pieces · ` : ''}Walls: {m.wall.name}
-							</span>
+							<span>{roomMeta(room)}</span>
 						</li>
 					))
 				}
@@ -59,32 +50,6 @@ const closed = museums.filter((m) => m.automation === 'pending' && !removed.has(
 		margin: 0 auto;
 		padding: 0 var(--gutter) 96px;
 		box-sizing: border-box;
-	}
-
-	.intro {
-		padding: 56px 0 48px;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: end;
-		gap: 24px 48px;
-	}
-
-	h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-weight: 400;
-		font-size: clamp(40px, 5vw, 56px);
-		line-height: 1.05;
-		letter-spacing: -0.02em;
-		max-width: 14ch;
-	}
-
-	.intro p {
-		margin: 0;
-		font-size: 19px;
-		line-height: 1.45;
-		max-width: 40ch;
 	}
 
 	ul {
