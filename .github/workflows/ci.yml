@@ -23,3 +23,38 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:dist
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      # Not a devDependency: Lighthouse is about 150 MB and only this job needs it.
+      - run: pnpm dlx @lhci/cli@0.15.1 autorun
+      - name: Record LCP
+        if: ${{ !cancelled() }}
+        run: |
+          manifest=lhci-reports/manifest.json
+          [ -f "$manifest" ] || exit 0
+          {
+            echo '| Page | LCP, median of 3 runs |'
+            echo '| --- | --- |'
+            jq -r '.[].jsonPath' "$manifest" | while read -r report; do cat "$report"; done |
+              jq -s -r 'group_by(.requestedUrl)[]
+                | (map(.audits["largest-contentful-paint"].numericValue) | sort) as $lcp
+                | "| \(.[0].requestedUrl | sub("^http://localhost:4329"; "")) | \($lcp[$lcp | length / 2 | floor] | round) ms |"'
+          } >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: lighthouse-reports
+          path: lhci-reports
+          if-no-files-found: ignore
+          retention-days: 30
