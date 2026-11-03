@@ -78,6 +78,7 @@ const size = (s: string) => `size-${s.toLowerCase()}`;
 <style>
 	/* Mobile first: below the drawn plan's width the rooms stack as an enfilade, in plan order. */
 	.floor {
+		container-type: inline-size;
 		padding-bottom: 32px;
 	}
 
@@ -219,9 +220,9 @@ const size = (s: string) => `size-${s.toLowerCase()}`;
 		text-decoration-thickness: 2px;
 	}
 
-	/* The drawn plan: 1100px plus the two 48px gutters, and 20px for a classic scrollbar, which
-	   media queries count as viewport width. */
-	@media (min-width: 1216px) {
+	/* The drawn plan, once the section itself is as wide as the shell (SHELL.w in src/lib/plan.ts).
+	   A container query reads the width left after the gutters and any scrollbar. */
+	@container (min-width: 1100px) {
 		.plan {
 			display: block;
 			width: 1100px;

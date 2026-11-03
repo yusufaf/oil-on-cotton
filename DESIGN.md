@@ -188,7 +188,7 @@ Pairing A won against B (Brygada 1918 + Familjen Grotesk) and C (Sofia Sans Extr
   - **Doorways.** A doorway is a gap in the wall. **No door-swing arcs**; they read as clip art.
   - **Closed rooms.** A shop under terms review is a hatched "Closed" room.
   - **Removed shops.** A shop taken down through `data/removals.yaml` leaves its room drawn empty, and is never named.
-  - **Phones.** Below 1216px (the 1100px plan, two gutters and room for a scrollbar) the rooms stack as a vertical corridor (enfilade) in plan order, at most 560px wide, with 6px walls between them. Each wall has one doorway on a single axis 32px in from the left, and the entrance is a gap in the top wall on the same axis. L, M and S rooms keep their class as heights of 208, 184 and 144px. The hall labels and empty rooms are not drawn.
+  - **Phones and tablets.** Wherever the page has less than 1100px of content width (the drawn plan's width), the rooms stack as a vertical corridor (enfilade) in plan order, at most 560px wide, with 6px walls between them. Each wall has one doorway on a single axis 32px in from the left, and the entrance is a gap in the top wall on the same axis. L, M and S rooms keep their class as heights of 208, 184 and 144px. The hall labels and empty rooms are not drawn.
   - **Gate.** The plan is served unlisted and noindex at /floor-plan/ until its task test (5 people, timed, mobile first) beats the plain list home.
   - **Plain list.** A plain-text room list sits directly under the plan, for keyboard users, screen readers and crawlers.
 
