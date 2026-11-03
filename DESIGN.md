@@ -293,11 +293,11 @@ None by default. No scroll-triggered animation and no fade-ups. Hover changes ar
 - Rooms are named in text, never by colour alone.
 - Focus is visible everywhere: a 2px outline in the current colour (3px on the hall).
 - Floor-plan rooms are links with accessible names, and decorative plan parts are `aria-hidden`.
-- Budget, enforced with Lighthouse CI:
-  - LCP under 2.0s on throttled mobile
-  - under 50KB of JS per room (the filter island only)
-  - at most 4 subset font files
-  - every artwork image file at most 200KB, at every width and format (`check:dist` checks it)
+- Budget, enforced by `check:dist` and the Lighthouse CI job in `ci.yml`:
+  - LCP under 2.0s on throttled mobile (Lighthouse; a warning until CI runs are stable)
+  - under 50KB of JS per room (the filter island only, plus the visit counter)
+  - at most 4 subset font files, counting the subsets a page's text can use
+  - every artwork image file at most 200KB, at every width and format
 
 ## Open items
 
