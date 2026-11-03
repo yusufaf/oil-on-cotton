@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import FloorPlan from '../components/FloorPlan.astro';
+import HallIntro from '../components/HallIntro.astro';
+import Base from '../layouts/Base.astro';
+import { homeRooms } from '../lib/plan';
+import { readRemovals, removedMuseums } from '../lib/removals';
+
+// The floor-plan home, unlisted until its task test (DESIGN.md, Floor plan). It reuses the
+// home's title and description, so moving it to / needs no new copy.
+const museums = (await getCollection('museums')).map((entry) => entry.data);
+const items = (await getCollection('catalog')).map((entry) => entry.data);
+const hall = homeRooms(museums, items, removedMuseums(readRemovals()));
+---
+
+<Base
+	title="Oil on Cotton: museum shop apparel, hung by room"
+	description="An independent index of clothing sold by museum shops. Each room is one shop, and every piece links to the shop that sells it."
+	noindex
+>
+	<main>
+		<HallIntro />
+		<FloorPlan hall={hall} />
+	</main>
+</Base>
+
+<style>
+	main {
+		max-width: var(--measure);
+		margin: 0 auto;
+		padding: 0 var(--gutter) 96px;
+		box-sizing: border-box;
+	}
+</style>

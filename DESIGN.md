@@ -13,6 +13,7 @@ colors:
   label-hover: "#DEE3E1"
   ink: "#171B1A"
   plan-ink: "#22262A"
+  hatch: "#A6A5A2"
   rule: "#C9D0CE"
   on-wall: "#F1F3F2"
   on-wall-warm: "#F6F1F1"
@@ -151,6 +152,7 @@ Most rooms are contemporary museums whose merchandise reproduces in-copyright wo
 - **No brand colours.** No room uses its museum's own brand colour. Getty Blue, SFMOMA red and the Met's red are excluded.
 - **Label stock** (#E9ECEB) is a cool foam-board white. It is deliberately not a Ridgway colour, and **never cream**.
 - **Ink.** Ink (#171B1A) on label stock is 14.62:1. Plan walls use plan-ink (#22262A).
+- **Hatch** (#A6A5A2) draws the hatch lines of a closed room on the plan. Decorative only.
 - **Rules** (#C9D0CE) on label stock are decorative separators only (1.32:1). Never use them to carry meaning.
 - **Text colour.** No grey text on coloured walls. Text on a wall is on-wall at full strength, or on-wall-warm for red walls.
 
@@ -185,7 +187,9 @@ Pairing A won against B (Brygada 1918 + Familjen Grotesk) and C (Sofia Sans Extr
   - **Shell.** The outer wall is 14px poché and the inner walls are 6px.
   - **Doorways.** A doorway is a gap in the wall. **No door-swing arcs**; they read as clip art.
   - **Closed rooms.** A shop under terms review is a hatched "Closed" room.
-  - **Phones.** The rooms stack as a vertical corridor (enfilade), in the same order. This is not yet drawn.
+  - **Removed shops.** A shop taken down through `data/removals.yaml` leaves its room drawn empty, and is never named.
+  - **Phones and tablets.** Wherever the page has less than 1100px of content width (the drawn plan's width), the rooms stack as a vertical corridor (enfilade) in plan order, at most 560px wide, with 6px walls between them. Each wall has one doorway on a single axis 32px in from the left, and the entrance is a gap in the top wall on the same axis. L, M and S rooms keep their class as heights of 208, 184 and 144px. The hall labels and empty rooms are not drawn.
+  - **Gate.** The plan is served unlisted and noindex at /floor-plan/ until its task test (5 people, timed, mobile first) beats the plain list home.
   - **Plain list.** A plain-text room list sits directly under the plan, for keyboard users, screen readers and crawlers.
 
 ## Elevation & Depth
@@ -302,7 +306,6 @@ None by default. No scroll-triggered animation and no fade-ups. Hover changes ar
 ## Open items
 
 - Measured Ridgway values via Munsell, with ΔE recorded.
-- Draw the phone enfilade for the floor plan.
 - Replace the working wordmark "The Hang" with "Oil on Cotton" on the canvas and in the build.
 - Read Brooklyn and Guggenheim terms in a browser before their rooms open.
 - Add LACMA, Met and MoMA room boards when their data is in.

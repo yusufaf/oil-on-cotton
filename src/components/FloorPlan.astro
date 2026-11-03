@@ -1,0 +1,292 @@
+---
+import { href } from '../lib/paths';
+import {
+	DOORS,
+	ENTRANCE,
+	LABELS,
+	closedLine,
+	placeRooms,
+	planOrder,
+	roomMeta,
+	type Box,
+	type Hall,
+	type HomeRoom,
+} from '../lib/plan';
+
+interface Props {
+	hall: Hall;
+}
+
+const placed = placeRooms(Astro.props.hall);
+const box = (b: Box) => `--x: ${b.x}px; --y: ${b.y}px; --w: ${b.w}px; --h: ${b.h}px`;
+const paint = (room: HomeRoom) => `; --wall: ${room.museum.wall.hex}; --text: var(--${room.museum.wall.text})`;
+const size = (s: string) => `size-${s.toLowerCase()}`;
+---
+
+<section class="floor" aria-label="Floor plan">
+	<div class="plan">
+		<div class="shell" aria-hidden="true"></div>
+		{
+			placed.map((p) => {
+				if (p.kind === 'room')
+					return (
+						<a class:list={['cell', 'plan-room', size(p.slot.size)]} href={href(`rooms/${p.room.museum.id}/`)} style={box(p.slot) + paint(p.room)}>
+							<span class="name">{p.room.museum.shop}</span>
+							<span class="meta">{roomMeta(p.room)}</span>
+						</a>
+					);
+				if (p.kind === 'shop')
+					return (
+						<div class:list={['cell', 'shop', size(p.slot.size)]} style={box(p.slot) + paint(p.room)}>
+							<span class="name">{p.room.museum.shop}</span>
+							<span class="meta">{roomMeta(p.room)}</span>
+						</div>
+					);
+				if (p.kind === 'closed')
+					return (
+						<div class:list={['cell', 'closed', size(p.slot.size)]} style={box(p.slot)}>
+							<span class="closed-title">Closed</span>
+							<span class="meta">{closedLine(p.closed)}</span>
+						</div>
+					);
+				return <div class:list={['cell', 'empty', size(p.slot.size)]} aria-hidden="true" style={box(p.slot)} />;
+			})
+		}
+		{DOORS.map((door) => <div class="door" aria-hidden="true" style={box(door)} />)}
+		<div class="entrance" aria-hidden="true" style={box(ENTRANCE)}></div>
+		{
+			LABELS.map((label) => (
+				<div class="label" aria-hidden="true" style={box(label.box)}>
+					{label.text}
+				</div>
+			))
+		}
+	</div>
+</section>
+
+<section class="list" aria-labelledby="room-list">
+	<h2 id="room-list">The same rooms as a list</h2>
+	<ul>
+		{
+			planOrder(placed).map((room) => (
+				<li>{room.linked ? <a href={href(`rooms/${room.museum.id}/`)}>{room.museum.shop}</a> : room.museum.shop}</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	/* Mobile first: below the drawn plan's width the rooms stack as an enfilade, in plan order. */
+	.floor {
+		container-type: inline-size;
+		padding-bottom: 32px;
+	}
+
+	.plan {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		/* The gap shows the ink behind the rooms: that is each inner wall. */
+		gap: 6px;
+		max-width: 560px;
+		border: 14px solid var(--plan-ink);
+		background: var(--plan-ink);
+	}
+
+	.shell,
+	.door,
+	.label {
+		display: none;
+	}
+
+	.cell {
+		position: relative;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		gap: 2px;
+		padding: 18px 20px;
+		background: var(--wall);
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.size-l {
+		min-height: 208px;
+	}
+
+	.size-m {
+		min-height: 184px;
+	}
+
+	.size-s {
+		min-height: 144px;
+	}
+
+	/* After .cell, so it wins: an empty slot takes no space and leaves no wall on phones. */
+	.cell.empty {
+		display: none;
+	}
+
+	/* One doorway per wall, on one axis; the first falls inside the entrance gap. */
+	.cell::before {
+		content: '';
+		position: absolute;
+		top: -6px;
+		left: 32px;
+		width: 56px;
+		height: 6px;
+		background: var(--hall);
+	}
+
+	.entrance {
+		position: absolute;
+		top: -14px;
+		left: 24px;
+		width: 72px;
+		height: 14px;
+		background: var(--hall);
+	}
+
+	.name {
+		font-family: var(--serif);
+		font-size: 28px;
+		line-height: 1.1;
+	}
+
+	.size-s .name {
+		font-size: 24px;
+	}
+
+	.meta {
+		font-size: 15px;
+		line-height: 1.4;
+	}
+
+	.size-s .meta {
+		font-size: 14px;
+	}
+
+	.closed {
+		background: repeating-linear-gradient(135deg, var(--hall) 0 9px, var(--hatch) 9px 10px);
+		color: var(--ink);
+	}
+
+	.closed-title {
+		font-size: 17px;
+		font-weight: 500;
+	}
+
+	.plan-room:hover .name,
+	.plan-room:focus-visible .name {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
+	}
+
+	/* Inset, in the room's own text colour, so a neighbouring room never covers it. */
+	.plan-room:focus-visible {
+		outline: 3px solid currentColor;
+		outline-offset: -12px;
+	}
+
+	.list {
+		padding-top: 24px;
+	}
+
+	h2 {
+		margin: 0 0 12px;
+		font-size: 17px;
+		font-weight: 500;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px 28px;
+		font-size: 16px;
+	}
+
+	.list a {
+		text-decoration: none;
+	}
+
+	.list a:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+	}
+
+	/* The drawn plan, once the section itself is as wide as the shell (SHELL.w in src/lib/plan.ts).
+	   A container query reads the width left after the gutters and any scrollbar. */
+	@container (min-width: 1100px) {
+		.plan {
+			display: block;
+			width: 1100px;
+			height: 560px;
+			max-width: none;
+			margin: 0;
+			border: 0;
+			background: none;
+		}
+
+		.shell {
+			display: block;
+			position: absolute;
+			inset: 0;
+			border: 14px solid var(--plan-ink);
+		}
+
+		.cell {
+			position: absolute;
+			left: var(--x);
+			top: var(--y);
+			width: var(--w);
+			height: var(--h);
+			min-height: 0;
+			border: 6px solid var(--plan-ink);
+		}
+
+		.cell::before {
+			display: none;
+		}
+
+		.cell.empty {
+			display: block;
+			background: var(--hall);
+		}
+
+		.door,
+		.entrance {
+			display: block;
+			position: absolute;
+			left: var(--x);
+			top: var(--y);
+			width: var(--w);
+			height: var(--h);
+			background: var(--hall);
+		}
+
+		.label {
+			display: block;
+			position: absolute;
+			left: var(--x);
+			top: var(--y);
+			width: var(--w);
+			text-align: center;
+			font-size: 14px;
+			line-height: 1.35;
+		}
+
+		.name {
+			font-size: 30px;
+		}
+
+		.size-s .name {
+			font-size: 24px;
+		}
+	}
+</style>
