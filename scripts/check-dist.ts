@@ -160,14 +160,15 @@ for (const path of pages(DIST)) {
 	for (const url of [...js.missing, ...styles.missing]) problems.push(`${path} loads ${url}, which is not in dist`);
 	for (const url of js.remote.filter((u) => u !== COUNTER)) problems.push(`${path} loads the remote script ${url}`);
 	if (js.bytes >= JS_BUDGET)
-		problems.push(`${path} has ${kb(js.bytes)} KB of first-party JS, over its 42 KB share of the 50 KB budget`);
+		problems.push(`${path} has ${kb(js.bytes)} KB of first-party JS, over its ${JS_BUDGET / 1024} KB share of the 50 KB budget`);
 	const fonts = fontFiles(styles.css, text);
 	if (fonts.length > FONT_FILE_BUDGET)
 		problems.push(`${path} can load ${fonts.length} font files, over the budget of ${FONT_FILE_BUDGET}: ${fonts.join(', ')}`);
 	maxJs = Math.max(maxJs, js.bytes);
 	maxFonts = Math.max(maxFonts, fonts.length);
 	for (const url of imageUrls(html)) {
-		if (checkedImages.has(url)) continue;
+		// An inline data: image is part of the page, not an image file.
+		if (checkedImages.has(url) || url.startsWith('data:')) continue;
 		checkedImages.add(url);
 		const file = fileOf(url);
 		if (isRemote(url)) problems.push(`${path} shows the remote image ${url}`);

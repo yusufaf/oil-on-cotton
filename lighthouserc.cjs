@@ -10,6 +10,7 @@ const urls = [...readFileSync('dist/sitemap.xml', 'utf8').matchAll(/<loc>([^<]+)
 	.map((m) => new URL(m[1]).pathname)
 	.filter((path) => path === '/' || path.startsWith('/rooms/'))
 	.map((path) => ORIGIN + path);
+if (urls.length === 0) throw new Error('dist/sitemap.xml lists no hall or room pages to measure');
 
 module.exports = {
 	ci: {
