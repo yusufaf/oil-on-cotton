@@ -1,8 +1,11 @@
 // Checks the built site in dist/ after `pnpm build`:
 // - every room page exists with one row per visible catalog piece, and one counted shop link per
 //   row and per hung piece
-// - every hung work shows its accession number, and every image file it uses exists and is at
-//   most 200 KB, with a 1280w AVIF; no hang source image ships
+// - every hung work shows its accession number and has a 1280w AVIF; no hang source image ships
+// - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
+//   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
+//   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
+//   dist and at most 200 KB; the visit counter is its only remote script
 // - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
 //   hall pages and the rooms
 // - staging pages carry noindex and no canonical; on the launch hostname every page but the 404
@@ -12,6 +15,16 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { parse } from 'yaml';
+import {
+	FONT_FILE_BUDGET,
+	IMAGE_BUDGET,
+	JS_BUDGET,
+	fontFiles,
+	imageUrls,
+	isRemote,
+	pageCss,
+	scriptBytes,
+} from '../src/lib/budget.ts';
 import { catalogSchema } from '../src/lib/catalog.ts';
 import { hangsFor, readCuration } from '../src/lib/curation.ts';
 import { museumSchema } from '../src/lib/museums.ts';
@@ -25,8 +38,8 @@ const problems: string[] = [];
 const BANNED =
 	/\b(delve|crafting|passionate|seamless|leverage|robust|journey|elevate|empower|unlock|transform|showcase|testament|pivotal|vibrant|meticulous|multifaceted)\b/i;
 const NOINDEX = '<meta name="robots" content="noindex">';
-// DESIGN.md, Accessibility and performance.
-const IMAGE_BUDGET = 200 * 1024;
+const COUNTER = 'https://analytics.oiloncotton.com/s.js';
+const kb = (bytes: number) => (bytes / 1024).toFixed(1);
 
 const pages = (dir: string): string[] =>
 	readdirSync(dir).flatMap((name) => {
@@ -45,6 +58,10 @@ const { default: config } = await import('../astro.config.mjs');
 if (!config.site) throw new Error('astro.config.mjs has no site');
 const site = new URL(config.site);
 const base = (config.base ?? '/').replace(/\/?$/, '/');
+// Asset URLs carry the base (a preview under a sub-path); dist/ does not.
+const fileOf = (url: string) =>
+	join(DIST, ...url.replace(/[?#].*$/, '').slice(url.startsWith(base) ? base.length : 0).split('/').filter(Boolean));
+const readAsset = (url: string) => (isRemote(url) ? undefined : read(fileOf(url)));
 
 const catalog = visible(
 	catalogSchema.parse(JSON.parse(readFileSync('data/catalog.json', 'utf8'))),
@@ -81,16 +98,6 @@ for (const museum of rooms) {
 	const sources = [...hang.matchAll(/<source type="image\/avif" srcset="([^"]+)"/g)].map((m) => m[1]);
 	if (sources.length !== hangs.length || sources.some((s) => !/ 1280w\b/.test(s)))
 		problems.push(`${path} has a hung work without a 1280w AVIF`);
-	const urls = [...hang.matchAll(/\b(?:src|srcset)="([^"]+)"/g)].flatMap((m) =>
-		m[1].split(',').map((entry) => entry.trim().split(/\s+/)[0]),
-	);
-	for (const url of new Set(urls)) {
-		// Asset URLs carry the base (a preview under a sub-path); dist/ does not.
-		const file = join(DIST, ...url.slice(url.startsWith(base) ? base.length : 0).split('/').filter(Boolean));
-		if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
-		else if (statSync(file).size > IMAGE_BUDGET)
-			problems.push(`${url} is ${Math.round(statSync(file).size / 1024)} KB, over the 200 KB budget`);
-	}
 }
 
 // A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or
@@ -130,6 +137,9 @@ if (sitemapDiff.length > 0) problems.push(`sitemap.xml ${sitemapDiff.join(', ')}
 if (!read(join(DIST, 'robots.txt'))?.includes(`Sitemap: ${urlOf('sitemap.xml')}`))
 	problems.push('robots.txt does not point to the sitemap');
 
+let maxJs = 0;
+let maxFonts = 0;
+const checkedImages = new Set<string>();
 for (const path of pages(DIST)) {
 	const route = routeOf(path);
 	const html = readFileSync(path, 'utf8');
@@ -143,6 +153,28 @@ for (const path of pages(DIST)) {
 	// Room pages quote shop product names, which follow the shops' own style.
 	if (!route.startsWith('rooms/') && (/[—!]/.test(text) || BANNED.test(text)))
 		problems.push(`${path} breaks the copy rules (em dash, exclamation mark or banned word)`);
+
+	// DESIGN.md, Accessibility and performance.
+	const js = scriptBytes(html, base + route, readAsset);
+	const styles = pageCss(html, readAsset);
+	for (const url of [...js.missing, ...styles.missing]) problems.push(`${path} loads ${url}, which is not in dist`);
+	for (const url of js.remote.filter((u) => u !== COUNTER)) problems.push(`${path} loads the remote script ${url}`);
+	if (js.bytes >= JS_BUDGET)
+		problems.push(`${path} has ${kb(js.bytes)} KB of first-party JS, over its 42 KB share of the 50 KB budget`);
+	const fonts = fontFiles(styles.css, text);
+	if (fonts.length > FONT_FILE_BUDGET)
+		problems.push(`${path} can load ${fonts.length} font files, over the budget of ${FONT_FILE_BUDGET}: ${fonts.join(', ')}`);
+	maxJs = Math.max(maxJs, js.bytes);
+	maxFonts = Math.max(maxFonts, fonts.length);
+	for (const url of imageUrls(html)) {
+		if (checkedImages.has(url)) continue;
+		checkedImages.add(url);
+		const file = fileOf(url);
+		if (isRemote(url)) problems.push(`${path} shows the remote image ${url}`);
+		else if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
+		else if (statSync(file).size > IMAGE_BUDGET)
+			problems.push(`${url} is ${kb(statSync(file).size)} KB, over the 200 KB budget`);
+	}
 
 	if (!launch || route === '404.html') {
 		if (!noindex) problems.push(`${path} lacks noindex`);
@@ -158,4 +190,6 @@ if (problems.length > 0) {
 	console.error(problems.join('\n'));
 	process.exit(1);
 }
-console.log(`dist ok: ${pages(DIST).length} pages checked`);
+console.log(
+	`dist ok: ${pages(DIST).length} pages checked; the most any page has is ${kb(maxJs)} KB of JS and ${maxFonts} font files`,
+);
