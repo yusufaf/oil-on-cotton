@@ -219,8 +219,9 @@ const size = (s: string) => `size-${s.toLowerCase()}`;
 		text-decoration-thickness: 2px;
 	}
 
-	/* The drawn plan: 1100px plus the page's two 48px gutters. */
-	@media (min-width: 1196px) {
+	/* The drawn plan: 1100px plus the two 48px gutters, and 20px for a classic scrollbar, which
+	   media queries count as viewport width. */
+	@media (min-width: 1216px) {
 		.plan {
 			display: block;
 			width: 1100px;
