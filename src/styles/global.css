@@ -10,6 +10,8 @@
 	--label-hover: #dee3e1;
 	--ink: #171b1a;
 	--plan-ink: #22262a;
+	/* Hatch lines on a closed room only; decorative. */
+	--hatch: #a6a5a2;
 	--rule: #c9d0ce;
 	--on-wall: #f1f3f2;
 	--on-wall-warm: #f6f1f1;
