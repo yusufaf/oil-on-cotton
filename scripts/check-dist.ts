@@ -167,9 +167,13 @@ for (const path of pages(DIST)) {
 	maxJs = Math.max(maxJs, js.bytes);
 	maxFonts = Math.max(maxFonts, fonts.length);
 	for (const url of imageUrls(html)) {
-		// An inline data: image is part of the page, not an image file.
-		if (checkedImages.has(url) || url.startsWith('data:')) continue;
+		if (checkedImages.has(url)) continue;
 		checkedImages.add(url);
+		// An inline data: image has no file; its encoded length is at least its decoded size.
+		if (url.startsWith('data:')) {
+			if (url.length > IMAGE_BUDGET) problems.push(`${path} has a ${kb(url.length)} KB inline image, over the 200 KB budget`);
+			continue;
+		}
 		const file = fileOf(url);
 		if (isRemote(url)) problems.push(`${path} shows the remote image ${url}`);
 		else if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
