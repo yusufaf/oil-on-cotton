@@ -1,6 +1,7 @@
 // Checks the built site in dist/ after `pnpm build`:
 // - every room page exists with one row per visible catalog piece, and one counted shop link per
-//   row and per hung piece
+//   row (place checklist) and per hung piece (place hang), each naming its museum and piece and
+//   opening that piece's shop page in a new tab
 // - every hung work shows its accession number and has a 1280w AVIF; no hang source image ships
 // - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
@@ -31,6 +32,7 @@ import {
 import { catalogSchema } from '../src/lib/catalog.ts';
 import { hangsFor, readCuration } from '../src/lib/curation.ts';
 import { museumSchema } from '../src/lib/museums.ts';
+import { outboundLinks, outboundProblems } from '../src/lib/outbound.ts';
 import { homeRooms } from '../src/lib/plan.ts';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals.ts';
 import { roomMuseums } from '../src/lib/room.ts';
@@ -83,13 +85,11 @@ for (const museum of rooms) {
 	const items = catalog.filter((i) => i.museum === museum.id);
 	const expected = items.length;
 	const rows = html.match(/<li\b[^>]*\bclass="row\b/g)?.length ?? 0;
-	const counted = html.match(/data-umami-event="Outbound"/g)?.length ?? 0;
 	const hangs = hangsFor(museum.id, works, items);
-	const hung = hangs.reduce((n, h) => n + h.pieces.length, 0);
 	for (const h of hangs) hanging.add(h.work.id);
 	if (rows !== expected) problems.push(`${path} has ${rows} rows, catalog has ${expected}`);
-	if (counted !== expected + hung)
-		problems.push(`${path} has ${counted} counted shop links, expected ${expected} rows and ${hung} hung pieces`);
+	const hung = hangs.flatMap((h) => h.pieces.map((p) => p.item.id));
+	problems.push(...outboundProblems(outboundLinks(html), { path, museum: museum.id, items, hung }));
 
 	const hang = html.match(/<section class="hang"[\s\S]*?<\/section>/)?.[0] ?? '';
 	if (hangs.length > 0 && !hang) problems.push(`${path} has no hang section`);
