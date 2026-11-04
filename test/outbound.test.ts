@@ -42,6 +42,14 @@ describe('outboundLinks', () => {
 		const html = '<a href="https://shop.example/p?a=1&amp;b=&quot;x&quot;" data-umami-event="Outbound">P</a>';
 		expect(outboundLinks(html)[0].href).toBe('https://shop.example/p?a=1&b="x"');
 	});
+
+	it('reads past a > inside an attribute value', () => {
+		const html =
+			'<a href="https://shop.example/p?q=a>b" target="_blank" data-umami-event="Outbound" data-umami-event-museum="getty" data-umami-event-item="getty:1" data-umami-event-place="hang">P</a>';
+		expect(outboundLinks(html)).toEqual([
+			{ href: 'https://shop.example/p?q=a>b', target: '_blank', museum: 'getty', item: 'getty:1', place: 'hang' },
+		]);
+	});
 });
 
 describe('outboundProblems', () => {

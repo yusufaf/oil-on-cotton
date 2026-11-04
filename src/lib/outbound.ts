@@ -18,7 +18,8 @@ export interface OutboundRoom {
 const decode = (value: string) => value.replaceAll('&quot;', '"').replaceAll('&amp;', '&');
 
 export function outboundLinks(html: string): OutboundLink[] {
-	return [...html.matchAll(/<a\b[^>]*>/g)]
+	// A quoted value may hold a > (Astro escapes only & and ").
+	return [...html.matchAll(/<a\b(?:[^>"]|"[^"]*")*>/g)]
 		.map(([tag]) => tag)
 		.filter((tag) => tag.includes('data-umami-event="Outbound"'))
 		.map((tag) => {
