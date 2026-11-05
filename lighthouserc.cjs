@@ -25,8 +25,11 @@ module.exports = {
 		},
 		assert: {
 			assertions: {
-				// A warning until CI runs are stable; each run's job summary records LCP per page.
-				'largest-contentful-paint': ['warn', { maxNumericValue: 2000, aggregationMethod: 'median' }],
+				// Lantern simulates LCP from the page's requests, so the runner's speed barely moves it, with
+				// one exception: when the visit counter finishes loading before the runner's first paint,
+				// Lantern counts it as render blocking and LCP reads 150 ms (one simulated round trip) higher.
+				// Getty reads about 1805 ms, or 1955 with that step, so a failure means a page got heavier.
+				'largest-contentful-paint': ['error', { maxNumericValue: 2000, aggregationMethod: 'median' }],
 				// The visit counter's 8 KB share of the 50 KB JS budget (2.8 KB today); check:dist holds
 				// first-party JS, inline or served as files, under 42 KB. This is every request not from
 				// localhost, and check:dist allows no remote script or image but the counter, so the counter
