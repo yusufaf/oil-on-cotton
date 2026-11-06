@@ -1,14 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
+import FloorPlan from '../components/FloorPlan.astro';
 import HallIntro from '../components/HallIntro.astro';
 import Base from '../layouts/Base.astro';
-import { href } from '../lib/paths';
-import { homeRooms, roomMeta } from '../lib/plan';
+import { homeRooms } from '../lib/plan';
 import { readRemovals, removedMuseums } from '../lib/removals';
 
 const museums = (await getCollection('museums')).map((entry) => entry.data);
 const items = (await getCollection('catalog')).map((entry) => entry.data);
-const { open, closed } = homeRooms(museums, items, removedMuseums(readRemovals()));
+const hall = homeRooms(museums, items, removedMuseums(readRemovals()));
 ---
 
 <Base
@@ -17,30 +17,7 @@ const { open, closed } = homeRooms(museums, items, removedMuseums(readRemovals()
 >
 	<main>
 		<HallIntro />
-		<section aria-label="Rooms" class="rooms">
-			<ul>
-				{
-					open.map((room) => (
-						<li>
-							<span class="swatch" style={`background: ${room.museum.wall.hex}`} aria-hidden="true" />
-							{room.linked ? (
-								<a class="name" href={href(`rooms/${room.museum.id}/`)}>
-									{room.museum.shop}
-								</a>
-							) : (
-								<span class="name">{room.museum.shop}</span>
-							)}
-							<span>{roomMeta(room)}</span>
-						</li>
-					))
-				}
-			</ul>
-			{
-				closed.length > 0 && (
-					<p>Closed for now: {closed.map((m) => m.museum).join(' and ')}, while we read their terms.</p>
-				)
-			}
-		</section>
+		<FloorPlan hall={hall} />
 	</main>
 </Base>
 
@@ -50,57 +27,5 @@ const { open, closed } = homeRooms(museums, items, removedMuseums(readRemovals()
 		margin: 0 auto;
 		padding: 0 var(--gutter) 96px;
 		box-sizing: border-box;
-	}
-
-	ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		border-bottom: 2px solid var(--plan-ink);
-	}
-
-	li {
-		display: grid;
-		grid-template-columns: 56px minmax(0, 2fr) minmax(0, 1fr);
-		column-gap: 28px;
-		align-items: center;
-		padding: 22px 0;
-		border-top: 2px solid var(--plan-ink);
-	}
-
-	.swatch {
-		width: 56px;
-		height: 56px;
-	}
-
-	a.name {
-		text-decoration: none;
-	}
-
-	a.name:hover {
-		text-decoration: underline;
-		text-decoration-thickness: 2px;
-	}
-
-	.name {
-		font-family: var(--serif);
-		font-size: 32px;
-		line-height: 1.15;
-	}
-
-	@media (max-width: 720px) {
-		li {
-			grid-template-columns: 40px minmax(0, 1fr);
-			row-gap: 4px;
-		}
-
-		.swatch {
-			width: 40px;
-			height: 40px;
-		}
-
-		li > span:last-child {
-			grid-column: 2;
-		}
 	}
 </style>

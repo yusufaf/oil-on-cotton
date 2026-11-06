@@ -9,11 +9,11 @@
 //   dist and at most 200 KB; the visit counter is its only remote script
 // - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
 //   hall pages and the rooms
-// - the floor-plan page links each built room once and nothing else as a plan room, names every
-//   open shop and never a removed one
-// - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 and
-//   the preview pages is indexable, with a canonical that matches its sitemap entry; only launch
-//   builds load the visit counter
+// - the home page's floor plan links each built room once and nothing else as a plan room, names
+//   every open shop and never a removed one
+// - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 is
+//   indexable, with a canonical that matches its sitemap entry; only launch builds load the visit
+//   counter
 // - hall pages follow DESIGN.md's copy rules, and no page shows "undefined", "NaN" or "Invalid Date"
 // Usage: node scripts/check-dist.ts
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -36,7 +36,7 @@ import { outboundLinks, outboundProblems } from '../src/lib/outbound.ts';
 import { homeRooms } from '../src/lib/plan.ts';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals.ts';
 import { roomMuseums } from '../src/lib/room.ts';
-import { HALL_PAGES, LAUNCH_HOSTNAME, PLAN_PAGE, PREVIEW_PAGES } from '../src/lib/site.ts';
+import { HALL_PAGES, LAUNCH_HOSTNAME } from '../src/lib/site.ts';
 
 const DIST = 'dist';
 const problems: string[] = [];
@@ -116,9 +116,9 @@ for (const work of works) {
 	if (sources.length > 0) problems.push(`dist/_astro ships the source image ${sources.join(', ')}`);
 }
 
-// The floor plan: each built room is one plan-room link, every open shop is named, and a removed
-// shop never is (DESIGN.md, Floor plan).
-const planPath = join(DIST, PLAN_PAGE, 'index.html');
+// The floor plan on the home page: each built room is one plan-room link, every open shop is named,
+// and a removed shop never is (DESIGN.md, Floor plan).
+const planPath = join(DIST, 'index.html');
 const planHtml = read(planPath);
 if (planHtml !== undefined) {
 	const planLinks = [...planHtml.matchAll(/<a\b[^>]*\bclass="[^"]*\bplan-room\b[^"]*"[^>]*>/g)].map(
@@ -150,7 +150,7 @@ for (const file of [
 	'404.html',
 	'sitemap.xml',
 	'robots.txt',
-	...[...HALL_PAGES, ...PREVIEW_PAGES].map((r) => `${r}index.html`),
+	...HALL_PAGES.map((r) => `${r}index.html`),
 ]) {
 	if (!existsSync(join(DIST, file))) problems.push(`${join(DIST, file)} is missing`);
 }
@@ -209,7 +209,7 @@ for (const path of pages(DIST)) {
 			problems.push(`${url} is ${kb(statSync(file).size)} KB, over the 200 KB budget`);
 	}
 
-	if (!launch || route === '404.html' || PREVIEW_PAGES.includes(route)) {
+	if (!launch || route === '404.html') {
 		if (!noindex) problems.push(`${path} lacks noindex`);
 		if (canonical) problems.push(`${path} has a canonical but is not indexable`);
 		continue;
