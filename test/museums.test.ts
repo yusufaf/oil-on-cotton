@@ -97,7 +97,7 @@ describe('walls (DESIGN.md, Colors)', () => {
 	});
 
 	it('matches the DESIGN.md wall tokens to the painted rooms', () => {
-		const colors: Record<string, string> = parse(readFileSync('DESIGN.md', 'utf8').split(/^---$/m)[1]).colors;
+		const colors: Record<string, string> = parse(readFileSync('DESIGN.md', 'utf8').split(/^---\r?$/m)[1]).colors;
 		for (const [key, hex] of Object.entries(colors).filter(([k]) => k.startsWith('wall-'))) {
 			const room = museums.find((m) => `wall-${m.id}` === key);
 			expect(room?.wall.hex, `DESIGN.md ${key}`).toBe(hex);

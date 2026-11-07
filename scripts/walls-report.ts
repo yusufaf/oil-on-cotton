@@ -9,7 +9,7 @@ import { SLOTS } from '../src/lib/plan.ts';
 
 const ridgway = ridgwaySchema.array().parse(parse(readFileSync('data/ridgway.yaml', 'utf8')));
 const rooms = museumSchema.array().parse(parse(readFileSync('data/museums.yaml', 'utf8')));
-const colors: Record<string, string> = parse(readFileSync('DESIGN.md', 'utf8').split(/^---$/m)[1]).colors;
+const colors: Record<string, string> = parse(readFileSync('DESIGN.md', 'utf8').split(/^---\r?$/m)[1]).colors;
 
 const walls = new Map(
 	ridgway.map((entry) => {
@@ -39,6 +39,7 @@ for (const slot of SLOTS) {
 	if (!room) continue;
 	const { entry, hex, deltaE } = wall(room.wall.name);
 	const textHex = colors[room.wall.text];
+	if (!textHex) throw new Error(`DESIGN.md has no ${room.wall.text} colour`);
 	const contrast = contrastRatio(textHex, hex).toFixed(2);
 	const textNote = room.wall.text === 'on-wall' ? '' : ` (${textHex})`;
 	const shop = room.automation === 'manual' ? `${room.shop} (hand-listed)` : room.shop;

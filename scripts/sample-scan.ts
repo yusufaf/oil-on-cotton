@@ -7,7 +7,7 @@ const HOSTS = ['digital.sciencehistory.org', 'archive.org'];
 // Where those hosts redirect image downloads: archive.org to its ia*.archive.org servers, SHI to
 // its CloudFront distribution.
 const allowedAfterRedirect = (host: string) =>
-	HOSTS.includes(host) || host.endsWith('.archive.org') || host.endsWith('.cloudfront.net');
+	HOSTS.includes(host) || host.endsWith('.archive.org') || host === 'd3dkjx001zrum8.cloudfront.net';
 
 const [url, boxArg, preview] = process.argv.slice(2);
 if (!url || !boxArg) {
