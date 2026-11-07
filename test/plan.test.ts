@@ -26,7 +26,7 @@ const museum = (id: string, automation: Museum['automation'], name = `${id} muse
 		automation,
 		shop: `${id} shop`,
 		museum: name,
-		wall: { name: `${id} wall`, hex: '#36454F', source: 'iscc-nbs-centroid', text: 'on-wall' },
+		wall: { name: `${id} wall`, hex: '#40424E', source: 'munsell-hamly-1949', munsell: '6.5PB 2.8/1.5', deltaE: 0.5, text: 'on-wall' },
 	}) as Museum;
 
 const pieces = (id: string, n: number) =>

@@ -1,7 +1,8 @@
 # One entry per museum shop. Terms verdicts come from reading each shop's terms
 # and its museum's site terms; quote the clause that decided the verdict.
-# Wall colours are Ridgway (1912) names; hex values are provisional ISCC-NBS
-# centroids until they are recomputed from Hamly's 1949 Munsell key.
+# Wall colours are Ridgway (1912) names. Each hex is Hamly's 1949 Munsell notation for
+# that name (data/ridgway.yaml) converted to sRGB; deltaE is CIEDE2000 between the two.
+# node scripts/walls-report.ts prints these lines.
 
 - id: getty
   shop: Getty Museum Store
@@ -17,7 +18,7 @@
     reviewedAt: "2026-10-25"
     verdict: listed-noncommercial
     clause: "(3) Using Site Content for commercial purposes is prohibited;"
-  wall: { name: Ox-blood Red, hex: "#841B2D", source: iscc-nbs-centroid, text: on-wall-warm }
+  wall: { name: Ox-blood Red, hex: "#780027", source: munsell-hamly-1949, munsell: "5R 2.4/10.0", deltaE: 0.1, text: on-wall-warm }
 
 - id: whitney
   shop: Whitney Shop
@@ -33,7 +34,7 @@
     reviewedAt: "2026-10-25"
     verdict: listed-noncommercial
     clause: "You may not use the Materials for commercial purposes."
-  wall: { name: Dull Blackish Green, hex: "#3A4B47", source: iscc-nbs-centroid }
+  wall: { name: Dull Blackish Green, hex: "#343F37", source: munsell-hamly-1949, munsell: "2.5G 2.5/1.5", deltaE: 0.5 }
 
 - id: lacma
   shop: LACMA Store
@@ -48,7 +49,7 @@
     reviewedAt: "2026-10-25"
     verdict: listed-noncommercial
     clause: "LACMA expressly prohibits the use, downloading, copying, display, publication, distribution, transmission, modification, reposting or exploitation for commercial or public purposes of the Protected Content"
-  wall: { name: Dark Payne's Gray, hex: "#36454F", source: iscc-nbs-centroid }
+  wall: { name: "Dark Payne's Gray", hex: "#40424E", source: munsell-hamly-1949, munsell: "6.5PB 2.8/1.5", deltaE: 0.5 }
 
 - id: met
   shop: The Met Store
@@ -61,7 +62,7 @@
     mainUrl: https://www.metmuseum.org/information/terms-and-conditions
     reviewedAt: "2026-10-25"
     verdict: unread
-  wall: { name: Bottle Green, hex: "#1B4D3E", source: iscc-nbs-centroid }
+  wall: { name: Bottle Green, hex: "#3A5847", source: munsell-hamly-1949, munsell: "3.5G 3.4/3.0", deltaE: 0.3 }
 
 - id: moma
   shop: MoMA Design Store
@@ -73,7 +74,7 @@
   terms:
     reviewedAt: "2026-10-25"
     verdict: unread
-  wall: { name: Bone Brown, hex: "#5B504F", source: iscc-nbs-centroid }
+  wall: { name: Bone Brown, hex: "#4A3B34", source: munsell-hamly-1949, munsell: "5YR 2.6/1.5", deltaE: 0.2 }
 
 - id: brooklyn
   shop: Brooklyn Museum Shop
@@ -86,7 +87,7 @@
     shopUrl: https://shop.brooklynmuseum.org/policies/terms-of-service
     reviewedAt: "2026-10-25"
     verdict: unread
-  wall: { name: Blackish Slate, hex: "#555555", source: iscc-nbs-centroid }
+  wall: { name: Blackish Slate, hex: "#3E3E3E", source: munsell-hamly-1949, munsell: "N2.6/", deltaE: 0 }
 
 - id: guggenheim
   shop: Guggenheim Store
@@ -99,7 +100,7 @@
     mainUrl: https://www.guggenheim.org/terms-conditions
     reviewedAt: "2026-10-25"
     verdict: unread
-  wall: { name: Hessian Brown, hex: "#43302E", source: iscc-nbs-centroid }
+  wall: { name: Hessian Brown, hex: "#513530", source: munsell-hamly-1949, munsell: "10R 2.5/2.5", deltaE: 0.3 }
 
 - id: sfmoma
   shop: SFMOMA Museum Store
@@ -113,7 +114,7 @@
     reviewedAt: "2026-10-25"
     verdict: excluded
     clause: "access or use any automated process (such as a robot, spider, scraper, or similar) to access the Service in violation of our robot exclusion headers, or for the purpose of scraping all or a substantial portion of the content of the Service"
-  wall: { name: Carob Brown, hex: "#3E1D1E", source: iscc-nbs-centroid }
+  wall: { name: Carob Brown, hex: "#4C261D", source: munsell-hamly-1949, munsell: "2.5YR 2.0/4.0", deltaE: 0.4 }
 
 - id: new-museum
   shop: New Museum Store
@@ -127,7 +128,7 @@
     reviewedAt: "2026-10-25"
     verdict: excluded
     clause: "you agree to not in any event use any robot, spider, Webcrawler or other automatic or manual device or process for the purpose of compiling information"
-  wall: { name: Dark Payne's Gray, hex: "#51585E", source: iscc-nbs-centroid }
+  wall: { name: "Dark Payne's Gray", hex: "#40424E", source: munsell-hamly-1949, munsell: "6.5PB 2.8/1.5", deltaE: 0.5 }
 
 - id: aic
   shop: Art Institute of Chicago Museum Shop
@@ -141,4 +142,4 @@
     reviewedAt: "2026-10-25"
     verdict: excluded
     clause: "This license does not include any commercial use of this site or its contents; any collection or use of product listings, descriptions, or prices"
-  wall: { name: Bottle Green, hex: "#1B4D3E", source: iscc-nbs-centroid }
+  wall: { name: Bottle Green, hex: "#3A5847", source: munsell-hamly-1949, munsell: "3.5G 3.4/3.0", deltaE: 0.3 }

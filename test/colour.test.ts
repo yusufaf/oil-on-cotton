@@ -32,8 +32,8 @@ describe('hexToLab', () => {
 
 describe('contrastRatio', () => {
 	it('reproduces the DESIGN.md table', () => {
-		expect(contrastRatio('#F6F1F1', '#841B2D').toFixed(2)).toBe('8.63');
-		expect(contrastRatio('#F1F3F2', '#3A4B47').toFixed(2)).toBe('8.27');
+		expect(contrastRatio('#F6F1F1', '#780027').toFixed(2)).toBe('10.27');
+		expect(contrastRatio('#F1F3F2', '#343F37').toFixed(2)).toBe('9.85');
 	});
 });
 

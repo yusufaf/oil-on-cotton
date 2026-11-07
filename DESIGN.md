@@ -3,11 +3,11 @@ version: alpha
 name: Oil on Cotton
 description: An independent index of museum shop apparel, staged as an exhibition. Each shop is a painted room; its clothing hangs as labels and an exhibition checklist.
 colors:
-  wall-getty: "#841B2D"
-  wall-whitney: "#3A4B47"
-  wall-met: "#1B4D3E"
-  wall-lacma: "#36454F"
-  wall-moma: "#5B504F"
+  wall-getty: "#780027"
+  wall-whitney: "#343F37"
+  wall-met: "#3A5847"
+  wall-lacma: "#40424E"
+  wall-moma: "#4A3B34"
   hall: "#B9B8B5"
   label: "#E9ECEB"
   label-hover: "#DEE3E1"
@@ -136,16 +136,16 @@ Most rooms are contemporary museums whose merchandise reproduces in-copyright wo
 
 ## Colors
 
-**Wall names** come from Robert Ridgway, *Color Standards and Color Nomenclature* (1912, public domain). The current hex values are provisional ISCC-NBS centroid approximations, taken from Jaffer's NBS/ISCC "R" dictionary. They are not measured from the plates. Before launch, each wall is recomputed from Hamly's 1949 Munsell key for the Ridgway standards (JOSA 39:592-599), converted to sRGB through the Munsell renotation data, and cross-checked against two plate scans: the Science History Institute and BHL. Publish the ΔE2000 between source and shipped value. Any wall with ΔE above 5 is labelled "after Ridgway's <name>".
+**Wall names** come from Robert Ridgway, *Color Standards and Color Nomenclature* (1912, public domain). Each wall is Hamly's Munsell notation for that name (JOSA 39:592-599, 1949, Table I), recorded in `data/ridgway.yaml`. Hamly's notations are 1929 Munsell Book of Color notations. They are converted to sRGB as if they were renotations, through the Munsell renotation data (munsell.js 1.1.7, Bradford C to D65); the Book-to-renotation step that NBS Circular 553 §6.1.3 describes is not applied. ΔE2000 is measured between the unclipped renotation colour and the shipped 8-bit hex. Each colour is cross-checked against plate scans from the Science History Institute and BHL; those ΔEs are in `data/ridgway.yaml`, not on the site. Any wall with ΔE above 5 is labelled "after Ridgway's <name>"; `test/museums.test.ts` fails until that label exists.
 
-| Token | Ridgway name | Hex (provisional) | Luminance | Light text contrast | Room |
-|---|---|---|---|---|---|
-| wall-getty | Ox-blood Red | #841B2D | 0.059 | 8.63:1 (#F6F1F1) | Getty Museum Store |
-| wall-whitney | Dull Blackish Green | #3A4B47 | 0.064 | 8.27:1 | Whitney Shop |
-| wall-met | Bottle Green | #1B4D3E | 0.059 | 8.65:1 | The Met Store (hand-listed) |
-| wall-lacma | Dark Payne's Gray | #36454F | 0.056 | 8.88:1 | LACMA Store |
-| wall-moma | Bone Brown | #5B504F | 0.085 | 6.97:1 | MoMA Design Store (hand-listed) |
-| hall | Light Gull Gray | #B9B8B5 | 0.479 | ink 8.76:1 | Floor plan, room list |
+| Token | Ridgway name | Munsell (Hamly 1949) | Hex | ΔE2000 | Luminance | Light text contrast | Room |
+|---|---|---|---|---|---|---|---|
+| wall-getty | Ox-blood Red | 5R 2.4/10.0 | #780027 | 0.1 | 0.041 | 10.27:1 (#F6F1F1) | Getty Museum Store |
+| wall-whitney | Dull Blackish Green | 2.5G 2.5/1.5 | #343F37 | 0.5 | 0.046 | 9.85:1 | Whitney Shop |
+| wall-met | Bottle Green | 3.5G 3.4/3.0 | #3A5847 | 0.3 | 0.083 | 7.07:1 | The Met Store (hand-listed) |
+| wall-lacma | Dark Payne's Gray | 6.5PB 2.8/1.5 | #40424E | 0.5 | 0.055 | 8.94:1 | LACMA Store |
+| wall-moma | Bone Brown | 5YR 2.6/1.5 | #4A3B34 | 0.2 | 0.048 | 9.58:1 | MoMA Design Store (hand-listed) |
+| hall | Light Gull Gray | - | #B9B8B5 | - | 0.479 | ink 8.76:1 | Floor plan, room list |
 
 **Rules:**
 - **Wall luminance.** Every wall has relative luminance at or below 0.10, so light text passes 4.5:1 at any size. A new wall must meet this, or sit at or above 0.40 with ink text. Nothing in between: mid-tone walls make text marginal.
@@ -305,7 +305,6 @@ None by default. No scroll-triggered animation and no fade-ups. Hover changes ar
 
 ## Open items
 
-- Measured Ridgway values via Munsell, with ΔE recorded.
 - Replace the working wordmark "The Hang" with "Oil on Cotton" on the canvas and in the build.
 - Read Brooklyn and Guggenheim terms in a browser before their rooms open.
 - Add LACMA, Met and MoMA room boards when their data is in.
