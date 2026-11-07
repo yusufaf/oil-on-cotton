@@ -30,6 +30,8 @@
 		"@types/node": "^24.19.2",
 		"http-message-sig": "0.3.0",
 		"husky": "^9.1.7",
+		"munsell": "1.1.7",
+		"sharp": "0.35.5",
 		"typescript": "^6.0.3",
 		"vitest": "^5.0.5",
 		"web-bot-auth": "0.2.0",
