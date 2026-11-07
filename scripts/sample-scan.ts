@@ -4,6 +4,10 @@
 import sharp from 'sharp';
 
 const HOSTS = ['digital.sciencehistory.org', 'archive.org'];
+// Where those hosts redirect image downloads: archive.org to its ia*.archive.org servers, SHI to
+// its CloudFront distribution.
+const allowedAfterRedirect = (host: string) =>
+	HOSTS.includes(host) || host.endsWith('.archive.org') || host.endsWith('.cloudfront.net');
 
 const [url, boxArg, preview] = process.argv.slice(2);
 if (!url || !boxArg) {
@@ -16,8 +20,10 @@ if (!HOSTS.includes(new URL(url).hostname)) {
 }
 const [left, top, width, height] = boxArg.split(',').map(Number);
 
-const response = await fetch(url);
+const response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
 if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+const finalHost = new URL(response.url).hostname;
+if (!allowedAfterRedirect(finalHost)) throw new Error(`${url} redirected to ${finalHost}, which is not a scan host`);
 const image = sharp(Buffer.from(await response.arrayBuffer()));
 const meta = await image.metadata();
 console.error(`${meta.width}x${meta.height} ${meta.format}, ${meta.icc ? 'embedded ICC' : 'no ICC, assumed sRGB'}`);
