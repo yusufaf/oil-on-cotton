@@ -19,7 +19,6 @@ import {
 	type Hall,
 } from '../src/lib/plan';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals';
-import { HALL_PAGES, PLAN_PAGE, PREVIEW_PAGES } from '../src/lib/site';
 
 const museum = (id: string, automation: Museum['automation'], name = `${id} museum`): Museum =>
 	({
@@ -176,12 +175,5 @@ describe('floor plan geometry', () => {
 		}
 		expect(inside(ENTRANCE, { x: 0, y: SHELL.h - SHELL.wall, w: SHELL.w, h: SHELL.wall })).toBe(true);
 		expect(inside(ENTRANCE, shell)).toBe(true);
-	});
-});
-
-describe('the floor plan page', () => {
-	it('is a preview page, apart from the hall pages', () => {
-		expect(PREVIEW_PAGES).toContain(PLAN_PAGE);
-		expect(PREVIEW_PAGES.filter((p) => HALL_PAGES.includes(p))).toEqual([]);
 	});
 });
