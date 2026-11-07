@@ -31,6 +31,29 @@ export const museumSchema = z.object({
 
 export type Museum = z.infer<typeof museumSchema>;
 
+// One entry per Ridgway name in data/ridgway.yaml: Hamly's notation and two plate scans.
+export const ridgwaySchema = z.object({
+	name: z.string(),
+	munsell: z.string(),
+	hamly: z.object({
+		page: z.number().int().min(592).max(599),
+		plate: z.string().regex(/^[IVXL]+$/),
+	}),
+	scans: z
+		.array(
+			z.object({
+				at: z.enum(['shi', 'bhl']),
+				image: z.url(),
+				box: z.tuple([z.number().int(), z.number().int(), z.number().int().positive(), z.number().int().positive()]),
+				hex: z.string().regex(/^#[0-9A-F]{6}$/),
+				deltaE: z.number().nonnegative(),
+			}),
+		)
+		.length(2),
+});
+
+export type RidgwayColour = z.infer<typeof ridgwaySchema>;
+
 export function relativeLuminance(hex: string): number {
 	const channel = (i: number) => {
 		const c = parseInt(hex.slice(i, i + 2), 16) / 255;

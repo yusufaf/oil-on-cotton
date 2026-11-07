@@ -1,0 +1,59 @@
+# One entry per Ridgway (1912) colour name used for a wall in data/museums.yaml.
+# munsell: D. H. Hamly, "The Ridgway Color Standards with a Munsell Notation Key", JOSA
+# 39(7):592-599 (1949), Table I, read from the page images of archive.org item
+# sim_optical-society-of-america-journal_1949-07_39_7 (hamly.page is the journal page).
+# Hamly's notations are 1929 Munsell Book of Color notations (p. 599, footnote 5); they are
+# converted here as if they were renotations. See DESIGN.md, Colors.
+# scans are cross-checks only, sampled with scripts/sample-scan.ts: shi is the Science History
+# Institute copy, bhl is the Smithsonian Libraries copy digitised for the Biodiversity Heritage
+# Library. box is [x, y, width, height] in pixels; deltaE is CIEDE2000 between the scan hex and
+# the wall hex shipped for that name.
+
+- name: Ox-blood Red
+  munsell: "5R 2.4/10.0"
+  hamly: { page: 597, plate: I }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/q3hjfhg/download_full", box: [618,2429,244,118], hex: "#721521", deltaE: 4.2 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n60.jpg", box: [536,2924,307,147], hex: "#0E0303", deltaE: 26.5 }
+- name: Dull Blackish Green
+  munsell: "2.5G 2.5/1.5"
+  hamly: { page: 594, plate: XLI }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/xviy1uv/download_full", box: [1572,2722,238,117], hex: "#334440", deltaE: 3.4 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n142.jpg", box: [1851,3274,307,147], hex: "#0E130F", deltaE: 14 }
+- name: "Dark Payne's Gray"
+  munsell: "6.5PB 2.8/1.5"
+  hamly: { page: 594, plate: XLIX }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/f7r8bmi/download_full", box: [568,2396,233,114], hex: "#3B4052", deltaE: 2.9 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n158.jpg", box: [549,2880,307,151], hex: "#0D0E11", deltaE: 17 }
+- name: Bottle Green
+  munsell: "3.5G 3.4/3.0"
+  hamly: { page: 593, plate: XIX }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/g9ftcu2/download_full", box: [591,2715,241,118], hex: "#2E5351", deltaE: 7.3 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n96.jpg", box: [523,3283,311,151], hex: "#101914", deltaE: 21 }
+- name: Bone Brown
+  munsell: "5YR 2.6/1.5"
+  hamly: { page: 593, plate: XL }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/k9h1ie4/download_full", box: [560,2720,241,120], hex: "#553C36", deltaE: 4.9 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n140.jpg", box: [545,3257,307,151], hex: "#241B13", deltaE: 11.1 }
+- name: Blackish Slate
+  munsell: "N2.6/"
+  hamly: { page: 593, plate: LIII }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/m3cl4v5/download_full", box: [1640,2702,242,117], hex: "#3F3E43", deltaE: 3.5 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n166.jpg", box: [1816,3283,307,147], hex: "#101010", deltaE: 14.2 }
+- name: Hessian Brown
+  munsell: "10R 2.5/2.5"
+  hamly: { page: 595, plate: XIII }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/fsoyeug/download_full", box: [1492,2733,235,120], hex: "#642526", deltaE: 9.7 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n84.jpg", box: [1773,3304,303,147], hex: "#170B0A", deltaE: 16.1 }
+- name: Carob Brown
+  munsell: "2.5YR 2.0/4.0"
+  hamly: { page: 593, plate: XIV }
+  scans:
+    - { at: shi, image: "https://digital.sciencehistory.org/downloads/deriv/ki5a5gt/download_full", box: [1023,2751,232,116], hex: "#723A30", deltaE: 9.2 }
+    - { at: bhl, image: "https://archive.org/download/colorstandardsco00ridg/page/n86.jpg", box: [1176,3313,311,147], hex: "#20130F", deltaE: 12.9 }
