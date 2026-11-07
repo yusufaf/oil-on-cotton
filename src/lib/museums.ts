@@ -23,13 +23,38 @@ export const museumSchema = z.object({
 	wall: z.object({
 		name: z.string(),
 		hex: z.string().regex(/^#[0-9A-F]{6}$/),
-		source: z.enum(['iscc-nbs-centroid', 'munsell-hamly-1949']),
+		source: z.literal('munsell-hamly-1949'),
+		munsell: z.string(),
+		deltaE: z.number().nonnegative(),
 		// Light text on the wall; red walls take the warm white (DESIGN.md, Colors).
 		text: z.enum(['on-wall', 'on-wall-warm']).default('on-wall'),
 	}),
 });
 
 export type Museum = z.infer<typeof museumSchema>;
+
+// One entry per Ridgway name in data/ridgway.yaml: Hamly's notation and two plate scans.
+export const ridgwaySchema = z.object({
+	name: z.string(),
+	munsell: z.string(),
+	hamly: z.object({
+		page: z.number().int().min(592).max(599),
+		plate: z.string().regex(/^[IVXL]+$/),
+	}),
+	scans: z
+		.array(
+			z.object({
+				at: z.enum(['shi', 'bhl']),
+				image: z.url(),
+				box: z.tuple([z.number().int(), z.number().int(), z.number().int().positive(), z.number().int().positive()]),
+				hex: z.string().regex(/^#[0-9A-F]{6}$/),
+				deltaE: z.number().nonnegative(),
+			}),
+		)
+		.length(2),
+});
+
+export type RidgwayColour = z.infer<typeof ridgwaySchema>;
 
 export function relativeLuminance(hex: string): number {
 	const channel = (i: number) => {
