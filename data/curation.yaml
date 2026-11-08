@@ -16,6 +16,28 @@
 # left stops hanging. To take down a work itself, delete its entry and its image file.
 # Quote every date: test/curation.test.ts checks it. All label copy follows DESIGN.md.
 
+- id: young-man-at-his-window
+  room: getty
+  artist: gustave-caillebotte
+  name: Gustave Caillebotte
+  artistLine: French, 1848–1894
+  title: Young Man at His Window
+  date: "1876"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: "2021.67"
+  record: https://www.getty.edu/art/collection/object/10A2Y1
+  checked: "2026-11-07"
+  image:
+    file: young-man-at-his-window.jpg
+    source: https://media.getty.edu/iiif/image/3c77a2e9-fc44-4811-9387-ffabc6bddee7/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-07"
+    alt: A man in a dark suit stands with his back to us at an open window, hands in his pockets, looking down past a stone balustrade at a sunlit street of pale apartment buildings where a woman crosses alone. A red armchair stands beside him.
+  pieces:
+    - { id: "getty:8197705957568", label: Young Man at His Window scarf, verified: "2026-11-07" }
+
 - id: irises
   room: getty
   artist: vincent-van-gogh
