@@ -60,3 +60,25 @@
   pieces:
     - { id: "getty:8032247283904", label: Irises cotton scarf, verified: "2026-11-01" }
     - { id: "getty:8497728323776", label: Irises socks, verified: "2026-11-01" }
+
+- id: jeanne-spring
+  room: getty
+  artist: edouard-manet
+  name: Édouard Manet
+  artistLine: French, 1832–1883
+  title: Jeanne (Spring)
+  date: "1881"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: "2014.62"
+  record: https://www.getty.edu/art/collection/object/103QTZ
+  checked: "2026-11-09"
+  image:
+    file: jeanne-spring.jpg
+    source: https://media.getty.edu/iiif/image/8094f61e-e458-42bd-90cf-a0ed0dcc90b9/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-09"
+    alt: A young woman in profile, facing left, wears a cream bonnet trimmed with a pink rose and a pale dress patterned with small flowers. A long tan glove holds a cream parasol over her shoulder, against green leaves and blue sky.
+  pieces:
+    - { id: "getty:8498675941568", label: Jeanne (Spring) socks, verified: "2026-11-08" }
