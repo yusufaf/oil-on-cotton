@@ -98,17 +98,20 @@ for (const museum of rooms) {
 	for (const { work } of hangs) {
 		if (!hang.includes(work.accession)) problems.push(`${path} does not show ${work.id}'s accession ${work.accession}`);
 	}
-	const sources = [...hang.matchAll(/<source type="image\/avif" srcset="([^"]+)"/g)].map((m) => m[1]);
+	// The pictures that load with JavaScript on: the first work's, then the held ones (data-srcset).
+	const live = hang.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
+	const sources = [...live.matchAll(/<source type="image\/avif" (?:data-)?srcset="([^"]+)"/g)].map((m) => m[1]);
 	if (sources.length !== hangs.length || sources.some((s) => !/ 1280w\b/.test(s)))
 		problems.push(`${path} has a hung work without a 1280w AVIF`);
 	// Only the first work loads with the page; later works wait for the load event (Hang.astro), so
 	// Lighthouse's simulation never counts them against LCP, and each has a <noscript> copy.
-	const live = hang.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
 	const loading = live.match(/<img\b[^>]*\ssrc="/g)?.length ?? 0;
 	const held = live.match(/<img\b[^>]*\sdata-srcset="/g)?.length ?? 0;
 	const copies = hang.match(/<noscript>/g)?.length ?? 0;
-	if (hangs.length > 0 && (loading !== 1 || held !== hangs.length - 1 || copies !== hangs.length - 1))
+	if (hangs.length > 0 && loading !== 1)
 		problems.push(`${path} loads ${loading} hung works with the page, expected only the first`);
+	if (held !== Math.max(hangs.length - 1, 0) || copies !== held)
+		problems.push(`${path} holds ${held} later works with ${copies} <noscript> copies, expected ${Math.max(hangs.length - 1, 0)} of each`);
 }
 
 // A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or
