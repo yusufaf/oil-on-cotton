@@ -124,9 +124,10 @@ const img = (i: number, work: Hang<CatalogItem>['work']) => ({
 				// the first work or the fonts. loading="lazy" then fetches each as it nears the screen. A
 				// classic script, so it runs as the page is read: the load event waits for the visit
 				// counter, and if that stalls the works start after 4s anyway. The 4s timer stays armed
-				// after load, since a background tab runs no animation frames until it is shown.
+				// until the works start, since a background tab runs no animation frames until it is shown.
 				{
 					let started = false;
+					let fallback;
 					const start = () => {
 						if (started) return;
 						started = true;
@@ -136,7 +137,7 @@ const img = (i: number, work: Hang<CatalogItem>['work']) => ({
 							if (el instanceof HTMLImageElement) el.src = el.dataset.src;
 						}
 					};
-					const fallback = setTimeout(start, 4000);
+					fallback = setTimeout(start, 4000);
 					const later = () => requestAnimationFrame(() => setTimeout(start));
 					if (document.readyState === 'complete') later();
 					else addEventListener('load', later, { once: true });

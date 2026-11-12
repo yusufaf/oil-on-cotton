@@ -110,7 +110,7 @@ for (const museum of rooms) {
 	const held = live.match(/<img\b[^>]*\sdata-srcset="/g)?.length ?? 0;
 	const copies = hang.match(/<noscript>/g)?.length ?? 0;
 	if (hangs.length > 0 && (loading !== 1 || loadingAvif !== 1))
-		problems.push(`${path} loads ${loading} hung works with the page, expected only the first`);
+		problems.push(`${path} loads ${loading} hung images and ${loadingAvif} AVIF sources with the page, expected only the first work's`);
 	if (held !== Math.max(hangs.length - 1, 0) || copies !== held)
 		problems.push(`${path} holds ${held} later works with ${copies} <noscript> copies, expected ${Math.max(hangs.length - 1, 0)} of each`);
 	// Held works need the loader that starts them and, without JavaScript, the style that hides them.
