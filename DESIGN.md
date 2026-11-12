@@ -285,6 +285,7 @@ Claude drafts all copy from each hub's fact ledger: counts, price spread, size g
 - Only public-domain or CC0 artwork images. Never product photos, museum logos or shop imagery.
 - An artwork hangs only when a curator has verified that the garment reproduces that exact work.
 - Use the owning museum's open-access image, only when it is CC0, and record its source URL, licence and retrieval date in `data/curation.yaml`. *Irises* is the Getty Open Content file. The build serves AVIF at 640, 960 and 1280px wide, with a WebP fallback at 640 and 960px, because a busy painting at 1280px fits the 200KB budget only as AVIF.
+- Only the first hung work loads with the page. Later works wait until the page has loaded, or four seconds if loading stalls, then load as a visitor scrolls near them. Without JavaScript they load with the page.
 - No AI-generated imagery. Wall texture, if used at all, is a real CC0 plaster scan (Poly Haven or ambientCG), under 40KB.
 
 ## Motion
@@ -299,7 +300,7 @@ None by default. No scroll-triggered animation and no fade-ups. Hover changes ar
 - Floor-plan rooms are links with accessible names, and decorative plan parts are `aria-hidden`.
 - Budget, enforced by `check:dist` and the Lighthouse CI job in `ci.yml`:
   - LCP under 2.0s on throttled mobile (Lighthouse, median of 3 runs, including the 150 ms the visit counter can add in CI)
-  - under 50KB of JS per room (the filter island only, plus the visit counter)
+  - under 50KB of JS per room (the filter island and the hang's image loader, plus the visit counter)
   - at most 4 subset font files, counting the subsets a page's text can use
   - every artwork image file at most 200KB, at every width and format
 

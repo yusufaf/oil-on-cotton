@@ -2,7 +2,8 @@
 // - every room page exists with one row per visible catalog piece, and one counted shop link per
 //   row (place checklist) and per hung piece (place hang), each naming its museum and piece and
 //   opening that piece's shop page in a new tab
-// - every hung work shows its accession number and has a 1280w AVIF; no hang source image ships
+// - every hung work shows its accession number and has a 1280w AVIF; only the first loads with the
+//   page; no hang source image ships
 // - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
 //   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
@@ -100,6 +101,14 @@ for (const museum of rooms) {
 	const sources = [...hang.matchAll(/<source type="image\/avif" srcset="([^"]+)"/g)].map((m) => m[1]);
 	if (sources.length !== hangs.length || sources.some((s) => !/ 1280w\b/.test(s)))
 		problems.push(`${path} has a hung work without a 1280w AVIF`);
+	// Only the first work loads with the page; later works wait for the load event (Hang.astro), so
+	// Lighthouse's simulation never counts them against LCP, and each has a <noscript> copy.
+	const live = hang.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
+	const loading = live.match(/<img\b[^>]*\ssrc="/g)?.length ?? 0;
+	const held = live.match(/<img\b[^>]*\sdata-srcset="/g)?.length ?? 0;
+	const copies = hang.match(/<noscript>/g)?.length ?? 0;
+	if (hangs.length > 0 && (loading !== 1 || held !== hangs.length - 1 || copies !== hangs.length - 1))
+		problems.push(`${path} loads ${loading} hung works with the page, expected only the first`);
 }
 
 // A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or
