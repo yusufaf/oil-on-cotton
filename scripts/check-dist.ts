@@ -106,12 +106,18 @@ for (const museum of rooms) {
 	// Only the first work loads with the page; later works wait for the load event (Hang.astro), so
 	// Lighthouse's simulation never counts them against LCP, and each has a <noscript> copy.
 	const loading = live.match(/<img\b[^>]*\ssrc="/g)?.length ?? 0;
+	const loadingAvif = live.match(/<source type="image\/avif" srcset="/g)?.length ?? 0;
 	const held = live.match(/<img\b[^>]*\sdata-srcset="/g)?.length ?? 0;
 	const copies = hang.match(/<noscript>/g)?.length ?? 0;
-	if (hangs.length > 0 && loading !== 1)
+	if (hangs.length > 0 && (loading !== 1 || loadingAvif !== 1))
 		problems.push(`${path} loads ${loading} hung works with the page, expected only the first`);
 	if (held !== Math.max(hangs.length - 1, 0) || copies !== held)
 		problems.push(`${path} holds ${held} later works with ${copies} <noscript> copies, expected ${Math.max(hangs.length - 1, 0)} of each`);
+	// Held works need the loader that starts them and, without JavaScript, the style that hides them.
+	const loader = html.includes(`querySelectorAll('.hang .held [data-srcset]')`);
+	const hide = html.includes('<noscript><style>.hang .held { display: none; }</style></noscript>');
+	if ((held > 0) !== loader || (held > 0) !== hide)
+		problems.push(`${path} holds ${held} later works but ${loader ? 'has' : 'lacks'} the loader and ${hide ? 'has' : 'lacks'} the no-JavaScript style`);
 }
 
 // A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or

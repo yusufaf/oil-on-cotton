@@ -130,12 +130,13 @@ const img = (i: number, work: Hang<CatalogItem>['work']) => ({
 					const start = () => {
 						if (started) return;
 						started = true;
+						clearTimeout(fallback);
 						for (const el of document.querySelectorAll('.hang .held [data-srcset]')) {
 							el.srcset = el.dataset.srcset;
 							if (el instanceof HTMLImageElement) el.src = el.dataset.src;
 						}
 					};
-					setTimeout(start, 4000);
+					const fallback = setTimeout(start, 4000);
 					const later = () => requestAnimationFrame(() => setTimeout(start));
 					if (document.readyState === 'complete') later();
 					else addEventListener('load', later, { once: true });
