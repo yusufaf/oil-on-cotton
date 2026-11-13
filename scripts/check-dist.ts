@@ -2,7 +2,8 @@
 // - every room page exists with one row per visible catalog piece, and one counted shop link per
 //   row (place checklist) and per hung piece (place hang), each naming its museum and piece and
 //   opening that piece's shop page in a new tab
-// - every hung work shows its accession number and has a 1280w AVIF; no hang source image ships
+// - every hung work shows its accession number and has a 1280w AVIF; only the first loads with the
+//   page; no hang source image ships
 // - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
 //   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
@@ -97,9 +98,26 @@ for (const museum of rooms) {
 	for (const { work } of hangs) {
 		if (!hang.includes(work.accession)) problems.push(`${path} does not show ${work.id}'s accession ${work.accession}`);
 	}
-	const sources = [...hang.matchAll(/<source type="image\/avif" srcset="([^"]+)"/g)].map((m) => m[1]);
+	// The pictures that load with JavaScript on: the first work's, then the held ones (data-srcset).
+	const live = hang.replace(/<noscript>[\s\S]*?<\/noscript>/g, '');
+	const sources = [...live.matchAll(/<source type="image\/avif" (?:data-)?srcset="([^"]+)"/g)].map((m) => m[1]);
 	if (sources.length !== hangs.length || sources.some((s) => !/ 1280w\b/.test(s)))
 		problems.push(`${path} has a hung work without a 1280w AVIF`);
+	// Only the first work loads with the page; later works wait for the load event (Hang.astro), so
+	// Lighthouse's simulation never counts them against LCP, and each has a <noscript> copy.
+	const loading = live.match(/<img\b[^>]*\ssrc="/g)?.length ?? 0;
+	const loadingAvif = live.match(/<source type="image\/avif" srcset="/g)?.length ?? 0;
+	const held = live.match(/<img\b[^>]*\sdata-srcset="/g)?.length ?? 0;
+	const copies = hang.match(/<noscript>/g)?.length ?? 0;
+	if (hangs.length > 0 && (loading !== 1 || loadingAvif !== 1))
+		problems.push(`${path} loads ${loading} hung images and ${loadingAvif} AVIF sources with the page, expected only the first work's`);
+	if (held !== Math.max(hangs.length - 1, 0) || copies !== held)
+		problems.push(`${path} holds ${held} later works with ${copies} <noscript> copies, expected ${Math.max(hangs.length - 1, 0)} of each`);
+	// Held works need the loader that starts them and, without JavaScript, the style that hides them.
+	const loader = html.includes(`querySelectorAll('.hang .held [data-srcset]')`);
+	const hide = html.includes('<noscript><style>.hang .held { display: none; }</style></noscript>');
+	if ((held > 0) !== loader || (held > 0) !== hide)
+		problems.push(`${path} holds ${held} later works but ${loader ? 'has' : 'lacks'} the loader and ${hide ? 'has' : 'lacks'} the no-JavaScript style`);
 }
 
 // A hung work ships only its resized files. A work that hangs nowhere (its pieces are gone, or

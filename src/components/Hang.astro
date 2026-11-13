@@ -20,8 +20,11 @@ const imageOf = (file: string) => {
 };
 
 // Every file must be 200 KB or less (DESIGN.md). A busy painting fits at 1280px only as AVIF,
-// so the WebP fallback, for browsers without AVIF, stops at 960px. AVIF quality 40 keeps
-// mobile LCP under 2s on the Getty room (Lighthouse: 2.1s at 50, 1.8s at 40).
+// so the WebP fallback, for browsers without AVIF, stops at 960px. AVIF quality 40 keeps the
+// first work, the LCP image, small enough for mobile LCP under 2s (Lighthouse: 2.1s at 50, 1.8s
+// at 40 on the Getty room). Later works wait for the load event (see the script below):
+// Lighthouse's simulation counts any image that finishes before first paint against LCP, about
+// 75 to 150 ms each, though on a real phone they arrive after it.
 // The image column: full width under 720px (20px gutters), up to 640px when stacked (48px
 // gutters), squeezed beside the 256px label and 104px gap until the row fits at 1096px.
 const sizes = [
@@ -41,25 +44,38 @@ const pictures = await Promise.all(
 		return { avif, webp };
 	}),
 );
+const img = (i: number, work: Hang<CatalogItem>['work']) => ({
+	sizes,
+	width: pictures[i].webp.attributes.width,
+	height: pictures[i].webp.attributes.height,
+	alt: work.image.alt,
+	decoding: 'async' as const,
+});
 ---
 
 <section class="hang" aria-label="Hung works">
 	{
 		hangs.map(({ work, pieces }, i) => (
 			<figure>
-				<picture>
-					<source type="image/avif" srcset={pictures[i].avif.srcSet.attribute} sizes={sizes} />
-					<img
-						src={pictures[i].webp.src}
-						srcset={pictures[i].webp.srcSet.attribute}
-						sizes={sizes}
-						width={pictures[i].webp.attributes.width}
-						height={pictures[i].webp.attributes.height}
-						alt={work.image.alt}
-						loading={i === 0 ? 'eager' : 'lazy'}
-						decoding="async"
-					/>
-				</picture>
+				{i === 0 ? (
+					<picture>
+						<source type="image/avif" srcset={pictures[i].avif.srcSet.attribute} sizes={sizes} />
+						<img src={pictures[i].webp.src} srcset={pictures[i].webp.srcSet.attribute} loading="eager" {...img(i, work)} />
+					</picture>
+				) : (
+					<Fragment>
+						<picture class="held">
+							<source type="image/avif" data-srcset={pictures[i].avif.srcSet.attribute} sizes={sizes} />
+							<img data-src={pictures[i].webp.src} data-srcset={pictures[i].webp.srcSet.attribute} loading="lazy" {...img(i, work)} />
+						</picture>
+						<noscript>
+							<picture>
+								<source type="image/avif" srcset={pictures[i].avif.srcSet.attribute} sizes={sizes} />
+								<img src={pictures[i].webp.src} srcset={pictures[i].webp.srcSet.attribute} loading="lazy" {...img(i, work)} />
+							</picture>
+						</noscript>
+					</Fragment>
+				)}
 				<figcaption>
 					<p>
 						<span class="artist">{work.name}</span>
@@ -99,6 +115,37 @@ const pictures = await Promise.all(
 		))
 	}
 </section>
+{
+	hangs.length > 1 && (
+		<Fragment>
+			<noscript><style is:inline>.hang .held { display: none; }</style></noscript>
+			<script is:inline>
+				// Later works wait for the load event and one frame, so they never share the network with
+				// the first work or the fonts. loading="lazy" then fetches each as it nears the screen. A
+				// classic script, so it runs as the page is read: the load event waits for the visit
+				// counter, and if that stalls the works start after 4s anyway. The 4s timer stays armed
+				// until the works start, since a background tab runs no animation frames until it is shown.
+				{
+					let started = false;
+					let fallback;
+					const start = () => {
+						if (started) return;
+						started = true;
+						clearTimeout(fallback);
+						for (const el of document.querySelectorAll('.hang .held [data-srcset]')) {
+							el.srcset = el.dataset.srcset;
+							if (el instanceof HTMLImageElement) el.src = el.dataset.src;
+						}
+					};
+					fallback = setTimeout(start, 4000);
+					const later = () => requestAnimationFrame(() => setTimeout(start));
+					if (document.readyState === 'complete') later();
+					else addEventListener('load', later, { once: true });
+				}
+			</script>
+		</Fragment>
+	)
+}
 
 <style>
 	.hang {
