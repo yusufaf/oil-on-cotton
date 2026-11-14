@@ -220,7 +220,7 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
   2. nationality and dates
   3. artwork title (italic Besley) and year
   4. owning collection and accession number, then "Image in the public domain, courtesy of <image credit>."
-  5. a divider, then "Made after this painting" with a list of pieces: a short name we write ("Irises socks") as the link, the price or "Sold out" on the right
+  5. a divider, then "Made after this painting" ("this pastel" for a pastel, from the work's `kind`) with a list of pieces: a short name we write ("Irises socks") as the link, the price or "Sold out" on the right
   6. "Sold by the <shop>" in credit size
 
   The label quotes the owning museum's record (name, nationality and dates, title, date, collection, accession), read from that record before shipping. A curator opens each piece's shop page in a browser and confirms it reproduces that exact work. Hung pieces also stay in the checklist, so the checklist is always the room's full list. Works live in `data/curation.yaml`.
