@@ -35,7 +35,7 @@ jobs:
       # Hashes each sitemap page into dist/indexnow-pages.json and lists the pages that differ from
       # the live copy in indexnow-request.json; the indexnow job submits them once deployed. The
       # script never fails, and a crash still writes an empty request, so this never stops a deploy.
-      - run: pnpm indexnow || { rm -f dist/indexnow-pages.json; echo '{"urlList":[]}' > indexnow-request.json; }
+      - run: pnpm indexnow || { echo '::warning title=IndexNow::pnpm indexnow crashed, submitting nothing'; rm -f dist/indexnow-pages.json; echo '{"urlList":[]}' > indexnow-request.json; }
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
