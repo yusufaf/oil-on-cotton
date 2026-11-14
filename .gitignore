@@ -2,6 +2,7 @@
 dist/
 .lighthouseci/
 lhci-reports/
+indexnow-request.json
 # generated types
 .astro/
 
