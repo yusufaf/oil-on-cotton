@@ -7,7 +7,7 @@
 // - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
 //   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
-//   dist and at most 200 KB; the visit counter is its only remote script
+//   dist and at most 200 KB; the visit counter is its only remote script, and it loads async
 // - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
 //   hall pages and the rooms
 // - the home page's floor plan links each built room once and nothing else as a plan room, names
@@ -24,6 +24,7 @@ import {
 	FONT_FILE_BUDGET,
 	IMAGE_BUDGET,
 	JS_BUDGET,
+	blockingRemoteScripts,
 	fontFiles,
 	imageUrls,
 	isRemote,
@@ -205,6 +206,9 @@ for (const path of pages(DIST)) {
 	const styles = pageCss(html, readAsset);
 	for (const url of [...js.missing, ...styles.missing]) problems.push(`${path} loads ${url}, which is not in dist`);
 	for (const url of js.remote.filter((u) => u !== COUNTER)) problems.push(`${path} loads the remote script ${url}`);
+	// Without async a remote script holds the page's module scripts and DOMContentLoaded until it
+	// loads, so a stalled visit counter would leave the checklist without its filters.
+	for (const url of blockingRemoteScripts(html)) problems.push(`${path} loads ${url} without async`);
 	if (js.bytes >= JS_BUDGET)
 		problems.push(`${path} has ${kb(js.bytes)} KB of first-party JS, over its ${JS_BUDGET / 1024} KB share of the 50 KB budget`);
 	const fonts = fontFiles(styles.css, text);

@@ -13,7 +13,10 @@ interface Props {
 }
 
 // Umami website id for oiloncotton.com (public; it ships in every page). The tracker is only
-// included in builds for the launch hostname, so previews and forks never request it.
+// included in builds for the launch hostname, so previews and forks never request it. It loads
+// async, not defer: a deferred script runs before the page's module scripts and DOMContentLoaded,
+// so a stalled counter would hold the checklist's filters. The load event still waits for it (see
+// Hang.astro).
 const UMAMI_WEBSITE_ID = '4578771b-d472-458f-815a-36bcfb9f95dd';
 
 const { title, description, wall, noindex = false } = Astro.props;
@@ -54,7 +57,7 @@ const footerLinks = [
 			launch && (
 				<script
 					is:inline
-					defer
+					async
 					src="https://analytics.oiloncotton.com/s.js"
 					data-website-id={UMAMI_WEBSITE_ID}
 					data-domains="oiloncotton.com"
