@@ -1,11 +1,11 @@
 ---
 import { href } from '../lib/paths';
-import { LAUNCH_HOSTNAME } from '../lib/site';
+import { REDIRECTS } from '../lib/site';
 
 // The floor plan was at /floor-plan/ until it became the home page (#28). GitHub Pages can't send
-// a redirect, so this page refreshes to the home page at once. It is listed in REDIRECTS.
-const to = href();
-const canonical = Astro.site?.hostname === LAUNCH_HOSTNAME ? new URL(to, Astro.site).href : undefined;
+// a redirect, so this page refreshes to its REDIRECTS target at once. It carries noindex and no
+// canonical, like the 404 page: the old URL was never indexed, and the two would conflict.
+const to = href(REDIRECTS['floor-plan/']);
 ---
 
 <!doctype html>
@@ -15,7 +15,6 @@ const canonical = Astro.site?.hostname === LAUNCH_HOSTNAME ? new URL(to, Astro.s
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="refresh" content={`0;url=${to}`} />
 		<meta name="robots" content="noindex" />
-		{canonical && <link rel="canonical" href={canonical} />}
 		<title>Oil on Cotton</title>
 	</head>
 	<body>

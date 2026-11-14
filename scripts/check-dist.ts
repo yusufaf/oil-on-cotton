@@ -13,8 +13,8 @@
 // - the home page's floor plan links each built room once and nothing else as a plan room, names
 //   every open shop and never a removed one
 // - each page in REDIRECTS (src/lib/site.ts) exists, refreshes at once to its target, carries
-//   noindex, is not in the sitemap, and on the launch hostname has its target as canonical; no other
-//   page has a meta refresh in any form, and redirect pages don't load the visit counter
+//   noindex and no canonical, and is not in the sitemap; no other page has a meta refresh in any
+//   form, and redirect pages don't load the visit counter
 // - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 and
 //   the redirects is indexable, with a canonical that matches its sitemap entry; only launch builds
 //   load the visit counter
@@ -246,16 +246,15 @@ for (const path of pages(DIST)) {
 			problems.push(`${url} is ${kb(statSync(file).size)} KB, over the 200 KB budget`);
 	}
 
-	// A redirect page refreshes to its target at once, is never indexed and, on the launch hostname,
-	// names its target as canonical.
+	// A redirect page refreshes to its target at once and is never indexed. Like the 404 page it has
+	// no canonical: noindex with a canonical sends search engines conflicting signals.
 	if (redirect !== undefined || refreshes) {
 		if (redirect === undefined) problems.push(`${path} has a meta refresh but is not in REDIRECTS`);
 		else {
 			if (refresh !== base + redirect)
 				problems.push(`${path} refreshes to ${refresh ?? 'no 0-second url'}, expected ${base + redirect}`);
 			if (!noindex) problems.push(`${path} lacks noindex`);
-			const target = launch ? urlOf(redirect) : undefined;
-			if (canonical !== target) problems.push(`${path} canonical is ${canonical}, expected ${target ?? 'none'}`);
+			if (canonical) problems.push(`${path} has a canonical but is not indexable`);
 		}
 		continue;
 	}
