@@ -12,9 +12,12 @@
 //   holding its own name; the sitemap lists exactly the hall pages and the rooms
 // - the home page's floor plan links each built room once and nothing else as a plan room, names
 //   every open shop and never a removed one
-// - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 is
-//   indexable, with a canonical that matches its sitemap entry; only launch builds load the visit
-//   counter
+// - each page in REDIRECTS (src/lib/site.ts) exists, refreshes at once to its target, carries
+//   noindex and no canonical, and is not in the sitemap; no other page has a meta refresh in any
+//   form, and redirect pages don't load the visit counter
+// - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 and
+//   the redirects is indexable, with a canonical that matches its sitemap entry; only launch builds
+//   load the visit counter
 // - hall pages follow DESIGN.md's copy rules, and no page shows "undefined", "NaN" or "Invalid Date"
 // Usage: node scripts/check-dist.ts
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -39,7 +42,7 @@ import { homeRooms } from '../src/lib/plan.ts';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals.ts';
 import { keyFiles } from '../src/lib/indexnow.ts';
 import { roomMuseums } from '../src/lib/room.ts';
-import { HALL_PAGES, LAUNCH_HOSTNAME } from '../src/lib/site.ts';
+import { HALL_PAGES, LAUNCH_HOSTNAME, REDIRECTS } from '../src/lib/site.ts';
 
 const DIST = 'dist';
 const problems: string[] = [];
@@ -171,6 +174,7 @@ for (const file of [
 	'sitemap.xml',
 	'robots.txt',
 	...HALL_PAGES.map((r) => `${r}index.html`),
+	...Object.keys(REDIRECTS).map((r) => `${r}index.html`),
 ]) {
 	if (!existsSync(join(DIST, file))) problems.push(`${join(DIST, file)} is missing`);
 }
@@ -199,9 +203,14 @@ for (const path of pages(DIST)) {
 	const text = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>/g, ' ');
 	const canonical = html.match(/<link rel="canonical" href="([^"]+)">/)?.[1];
 	const noindex = html.includes(NOINDEX);
+	const redirect = REDIRECTS[route];
+	// Any meta refresh, in any form, marks a redirect page; only the exact 0-second form counts as refreshing at once.
+	const refreshes = /<meta\b[^>]*\bhttp-equiv\s*=\s*["']?refresh\b/i.test(html);
+	const refresh = html.match(/<meta http-equiv="refresh" content="0;url=([^"]+)">/)?.[1];
 	const counter = /<script[^>]+src="https:\/\/analytics\.oiloncotton\.com\/s\.js"[^>]+data-website-id="[0-9a-f-]{36}"/.test(html);
-	// The counter loads on every launch page, 404 included, and on no other build.
-	if (counter !== launch) problems.push(`${path} ${launch ? 'does not load' : 'loads'} the visit counter`);
+	// The counter loads on every launch page but a redirect, 404 included, and on no other build.
+	const counted = launch && redirect === undefined;
+	if (counter !== counted) problems.push(`${path} ${counted ? 'does not load' : 'loads'} the visit counter`);
 	if (/\bundefined\b|\bNaN\b|Invalid Date/.test(text)) problems.push(`${path} shows "undefined", "NaN" or "Invalid Date"`);
 	// Room pages quote shop product names, which follow the shops' own style.
 	if (!route.startsWith('rooms/') && (/[—!]/.test(text) || BANNED.test(text)))
@@ -235,6 +244,19 @@ for (const path of pages(DIST)) {
 		else if (!existsSync(file)) problems.push(`${path} uses ${url}, which is not in dist`);
 		else if (statSync(file).size > IMAGE_BUDGET)
 			problems.push(`${url} is ${kb(statSync(file).size)} KB, over the 200 KB budget`);
+	}
+
+	// A redirect page refreshes to its target at once and is never indexed. Like the 404 page it has
+	// no canonical: noindex with a canonical sends search engines conflicting signals.
+	if (redirect !== undefined || refreshes) {
+		if (redirect === undefined) problems.push(`${path} has a meta refresh but is not in REDIRECTS`);
+		else {
+			if (refresh !== base + redirect)
+				problems.push(`${path} refreshes to ${refresh ?? 'no 0-second url'}, expected ${base + redirect}`);
+			if (!noindex) problems.push(`${path} lacks noindex`);
+			if (canonical) problems.push(`${path} has a canonical but is not indexable`);
+		}
+		continue;
 	}
 
 	if (!launch || route === '404.html') {
