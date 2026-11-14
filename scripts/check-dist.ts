@@ -8,8 +8,8 @@
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
 //   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
 //   dist and at most 200 KB; the visit counter is its only remote script, and it loads async
-// - the hall pages, 404 page, sitemap and robots.txt exist, and the sitemap lists exactly the
-//   hall pages and the rooms
+// - the hall pages, 404 page, sitemap and robots.txt exist, and so does the one IndexNow key file,
+//   holding its own name; the sitemap lists exactly the hall pages and the rooms
 // - the home page's floor plan links each built room once and nothing else as a plan room, names
 //   every open shop and never a removed one
 // - staging pages carry noindex and no canonical; on the launch hostname every page but the 404 is
@@ -37,6 +37,7 @@ import { museumSchema } from '../src/lib/museums.ts';
 import { outboundLinks, outboundProblems } from '../src/lib/outbound.ts';
 import { homeRooms } from '../src/lib/plan.ts';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals.ts';
+import { keyFiles } from '../src/lib/indexnow.ts';
 import { roomMuseums } from '../src/lib/room.ts';
 import { HALL_PAGES, LAUNCH_HOSTNAME } from '../src/lib/site.ts';
 
@@ -173,6 +174,11 @@ for (const file of [
 ]) {
 	if (!existsSync(join(DIST, file))) problems.push(`${join(DIST, file)} is missing`);
 }
+// IndexNow reads the key from <key>.txt at the site root (scripts/indexnow.ts).
+const indexNowKeys = keyFiles(readdirSync(DIST));
+if (indexNowKeys.length !== 1) problems.push(`dist has ${indexNowKeys.length} IndexNow key files, expected 1`);
+else if (read(join(DIST, `${indexNowKeys[0]}.txt`))?.trim() !== indexNowKeys[0])
+	problems.push(`dist/${indexNowKeys[0]}.txt does not hold its key`);
 
 const listed = [...(read(join(DIST, 'sitemap.xml')) ?? '').matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const indexable = [...HALL_PAGES, ...rooms.map((m) => `rooms/${m.id}/`)].map(urlOf);

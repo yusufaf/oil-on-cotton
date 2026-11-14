@@ -32,10 +32,19 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm check:dist
+      # Hashes each sitemap page into dist/indexnow-pages.json and lists the pages that differ from
+      # the live copy in indexnow-request.json; the indexnow job submits them once deployed. The
+      # script never fails, and a crash still writes an empty request, so this never stops a deploy.
+      - run: pnpm indexnow || { echo '::warning title=IndexNow::pnpm indexnow crashed, submitting nothing'; rm -f dist/indexnow-pages.json; echo '{"urlList":[]}' > indexnow-request.json; }
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-request
+          path: indexnow-request.json
+          retention-days: 30
 
   deploy:
     needs: site
@@ -46,3 +55,27 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tells Bing and the other IndexNow engines which pages changed; Google ignores it. Runs only once
+  # the deploy succeeds. If it fails, re-run only this failed job, not all jobs: a full re-run plans
+  # against the new live manifest and submits nothing, and the next deploy won't resubmit these pages.
+  indexnow:
+    needs: deploy
+    if: github.repository == 'yusufaf/oil-on-cotton'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: indexnow-request
+      - name: Submit changed pages
+        run: |
+          if [ "$(jq '.urlList | length' indexnow-request.json)" -eq 0 ]; then
+            echo "No pages changed"
+            exit 0
+          fi
+          jq -r '.urlList[]' indexnow-request.json
+          curl -sS --fail-with-body --retry 3 -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data @indexnow-request.json -w 'IndexNow: HTTP %{http_code}\n'
