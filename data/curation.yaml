@@ -104,3 +104,25 @@
     alt: A woman with her hair pinned up looks away to the left, her face drawn in pencil on the tan paper. She wears a deep blue jacket open over red at her throat. Pale orange and blue blossoms float on a speckled blue and green ground around her.
   pieces:
     - { id: "getty:10284295684288", label: Baronne de Domecy scarf, verified: "2026-11-13" }
+
+- id: still-life-with-apples
+  room: getty
+  artist: paul-cezanne
+  name: Paul Cézanne
+  artistLine: French, 1839–1906
+  title: Still Life with Apples
+  date: "1893–1894"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: 96.PA.8
+  record: https://www.getty.edu/art/collection/object/103QT5
+  checked: "2026-11-13"
+  image:
+    file: still-life-with-apples.jpg
+    source: https://media.getty.edu/iiif/image/f0d223e4-3254-4482-8c65-e5468e186efb/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-13"
+    alt: A plate of red and yellow apples rests on a rumpled white cloth beside a blue ginger pot bound with rattan straps. At left stands a tall green jar, and behind the ginger pot rises a bottle wrapped in rattan. In front, a small white lidded pot painted with leaves sits on a dark blue cloth with a black pattern.
+  pieces:
+    - { id: "getty:8498679251136", label: Still Life with Apples socks, verified: "2026-11-13" }
