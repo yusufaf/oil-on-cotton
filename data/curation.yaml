@@ -82,3 +82,25 @@
     alt: A young woman in profile, facing left, wears a cream bonnet trimmed with a pink rose and a pale dress patterned with small flowers. A long tan glove holds a cream parasol over her shoulder, against green leaves and blue sky.
   pieces:
     - { id: "getty:8498675941568", label: Jeanne (Spring) socks, verified: "2026-11-08" }
+
+- id: baronne-de-domecy
+  room: getty
+  artist: odilon-redon
+  name: Odilon Redon
+  artistLine: French, 1840–1916
+  title: Baronne de Domecy
+  date: about 1900
+  kind: pastel
+  collection: J. Paul Getty Museum
+  accession: "2005.1"
+  record: https://www.getty.edu/art/collection/object/1097R2
+  checked: "2026-11-13"
+  image:
+    file: baronne-de-domecy.jpg
+    source: https://media.getty.edu/iiif/image/e32605d5-dc91-4b5c-8904-461016fbe34d/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-13"
+    alt: A woman with her hair pinned up looks away to the left, her face drawn in pencil on the tan paper. She wears a deep blue jacket open over red at her throat. Pale orange and blue blossoms float on a speckled blue and green ground around her.
+  pieces:
+    - { id: "getty:10284295684288", label: Baronne de Domecy scarf, verified: "2026-11-13" }

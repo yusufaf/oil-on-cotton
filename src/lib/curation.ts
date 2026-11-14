@@ -17,7 +17,7 @@ export const workSchema = z
 		artistLine: z.string().min(1),
 		title: z.string().min(1),
 		date: z.string().min(1),
-		kind: z.enum(['painting']),
+		kind: z.enum(['painting', 'pastel']),
 		collection: z.string().min(1),
 		accession: z.string().min(1),
 		record: https,
