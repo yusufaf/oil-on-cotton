@@ -1,0 +1,28 @@
+---
+import { href } from '../lib/paths';
+import { LAUNCH_HOSTNAME } from '../lib/site';
+
+// The floor plan was at /floor-plan/ until it became the home page (#28). GitHub Pages can't send
+// a redirect, so this page refreshes to the home page at once. It is listed in REDIRECTS.
+const to = href();
+const canonical = Astro.site?.hostname === LAUNCH_HOSTNAME ? new URL(to, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="refresh" content={`0;url=${to}`} />
+		<meta name="robots" content="noindex" />
+		{canonical && <link rel="canonical" href={canonical} />}
+		<title>Oil on Cotton</title>
+	</head>
+	<body>
+		<p>The floor plan is now the <a href={to}>home page</a>.</p>
+		<p>
+			An independent, non-commercial index. It is not affiliated with or endorsed by any museum. Names identify the
+			shops; trademarks belong to their owners.
+		</p>
+	</body>
+</html>
