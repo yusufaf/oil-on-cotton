@@ -96,10 +96,13 @@ export function scriptBytes(html: string, pageUrl: string, read: (url: string) =
 // DOMContentLoaded run only after it, so if it stalls they never run.
 export function blockingRemoteScripts(html: string): string[] {
 	const urls: string[] = [];
-	for (const [open] of html.matchAll(/<script\b[^>]*>/g)) {
+	// Pair each tag with its </script>, as scriptBytes does, so a tag quoted inside a script body
+	// isn't read as one.
+	for (const [, open] of html.matchAll(/(<script\b[^>]*>)[\s\S]*?<\/script>/g)) {
 		const src = attr(open, 'src');
 		if (!JS_TYPES.has(attr(open, 'type') ?? '') || src === undefined || !isRemote(src)) continue;
-		if (!/\sasync(?=[\s=>])/.test(open)) urls.push(src);
+		// Empty the quoted values first, so "async" inside another attribute's value doesn't count.
+		if (!/\sasync(?=[\s=>])/.test(open.replace(/"[^"]*"/g, '""'))) urls.push(src);
 	}
 	return urls;
 }

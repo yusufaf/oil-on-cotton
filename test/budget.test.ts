@@ -134,6 +134,12 @@ describe('blockingRemoteScripts', () => {
 			'<script async src="https://analytics.oiloncotton.com/s.js" data-website-id="x"></script><script defer src="/_astro/a.js"></script><script type="module">1</script><script type="application/ld+json" src="https://a.example/d.json"></script>';
 		expect(blockingRemoteScripts(html)).toEqual([]);
 	});
+
+	it('reads async as an attribute name, not inside a value, and skips script bodies', () => {
+		const html =
+			'<script defer src="https://a.example/s.js" data-note="load async"></script><script async="" type="module" src="https://b.example/m.js"></script><script>const t = \'<script src="https://c.example/x.js">\';</script>';
+		expect(blockingRemoteScripts(html)).toEqual(['https://a.example/s.js']);
+	});
 });
 
 describe('imageUrls', () => {
