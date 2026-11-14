@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { fontFiles, imageUrls, pageCss, parseUnicodeRange, scriptBytes } from '../src/lib/budget';
+import { blockingRemoteScripts, fontFiles, imageUrls, pageCss, parseUnicodeRange, scriptBytes } from '../src/lib/budget';
 
 const reader = (files: Record<string, string>) => (url: string) => files[url];
 
@@ -85,7 +85,7 @@ describe('scriptBytes', () => {
 
 	it('lists remote scripts without counting them', () => {
 		const result = scriptBytes(
-			'<script defer src="https://analytics.oiloncotton.com/s.js" data-website-id="x"></script>',
+			'<script async src="https://analytics.oiloncotton.com/s.js" data-website-id="x"></script>',
 			'/',
 			reader({}),
 		);
@@ -119,6 +119,20 @@ describe('scriptBytes', () => {
 			reader({ '/preview/_astro/a.js': 'import"./b.js"', '/preview/_astro/b.js': '' }),
 		);
 		expect(result.missing).toEqual([]);
+	});
+});
+
+describe('blockingRemoteScripts', () => {
+	it('lists remote scripts that load deferred, as modules or parser-blocking', () => {
+		const html =
+			'<script defer src="https://a.example/s.js"></script><script src="https://b.example/s.js"></script><script type="module" src="https://c.example/m.js"></script>';
+		expect(blockingRemoteScripts(html)).toEqual(['https://a.example/s.js', 'https://b.example/s.js', 'https://c.example/m.js']);
+	});
+
+	it('passes async remote scripts, local scripts and data scripts', () => {
+		const html =
+			'<script async src="https://analytics.oiloncotton.com/s.js" data-website-id="x"></script><script defer src="/_astro/a.js"></script><script type="module">1</script><script type="application/ld+json" src="https://a.example/d.json"></script>';
+		expect(blockingRemoteScripts(html)).toEqual([]);
 	});
 });
 

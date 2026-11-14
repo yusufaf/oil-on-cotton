@@ -91,6 +91,19 @@ export function scriptBytes(html: string, pageUrl: string, read: (url: string) =
 	return result;
 }
 
+// Remote scripts the page's own scripts wait for. Without async, a remote script is either
+// parser-blocking or deferred (defer, or a module), and the page's module scripts and
+// DOMContentLoaded run only after it, so if it stalls they never run.
+export function blockingRemoteScripts(html: string): string[] {
+	const urls: string[] = [];
+	for (const [open] of html.matchAll(/<script\b[^>]*>/g)) {
+		const src = attr(open, 'src');
+		if (!JS_TYPES.has(attr(open, 'type') ?? '') || src === undefined || !isRemote(src)) continue;
+		if (!/\sasync(?=[\s=>])/.test(open)) urls.push(src);
+	}
+	return urls;
+}
+
 // Every image URL a page's <img> and <source> tags name, in src or srcset.
 export function imageUrls(html: string): string[] {
 	const urls = new Set<string>();
