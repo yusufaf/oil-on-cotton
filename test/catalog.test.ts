@@ -1,8 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { catalogItemSchema, type CatalogItem, type HostState } from '../src/lib/catalog';
+import type { Work } from '../src/lib/curation';
 import type { Museum } from '../src/lib/museums';
-import { crawlMuseum } from '../ingest/catalog';
+import { crawlMuseum, goneReport, leftSince, type Gone } from '../ingest/catalog';
 import { fakeCrawler } from './helpers';
 
 const museum = {
@@ -301,6 +302,55 @@ describe('a page that keeps failing', () => {
 			firstSeen: '2026-10-01T00:00:00.000Z',
 		});
 		expect(gone).toEqual([]);
+	});
+});
+
+describe('goneReport', () => {
+	it('says when no rows leave', () => {
+		expect(goneReport([], [])).toBe('This data PR removes no rows from the catalog.\n');
+	});
+
+	it('lists the rows that leave, and the hung pieces among them', () => {
+		const gone: Gone[] = [
+			{ id: 'getty:1', handle: 'a-scarf', reason: 'meta has no product; last read 2026-10-26' },
+			{ id: 'getty:2', handle: 'b-hat', reason: 'answered 404' },
+		];
+		const works = [{ id: 'irises', pieces: [{ id: 'getty:2', label: 'Irises hat', verified: '2026-11-01' }] }] as Work[];
+		expect(goneReport(gone, works)).toBe(
+			[
+				'Rows this data PR removes from the catalog:',
+				'',
+				'- getty:1 `a-scarf`: meta has no product; last read 2026-10-26',
+				'- getty:2 `b-hat`: answered 404',
+				'',
+				'Hung pieces among them, which leave their labels:',
+				'',
+				'- irises: getty:2 (Irises hat)',
+			].join('\n') + '\n',
+		);
+	});
+});
+
+describe('leftSince', () => {
+	it('names every row main has that the new catalog lacks, with its reason', () => {
+		const base = [item('a', 1), item('b', 2), item('c', 3), item('d', 4)];
+		const gone: Gone[] = [
+			{ id: 'whitney:1', handle: 'a', reason: 'answered 404' },
+			{ id: 'whitney:9', handle: 'new-tee', reason: 'answered 410' },
+		];
+		expect(leftSince(base, [item('d', 4)], gone, new Set(['whitney:2']))).toEqual([
+			{ id: 'whitney:1', handle: 'a', reason: 'answered 404' },
+			{ id: 'whitney:2', handle: 'b', reason: 'taken down in data/removals.yaml' },
+			{ id: 'whitney:3', handle: 'c', reason: 'left in an earlier crawl of this data PR' },
+			{ id: 'whitney:9', handle: 'new-tee', reason: 'answered 410' },
+		]);
+	});
+
+	it('is empty when nothing left, and names an id dropped at two handles once', () => {
+		const base = [item('a', 1)];
+		expect(leftSince(base, base, [], new Set())).toEqual([]);
+		const g: Gone = { id: 'whitney:5', handle: 'tee-5', reason: 'answered 404' };
+		expect(leftSince([], [], [g, g], new Set())).toEqual([g]);
 	});
 });
 

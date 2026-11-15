@@ -1,4 +1,5 @@
 import { catalogItemSchema, type CatalogItem, type HostState } from '../src/lib/catalog.ts';
+import type { Work } from '../src/lib/curation.ts';
 import { CHILDRENS } from '../src/lib/kids.ts';
 import type { Museum } from '../src/lib/museums.ts';
 import { garmentOf } from './classify.ts';
@@ -62,6 +63,32 @@ export interface Gone {
 	id: string;
 	handle: string;
 	reason: string;
+}
+
+// Every row in `base` (main's catalog) that `next` lacks, with this crawl's reason when it has one.
+// A data PR left open builds on itself, so rows dropped in its earlier weeks are named here too.
+export function leftSince(base: CatalogItem[], next: CatalogItem[], gone: Gone[], takenDown: Set<string>): Gone[] {
+	const known = new Set([...next, ...gone].map((r) => r.id));
+	return [
+		...new Map(gone.map((g) => [g.id, g])).values(),
+		...base
+			.filter((r) => !known.has(r.id))
+			.map((r) => ({
+				id: r.id,
+				handle: r.handle,
+				reason: takenDown.has(r.id) ? 'taken down in data/removals.yaml' : 'left in an earlier crawl of this data PR',
+			})),
+	].sort((a, b) => a.id.localeCompare(b.id));
+}
+
+// The data PR body's list of the rows it removes, and of the hung pieces among them.
+export function goneReport(gone: Gone[], works: Pick<Work, 'id' | 'pieces'>[]): string {
+	if (gone.length === 0) return 'This data PR removes no rows from the catalog.\n';
+	const ids = new Set(gone.map((g) => g.id));
+	const hung = works.flatMap((w) => w.pieces.filter((p) => ids.has(p.id)).map((p) => `- ${w.id}: ${p.id} (${p.label})`));
+	const lines = ['Rows this data PR removes from the catalog:', '', ...gone.map((g) => `- ${g.id} \`${g.handle}\`: ${g.reason}`)];
+	if (hung.length > 0) lines.push('', 'Hung pieces among them, which leave their labels:', '', ...hung);
+	return lines.join('\n') + '\n';
 }
 
 export interface MuseumCrawl {
