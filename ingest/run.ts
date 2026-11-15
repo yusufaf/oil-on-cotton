@@ -88,7 +88,12 @@ const readJson = (path: string) => (existsSync(path) ? JSON.parse(readFileSync(p
 // crawls no shop, and a shop that fails can't hand them back.
 const stored = catalogSchema.parse(readJson(CATALOG) ?? []);
 const catalog = visible(stored, removals);
-const base = values.base === undefined ? stored : catalogSchema.parse(readJson(values.base) ?? []);
+// A --base that isn't there would make the report claim nothing left, so it stops the run.
+if (values.base !== undefined && !existsSync(values.base)) {
+	console.error(`--base ${values.base} does not exist`);
+	process.exit(2);
+}
+const base = values.base === undefined ? stored : catalogSchema.parse(readJson(values.base));
 const shown = new Set(visible(base, removals).map((i) => i.id));
 const takenDown = new Set(base.map((i) => i.id).filter((id) => !shown.has(id)));
 const hosts = hostsSchema.parse(readJson(HOSTS) ?? {});
