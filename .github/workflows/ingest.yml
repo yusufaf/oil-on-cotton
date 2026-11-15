@@ -76,7 +76,20 @@ jobs:
         id: crawl
         if: env.CRAWL == 'true'
         continue-on-error: true
-        run: pnpm ingest $REFRESH ${MUSEUM:+--museum "$MUSEUM"}
+        # --base is main's catalog, so the report also names rows an earlier week of this data PR dropped.
+        run: |
+          git show HEAD:data/catalog.json > "$RUNNER_TEMP/main-catalog.json"
+          pnpm ingest $REFRESH ${MUSEUM:+--museum "$MUSEUM"} --base "$RUNNER_TEMP/main-catalog.json" --report "$RUNNER_TEMP/gone.md"
+
+      # The data PR names the rows that left the catalog, and why (ingest/run.ts --report).
+      - name: Write the data PR body
+        if: env.CRAWL == 'true'
+        run: |
+          {
+            echo "Crawl run $GITHUB_RUN_ID. Check \`data/hosts.json\` for any shop whose status is not \`ok\`."
+            echo
+            cat "$RUNNER_TEMP/gone.md" 2>/dev/null || echo "The crawl stopped before it listed the rows that left the catalog."
+          } > "$RUNNER_TEMP/pr-body.md"
 
       - uses: actions/create-github-app-token@v1
         id: app-token
@@ -96,8 +109,7 @@ jobs:
             data/hosts.json
           commit-message: 'chore(data): update catalog from crawl'
           title: 'chore(data): update catalog from crawl'
-          body: |
-            Crawl run ${{ github.run_id }}. Check `data/hosts.json` for any shop whose status is not `ok`.
+          body-path: ${{ runner.temp }}/pr-body.md
 
       - name: Fail if a shop failed
         if: env.CRAWL == 'true' && steps.crawl.outcome == 'failure'

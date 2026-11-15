@@ -12,8 +12,9 @@
 #    piece's shop page in a browser, confirms it reproduces this exact work, and sets `verified`
 #    to that day. Never fetch a shop page from a script.
 #
-# A piece that leaves the catalog drops off the label at build time, and a work with no pieces
-# left stops hanging. To take down a work itself, delete its entry and its image file.
+# A piece that leaves the catalog drops off the label at build time, and the crawl's data PR
+# names it. A work with no pieces left stops hanging. To take down a work itself, delete its
+# entry and its image file.
 # Quote every date: test/curation.test.ts checks it. All label copy follows DESIGN.md.
 
 - id: young-man-at-his-window

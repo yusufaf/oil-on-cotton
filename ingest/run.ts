@@ -1,5 +1,7 @@
 // Weekly crawl of the shops whose terms allow it. Usage:
 //   node ingest/run.ts [--museum <id>]... [--limit <n>] [--refresh] [--dry-run] [--smoke]
+//     [--report <file>] [--base <catalog.json>]
+// --report writes the rows that left the catalog since --base (default: the stored catalog).
 // Needs WEB_BOT_AUTH_KEY (base64url Ed25519 seed); BOT_SIGNATURE_AGENT overrides the key directory origin.
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
@@ -7,9 +9,10 @@ import { signerFromJWK } from 'web-bot-auth/crypto';
 import { parse } from 'yaml';
 import { jwkFromSeed } from '../bot/key.ts';
 import { catalogSchema, hostsSchema, type CatalogItem } from '../src/lib/catalog.ts';
+import { readCuration } from '../src/lib/curation.ts';
 import { museumSchema } from '../src/lib/museums.ts';
 import { readRemovals, removedHandles, removedIds, removedMuseums, visible } from '../src/lib/removals.ts';
-import { crawlMuseum } from './catalog.ts';
+import { crawlMuseum, goneReport, leftSince, type Gone } from './catalog.ts';
 import { Crawler } from './crawler.ts';
 
 const CATALOG = 'data/catalog.json';
@@ -22,6 +25,8 @@ const { values } = parseArgs({
 		'dry-run': { type: 'boolean', default: false },
 		refresh: { type: 'boolean', default: false },
 		smoke: { type: 'boolean', default: false },
+		report: { type: 'string' },
+		base: { type: 'string' },
 	},
 });
 
@@ -81,7 +86,16 @@ if (values.smoke) {
 const readJson = (path: string) => (existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : undefined);
 // Taken-down pieces leave catalog.json on the first run after their removal, even one that
 // crawls no shop, and a shop that fails can't hand them back.
-const catalog = visible(catalogSchema.parse(readJson(CATALOG) ?? []), removals);
+const stored = catalogSchema.parse(readJson(CATALOG) ?? []);
+const catalog = visible(stored, removals);
+// A --base that isn't there would make the report claim nothing left, so it stops the run.
+if (values.base !== undefined && !existsSync(values.base)) {
+	console.error(`--base ${values.base} does not exist`);
+	process.exit(2);
+}
+const base = values.base === undefined ? stored : catalogSchema.parse(readJson(values.base));
+const shown = new Set(visible(base, removals).map((i) => i.id));
+const takenDown = new Set(base.map((i) => i.id).filter((id) => !shown.has(id)));
 const hosts = hostsSchema.parse(readJson(HOSTS) ?? {});
 for (const id of excluded) delete hosts[id];
 const now = new Date().toISOString();
@@ -95,6 +109,7 @@ const save = () => {
 	writeFileSync(HOSTS, JSON.stringify(Object.fromEntries(Object.entries(hosts).sort()), null, '\t') + '\n');
 };
 
+const gone: Gone[] = [];
 for (const museum of museums) {
 	console.error(`${museum.id}: crawling`);
 	const result = await crawlMuseum(
@@ -111,10 +126,13 @@ for (const museum of museums) {
 	);
 	next = next.filter((i) => i.museum !== museum.id).concat(result.items);
 	hosts[museum.id] = result.host;
+	gone.push(...result.gone);
 	console.error(`${museum.id}: ${result.host.status}, ${result.items.length} items, ${result.host.requests} requests`);
 	save();
 }
 save();
+// Written in --dry-run too: it is not data. Before the exit code, so a failed shop still gets one.
+if (values.report) writeFileSync(values.report, goneReport(leftSince(base, next, gone, takenDown), readCuration()));
 
 if (values['dry-run']) console.log(JSON.stringify({ items: next.length, hosts }, null, 2));
 if (museums.some((m) => hosts[m.id]?.status !== 'ok')) process.exitCode = 1;
