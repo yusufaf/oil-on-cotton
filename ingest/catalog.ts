@@ -58,9 +58,16 @@ async function readCollections(crawler: Crawler, origin: string, collections: st
 	return [...handles];
 }
 
+export interface Gone {
+	id: string;
+	handle: string;
+	reason: string;
+}
+
 export interface MuseumCrawl {
 	items: CatalogItem[];
 	host: HostState;
+	gone: Gone[];
 }
 
 export async function crawlMuseum(
@@ -99,12 +106,22 @@ export async function crawlMuseum(
 	try {
 		if (museum.apparelCollections.length === 0) throw new Error('no apparelCollections in museums.yaml');
 		const listed = await readCollections(crawler, origin, museum.apparelCollections);
-		// Previously indexed pieces stay until their own product page is gone, even if they left the collection.
+		// Previously indexed pieces stay until their own product page is gone, or fails on two crawls in a
+		// row, even if they left the collection.
 		const handles = [...new Set([...listed, ...previous.map((i) => i.handle)])];
 		const byHandle = new Map(previous.map((i) => [i.handle, i]));
 		const oldSkipped = previousHost?.skipped ?? {};
 		const skipped: Record<string, string> = {};
 		const items: CatalogItem[] = [];
+		const gone: Gone[] = [];
+		// Handles whose page was read as a piece this run.
+		const read = new Set<string>();
+		// Every row is reread on every successful crawl, so a row last read before the previous one
+		// failed then too. One failure keeps the row; a second in a row drops it.
+		const lastCrawl = previousHost?.lastSuccess;
+		const failedLastCrawl = (row: CatalogItem) =>
+			lastCrawl !== undefined && Date.parse(row.checkedAt) < Date.parse(lastCrawl);
+		const drop = (row: CatalogItem, reason: string) => gone.push({ id: row.id, handle: row.handle, reason });
 		const skippedRecently = (handle: string) =>
 			!options.refresh &&
 			oldSkipped[handle] !== undefined &&
@@ -129,37 +146,61 @@ export async function crawlMuseum(
 			let finalHandle = handle;
 			try {
 				const page = await crawler.get(`${origin}/products/${encodeURIComponent(handle)}`);
-				if (page.status === 404 || page.status === 410) continue;
+				if (page.status === 404 || page.status === 410) {
+					if (old) drop(old, `answered ${page.status}`);
+					continue;
+				}
 				if (page.status !== 200) throw new ParseError(`answered ${page.status}`);
 				// A renamed product redirects to its new handle; index it there, once.
 				finalHandle = decodeURIComponent(new URL(page.url).pathname.replace(/^\/products\//, ''));
-				if (finalHandle !== handle && handles.includes(finalHandle)) continue;
+				if (finalHandle !== handle && read.has(finalHandle)) {
+					if (old) drop(old, `redirects to ${finalHandle}`);
+					continue;
+				}
 				item = toItem(museum.id, origin, finalHandle, parseProductPage(page.body, finalHandle), old, options.now);
 			} catch (error) {
 				// Throttling ends the shop's crawl; anything wrong with one page only affects that page.
 				if (error instanceof HostBlockedError) throw error;
-				console.error(`  kept previous ${museum.id}/${handle}: ${error instanceof Error ? error.message : error}`);
-				if (old) items.push(old);
+				const message = error instanceof Error ? error.message : String(error);
+				if (old && failedLastCrawl(old)) drop(old, `${message}; last read ${old.checkedAt.slice(0, 10)}`);
+				else {
+					console.error(`  ${old ? 'kept previous' : 'could not read'} ${museum.id}/${handle}: ${message}`);
+					if (old) items.push(old);
+				}
 				if (oldSkipped[handle]) skipped[handle] = oldSkipped[handle];
 				continue;
 			}
+			if (old && item && item.id !== old.id) drop(old, `now reads as ${item.id} at ${finalHandle}`);
 			if (item && removed.has(item.id)) continue;
-			if (item) items.push(item);
-			else skipped[finalHandle] = options.now;
+			if (item) {
+				items.push(item);
+				read.add(finalHandle);
+			} else {
+				skipped[finalHandle] = options.now;
+				if (old) drop(old, 'no longer reads as clothing');
+			}
 		}
 
 		if (previous.length > 0 && items.length < previous.length * MIN_COUNT_RATIO) {
+			for (const g of gone) console.error(`  would drop ${museum.id}/${g.handle}: ${g.reason}`);
 			return {
 				items: previous,
 				host: host('count-drop', previous.length, { error: `found ${items.length}, had ${previous.length}` }),
+				gone: [],
 			};
 		}
 		const unique = [...new Map(items.map((i) => [i.id, i])).values()].sort((a, b) => a.id.localeCompare(b.id));
-		return { items: unique, host: host('ok', unique.length, { lastSuccess: options.now, skipped }) };
+		// A piece seen gone at one handle but read at another stays.
+		const kept = new Set(unique.map((i) => i.id));
+		const left = gone.filter((g) => !kept.has(g.id));
+		for (const g of left) console.error(`  dropped ${museum.id}/${g.handle}: ${g.reason}`);
+		// A limited run leaves rows unread, so it doesn't count as a crawl.
+		const lastSuccess = options.limit === undefined ? options.now : (previousHost?.lastSuccess ?? options.now);
+		return { items: unique, host: host('ok', unique.length, { lastSuccess, skipped }), gone: left };
 	} catch (error) {
 		// Any failure keeps last week's items for this shop; the reason lands in hosts.json.
 		const message = error instanceof Error ? error.message : String(error);
 		console.error(`  ${museum.id} failed${error instanceof HostBlockedError ? ' (blocked)' : ''}: ${message}`);
-		return { items: previous, host: host('error', previous.length, { error: message }) };
+		return { items: previous, host: host('error', previous.length, { error: message }), gone: [] };
 	}
 }
