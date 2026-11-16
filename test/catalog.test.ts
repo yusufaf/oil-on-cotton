@@ -1,9 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
-import { catalogItemSchema, type CatalogItem, type HostState } from '../src/lib/catalog';
+import { catalogItemSchema, hostsSchema, type CatalogItem, type HostState } from '../src/lib/catalog';
 import type { Work } from '../src/lib/curation';
 import type { Museum } from '../src/lib/museums';
-import { crawlMuseum, goneReport, leftSince, type Gone } from '../ingest/catalog';
+import { crawlMuseum, goneReport, hostsFile, leftSince, type Gone } from '../ingest/catalog';
 import { fakeCrawler } from './helpers';
 
 const museum = {
@@ -351,6 +351,46 @@ describe('leftSince', () => {
 		expect(leftSince(base, base, [], new Set())).toEqual([]);
 		const g: Gone = { id: 'whitney:5', handle: 'tee-5', reason: 'answered 404' };
 		expect(leftSince([], [], [g, g], new Set())).toEqual([g]);
+	});
+});
+
+describe('hostsFile', () => {
+	const hosts = () => ({
+		whitney: hostWith({ 'zine-tote': NOW, 'apron-blue': NOW, 'mug-2': NEXT_WEEK }),
+		getty: hostWith({ 'b-pin': NOW, 'a-cap': NOW }),
+	});
+
+	it('writes shops and each skip list sorted by key, as tab-indented JSON', () => {
+		const input = hosts();
+		const out = hostsFile(input);
+		const parsed = JSON.parse(out);
+		expect(Object.keys(parsed)).toEqual(['getty', 'whitney']);
+		expect(Object.keys(parsed.whitney.skipped)).toEqual(['apron-blue', 'mug-2', 'zine-tote']);
+		expect(Object.keys(parsed.getty.skipped)).toEqual(['a-cap', 'b-pin']);
+		expect(parsed).toEqual(input);
+		expect(out.endsWith('}\n')).toBe(true);
+		expect(out).toContain('\n\t"getty": {');
+	});
+
+	it('gives the same file whatever order the crawl met the skipped pages in', async () => {
+		const mugs = Object.fromEntries(
+			['z-mug', 'a-mug', 'm-mug'].map((h, n) => [`/products/${h}`, product(n + 1, 'Whitney Mug')]),
+		);
+		const crawl = async (order: string[]) =>
+			crawlMuseum((await fakeCrawler(site(order, mugs))).crawler, museum, [], undefined, { now: NOW });
+		const first = await crawl(['z-mug', 'a-mug', 'm-mug']);
+		const second = await crawl(['m-mug', 'z-mug', 'a-mug']);
+		expect(Object.keys(first.host.skipped)).toEqual(['z-mug', 'a-mug', 'm-mug']);
+		expect(hostsFile({ whitney: first.host })).toBe(hostsFile({ whitney: second.host }));
+		const written = JSON.parse(hostsFile({ whitney: first.host }));
+		expect(Object.keys(written.whitney.skipped)).toEqual(['a-mug', 'm-mug', 'z-mug']);
+	});
+
+	it('reads back through hostsSchema and does not change its input', () => {
+		const input = hosts();
+		const before = Object.keys(input.whitney.skipped);
+		expect(hostsSchema.parse(JSON.parse(hostsFile(input)))).toEqual(input);
+		expect(Object.keys(input.whitney.skipped)).toEqual(before);
 	});
 });
 

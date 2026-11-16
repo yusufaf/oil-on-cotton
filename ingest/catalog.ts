@@ -91,6 +91,15 @@ export function goneReport(gone: Gone[], works: Pick<Work, 'id' | 'pieces'>[]): 
 	return lines.join('\n') + '\n';
 }
 
+const byKey = <T>(record: Record<string, T>): Record<string, T> =>
+	Object.fromEntries(Object.entries(record).sort(([a], [b]) => (a < b ? -1 : 1)));
+
+// Sorted throughout, so a data PR's diff of hosts.json shows only what changed.
+export function hostsFile(hosts: Record<string, HostState>): string {
+	const sorted = Object.entries(byKey(hosts)).map(([id, host]) => [id, { ...host, skipped: byKey(host.skipped) }]);
+	return JSON.stringify(Object.fromEntries(sorted), null, '\t') + '\n';
+}
+
 export interface MuseumCrawl {
 	items: CatalogItem[];
 	host: HostState;

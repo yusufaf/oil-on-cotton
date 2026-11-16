@@ -12,7 +12,7 @@ import { catalogSchema, hostsSchema, type CatalogItem } from '../src/lib/catalog
 import { readCuration } from '../src/lib/curation.ts';
 import { museumSchema } from '../src/lib/museums.ts';
 import { readRemovals, removedHandles, removedIds, removedMuseums, visible } from '../src/lib/removals.ts';
-import { crawlMuseum, goneReport, leftSince, type Gone } from './catalog.ts';
+import { crawlMuseum, goneReport, hostsFile, leftSince, type Gone } from './catalog.ts';
 import { Crawler } from './crawler.ts';
 
 const CATALOG = 'data/catalog.json';
@@ -106,7 +106,7 @@ const save = () => {
 	if (values['dry-run']) return;
 	next.sort((a, b) => a.id.localeCompare(b.id));
 	writeFileSync(CATALOG, JSON.stringify(next, null, '\t') + '\n');
-	writeFileSync(HOSTS, JSON.stringify(Object.fromEntries(Object.entries(hosts).sort()), null, '\t') + '\n');
+	writeFileSync(HOSTS, hostsFile(hosts));
 };
 
 const gone: Gone[] = [];
