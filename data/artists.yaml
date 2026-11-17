@@ -5,6 +5,8 @@
 #
 # - An alias goes in only when it cannot mean anything else in a clothing name ("Basquiat",
 #   not "Thomas" or "Indiana").
+# - A hang label may name an artist by an alias, when the museum's record names them that way
+#   ("Ambrosius Bosschaert the Elder", a Wikidata alias).
 # - A work goes in only when a piece names the work but not the artist, with a source showing
 #   the title is that artist's work. It counts only at that museum.
 # - Every artist has a Wikidata item, checked against its English label.
@@ -31,6 +33,7 @@
 - id: ambrosius-bosschaert
   name: Ambrosius Bosschaert
   wikidata: Q459665
+  aliases: [Ambrosius Bosschaert the Elder]
 
 - id: francois-boucher
   name: François Boucher

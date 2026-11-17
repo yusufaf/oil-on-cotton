@@ -44,7 +44,7 @@ describe('data/curation.yaml', () => {
 			expect(rooms.has(work.room), `${work.id}: room ${work.room}`).toBe(true);
 			const artist = artists.find((a) => a.id === work.artist);
 			expect(artist, `${work.id}: artist ${work.artist}`).toBeDefined();
-			expect(artist!.name, `${work.id}: name`).toBe(work.name);
+			expect([artist!.name, ...artist!.aliases], `${work.id}: name`).toContain(work.name);
 		}
 	});
 
