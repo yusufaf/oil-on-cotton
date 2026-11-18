@@ -149,3 +149,25 @@
     alt: A wicker basket heaped with flowers sits on a ledge against a dark background. Pink roses and a white rose with a bee on it fill the middle, with a red and white striped tulip at upper left and blue hyacinths at right. In front, a pink carnation and a white rose with buds lie on the ledge beside a dragonfly. At right, a red admiral butterfly rests by a yellow tulip streaked with red.
   pieces:
     - { id: "getty:7385184043200", label: Flower Still Life silk scarf, verified: "2026-11-17" }
+
+- id: vase-of-flowers
+  room: getty
+  artist: jan-van-huysum
+  name: Jan van Huysum
+  artistLine: Dutch, 1682–1749
+  title: Vase of Flowers
+  date: "1722"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: 82.PB.70
+  record: https://www.getty.edu/art/collection/object/103REY
+  checked: "2026-11-17"
+  image:
+    file: vase-of-flowers.jpg
+    source: https://media.getty.edu/iiif/image/1e691a57-153d-466e-b6d6-5e489099c635/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-17"
+    alt: A terracotta vase with a relief of small figures stands on a stone ledge against a plain brown wall, crowded with flowers. An orange crown imperial rises at the top beside a drooping poppy bud, and a butterfly flies in from the left. A red and white striped tulip and a large red bloom hang head down over the right side of the vase. A pink rose and blue morning glories trail over the ledge at left, and a bird's nest with eggs sits at right.
+  pieces:
+    - { id: "getty:8398712963264", label: Vase of Flowers silk scarf, verified: "2026-11-17" }
