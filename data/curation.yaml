@@ -127,3 +127,25 @@
     alt: A plate of red and yellow apples rests on a rumpled white cloth beside a blue ginger pot bound with rattan straps. At left stands a tall green jar, and behind the ginger pot rises a bottle wrapped in rattan. In front, a small white lidded pot painted with leaves sits on a dark blue cloth with a black pattern.
   pieces:
     - { id: "getty:8498679251136", label: Still Life with Apples socks, verified: "2026-11-13" }
+
+- id: flower-still-life
+  room: getty
+  artist: ambrosius-bosschaert
+  name: Ambrosius Bosschaert the Elder
+  artistLine: Dutch, 1573–1621
+  title: Flower Still Life
+  date: "1614"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: 83.PC.386
+  record: https://www.getty.edu/art/collection/object/103RFM
+  checked: "2026-11-16"
+  image:
+    file: flower-still-life.jpg
+    source: https://media.getty.edu/iiif/image/5f32a78f-fc07-4822-acf3-27ed7d770799/full/1600,1245/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-16"
+    alt: A wicker basket heaped with flowers sits on a ledge against a dark background. Pink roses and a white rose with a bee on it fill the middle, with a red and white striped tulip at upper left and blue hyacinths at right. In front, a pink carnation and a white rose with buds lie on the ledge beside a dragonfly. At right, a red admiral butterfly rests by a yellow tulip streaked with red.
+  pieces:
+    - { id: "getty:7385184043200", label: Flower Still Life silk scarf, verified: "2026-11-17" }
