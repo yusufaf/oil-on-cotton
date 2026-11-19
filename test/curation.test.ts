@@ -3,7 +3,7 @@ import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import { artistSchema, matchArtists } from '../src/lib/artists';
 import type { CatalogItem } from '../src/lib/catalog';
-import { CURATION, hangsFor, readCuration, type Work } from '../src/lib/curation';
+import { CURATION, hangsFor, readCuration, workSchema, type Work } from '../src/lib/curation';
 import { museumSchema } from '../src/lib/museums';
 import { readRemovals, removedIds, visible, type Removal } from '../src/lib/removals';
 
@@ -109,6 +109,13 @@ describe('data/curation.yaml', () => {
 			expect(alt.startsWith(work.title.toLowerCase()), work.id).toBe(false);
 			expect(alt, work.id).not.toContain(work.name.toLowerCase());
 		}
+	});
+});
+
+describe('workSchema', () => {
+	it('takes watercolour as a kind, spelt as the site spells it', () => {
+		expect(workSchema.safeParse({ ...works[0], kind: 'watercolour' }).success).toBe(true);
+		expect(workSchema.safeParse({ ...works[0], kind: 'watercolor' }).success).toBe(false);
 	});
 });
 

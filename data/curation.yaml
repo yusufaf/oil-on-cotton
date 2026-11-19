@@ -7,7 +7,7 @@
 # 2. Use the owner's open-access image, and only if it is CC0. Save it in src/assets/hang/ at
 #    1600px wide, and record `source`, `licence`, `credit` and `retrieved`. Every image the build
 #    ships must be 200 KB or less; scripts/check-dist.ts checks it.
-# 3. The `alt` says what the painting shows. The label already gives artist and title.
+# 3. The `alt` says what the work shows. The label already gives artist and title.
 # 4. List each piece by its catalog id with a short `label` for the label. A curator opens the
 #    piece's shop page in a browser, confirms it reproduces this exact work, and sets `verified`
 #    to that day. Never fetch a shop page from a script.
@@ -171,3 +171,25 @@
     alt: A terracotta vase with a relief of small figures stands on a stone ledge against a plain brown wall, crowded with flowers. An orange crown imperial rises at the top beside a drooping poppy bud, and a butterfly flies in from the left. A red and white striped tulip and a large red bloom hang head down over the right side of the vase. A pink rose and blue morning glories trail over the ledge at left, and a bird's nest with eggs sits at right.
   pieces:
     - { id: "getty:8398712963264", label: Vase of Flowers silk scarf, verified: "2026-11-17" }
+
+- id: stag-beetle
+  room: getty
+  artist: albrecht-durer
+  name: Albrecht Dürer
+  artistLine: German, 1471–1528
+  title: Stag Beetle
+  date: "1505"
+  kind: watercolour
+  collection: J. Paul Getty Museum
+  accession: 83.GC.214
+  record: https://www.getty.edu/art/collection/object/103QS6
+  checked: "2026-11-18"
+  image:
+    file: stag-beetle.jpg
+    source: https://media.getty.edu/iiif/image/f15edb50-2b04-4e0b-8c78-2c5e683ea078/232,226,3472,4326/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-18"
+    alt: A stag beetle on bare tan paper, seen from above as it walks toward the upper right with its antler-like jaws raised. Its head and thorax are dark grey and its wing cases a glossy red-brown. Thin, hairy legs hold the body up, and it casts a soft grey shadow. The date 1505 and a monogram are written at lower left.
+  pieces:
+    - { id: "getty:8498679120064", label: Stag Beetle socks, verified: "2026-11-18" }
