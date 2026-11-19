@@ -193,3 +193,25 @@
     alt: A stag beetle on bare tan paper, seen from above as it walks toward the upper right with its antler-like jaws raised. Its head and thorax are dark grey and its wing cases a glossy red-brown. Thin, hairy legs hold the body up, and it casts a soft grey shadow. The date 1505 and a monogram are written at lower left.
   pieces:
     - { id: "getty:8498679120064", label: Stag Beetle socks, verified: "2026-11-18" }
+
+- id: head-within-an-aureole
+  room: getty
+  artist: odilon-redon
+  name: Odilon Redon
+  artistLine: French, 1840–1916
+  title: Head within an Aureole
+  date: "about 1894–1895"
+  kind: charcoal
+  collection: J. Paul Getty Museum
+  accession: "2016.10"
+  record: https://www.getty.edu/art/collection/object/109MB9
+  checked: "2026-11-18"
+  image:
+    file: head-within-an-aureole.jpg
+    source: https://media.getty.edu/iiif/image/57b459aa-4389-4866-aa7a-bf2c1a503949/120,100,7830,11080/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-18"
+    alt: A man's head, eyes closed and half in shadow, sits in a dark disc at the centre, with a pale twisted band curving over its top. Around it spreads a wide ring of charcoal strokes flecked with cobalt blue, edged with a soft pink glow. Grey and mauve haze drifts below it on the tan sheet. A signature is written at lower right.
+  pieces:
+    - { id: "getty:8730741571776", label: Head within an Aureole bandana, verified: "2026-11-18" }

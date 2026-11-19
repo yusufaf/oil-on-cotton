@@ -117,6 +117,9 @@ describe('workSchema', () => {
 		expect(workSchema.safeParse({ ...works[0], kind: 'watercolour' }).success).toBe(true);
 		expect(workSchema.safeParse({ ...works[0], kind: 'watercolor' }).success).toBe(false);
 	});
+	it('takes charcoal as a kind, for a sheet drawn mainly in charcoal', () => {
+		expect(workSchema.safeParse({ ...works[0], kind: 'charcoal' }).success).toBe(true);
+	});
 });
 
 describe('hangsFor', () => {
