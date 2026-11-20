@@ -215,3 +215,26 @@
     alt: A man's head, eyes closed and half in shadow, sits in a dark disc at the centre, with a pale twisted band curving over its top. Around it spreads a wide ring of charcoal strokes flecked with cobalt blue, edged with a soft pink glow. Grey and mauve haze drifts below it on the tan sheet. A signature is written at lower right.
   pieces:
     - { id: "getty:8730741571776", label: Head within an Aureole bandana, verified: "2026-11-18" }
+
+- id: the-battle-of-the-bones
+  room: getty
+  artist: odilon-redon
+  name: Odilon Redon
+  artistLine: French, 1840–1916
+  title: The Battle of the Bones
+  date: "about 1881"
+  kind: charcoal
+  collection: J. Paul Getty Museum
+  accession: "2024.17"
+  record: https://www.getty.edu/art/collection/object/114VF4
+  checked: "2026-11-19"
+  image:
+    file: the-battle-of-the-bones.jpg
+    source: https://media.getty.edu/iiif/image/65ae6da5-05e8-400d-8a93-174399893fee/150,150,10440,8535/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-19"
+    alt: Two broken skeletons, drawn pale, fight in a black charcoal darkness. At left, a skull and ribcage lie on the ground with one bent arm raised, while a pair of leg bones topped by a pelvis strides on beside them. At right, a headless skeleton sits up with its legs stretched out along the ground, lifting one bent arm high and propping itself on the other. A loose bone and a skull lie in front. Slanting red-brown strokes run along the top above a ruled line, and a signature is written at lower right.
+  pieces:
+    - { id: "getty:8748546162880", label: The Battle of the Bones bandana, verified: "2026-11-19" }
+    - { id: "getty:8748546130112", label: The Battle of the Bones dad hat, verified: "2026-11-19" }
