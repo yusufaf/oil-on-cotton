@@ -198,6 +198,15 @@
   name: Deborah Remington
   wikidata: Q5248361
 
+- id: francesco-solimena
+  name: Francesco Solimena
+  wikidata: Q736065
+  works:
+    # The Getty's record names Solimena as the painter of this canvas (84.PA.64).
+    - title: Venus at the Forge of Vulcan
+      museum: getty
+      url: https://www.getty.edu/art/collection/object/103RFY
+
 - id: tavares-strachan
   name: Tavares Strachan
   wikidata: Q7689031

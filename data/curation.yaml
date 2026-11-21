@@ -238,3 +238,25 @@
   pieces:
     - { id: "getty:8748546162880", label: The Battle of the Bones bandana, verified: "2026-11-20" }
     - { id: "getty:8748546130112", label: The Battle of the Bones dad hat, verified: "2026-11-20" }
+
+- id: venus-at-the-forge-of-vulcan
+  room: getty
+  artist: francesco-solimena
+  name: Francesco Solimena
+  artistLine: Italian, 1657–1747
+  title: Venus at the Forge of Vulcan
+  date: "1704"
+  kind: painting
+  collection: J. Paul Getty Museum
+  accession: "84.PA.64"
+  record: https://www.getty.edu/art/collection/object/103RFY
+  checked: "2026-11-21"
+  image:
+    file: venus-at-the-forge-of-vulcan.jpg
+    source: https://media.getty.edu/iiif/image/0e2d21f0-e964-4988-9960-c5d14c5dc1c1/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-21"
+    alt: A young woman in pale drapery, a blue cloth across her lap, sits on a cloud holding a gilded sword hilt, while a winged child beside her lifts a gold helmet crested with white plumes. At right a bearded man sits bare on a rock, red cloth over his thigh, one hand on the rim of a great gold shield worked in relief and the other held open. Pieces of armour lie on the ground below, with a long staff across them. Two doves, one dark and one white, perch on a gilded scroll at upper right, and in the shadows at lower left small figures bend over a glowing fire.
+  pieces:
+    - { id: "getty:8349225091264", label: Venus at the Forge of Vulcan tee, verified: "2026-11-21" }
