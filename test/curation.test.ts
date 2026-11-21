@@ -120,6 +120,9 @@ describe('workSchema', () => {
 	it('takes charcoal as a kind, for a sheet drawn mainly in charcoal', () => {
 		expect(workSchema.safeParse({ ...works[0], kind: 'charcoal' }).success).toBe(true);
 	});
+	it('takes tapestry as a kind, for a woven hanging', () => {
+		expect(workSchema.safeParse({ ...works[0], kind: 'tapestry' }).success).toBe(true);
+	});
 });
 
 describe('hangsFor', () => {

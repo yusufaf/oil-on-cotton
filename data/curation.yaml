@@ -260,3 +260,25 @@
     alt: A young woman in pale drapery, a blue cloth across her lap, sits on a cloud holding a gilded sword hilt, while a winged child beside her lifts a gold helmet crested with white plumes. At right a bearded man sits bare on a rock, red cloth over his thigh, one hand on the rim of a great gold shield worked in relief and the other held open. Pieces of armour lie on the ground below, with a long staff across them. Two doves, one dark and one white, perch on a gilded scroll at upper right, and in the shadows at lower left small figures bend over a glowing fire.
   pieces:
     - { id: "getty:8349225091264", label: Venus at the Forge of Vulcan tee, verified: "2026-11-21" }
+
+- id: psyche-at-the-basketmakers
+  room: getty
+  artist: francois-boucher
+  name: François Boucher
+  artistLine: French, 1703–1770. Woven after his design at the Beauvais Manufactory
+  title: Psyche at the Basketmakers
+  date: "possibly 1756–1757 but probably 1767–1771"
+  kind: tapestry
+  collection: J. Paul Getty Museum
+  accession: "63.DD.4"
+  record: https://www.getty.edu/art/collection/object/103SC7
+  checked: "2026-11-21"
+  image:
+    file: psyche-at-the-basketmakers.jpg
+    source: https://media.getty.edu/iiif/image/b09f8740-75ce-493a-aeba-604b0e9e1b95/127,107,2942,4074/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-21"
+    alt: In a wooded valley, a bearded old man in a red cloak holds the arm of a young woman in a blue mantle on an earthen path. Ahead of them two young women sit on the ground among sheaves of wheat and wicker baskets, one stretching an arm out towards the pair. A shaggy goat stands at lower left by a broken fence, near a stone bearing a woven signature. High in the pale sky a crowned coat of arms sits in a gilded cartouche, and a plain blue border runs along the edges.
+  pieces:
+    - { id: "getty:8349216374976", label: Psyche at the Basketmakers hoodie, verified: "2026-11-21" }
