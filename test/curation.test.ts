@@ -123,6 +123,9 @@ describe('workSchema', () => {
 	it('takes tapestry as a kind, for a woven hanging', () => {
 		expect(workSchema.safeParse({ ...works[0], kind: 'tapestry' }).success).toBe(true);
 	});
+	it('takes photograph as a kind, for a photographic print', () => {
+		expect(workSchema.safeParse({ ...works[0], kind: 'photograph' }).success).toBe(true);
+	});
 });
 
 describe('hangsFor', () => {
