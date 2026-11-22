@@ -77,6 +77,15 @@
   wikidata: Q46373
   aliases: [Degas]
 
+- id: louis-emile-durandelle
+  name: Louis-Émile Durandelle
+  wikidata: Q15556390
+  works:
+    # The Getty's record names Durandelle as the photographer of this print (84.XB.867.3.57).
+    - title: "Plafond: Le Zodiaque"
+      museum: getty
+      url: https://www.getty.edu/art/collection/object/108SK0
+
 - id: albrecht-durer
   name: Albrecht Dürer
   wikidata: Q5580

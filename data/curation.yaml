@@ -282,3 +282,25 @@
     alt: In a wooded valley, a bearded old man in a red cloak holds the arm of a young woman in a blue mantle on an earthen path. Ahead of them two young women sit on the ground among sheaves of wheat and wicker baskets, one stretching an arm out towards the pair. A shaggy goat stands at lower left by a broken fence, near a stone bearing a woven signature. High in the pale sky a crowned coat of arms sits in a gilded cartouche, and a plain blue border runs along the edges.
   pieces:
     - { id: "getty:8349216374976", label: Psyche at the Basketmakers hoodie, verified: "2026-11-21" }
+
+- id: plafond-le-zodiaque
+  room: getty
+  artist: louis-emile-durandelle
+  name: Louis-Émile Durandelle
+  artistLine: French, 1839–1917
+  title: "Plafond: Le Zodiaque"
+  date: "about 1875"
+  kind: photograph
+  collection: J. Paul Getty Museum
+  accession: "84.XB.867.3.57"
+  record: https://www.getty.edu/art/collection/object/108SK0
+  checked: "2026-11-21"
+  image:
+    file: plafond-le-zodiaque.jpg
+    source: https://media.getty.edu/iiif/image/4415b9b9-acb5-42a6-ae52-75863c0ec7e7/4,31,4263,2458/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-21"
+    alt: An oval, pale brown photograph of a ceiling painting, where winged figures float on clouds across the sky. At the centre a young man with dark wings and tousled hair flies bare but for a drape, one arm stretched out to the left and a torch in his other hand. At left a winged child blows a long trumpet above a young man in a laurel wreath and a loose robe, who writes on a tablet and looks back over his shoulder. At right a winged figure lies back inside a ring of leaves, beside a winged youth who raises a fist and holds a jester's bauble at his side. Fine dark cracks run across the print.
+  pieces:
+    - { id: "getty:8349224927424", label: "Plafond: Le Zodiaque tee", verified: "2026-11-21" }
