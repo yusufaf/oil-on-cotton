@@ -42,9 +42,14 @@ describe('data/curation.yaml', () => {
 		const rooms = new Set(museums.map((m) => m.id));
 		for (const work of works) {
 			expect(rooms.has(work.room), `${work.id}: room ${work.room}`).toBe(true);
-			const artist = artists.find((a) => a.id === work.artist);
-			expect(artist, `${work.id}: artist ${work.artist}`).toBeDefined();
-			expect([artist!.name, ...artist!.aliases], `${work.id}: name`).toContain(work.name);
+			if (work.artist) {
+				const artist = artists.find((a) => a.id === work.artist);
+				expect(artist, `${work.id}: artist ${work.artist}`).toBeDefined();
+				expect([artist!.name, ...artist!.aliases], `${work.id}: name`).toContain(work.name);
+			} else {
+				// Only a record that names no maker may leave artist out (DESIGN.md, hang-label).
+				expect(work.name, `${work.id}: a named maker needs an artist`).toBe('Unknown maker');
+			}
 		}
 	});
 
@@ -70,11 +75,21 @@ describe('data/curation.yaml', () => {
 	});
 
 	it('lists pieces the matcher gives to the same artist, so label and checklist agree', () => {
-		for (const work of works) {
+		for (const work of works.filter((w) => w.artist)) {
 			for (const piece of work.pieces) {
 				const item = catalog.find((i) => i.id === piece.id) ?? fixture.find((i) => i.id === piece.id);
 				if (!item) continue; // removed, and so never shown
 				expect(matchArtists(item, artists), `${work.id}: ${item.name}`).toContain(work.artist);
+			}
+		}
+	});
+
+	it('lists pieces the matcher gives to no artist when the work names none, so the Artist cell stays blank', () => {
+		for (const work of works.filter((w) => !w.artist)) {
+			for (const piece of work.pieces) {
+				const item = catalog.find((i) => i.id === piece.id) ?? fixture.find((i) => i.id === piece.id);
+				if (!item) continue; // removed, and so never shown
+				expect(matchArtists(item, artists), `${work.id}: ${item.name}`).toEqual([]);
 			}
 		}
 	});
@@ -125,6 +140,12 @@ describe('workSchema', () => {
 	});
 	it('takes photograph as a kind, for a photographic print', () => {
 		expect(workSchema.safeParse({ ...works[0], kind: 'photograph' }).success).toBe(true);
+	});
+	it('takes a work with no artist, for an unknown maker, and still checks one that is given', () => {
+		const unknown: Partial<Work> = { ...works[0] };
+		delete unknown.artist;
+		expect(workSchema.safeParse(unknown).success).toBe(true);
+		expect(workSchema.safeParse({ ...works[0], artist: 'Unknown maker' }).success).toBe(false);
 	});
 });
 

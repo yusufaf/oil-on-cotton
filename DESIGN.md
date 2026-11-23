@@ -216,8 +216,8 @@ Everything is square (`rounded.none`). Label stock is cut board; walls are walls
   - **Unavailable items.** A sold-out item shows "Sold out" in the price column.
   - **Sales.** Only a single price with a higher compare-at price counts as a sale. The price column shows the price with "was $65" beneath it, and the sizes line opens with "On sale as of 26 October". The sale marks drop after 14 days without a fresh check. That is 14, not 7, because the crawl is weekly and data PRs merge days later. The site rebuilds daily so the expiry applies.
 - **hang-label.** A museum tombstone in a fixed order:
-  1. artist name (600)
-  2. nationality and dates
+  1. artist name (600), or "Unknown maker" when the record names no maker
+  2. nationality and dates, or only the nationality the record gives an unknown maker ("Dutch")
   3. artwork title (italic Besley) and year
   4. owning collection and accession number, then "Image in the public domain, courtesy of <image credit>."
   5. a divider, then "Made after this painting" ("this pastel" for a pastel, "this watercolour" for a watercolour, "this charcoal" for a charcoal, "this tapestry" for a tapestry, "this photograph" for a photograph, from the work's `kind`) with a list of pieces: a short name we write ("Irises socks") as the link, the price or "Sold out" on the right
