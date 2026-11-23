@@ -3,7 +3,8 @@
 #
 # 1. Read the owning museum's collection record, never a shop page. Copy name, artistLine,
 #    title, date, collection and accession as the record gives them (a year range takes an en
-#    dash), set `record` to its URL and `checked` to the day you read it.
+#    dash), set `record` to its URL and `checked` to the day you read it. Set `artist` to the
+#    work's data/artists.yaml id, or leave it out when the record names no maker.
 # 2. Use the owner's open-access image, and only if it is CC0. Save it in src/assets/hang/ at
 #    1600px wide, and record `source`, `licence`, `credit` and `retrieved`. Every image the build
 #    ships must be 200 KB or less; scripts/check-dist.ts checks it.
@@ -304,3 +305,24 @@
     alt: An oval, pale brown photograph of a ceiling painting, where winged figures float on clouds across the sky. At the centre a young man with dark wings and tousled hair flies bare but for a drape, one arm stretched out to the left and a torch in his other hand. At left a winged child blows a long trumpet above a young man in a laurel wreath and a loose robe, who writes on a tablet and looks back over his shoulder. At right a winged figure lies back inside a ring of leaves, beside a winged youth who raises a fist and holds a jester's bauble at his side. Fine dark cracks run across the print.
   pieces:
     - { id: "getty:8349224927424", label: "Plafond: Le Zodiaque tee", verified: "2026-11-21" }
+
+- id: two-tulips-recto-one-tulip-verso
+  room: getty
+  name: Unknown maker
+  artistLine: Dutch
+  title: Two Tulips (recto); One Tulip (verso)
+  date: "about 1633–1637"
+  kind: watercolour
+  collection: J. Paul Getty Museum
+  accession: "2020.5"
+  record: https://www.getty.edu/art/collection/object/109Q58
+  checked: "2026-11-22"
+  image:
+    file: two-tulips-recto-one-tulip-verso.jpg
+    source: https://media.getty.edu/iiif/image/f1a7ff9f-acd6-487e-8b84-3345393348bb/240,250,6837,5680/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-22"
+    alt: A single tulip on a pale, spotted sheet, its white petals shaded grey and feathered with crimson streaks, the pointed tips held upright and one outer petal curling away to the left, on a slender green stem. Either side of the stem the name "Witte Marvelje" is written in brown ink in a looping hand, led in by a long flourish from the left. Faint stems and ink from the other side of the sheet show through the paper.
+  pieces:
+    - { id: "getty:8349224992960", label: Witte Marvelje crewneck, verified: "2026-11-22" }

@@ -12,7 +12,8 @@ export const workSchema = z
 	.object({
 		id: z.string().regex(/^[a-z0-9-]+$/),
 		room: z.string().regex(/^[a-z0-9-]+$/),
-		artist: z.string().regex(/^[a-z0-9-]+$/),
+		// Left out when the record names no maker, who has no data/artists.yaml entry.
+		artist: z.string().regex(/^[a-z0-9-]+$/).optional(),
 		name: z.string().min(1),
 		artistLine: z.string().min(1),
 		title: z.string().min(1),
