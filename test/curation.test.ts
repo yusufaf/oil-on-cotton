@@ -42,10 +42,14 @@ describe('data/curation.yaml', () => {
 		const rooms = new Set(museums.map((m) => m.id));
 		for (const work of works) {
 			expect(rooms.has(work.room), `${work.id}: room ${work.room}`).toBe(true);
-			if (!work.artist) continue; // an unknown maker, held to the matcher test below instead
-			const artist = artists.find((a) => a.id === work.artist);
-			expect(artist, `${work.id}: artist ${work.artist}`).toBeDefined();
-			expect([artist!.name, ...artist!.aliases], `${work.id}: name`).toContain(work.name);
+			if (work.artist) {
+				const artist = artists.find((a) => a.id === work.artist);
+				expect(artist, `${work.id}: artist ${work.artist}`).toBeDefined();
+				expect([artist!.name, ...artist!.aliases], `${work.id}: name`).toContain(work.name);
+			} else {
+				// Only a record that names no maker may leave artist out (DESIGN.md, hang-label).
+				expect(work.name, `${work.id}: a named maker needs an artist`).toBe('Unknown maker');
+			}
 		}
 	});
 
