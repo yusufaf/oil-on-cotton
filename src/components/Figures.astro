@@ -1,0 +1,18 @@
+---
+import { priceParts } from '../lib/room';
+
+interface Props {
+	text: string;
+}
+
+const { text } = Astro.props;
+---
+
+{priceParts(text).map((part, i) => (i % 2 ? <span class="stop">{part}</span> : part))}
+
+<style>
+	/* Without this the full stop and comma take a tabular digit's width from .price. */
+	.stop {
+		font-variant-numeric: normal;
+	}
+</style>
