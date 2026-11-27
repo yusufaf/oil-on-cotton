@@ -152,6 +152,8 @@ describe('priceParts and bareStops', () => {
 		expect(bareStops('<span class="price" data-astro-cid-a>$187.50</span>')).toEqual(['$187.50']);
 		expect(bareStops(`<span class="price" data-astro-cid-a>$187${stop('.')}50</span>`)).toEqual([]);
 		expect(bareStops(`<span class="price">$1${stop(',')}250.50</span>`)).toEqual(['$1,250.50']);
+		expect(bareStops('<span class="sale price" data-astro-cid-a>$9.50</span>')).toEqual(['$9.50']);
+		expect(bareStops('<span class="prices">$9.50</span>')).toEqual([]);
 		const sale = `<span class="price">\n\t$48${stop('.')}75\n\t<span class="was">was <del>$65.50</del></span></span>`;
 		expect(bareStops(sale)).toEqual(['$65.50']);
 		expect(bareStops('<span class="price">$27</span><span class="price">Price</span>')).toEqual([]);

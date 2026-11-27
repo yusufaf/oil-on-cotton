@@ -129,7 +129,7 @@ export function priceParts(text: string): string[] {
 // Prices on a built page whose full stop or comma is outside Figures.astro's stop markup.
 export function bareStops(html: string): string[] {
 	const marked = html.replace(/<span class="stop"[^>]*>([.,])<\/span>/g, '|$1');
-	return [...marked.matchAll(/(?:class="price"[^>]*|<del\b[^>]*)>([^<]*)/g)]
+	return [...marked.matchAll(/(?:class="(?:[^"]*\s)?price(?:\s[^"]*)?"[^>]*|<del\b[^>]*)>([^<]*)/g)]
 		.map((m) => m[1].trim())
 		.filter((t) => /\d[.,]\d/.test(t))
 		.map((t) => t.replaceAll('|', ''));
