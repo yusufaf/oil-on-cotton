@@ -28,7 +28,7 @@ module.exports = {
 				// Lantern simulates LCP from the page's requests, so the runner's speed barely moves it, with
 				// one exception: when the visit counter finishes loading before the runner's first paint,
 				// Lantern counts it as render blocking and LCP reads 150 ms (one simulated round trip) higher.
-				// Getty reads about 1805 ms, or 1955 with that step: its HTML (15.4 KB compressed) no longer fits
+				// Getty reads about 1805 ms, or 1955 with that step: its HTML (15.9 KB compressed) no longer fits
 				// the first 14.6 KB round trip, which costs 150 ms. A failure means a page got heavier.
 				'largest-contentful-paint': ['error', { maxNumericValue: 2000, aggregationMethod: 'median' }],
 				// The visit counter's 8 KB share of the 50 KB JS budget (2.8 KB today); check:dist holds

@@ -141,6 +141,9 @@ describe('workSchema', () => {
 	it('takes photograph as a kind, for a photographic print', () => {
 		expect(workSchema.safeParse({ ...works[0], kind: 'photograph' }).success).toBe(true);
 	});
+	it('takes sculpture as a kind, for a carved figure', () => {
+		expect(workSchema.safeParse({ ...works[0], kind: 'sculpture' }).success).toBe(true);
+	});
 	it('takes a work with no artist, for an unknown maker, and still checks one that is given', () => {
 		const unknown: Partial<Work> = { ...works[0] };
 		delete unknown.artist;

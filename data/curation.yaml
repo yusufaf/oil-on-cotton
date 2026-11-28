@@ -326,3 +326,24 @@
     alt: A single tulip on a pale, spotted sheet, its white petals shaded grey and feathered with crimson streaks, the pointed tips held upright and one outer petal curling away to the left, on a slender green stem. Either side of the stem the name "Witte Marvelje" is written in brown ink in a looping hand, led in by a long flourish from the left. Faint stems and ink from the other side of the sheet show through the paper.
   pieces:
     - { id: "getty:8349224992960", label: Witte Marvelje crewneck, verified: "2026-11-22" }
+
+- id: male-harp-player-of-the-early-spedos-type
+  room: getty
+  name: Unknown maker
+  artistLine: Cycladic
+  title: Male Harp Player of the Early Spedos Type
+  date: "2700–2300 B.C."
+  kind: sculpture
+  collection: J. Paul Getty Museum
+  accession: "85.AA.103"
+  record: https://www.getty.edu/art/collection/object/103QT1
+  checked: "2026-11-27"
+  image:
+    file: male-harp-player-of-the-early-spedos-type.jpg
+    source: https://media.getty.edu/iiif/image/3f2f9dd3-8977-4517-9919-fe031f29a388/full/1600,/0/default.jpg
+    licence: CC0 1.0
+    credit: Getty's Open Content Program
+    retrieved: "2026-11-27"
+    alt: A pale marble figure of a man sitting upright on a four-legged stool, playing a harp. The harp's sound box lies across his lap, and its slender frame rises from it at his knee, arches over his head and comes down behind his shoulder, with a hooked point jutting forward at the top. One arm reaches out to grip the frame near the top, and the other hand rests flat on the sound box. His head is tilted back, the face smooth but for a long nose. Brown stains and fine pitting mark the stone, most of all along the harp.
+  pieces:
+    - { id: "getty:8349271064768", label: Cycladic Harpist tee, verified: "2026-11-27" }
