@@ -1,5 +1,6 @@
 ---
 import type { Price } from '../lib/room';
+import Figures from './Figures.astro';
 
 export interface Row {
 	id: string;
@@ -82,10 +83,10 @@ const sorts = [
 					<span class="artist">{r.artists}</span>
 					<span class="kind">{r.kind}</span>
 					<span class="price">
-						{r.price.text}
+						<Figures text={r.price.text} />
 						{r.price.was && (
 							<span class="was">
-								was <del>{r.price.was}</del>
+								was <del><Figures text={r.price.was} /></del>
 							</span>
 						)}
 					</span>

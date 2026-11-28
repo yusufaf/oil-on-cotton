@@ -4,6 +4,7 @@ import { getImage } from 'astro:assets';
 import type { CatalogItem } from '../lib/catalog';
 import type { Hang } from '../lib/curation';
 import { priceText } from '../lib/room';
+import Figures from './Figures.astro';
 
 interface Props {
 	shop: string;
@@ -105,7 +106,7 @@ const img = (i: number, work: Hang<CatalogItem>['work']) => ({
 									>
 										{label}
 									</a>
-									<span class="price">{priceText(item, now).text}</span>
+									<span class="price"><Figures text={priceText(item, now).text} /></span>
 								</li>
 							))}
 						</ul>

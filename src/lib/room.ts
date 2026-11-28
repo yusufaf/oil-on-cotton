@@ -120,6 +120,21 @@ export function priceText(item: Pick<CatalogItem, 'price' | 'available' | 'check
 	return { text: dollars(min) };
 }
 
+// Tabular figures give a full stop or comma a digit's width in Schibsted Grotesk, so a price is
+// split there and Figures.astro sets the separators (the odd indices) at their own width.
+export function priceParts(text: string): string[] {
+	return text.split(/([.,])/);
+}
+
+// Prices on a built page whose full stop or comma is outside Figures.astro's stop markup.
+export function bareStops(html: string): string[] {
+	const marked = html.replace(/<span class="stop"[^>]*>([.,])<\/span>/g, '|$1');
+	return [...marked.matchAll(/(?:class="(?:[^"]*\s)?price(?:\s[^"]*)?"[^>]*|<del\b[^>]*)>([^<]*)/g)]
+		.map((m) => m[1].trim())
+		.filter((t) => /\d[.,]\d/.test(t))
+		.map((t) => t.replaceAll('|', ''));
+}
+
 // "S, M, L · XL sold out". One-size and sold-out pieces get no line: the price says it.
 export function sizesLine(item: Pick<CatalogItem, 'sizes' | 'available'>, price: Price): string | undefined {
 	const sized = item.sizes.filter((s) => s.label !== 'One size');

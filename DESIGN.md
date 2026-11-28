@@ -166,7 +166,7 @@ Pairing A won against B (Brygada 1918 + Familjen Grotesk) and C (Sofia Sans Extr
 **Rules:**
 - Wall titles are lettered on the wall at 44 to 76px (`clamp(44px, 6vw, 76px)`), with letter-spacing -0.02em.
 - Artwork titles are italic Besley, because the titles of works are italicised by convention: *Irises*, 1889. Use italic for nothing else.
-- Prices always use tabular figures.
+- Prices always use tabular figures, but a price's full stop and comma keep their own width.
 - Sentence case everywhere. No all-caps labels, eyebrows or headings.
 - Two weights of Schibsted (400, 500), plus 600 for the wordmark and for active filters. Besley 400 only, roman and italic. Self-host subset files in production, with at most 4 font files.
 

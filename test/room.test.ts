@@ -4,11 +4,13 @@ import type { CatalogItem } from '../src/lib/catalog';
 import { isChildSize } from '../src/lib/kids';
 import type { Museum } from '../src/lib/museums';
 import {
+	bareStops,
 	checkLedes,
 	fillLede,
 	groupCounts,
 	isKids,
 	kindLabel,
+	priceParts,
 	priceText,
 	roomFacts,
 	roomMuseums,
@@ -133,6 +135,29 @@ describe('priceText and sizesLine', () => {
 		expect(sizesLine(sale, priceText(sale, NOW))).toBe('On sale as of 26 October · M');
 		const oneSize = { ...sale, sizes: [{ label: 'One size', available: true }] };
 		expect(sizesLine(oneSize, priceText(oneSize, NOW))).toBe('On sale as of 26 October');
+	});
+});
+
+describe('priceParts and bareStops', () => {
+	it('splits a price at its full stops and commas', () => {
+		expect(priceParts('$187.50')).toEqual(['$187', '.', '50']);
+		expect(priceParts('$1,250.50')).toEqual(['$1', ',', '250', '.', '50']);
+		expect(priceParts('$35.50–$55')).toEqual(['$35', '.', '50–$55']);
+		expect(priceParts('$27')).toEqual(['$27']);
+		expect(priceParts('Sold out')).toEqual(['Sold out']);
+	});
+
+	it('finds prices whose full stop or comma is bare', () => {
+		const stop = (c: string) => `<span class="stop" data-astro-cid-b>${c}</span>`;
+		expect(bareStops('<span class="price" data-astro-cid-a>$187.50</span>')).toEqual(['$187.50']);
+		expect(bareStops(`<span class="price" data-astro-cid-a>$187${stop('.')}50</span>`)).toEqual([]);
+		expect(bareStops(`<span class="price">$1${stop(',')}250.50</span>`)).toEqual(['$1,250.50']);
+		expect(bareStops('<span class="sale price" data-astro-cid-a>$9.50</span>')).toEqual(['$9.50']);
+		expect(bareStops('<span class="prices">$9.50</span>')).toEqual([]);
+		const sale = `<span class="price">\n\t$48${stop('.')}75\n\t<span class="was">was <del>$65.50</del></span></span>`;
+		expect(bareStops(sale)).toEqual(['$65.50']);
+		expect(bareStops('<span class="price">$27</span><span class="price">Price</span>')).toEqual([]);
+		expect(bareStops('<p>From $27 to $187.50.</p><p class="credit">84.XM.1</p>')).toEqual([]);
 	});
 });
 

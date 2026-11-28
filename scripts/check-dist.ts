@@ -4,6 +4,8 @@
 //   opening that piece's shop page in a new tab
 // - every hung work shows its accession number and has a 1280w AVIF; only the first loads with the
 //   page; no hang source image ships
+// - every price sets its full stops and commas in Figures.astro's stop markup, so tabular
+//   figures don't widen them
 // - every page keeps to DESIGN.md's performance budget: under 42 KB of first-party JS (inline, local
 //   files and their imports; the Lighthouse job holds third-party transfer, the visit counter, to
 //   8 KB, 50 KB in all), at most 4 font files its text can need, and every image it shows is in
@@ -41,7 +43,7 @@ import { outboundLinks, outboundProblems } from '../src/lib/outbound.ts';
 import { homeRooms } from '../src/lib/plan.ts';
 import { readRemovals, removedMuseums, visible } from '../src/lib/removals.ts';
 import { keyFiles } from '../src/lib/indexnow.ts';
-import { roomMuseums } from '../src/lib/room.ts';
+import { bareStops, roomMuseums } from '../src/lib/room.ts';
 import { HALL_PAGES, LAUNCH_HOSTNAME, REDIRECTS } from '../src/lib/site.ts';
 
 const DIST = 'dist';
@@ -215,6 +217,8 @@ for (const path of pages(DIST)) {
 	// Room pages quote shop product names, which follow the shops' own style.
 	if (!route.startsWith('rooms/') && (/[—!]/.test(text) || BANNED.test(text)))
 		problems.push(`${path} breaks the copy rules (em dash, exclamation mark or banned word)`);
+	for (const price of bareStops(html))
+		problems.push(`${path} shows ${price} with a bare full stop or comma, which tabular figures widen`);
 
 	// DESIGN.md, Accessibility and performance.
 	const js = scriptBytes(html, base + route, readAsset);
